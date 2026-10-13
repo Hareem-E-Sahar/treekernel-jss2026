@@ -1,0 +1,133 @@
+=== method foo  (parse errors: False)
+
+--- variant A: 48 nodes, height 8, max branching 5
+(method_declaration (modifiers (public)) (type_identifier (String)) (identifier (foo)) (formal_parameters (-LRB-) (formal_parameter (integral_type (int)) (identifier (i))) (-RRB-)) (block ({) (if_statement (if) (parenthesized_expression (-LRB-) (binary_expression (identifier (i)) (==) (decimal_integer_literal (0))) (-RRB-)) (block ({) (return_statement (return) (string_literal (") (string_fragment (·Foo·!·)) (")) (;)) (}))) (return_statement (return) (string_literal (") (string_fragment (·Not·Foo·!·)) (")) (;)) (})))
+
+method_declaration
+  modifiers
+    public
+  type_identifier
+    String
+  identifier
+    foo
+  formal_parameters
+    -LRB-
+    formal_parameter
+      integral_type
+        int
+      identifier
+        i
+    -RRB-
+  block
+    {
+    if_statement
+      if
+      parenthesized_expression
+        -LRB-
+        binary_expression
+          identifier
+            i
+          ==
+          decimal_integer_literal
+            0
+        -RRB-
+      block
+        {
+        return_statement
+          return
+          string_literal
+            "
+            string_fragment
+              ·Foo·!·
+            "
+          ;
+        }
+    return_statement
+      return
+      string_literal
+        "
+        string_fragment
+          ·Not·Foo·!·
+        "
+      ;
+    }
+
+--- variant B: 27 nodes, height 7, max branching 5
+(method_declaration (modifiers (public)) (type_identifier (String)) (identifier (foo)) (formal_parameter (integral_type (int)) (identifier (i))) (block (if_statement (binary_expression (identifier (i)) (==) (decimal_integer_literal (0))) (block (return_statement (string_literal ("·Foo·!·"))))) (return_statement (string_literal ("·Not·Foo·!·")))))
+
+method_declaration
+  modifiers
+    public
+  type_identifier
+    String
+  identifier
+    foo
+  formal_parameter
+    integral_type
+      int
+    identifier
+      i
+  block
+    if_statement
+      binary_expression
+        identifier
+          i
+        ==
+        decimal_integer_literal
+          0
+      block
+        return_statement
+          string_literal
+            "·Foo·!·"
+    return_statement
+      string_literal
+        "·Not·Foo·!·"
+
+--- variant C: 20 nodes, height 6, max branching 5
+(method_declaration (modifiers (public)) (TYPE) (ID) (formal_parameter (integral_type (int)) (ID)) (block (if_statement (binary_expression (ID) (==) (NUM)) (block (return_statement (STR)))) (return_statement (STR))))
+
+method_declaration
+  modifiers
+    public
+  TYPE
+  ID
+  formal_parameter
+    integral_type
+      int
+    ID
+  block
+    if_statement
+      binary_expression
+        ID
+        ==
+        NUM
+      block
+        return_statement
+          STR
+    return_statement
+      STR
+
+--- variant D: 21 nodes, height 6, max branching 5
+(method_declaration (modifiers (public)) (type_identifier (String)) (ID) (formal_parameter (integral_type (int)) (ID)) (block (if_statement (binary_expression (ID) (==) (NUM)) (block (return_statement (STR)))) (return_statement (STR))))
+
+method_declaration
+  modifiers
+    public
+  type_identifier
+    String
+  ID
+  formal_parameter
+    integral_type
+      int
+    ID
+  block
+    if_statement
+      binary_expression
+        ID
+        ==
+        NUM
+      block
+        return_statement
+          STR
+    return_statement
+      STR
