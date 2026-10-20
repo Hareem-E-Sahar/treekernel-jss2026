@@ -1,0 +1,20 @@
+== D STK 10:30:49
+done: 4260 queries x 14679 corpus, 62,547,219 evaluations, 1175.2s -> /home/hareem/treekernel_revision_Oct2026/results/replicates/runs/D_STK
+== D SSTK 10:50:25
+done: 4260 queries x 14679 corpus, 62,547,219 evaluations, 1170.0s -> /home/hareem/treekernel_revision_Oct2026/results/replicates/runs/D_SSTK
+== D PTK 11:09:55
+done: 4260 queries x 14679 corpus, 62,547,219 evaluations, 5119.6s -> /home/hareem/treekernel_revision_Oct2026/results/replicates/runs/D_PTK
+run: 4260 queries x 14679 -> results/replicates/runs/codebert_zs
+run: 4260 queries x 14679 -> results/replicates/runs/codebert_ft
+== BM25 12:35:22
+all: 4260 queries x 14679 -> results/replicates/runs/bm25 (532s)
+wsum -> results/replicates/runs/PTK_BM25_wsum
+rrf -> results/replicates/runs/PTK_BM25_rrf
+wsum -> results/replicates/runs/STK_BM25_wsum
+rrf -> results/replicates/runs/STK_BM25_rrf
+wsum -> results/replicates/runs/PTK_CBft_wsum
+rrf -> results/replicates/runs/PTK_CBft_rrf
+wsum -> results/replicates/runs/STK_CBft_wsum
+rrf -> results/replicates/runs/STK_CBft_rrf
+== evaluate 12:45:35
+all done 12:47:08

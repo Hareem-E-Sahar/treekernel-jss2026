@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\caption{RQ1 and RQ2 over 10 replicate query sets (seeds 55, 1375, 2084, 2802, 3389, 3501, 6251, 8241, 8828, 9080). Each replicate draws 100 queries per clone type and 100 functional queries at random, independently of the other replicates and of the original sets (Table~\ref{tab:rq1}); tuning queries are excluded. Mean $\pm$ standard deviation over the replicates; MAP per clone type, Mean = mean over the five types, MAP@R for RQ2. Tree kernels on variant D at tuned settings. Best mean per column in bold. $^{+}$/$^{-}$: significantly better/worse than BM25; $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT (all distinct queries of the replicates pooled; paired bootstrap over functionalities, 95\%).}
+\label{tab:rq1rep}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lccccccc}
+\toprule
+ & \multicolumn{6}{c}{RQ1: MAP} & RQ2 \\ \cmidrule(lr){2-7}\cmidrule(lr){8-8}
+Method & T1 & T2 & VST3 & ST3 & MT3 & Mean & MAP@R \\
+\midrule
+STK & \textbf{1.000}$\pm$0.000 & 0.997$\pm$0.005$^{+}$ & \textbf{0.999}$\pm$0.004$^{+\uparrow}$ & 0.959$\pm$0.010$^{+\uparrow}$ & 0.651$\pm$0.040$^{\downarrow}$ & 0.921$\pm$0.008$^{+}$ & 0.248$\pm$0.020$^{-\downarrow}$ \\
+SSTK & \textbf{1.000}$\pm$0.000 & 0.999$\pm$0.001$^{+\uparrow}$ & \textbf{0.999}$\pm$0.003$^{+\uparrow}$ & \textbf{0.970}$\pm$0.010$^{+\uparrow}$ & 0.668$\pm$0.041 & 0.927$\pm$0.009$^{+}$ & 0.242$\pm$0.021$^{-\downarrow}$ \\
+PTK & \textbf{1.000}$\pm$0.000 & \textbf{1.000}$\pm$0.000$^{+\uparrow}$ & 0.995$\pm$0.006 & 0.969$\pm$0.013$^{+\uparrow}$ & 0.709$\pm$0.034 & \textbf{0.935}$\pm$0.007$^{+}$ & 0.212$\pm$0.022$^{-\downarrow}$ \\
+\midrule
+BM25 & \textbf{1.000}$\pm$0.000 & 0.972$\pm$0.011 & 0.973$\pm$0.009 & 0.895$\pm$0.022 & 0.657$\pm$0.034 & 0.899$\pm$0.007 & 0.555$\pm$0.021 \\
+CodeBERT zs & \textbf{1.000}$\pm$0.000 & 0.982$\pm$0.009 & 0.978$\pm$0.011 & 0.902$\pm$0.014 & 0.579$\pm$0.037 & 0.888$\pm$0.009 & 0.203$\pm$0.014$^{-}$ \\
+CodeBERT ft & \textbf{1.000}$\pm$0.000 & 0.988$\pm$0.010 & 0.989$\pm$0.010 & 0.928$\pm$0.014 & \textbf{0.724}$\pm$0.022$^{+}$ & 0.926$\pm$0.006$^{+}$ & \textbf{0.577}$\pm$0.030 \\
+\bottomrule
+\end{tabular}
+\end{table*}

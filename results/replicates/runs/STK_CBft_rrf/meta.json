@@ -1,0 +1,7 @@
+{
+  "fusion": "rrf",
+  "w": null,
+  "k": 60,
+  "tree_kernel_run": "results/replicates/runs/D_STK",
+  "bm25_run": "results/replicates/runs/codebert_ft"
+}

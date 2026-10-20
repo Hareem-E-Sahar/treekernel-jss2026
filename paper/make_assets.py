@@ -139,7 +139,8 @@ cells = {}
 for lab, r in ALL:
     cells[lab] = [val(r, t)[0] for t in TYPES] + [mean5(r)]
 L = ["\\begin{table}[t]", "\\centering",
-     "\\caption{RQ1: MAP per clone type (100 queries each; candidates = the query's clones of that type plus methods of other "
+     "\\caption{RQ1: MAP per clone type on the original query sets (100 queries per type; Table~\\ref{tab:rq1rep} "
+     "repeats the evaluation on 10 replicate query sets; candidates = the query's clones of that type plus methods of other "
      "functionalities). Tree kernels on variant D at tuned settings. Mean = mean over the five types. " + NOTE_CB +
      "$^{+}$/$^{-}$: significantly better/worse than BM25 (paired bootstrap, 95\\%). " + NOTE_ARROW + "Best per column in bold.}",
      "\\label{tab:rq1}", "\\small", "\\begin{tabular}{llcccccc}", "\\toprule",
@@ -154,20 +155,54 @@ for j, (lab, r) in enumerate(ALL):
 L += ["\\bottomrule", "\\end{tabular}", "\\end{table}"]
 write("rq1_map.tex", L)
 
-fig, ax = plt.subplots(figsize=(W1, 2.1))
-x = np.arange(len(TYPES))
-for i, (lab, r) in enumerate(ALL):
-    v = [val(r, t) for t in TYPES]
-    y = np.array([a[0] for a in v])
-    err = np.array([[a[0] - a[1] for a in v], [a[2] - a[0] for a in v]])
-    off = (i - (len(ALL) - 1) / 2) * (0.36 / len(ALL))
-    ax.errorbar(x + off, y, yerr=err, marker=MARK[lab], ms=3.5, lw=1, capsize=1.5, color=COL[lab], label=lab)
-ax.set_xticks(x, TYPES)
-ax.set_ylabel("MAP")
-ax.set_ylim(0.35 if CB else 0.45, 1.02)
-ax.grid(axis="y", lw=0.3, alpha=0.5)
-ax.legend(ncol=3 if CB else 4, loc="lower left", frameon=False, handletextpad=0.3, columnspacing=0.8)
-save(fig, "rq1_map_by_type.pdf")
+# Replicate query sets (results/replicates, eval/replicates.py). The RQ1 box-plot figure is drawn in R: paper/rq1_boxplot.R
+REP = {}
+for r in csv.DictReader(open(R / "replicates/per_replicate.tsv"), delimiter="\t"):
+    REP.setdefault(r["method"].replace("D ", ""), []).append(r)
+NREP = len(REP["PTK"])
+POOLED = {(r["a"], r["b"], r["measure"]): (float(r["ci_low"]), float(r["ci_high"]))
+          for r in csv.DictReader(open(R / "replicates/pooled_compare.tsv"), delimiter="\t")}
+
+
+def rsig(a, b, m):
+    """+1 / -1 / 0: pooled replicate test, bootstrap over functionalities (eval/replicates.py)."""
+    full = {k: f"D {k}" for k in KERNELS}
+    lo, hi = POOLED[(full.get(a, a), full.get(b, b), m)]
+    return 1 if lo > 0 else -1 if hi < 0 else 0
+
+
+def rmarks(lab, m):
+    s = ""
+    if lab != "BM25":
+        s += {1: "+", -1: "-", 0: ""}[rsig(lab, "BM25", m)]
+    if lab in KERNELS:
+        s += {1: "\\uparrow", -1: "\\downarrow", 0: ""}[rsig(lab, "CodeBERT ft", m)]
+    return f"$^{{{s}}}$" if s else ""
+
+
+
+# Table: the same comparison over the 10 replicate query sets, mean ± SD (RQ1 types, mean, and RQ2 MAP@R)
+cols_r = TYPES + ["mean5", "functional"]
+mean_r = {lab: [np.mean([float(r[c]) for r in REP[lab]]) for c in cols_r] for lab, _ in ALL}
+sd_r = {lab: [np.std([float(r[c]) for r in REP[lab]], ddof=1) for c in cols_r] for lab, _ in ALL}
+col_b = [bold_max([mean_r[l][i] for l, _ in ALL]) for i in range(len(cols_r))]
+L = ["\\begin{table}[t]", "\\centering",
+     f"\\caption{{RQ1 and RQ2 over {NREP} replicate query sets (seeds 55, 1375, 2084, 2802, 3389, 3501, 6251, 8241, 8828, "
+     "9080). Each replicate draws 100 queries per clone type and 100 functional queries at random, independently of the other "
+     "replicates and of the original sets (Table~\\ref{tab:rq1}); tuning queries are excluded. Mean $\\pm$ standard deviation "
+     "over the replicates; MAP per clone type, Mean = mean over the five types, MAP@R for RQ2. Tree kernels on variant D at "
+     "tuned settings. Best mean per column in bold. $^{+}$/$^{-}$: significantly better/worse than BM25; "
+     "$^{\\uparrow}$/$^{\\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT (all distinct queries "
+     "of the replicates pooled; paired bootstrap over functionalities, 95\\%).}",
+     "\\label{tab:rq1rep}", "\\footnotesize", "\\setlength{\\tabcolsep}{3.5pt}", "\\begin{tabular}{lccccccc}", "\\toprule",
+     " & \\multicolumn{6}{c}{RQ1: MAP} & RQ2 \\\\ \\cmidrule(lr){2-7}\\cmidrule(lr){8-8}",
+     "Method & T1 & T2 & VST3 & ST3 & MT3 & Mean & MAP@R \\\\", "\\midrule"]
+for j, (lab, _) in enumerate(ALL):
+    if lab == "BM25":
+        L.append("\\midrule")
+    L.append(f"{lab} & " + " & ".join(f"{col_b[i][j]}$\\pm${sd_r[lab][i]:.3f}{rmarks(lab, m)}" for i, m in enumerate(cols_r)) + " \\\\")
+L += ["\\bottomrule", "\\end{tabular}", "\\end{table}"]
+write("rq1_rq2_replicates.tex", L)
 
 # ======================================================================== RQ2
 best_all = run("B", "SSTK_l0.1")
@@ -177,7 +212,7 @@ vals2 = {lab: [val(r, "functional", m)[0] for m, _ in metrics] + [maprr(r, "patt
 npat = val(BM, "functional", "AP@R", "pattern")[3]
 nname = val(BM, "functional", "AP@R", "name")[3]
 L = ["\\begin{table}[t]", "\\centering",
-     "\\caption{RQ2: functional similarity (100 queries; relevant = every method of the query's functionality, candidates = "
+     "\\caption{RQ2: functional similarity on the original query set (100 queries; Table~\\ref{tab:rq1rep} gives MAP@R over 10 replicate query sets; relevant = every method of the query's functionality, candidates = "
      f"the whole corpus). Tree kernels at tuned settings, variant D unless stated. Last two columns: MAP@R by functionality "
      f"category (pattern: {npat} queries, name: {nname} queries). " + NOTE_CB +
      "$^{+}$/$^{-}$: significantly better/worse than BM25 on MAP@R. " + NOTE_ARROW.replace(". ", " on MAP@R. ") + "}",
@@ -308,6 +343,49 @@ for k, (title, blk) in enumerate(rq2_blocks):
         L.append("\\midrule")
 L += ["\\bottomrule", "\\end{tabular}", "\\end{table}"]
 write("rq4_fusion.tex", L, wide=False)
+
+# Table: RQ4 fusion over the replicate query sets (mean ± SD; W as tuned above, fixed across replicates)
+def rcell(lab, m):
+    v = [float(r[m]) for r in REP[lab]]
+    return np.mean(v), np.std(v, ddof=1)
+
+
+def rblock(fus, tk, other, fdir):
+    w = next(fdir.glob("wsum_w*")).name.split("_w")[1]
+    return [(tk, tk), (other, other), (f"Weighted sum ($W$={w})", f"{fus} wsum"), ("RRF", f"{fus} RRF")]
+
+
+L = ["\\begin{table}[t]", "\\centering",
+     f"\\caption{{RQ4 over the {NREP} replicate query sets (Table~\\ref{{tab:rq1rep}}): fusion of a tree kernel (variant D, "
+     "tuned) with BM25 or with fine-tuned CodeBERT, at the $W$ tuned on the tuning queries (as in Table~\\ref{tab:rq4}). "
+     "Mean $\\pm$ standard deviation over the replicates. $^{\\dagger}$: significantly better than both components (all "
+     "distinct queries of the replicates pooled; paired bootstrap over functionalities, 95\\%).}",
+     "\\label{tab:rq4rep}", "\\footnotesize", "\\setlength{\\tabcolsep}{4pt}", "\\begin{tabular}{lcccc}", "\\toprule",
+     " & \\multicolumn{3}{c}{RQ1 (MAP)} & RQ2 \\\\ \\cmidrule(lr){2-4} \\cmidrule(lr){5-5}",
+     "Method & ST3 & MT3 & Mean & MAP@R \\\\", "\\midrule"]
+rq1_r = [("PTK + BM25", rblock("PTK+BM25", "PTK", "BM25", F1)), ("PTK + CodeBERT ft", rblock("PTK+CodeBERT ft", "PTK", "CodeBERT ft", F3))]
+rq2_r = [("STK + BM25", rblock("STK+BM25", "STK", "BM25", F2)), ("STK + CodeBERT ft", rblock("STK+CodeBERT ft", "STK", "CodeBERT ft", F4))]
+
+
+def dagger(blk, j, m):
+    full = {k: f"D {k}" for k in KERNELS}
+    ok = j >= 2 and all(POOLED[(blk[j][1], full.get(c, c), m)][0] > 0 for c in (blk[0][1], blk[1][1]))
+    return "$^{\\dagger}$" if ok else ""
+
+
+for k, (title, blk) in enumerate(rq1_r + rq2_r):
+    rq1 = k < len(rq1_r)
+    ms = ["ST3", "MT3", "mean5"] if rq1 else ["functional"]
+    L.append(f"\\multicolumn{{5}}{{l}}{{\\emph{{{title}, $W$ tuned for RQ{1 if rq1 else 2}}}}} \\\\")
+    bb = [bold_max([rcell(r, m)[0] for _, r in blk]) for m in ms]
+    for j, (lab, r) in enumerate(blk):
+        cells = [f"{bb[i][j]}$\\pm${rcell(r, m)[1]:.3f}{dagger(blk, j, m)}" for i, m in enumerate(ms)]
+        cells = cells + ["--"] if rq1 else ["--"] * 3 + cells
+        L.append(f"\\quad {lab} & " + " & ".join(cells) + " \\\\")
+    if k < len(rq1_r + rq2_r) - 1:
+        L.append("\\midrule")
+L += ["\\bottomrule", "\\end{tabular}", "\\end{table}"]
+write("rq4_fusion_replicates.tex", L)
 
 # Figure: (a) complementarity, (b) fusion weight on the tuning queries
 pairs = [("BM25", BM)] + ([("CodeBERT ft", CBF)] if FT else [])
@@ -463,3 +541,39 @@ ax.set_xlim(0.05, 40)
 ax.set_xlabel("time per query against 14,679 methods (s, log scale, 1 thread)")
 ax.tick_params(axis="y", length=0)
 save(fig, "rq5_time_per_query.pdf")
+
+# Figure: per-query time on the main corpus vs the corpus enlarged with false positives (E5), same protocol
+E5T = R / "rq5/e5"
+if (E5T / "tree_kernels.tsv").exists() and (E5T / "codebert.json").exists() and (E5T / "runs/bm25_timing_queries/timing.tsv").exists():
+    tk5 = {}
+    for r in csv.DictReader(open(E5T / "tree_kernels.tsv"), delimiter="\t"):
+        tk5.setdefault(r["kernel"], {})[int(r["queries"])] = float(r["wall_s"])
+    bt5 = list(csv.DictReader(open(E5T / "runs/bm25_timing_queries/timing.tsv"), delimiter="\t"))
+    cb5 = json.loads((E5T / "codebert.json").read_text())
+    NC5 = cb5["n_corpus"]
+    rows = [(f"D {k}", COL[k], (tk[("D", k)][20] - tk[("D", k)][0]) / 20, (tk5[k][20] - tk5[k][0]) / 20) for k in KERNELS]
+    rows.append(("BM25", COL["BM25"], bm_q, np.mean([float(x["client_ms"]) for x in bt5]) / 1000))
+    rows.append(("CodeBERT", COL["CodeBERT ft"], cbt["query_s_mean"], cb5["query_s_mean"]))
+    from matplotlib.patches import Patch
+    fig, ax = plt.subplots(figsize=(W1, 2.0))
+    h = 0.36
+    with plt.rc_context({"hatch.linewidth": 0.7}):
+        for i, (lab, c, a, b) in enumerate(rows):
+            # corpus is encoded by fill style (hatched outline = main, solid = enlarged), never by lightness
+            ax.barh(i - h / 2 - 0.01, a, h, facecolor="white", edgecolor=c, hatch="//////", lw=0.8)
+            ax.barh(i + h / 2 + 0.01, b, h, color=c, lw=0)
+            for y, v in ((i - h / 2 - 0.01, a), (i + h / 2 + 0.01, b)):
+                ax.text(v * 1.08, y, f"{v:.2f} s" if v < 1 else f"{v:.1f} s", va="center", fontsize=6, color="#222222")
+            ax.text(250, i, f"×{b / a:.1f}", va="center", ha="right", fontsize=6.5, color="#222222")
+        ax.set_yticks(range(len(rows)), [r[0] for r in rows])
+        ax.invert_yaxis()
+        ax.set_xscale("log")
+        ax.set_xlim(0.05, 250)
+        ax.text(250, -0.72, "enlarged\n÷ main", ha="right", va="bottom", fontsize=6, color="#222222", linespacing=1.0)
+        ax.set_xlabel("time per query (s, log scale, 1 thread)")
+        ax.tick_params(axis="y", length=0)
+        handles = [Patch(facecolor="white", edgecolor="#555555", hatch="//////", lw=0.8, label=f"main corpus ({NC + 1:,} methods)"),
+                   Patch(facecolor="#555555", label=f"with false positives ({NC5:,} methods)")]
+        ax.legend(handles=handles, loc="lower left", bbox_to_anchor=(-0.02, 0.99), ncol=1, frameon=False, handlelength=1.4,
+                  columnspacing=0.8, handletextpad=0.4, fontsize=6.5)
+    save(fig, "rq5_time_e5.pdf")

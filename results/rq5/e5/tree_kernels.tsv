@@ -1,0 +1,7 @@
+variant	kernel	setting	queries	wall_s	max_rss_kb
+D	STK	l=0.8,m=0	0	43.38	1900900
+D	STK	l=0.8,m=0	20	177.66	1742520
+D	SSTK	l=0.1,m=0	0	44.81	2106124
+D	SSTK	l=0.1,m=0	20	184.18	1724340
+D	PTK	l=0.4,m=0.6	0	83.12	1428080
+D	PTK	l=0.4,m=0.6	20	390.07	1216004

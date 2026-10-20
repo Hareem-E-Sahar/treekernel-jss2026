@@ -1,0 +1,10 @@
+{
+  "index": "bcb_timing_e5",
+  "trees": "data/trees_e5/D.tsv",
+  "sources": [
+    "data/trees_e5/source.tsv"
+  ],
+  "docs": 72782,
+  "index_seconds": 14.8,
+  "store_bytes": 64109368
+}

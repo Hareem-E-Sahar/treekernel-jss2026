@@ -1,0 +1,7 @@
+{
+  "fusion": "wsum",
+  "w": 0.6,
+  "k": null,
+  "tree_kernel_run": "results/replicates/runs/D_PTK",
+  "bm25_run": "results/replicates/runs/codebert_ft"
+}

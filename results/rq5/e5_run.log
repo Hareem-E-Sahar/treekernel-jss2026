@@ -1,0 +1,20 @@
+D	STK	l=0.8,m=0	0	43.38	1900900
+D	STK	l=0.8,m=0	20	177.66	1742520
+D	SSTK	l=0.1,m=0	0	44.81	2106124
+D	SSTK	l=0.1,m=0	20	184.18	1724340
+D	PTK	l=0.4,m=0.6	0	83.12	1428080
+D	PTK	l=0.4,m=0.6	20	390.07	1216004
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 22292.25it/s]
+{
+ "threads": 1,
+ "model_load_s": 3.07,
+ "sample_methods": 200,
+ "encode_ms_per_method_mean": 269.1,
+ "corpus_encoding_s_estimate": 19587.8,
+ "query_s_mean": 0.396,
+ "query_s_min": 0.144,
+ "query_s_max": 0.621,
+ "n_queries": 20,
+ "n_corpus": 72782
+}
+all done 23:44:57

@@ -1,0 +1,37 @@
+\begin{table*}[t]
+\centering
+\caption{RQ4 over the 10 replicate query sets (Table~\ref{tab:rq1rep}): fusion of a tree kernel (variant D, tuned) with BM25 or with fine-tuned CodeBERT, at the $W$ tuned on the tuning queries (as in Table~\ref{tab:rq4}). Mean $\pm$ standard deviation over the replicates. $^{\dagger}$: significantly better than both components (all distinct queries of the replicates pooled; paired bootstrap over functionalities, 95\%).}
+\label{tab:rq4rep}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{3}{c}{RQ1 (MAP)} & RQ2 \\ \cmidrule(lr){2-4} \cmidrule(lr){5-5}
+Method & ST3 & MT3 & Mean & MAP@R \\
+\midrule
+\multicolumn{5}{l}{\emph{PTK + BM25, $W$ tuned for RQ1}} \\
+\quad PTK & 0.969$\pm$0.013 & 0.709$\pm$0.034 & 0.935$\pm$0.007 & -- \\
+\quad BM25 & 0.895$\pm$0.022 & 0.657$\pm$0.034 & 0.899$\pm$0.007 & -- \\
+\quad Weighted sum ($W$=0.8) & \textbf{0.989}$\pm$0.008$^{\dagger}$ & \textbf{0.849}$\pm$0.031$^{\dagger}$ & \textbf{0.968}$\pm$0.007$^{\dagger}$ & -- \\
+\quad RRF & 0.972$\pm$0.012 & 0.777$\pm$0.028 & 0.949$\pm$0.006$^{\dagger}$ & -- \\
+\midrule
+\multicolumn{5}{l}{\emph{PTK + CodeBERT ft, $W$ tuned for RQ1}} \\
+\quad PTK & 0.969$\pm$0.013 & 0.709$\pm$0.034 & 0.935$\pm$0.007 & -- \\
+\quad CodeBERT ft & 0.928$\pm$0.014 & 0.724$\pm$0.022 & 0.926$\pm$0.006 & -- \\
+\quad Weighted sum ($W$=0.6) & \textbf{0.991}$\pm$0.004$^{\dagger}$ & \textbf{0.860}$\pm$0.025$^{\dagger}$ & \textbf{0.970}$\pm$0.005$^{\dagger}$ & -- \\
+\quad RRF & 0.986$\pm$0.008$^{\dagger}$ & 0.821$\pm$0.026$^{\dagger}$ & 0.960$\pm$0.005$^{\dagger}$ & -- \\
+\midrule
+\multicolumn{5}{l}{\emph{STK + BM25, $W$ tuned for RQ2}} \\
+\quad STK & -- & -- & -- & 0.248$\pm$0.020 \\
+\quad BM25 & -- & -- & -- & \textbf{0.555}$\pm$0.021 \\
+\quad Weighted sum ($W$=0.0) & -- & -- & -- & \textbf{0.555}$\pm$0.021 \\
+\quad RRF & -- & -- & -- & 0.409$\pm$0.020 \\
+\midrule
+\multicolumn{5}{l}{\emph{STK + CodeBERT ft, $W$ tuned for RQ2}} \\
+\quad STK & -- & -- & -- & 0.248$\pm$0.020 \\
+\quad CodeBERT ft & -- & -- & -- & 0.577$\pm$0.030 \\
+\quad Weighted sum ($W$=0.1) & -- & -- & -- & \textbf{0.579}$\pm$0.030 \\
+\quad RRF & -- & -- & -- & 0.441$\pm$0.019 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,7 @@
+{
+  "fusion": "wsum",
+  "w": 0.0,
+  "k": null,
+  "tree_kernel_run": "results/replicates/runs/D_STK",
+  "bm25_run": "results/replicates/runs/bm25"
+}

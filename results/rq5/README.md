@@ -18,3 +18,24 @@ Findings:
 ## CodeBERT (added 2026-10-19)
 
 1 thread: model load 3.3 s; 0.37 s per query (encode the query, then cosine against the stored embeddings); corpus encoding estimated at about 6,200 s one method at a time (1,503 s on 8 threads in batches of 32). Fine-tuning the 5 fold models: 6.6 h on 8 threads. Output: `codebert.json`.
+
+## Enlarged corpus (E5, added 2026-10-19)
+
+`scripts/run_timing_e5.sh` → `results/rq5/e5/`. Same protocol on the 72,782-method E5 corpus (main + 58,103 false positives):
+variant D tuned kernels, BM25 (fresh index `bcb_timing_e5`, deleted afterwards) and CodeBERT, one thread, the same 20 timing queries.
+Elasticsearch ran only during the BM25 step.
+
+| | Main (14,679), s/query | Enlarged (72,782), s/query | Growth |
+|---|---|---|---|
+| D STK | 1.5 | 6.7 | ×4.6 |
+| D SSTK | 1.5 | 7.0 | ×4.6 |
+| D PTK | 3.4 | 15.3 | ×4.5 |
+| BM25 (incl. returning all scores; `took` 0.74 s) | 0.12 | 0.81 | ×6.8 |
+| CodeBERT (encode + cosine) | 0.37 | 0.40 | ×1.1 |
+
+- Set-up for the kernels (0-query run): STK 43 s, SSTK 45 s, PTK 83 s.
+- BM25 index: 14.8 s, 64 MB.
+- CodeBERT corpus encoding, estimated one method at a time: about 19,600 s (269 ms per method on this sample).
+- The corpus is 5× larger. Kernel per-query time grows roughly linearly with it. BM25 grows more than linearly here because
+  every query returns all 72,782 scores. CodeBERT's per-query cost is dominated by encoding the query.
+- Figure: `paper/figures/rq5_time_e5.pdf`.

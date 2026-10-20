@@ -1,0 +1,22 @@
+{
+  "run": "results/replicates/runs/PTK_BM25_rrf",
+  "run_meta": {
+    "fusion": "rrf",
+    "w": null,
+    "k": 60,
+    "tree_kernel_run": "results/replicates/runs/D_PTK",
+    "bm25_run": "results/replicates/runs/bm25"
+  },
+  "syntactic": [
+    "data/pools/replicates/seed3501/syntactic_T1.tsv:T1",
+    "data/pools/replicates/seed3501/syntactic_T2.tsv:T2",
+    "data/pools/replicates/seed3501/syntactic_VST3.tsv:VST3",
+    "data/pools/replicates/seed3501/syntactic_ST3.tsv:ST3",
+    "data/pools/replicates/seed3501/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "data/pools/replicates/seed3501/functional.tsv"
+  ],
+  "bootstrap": 0,
+  "seed": 20261016
+}

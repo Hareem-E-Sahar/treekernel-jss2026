@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{RQ2: functional similarity (100 queries; relevant = every method of the query's functionality, candidates = the whole corpus). Tree kernels at tuned settings, variant D unless stated. Last two columns: MAP@R by functionality category (pattern: 6 queries, name: 94 queries). CodeBERT: microsoft/codebert-base, CLS embedding, cosine, first 512 tokens; fine-tuned = contrastive fine-tuning in 5 folds by functionality, each query scored by the model whose training data excluded its functionality. $^{+}$/$^{-}$: significantly better/worse than BM25 on MAP@R. $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT on MAP@R. }
+\caption{RQ2: functional similarity on the original query set (100 queries; Table~\ref{tab:rq1rep} gives MAP@R over 10 replicate query sets; relevant = every method of the query's functionality, candidates = the whole corpus). Tree kernels at tuned settings, variant D unless stated. Last two columns: MAP@R by functionality category (pattern: 6 queries, name: 94 queries). CodeBERT: microsoft/codebert-base, CLS embedding, cosine, first 512 tokens; fine-tuned = contrastive fine-tuning in 5 folds by functionality, each query scored by the model whose training data excluded its functionality. $^{+}$/$^{-}$: significantly better/worse than BM25 on MAP@R. $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT on MAP@R. }
 \label{tab:rq2}
 \small
 \begin{tabular}{lcccccc}

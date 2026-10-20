@@ -1,6 +1,6 @@
 \begin{table*}[t]
 \centering
-\caption{RQ1: MAP per clone type (100 queries each; candidates = the query's clones of that type plus methods of other functionalities). Tree kernels on variant D at tuned settings. Mean = mean over the five types. CodeBERT: microsoft/codebert-base, CLS embedding, cosine, first 512 tokens; fine-tuned = contrastive fine-tuning in 5 folds by functionality, each query scored by the model whose training data excluded its functionality. $^{+}$/$^{-}$: significantly better/worse than BM25 (paired bootstrap, 95\%). $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT. Best per column in bold.}
+\caption{RQ1: MAP per clone type on the original query sets (100 queries per type; Table~\ref{tab:rq1rep} repeats the evaluation on 10 replicate query sets; candidates = the query's clones of that type plus methods of other functionalities). Tree kernels on variant D at tuned settings. Mean = mean over the five types. CodeBERT: microsoft/codebert-base, CLS embedding, cosine, first 512 tokens; fine-tuned = contrastive fine-tuning in 5 folds by functionality, each query scored by the model whose training data excluded its functionality. $^{+}$/$^{-}$: significantly better/worse than BM25 (paired bootstrap, 95\%). $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT. Best per column in bold.}
 \label{tab:rq1}
 \small
 \begin{tabular}{llcccccc}

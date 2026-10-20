@@ -6,7 +6,7 @@ usage (run from the repository root; scripts/run_codebert.sh runs everything in 
   codebert.py encode MODEL TREES SOURCE OUT -> OUT.npy (one L2-normalised vector per method, order of TREES)
   codebert.py run OUT EMB [--folds] [--trees T] [--queries Q] -> run directory in RetrievalRunner's format (eval/evaluate.py);
                                                with --folds, EMB is a pattern with {k}
-  codebert.py timing EMB OUT.json           -> RQ5 cost on one thread
+  codebert.py timing EMB OUT.json [TREES SOURCE]   -> RQ5 cost on one thread (default: main corpus)
 
 Model: microsoft/codebert-base. Embedding = last-layer CLS vector (as in the earlier zero-shot setup),
 L2-normalised; similarity = cosine. Input = the method source, truncated to 512 tokens (41% of methods
@@ -218,7 +218,7 @@ def finetune(k, steps=500, pairs=16, lr=2e-5, temp=0.05, maxlen=256):
     print(f"fold {k} trained in {time.time() - t0:.0f}s -> {out}")
 
 
-def timing(emb, out, sample=200):
+def timing(emb, out, trees=TREES, source=SOURCE, sample=200):
     """RQ5, one thread like the tree kernels: model load (one-off); encoding one method at a time for a
     random sample of corpus methods (preparation = mean x corpus size); per query = encoding one of the
     20 timing queries + cosine against the corpus embeddings (emb)."""
@@ -228,10 +228,11 @@ def timing(emb, out, sample=200):
     tok, m = load_model(MODEL)
     m.eval()
     load_s = time.time() - t
-    corpus = ids_of(TREES)
+    corpus = ids_of(trees)
     col = {c: i for i, c in enumerate(corpus)}
-    src = sources(SOURCE)
+    src = sources(source)
     E = torch.from_numpy(np.load(emb))
+    assert len(E) == len(corpus), (len(E), len(corpus))
     rng = np.random.default_rng(SEED)
     sample_ids = [corpus[i] for i in rng.choice(len(corpus), sample, replace=False)]
     tq = [r["function_id"] for r in csv.DictReader(open(ROOT / "data/pools/timing_queries.tsv"), delimiter="\t")]
@@ -307,7 +308,7 @@ if __name__ == "__main__":
     elif cmd == "encode":
         encode(a[0], a[1], a[2], a[3])
     elif cmd == "timing":
-        timing(a[0], a[1])
+        timing(*a[:4])
     elif cmd == "run":
         opt = {k: a[a.index(k) + 1] for k in ("--trees", "--queries") if k in a}
         run(a[0], a[1], "--folds" in a, opt.get("--trees", TREES), opt.get("--queries", QUERIES))

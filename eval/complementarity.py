@@ -38,28 +38,30 @@ def ground_truth(corpus):
     return tasks, partners, task_of
 
 
-def query_sets():
+def query_sets(pools=ROOT / "data/pools"):
     sets = []
     for t in TYPES:
-        sets.append((t, [r["function_id"] for r in csv.DictReader(open(ROOT / f"data/pools/syntactic_{t}.tsv"), delimiter="\t")]))
-    sets.append(("functional", [r["function_id"] for r in csv.DictReader(open(ROOT / "data/pools/functional.tsv"), delimiter="\t")]))
+        sets.append((t, [r["function_id"] for r in csv.DictReader(open(pools / f"syntactic_{t}.tsv"), delimiter="\t")]))
+    sets.append(("functional", [r["function_id"] for r in csv.DictReader(open(pools / "functional.tsv"), delimiter="\t")]))
     return sets
 
 
-def analyse(tk_run, bm_run):
+def analyse(tk_run, bm_run, pools=None, evals=None):
+    """pools: query-set folder (default data/pools); evals: (tk, other) folders holding per_query.tsv
+    (default <run>/eval). Used by eval/replicates_complementarity.py for the replicate query sets."""
     q, c, tk = load(tk_run, True)
     _, _, bm = load(bm_run, False)
     tasks, partners, task_of = ground_truth(c)
     row = {x: i for i, x in enumerate(q)}
     col = {x: i for i, x in enumerate(c)}
     pq = {}
-    for name, run in (("tk", tk_run), ("bm", bm_run)):
+    for name, ev in zip(("tk", "bm"), evals or (Path(tk_run) / "eval", Path(bm_run) / "eval")):
         d = {}
-        for r in csv.DictReader(open(Path(run) / "eval/per_query.tsv"), delimiter="\t"):
+        for r in csv.DictReader(open(Path(ev) / "per_query.tsv"), delimiter="\t"):
             d[(r["type"], r["function_id"])] = float(r["AP@R" if r["type"] == "functional" else "AP"])
         pq[name] = d
     out = []
-    for t, qids in query_sets():
+    for t, qids in query_sets(*([Path(pools)] if pools else [])):
         win = loss = tie = 0
         found = np.zeros(4, int)        # both, tk only, bm only, neither
         overlap = []
