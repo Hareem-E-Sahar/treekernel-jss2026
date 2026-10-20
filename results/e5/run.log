@@ -1,0 +1,10 @@
+== E5 STK l=0.8 m=0 04:24:19
+done: 584 queries x 72782 corpus, 42,577,470 evaluations, 1290.1s -> /home/hareem/treekernel_revision_Oct2026/results/e5/D/STK_l0.8
+600 query evaluations -> results/e5/D/STK_l0.8/eval
+== E5 SSTK l=0.1 m=0 04:46:01
+done: 584 queries x 72782 corpus, 42,577,470 evaluations, 1261.9s -> /home/hareem/treekernel_revision_Oct2026/results/e5/D/SSTK_l0.1
+600 query evaluations -> results/e5/D/SSTK_l0.1/eval
+== E5 PTK l=0.4 m=0.6 05:07:14
+done: 584 queries x 72782 corpus, 42,577,470 evaluations, 2910.5s -> /home/hareem/treekernel_revision_Oct2026/results/e5/D/PTK_l0.4_m0.6
+600 query evaluations -> results/e5/D/PTK_l0.4_m0.6/eval
+all done 05:55:56

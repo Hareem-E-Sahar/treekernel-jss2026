@@ -1,0 +1,6 @@
+{
+  "fusion": "wsum",
+  "w": 0.8,
+  "tree_kernel_run": "results/grid/D/STK_l0.8",
+  "bm25_run": "results/bm25/tuning/all"
+}

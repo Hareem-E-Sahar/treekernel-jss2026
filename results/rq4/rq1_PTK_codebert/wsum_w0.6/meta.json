@@ -1,0 +1,8 @@
+{
+  "fusion": "wsum",
+  "w": 0.6,
+  "k": null,
+  "objective": "rq1",
+  "tree_kernel_run": "results/eval/D/PTK_l0.4_m0.6",
+  "bm25_run": "results/codebert/eval/finetuned"
+}

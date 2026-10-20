@@ -1,0 +1,30 @@
+\begin{table*}[t]
+\centering
+\caption{RQ5: cost on one CPU thread (AMD Ryzen 7 8845HS laptop), corpus of 14,679 methods, mean over 20 queries. Preparation = parsing all methods into trees (tree kernels) or tokens and building the index (BM25); set-up = loading the corpus and computing self-similarities; per query = one query scored against the whole corpus. Tree kernels at tuned settings. CodeBERT: preparation = encoding the corpus one method at a time (estimated from 200 methods); set-up = loading the model; per query = encoding the query plus cosine against the stored corpus embeddings; zero-shot and fine-tuned models cost the same at inference. Fine-tuning the five fold models took a further 6.6 h (8 threads).}
+\label{tab:rq5}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Variant & Method & Preparation (s) & Set-up (s) & Per query (s) & Per pair ($\mu$s) \\
+\midrule
+A & STK & 12.6 & 20.8 & 3.65 & 249 \\
+ & SSTK &  & 20.5 & 3.68 & 251 \\
+ & PTK &  & 51.2 & 14.84 & 1011 \\
+\midrule
+B & STK & 13.3 & 10.0 & 0.51 & 35 \\
+ & SSTK &  & 9.8 & 0.54 & 37 \\
+ & PTK &  & 23.4 & 5.68 & 387 \\
+\midrule
+C & STK & 6.9 & 10.9 & 2.43 & 166 \\
+ & SSTK &  & 11.1 & 2.44 & 166 \\
+ & PTK &  & 16.2 & 4.13 & 282 \\
+\midrule
+D & STK & 7.6 & 9.6 & 1.46 & 99 \\
+ & SSTK &  & 9.9 & 1.50 & 102 \\
+ & PTK &  & 15.7 & 3.40 & 232 \\
+\midrule
+-- & BM25 & 5.1 & -- & 0.12 & 8 \\
+-- & CodeBERT & 6190 & 3.3 & 0.37 & 25 \\
+\bottomrule
+\end{tabular}
+\end{table*}

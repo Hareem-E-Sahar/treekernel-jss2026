@@ -1,0 +1,17 @@
+{
+  "run": "/home/hareem/treekernel_revision_Oct2026/results/rq4/rq1_PTK_codebert/tuning_runs/wsum_w0.7",
+  "run_meta": {
+    "fusion": "wsum",
+    "w": 0.7,
+    "tree_kernel_run": "results/grid/D/PTK_l0.4_m0.6",
+    "bm25_run": "results/codebert/tuning/finetuned"
+  },
+  "syntactic": [
+    "data/pools/tuning.tsv"
+  ],
+  "functional": [
+    "data/pools/tuning.tsv"
+  ],
+  "bootstrap": 0,
+  "seed": 20261016
+}

@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\caption{Robustness: the same queries against a corpus enlarged with 58,103 BigCloneBench false positives (72,782 methods; variant D, tuned). Main = original corpus (14,679 methods). $^{+}$/$^{-}$: significantly better/worse than BM25 on the enlarged corpus. $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT on the enlarged corpus. }
+\label{tab:e5}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{MT3 MAP} & \multicolumn{2}{c}{RQ1 mean MAP} & \multicolumn{2}{c}{RQ2 MAP@R} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+Method & Main & Enlarged & Main & Enlarged & Main & Enlarged \\
+\midrule
+STK & 0.592 & 0.454 & 0.906 & 0.854$^{+\uparrow}$ & 0.187 & 0.089$^{-\downarrow}$ \\
+SSTK & 0.606 & 0.483 & 0.909 & 0.866$^{+\uparrow}$ & 0.179 & 0.082$^{-\downarrow}$ \\
+PTK & 0.654 & 0.514$^{+}$ & 0.926 & 0.882$^{+\uparrow}$ & 0.165 & 0.078$^{-\downarrow}$ \\
+\midrule
+BM25 & 0.630 & 0.432 & 0.888 & 0.804 & 0.477 & 0.259 \\
+CodeBERT zs & 0.485 & 0.332$^{-}$ & 0.868 & 0.805 & 0.171 & 0.081$^{-}$ \\
+CodeBERT ft & 0.673 & 0.475 & 0.910 & 0.831$^{+}$ & 0.486 & 0.249 \\
+\bottomrule
+\end{tabular}
+\end{table*}

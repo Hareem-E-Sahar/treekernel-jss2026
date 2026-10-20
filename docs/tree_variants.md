@@ -220,6 +220,66 @@ method_declaration
 
 This example calls no methods, so D differs from C only in `String`. On a typical BigCloneBench function the difference is larger. For example, `conn = DriverManager.getConnection(...)` is `(method_invocation (ID) (ID) ...)` in C but `(method_invocation (ID) (identifier (getConnection)) ...)` in D.
 
+## Variant selection: D chosen (2026-10-16)
+
+This selection was made at KeLP's default setting, when only one variant was going to get the full grid. All four were later tuned (2026-10-17); see "After tuning" below. The variant was picked from data: every variant × kernel at λ = μ = 0.4, on the 50 tuning queries, against the reduced corpus of 14,679 methods. Score = MAP per clone type (RQ1 ground truth), averaged over T1–MT3. Details and reproduction: `results/variant_selection/README.md`.
+
+| Kernel | A raw | B pruned | C abstracted | D + API names |
+|---|---|---|---|---|
+| STK | 0.866 | 0.864 | 0.800 | **0.895** |
+| SSTK | 0.735 | **0.767** | 0.738 | 0.756 |
+| PTK | 0.918 | 0.916 | 0.905 | **0.931** |
+
+**Findings.**
+- **D is best or tied-best for every kernel.** It wins for STK and PTK; for SSTK, B leads D by 0.011, which is noise (B wins in 69% of bootstrap resamples).
+- **D beats C significantly** (paired bootstrap, 95% CI excludes zero): STK +0.095 (+0.040 to +0.154), PTK +0.026 (+0.005 to +0.056). So the rule "prefer C on a near-tie" did not apply.
+- **D vs A and B is close.** PTK: D − A = +0.013 (significant but small), D − B = +0.015 (not significant). STK: D − A = +0.029 and D − B = +0.031, both not significant.
+- **The differences come almost entirely from ST3 and MT3.** T1, T2 and VST3 are near 1.0 for every variant, so they don't discriminate.
+- **SSTK at λ = 0.4 is the weakest kernel on every variant**, mainly on ST3 (0.43–0.58) and MT3. The grid search will show whether a smaller λ helps.
+- **Caveats.** Only 10 queries per type; per-variant CIs are about ±0.06. Only the default setting was compared, assuming the ranking of variants doesn't change much with λ and μ.
+
+### C vs D: what differs and why D wins
+
+The only difference is that D keeps the text of **called method names** and **type names** (`getConnection`, `FileInputStream`). C turns them into `ID` and `TYPE`. The method's own name and all variable names are abstracted in both.
+
+- **C over-abstracts.** With every name replaced, different methods can produce *identical* trees. Example: tuning query 162674 (T1) ties at a perfect score of 1.0 with 3 unrelated methods under STK on C, so its true T1 copy no longer ranks first on its own. In D the API names keep such methods apart. STK suffers most (−0.095), because it only counts complete subtrees, and identical abstracted subtrees are common.
+- **The gain is partly lexical.** D's API names are vocabulary, the same kind of signal BM25 uses. D is therefore "structure plus API vocabulary", not pure syntax. This must be stated in the paper. The RQ3 comparison of C vs D at default settings measures how much of the tree kernels' performance comes from these names. It also matters for RQ4: D may overlap more with BM25 than C would.
+- **Sizes.** D trees are slightly larger: median 160 vs 138 nodes; largest 9,516 vs 8,529 on the full benchmark.
+
+### After tuning (2026-10-17): D confirmed
+
+All four variants were then tuned on the common grid (`results/grid/tuned_comparison/README.md`). Each variant at its own best setting:
+
+| Kernel | A raw | B pruned | C abstracted | D + API names |
+|---|---|---|---|---|
+| STK | 0.893 | 0.900 | 0.882 | **0.905** |
+| SSTK | 0.896 | 0.906 | 0.884 | **0.914** |
+| PTK | 0.931 | 0.938 | 0.932 | **0.940** |
+
+- D is best for every kernel, now including SSTK. The default-setting comparison and the tuned comparison agree on D.
+- Tuning shrinks the gaps. C needs a large λ for STK (0.689 at λ = 0.1, 0.882 at 0.8): with abstracted names, small shared fragments say little. D − C for STK drops from +0.095 to +0.023 (not significant). So the lexical contribution of D's API names is small once λ is tuned (+0.01 to +0.03), mainly on ST3 and MT3.
+- Only PTK keeps significant (and small) differences: D − C +0.008, D − A +0.010.
+
+### Does D make the overflow problem worse than C?
+
+**No: the tunable grid is identical.** This also holds on the common grid adopted on 2026-10-17: 32 of 48 settings are computable on both C and D, the same ones (B: 31, A: 30). The original check, on the earlier grid, follows. On the reduced corpus (`results/grid_scan/main_corpus/scan.tsv`), exactly the same settings are computable on C and D:
+- STK: all 4 λ.
+- SSTK: λ 0.02–0.4 (7 values).
+- PTK: 6 of 9 settings.
+
+D has more overflowing methods in the cells that are *not* computable on either variant:
+
+| Not computable on C or D | Methods overflowing on C | on D |
+|---|---|---|
+| SSTK λ = 0.6 | 110 | 233 |
+| SSTK λ = 0.8 | 515 | 833 |
+| SSTK λ = 1.0 | 1,113 | 1,718 |
+| PTK (0.4, 0.8) | 25 | 27 |
+| PTK (0.8, 0.4) | 1 | 1 |
+| PTK (0.8, 0.8) | 1,896 | 1,962 |
+
+This only changes the annotation of those cells in the sensitivity tables. D sits closer to the float limit at the top of the computable range: the largest SSTK self-similarity at λ = 0.4 is 1.5·10²⁹ on D vs 7.9·10²⁴ on C. That is still 9 orders of magnitude below the limit of 3.4·10³⁸.
+
 ## Remaining design choices to state in the paper
 
 - **The method's own name is abstracted in D.** Only *called* method names keep their text. That's deliberate, because declaration names like `foo` or `bubbleSort` are chosen by the author and say little about behaviour.

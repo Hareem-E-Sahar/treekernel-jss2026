@@ -1,0 +1,16 @@
+{
+  "kernel": "STK",
+  "lambda": 1.0,
+  "mu": null,
+  "terminal_factor": null,
+  "implementation": "KeLP STK as is (float), log taken afterwards",
+  "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_main/A.tsv",
+  "queries": "/home/hareem/treekernel_revision_Oct2026/data/pools/timing_empty.tsv",
+  "n_queries": 0,
+  "n_corpus": 14679,
+  "evaluations": 14679,
+  "threads": 1,
+  "wall_seconds": 20.6,
+  "finished": "2026-10-18T12:07:32.084190748Z",
+  "java": "21.0.12.1"
+}

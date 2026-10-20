@@ -1,0 +1,23 @@
+{
+  "run": "/home/hareem/treekernel_revision_Oct2026/results/rq4/rq2_STK/rrf",
+  "run_meta": {
+    "fusion": "rrf",
+    "w": null,
+    "k": 60,
+    "objective": "rq2",
+    "tree_kernel_run": "results/eval/D/STK_l0.8",
+    "bm25_run": "results/bm25/eval/all"
+  },
+  "syntactic": [
+    "data/pools/syntactic_T1.tsv:T1",
+    "data/pools/syntactic_T2.tsv:T2",
+    "data/pools/syntactic_VST3.tsv:VST3",
+    "data/pools/syntactic_ST3.tsv:ST3",
+    "data/pools/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "data/pools/functional.tsv"
+  ],
+  "bootstrap": 1000,
+  "seed": 20261016
+}

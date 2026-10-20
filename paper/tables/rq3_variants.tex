@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\caption{RQ3: tree variant $\times$ kernel, each at its tuned setting (tuned on 50 separate queries). $\Delta$ tuning = RQ1 mean MAP at the tuned setting minus at KeLP's default ($\lambda$=$\mu$=0.4); $^{*}$: significant (paired bootstrap, 95\%). Best per column in bold.}
+\label{tab:rq3}
+\small
+\begin{tabular}{lllccccc}
+\toprule
+Variant & Kernel & Setting & ST3 & MT3 & RQ1 mean & RQ2 MAP@R & $\Delta$ tuning \\
+\midrule
+A & STK & $\lambda$=1.0 & 0.906 & 0.497 & 0.878 & 0.154 & +0.025$^{*}$ \\
+ & SSTK & $\lambda$=0.1 & 0.902 & 0.501 & 0.879 & 0.155 & +0.117$^{*}$ \\
+ & PTK & $\lambda$=0.6, $\mu$=0.4 & 0.937 & 0.575 & 0.901 & 0.151 & +0.000 \\
+\midrule
+B & STK & $\lambda$=1.0 & 0.896 & 0.604 & 0.897 & 0.246 & +0.031$^{*}$ \\
+ & SSTK & $\lambda$=0.1 & 0.896 & 0.614 & 0.900 & \textbf{0.248} & +0.093$^{*}$ \\
+ & PTK & $\lambda$=0.4, $\mu$=0.6 & 0.954 & 0.636 & 0.916 & 0.170 & +0.019$^{*}$ \\
+\midrule
+C & STK & $\lambda$=0.8 & 0.909 & 0.419 & 0.863 & 0.111 & +0.063$^{*}$ \\
+ & SSTK & $\lambda$=0.1 & 0.943 & 0.461 & 0.881 & 0.112 & +0.110$^{*}$ \\
+ & PTK & $\lambda$=0.4, $\mu$=0.6 & 0.952 & 0.572 & 0.905 & 0.140 & +0.015$^{*}$ \\
+\midrule
+D & STK & $\lambda$=0.8 & 0.937 & 0.592 & 0.906 & 0.187 & +0.011$^{*}$ \\
+ & SSTK & $\lambda$=0.1 & 0.939 & 0.606 & 0.909 & 0.179 & +0.128$^{*}$ \\
+ & PTK & $\lambda$=0.4, $\mu$=0.6 & \textbf{0.973} & \textbf{0.654} & \textbf{0.926} & 0.165 & +0.014$^{*}$ \\
+\bottomrule
+\end{tabular}
+\end{table*}

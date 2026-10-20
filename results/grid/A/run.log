@@ -1,0 +1,79 @@
+== STK lambda=0.1 02:31:37
+done: 50 queries x 14679 corpus, 748,629 evaluations, 49.5s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/STK_l0.1
+== STK lambda=0.2 02:32:38
+done: 50 queries x 14679 corpus, 748,629 evaluations, 50.0s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/STK_l0.2
+== STK lambda=0.4 02:33:38
+done: 50 queries x 14679 corpus, 748,629 evaluations, 48.6s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/STK_l0.4
+== STK lambda=0.6 02:34:37
+done: 50 queries x 14679 corpus, 748,629 evaluations, 48.8s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/STK_l0.6
+== STK lambda=0.8 02:35:37
+done: 50 queries x 14679 corpus, 748,629 evaluations, 47.2s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/STK_l0.8
+== STK lambda=1.0 02:36:34
+done: 50 queries x 14679 corpus, 748,629 evaluations, 46.7s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/STK_l1.0
+== SSTK lambda=0.1 02:37:31
+done: 50 queries x 14679 corpus, 748,629 evaluations, 46.5s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/SSTK_l0.1
+== SSTK lambda=0.2 02:38:28
+done: 50 queries x 14679 corpus, 748,629 evaluations, 46.7s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/SSTK_l0.2
+== SSTK lambda=0.4 02:39:25
+done: 50 queries x 14679 corpus, 748,629 evaluations, 46.0s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/SSTK_l0.4
+-- SSTK lambda=0.6: not computable (non-finite=822 (smallest tree 1002 nodes))
+-- SSTK lambda=0.8: not computable (non-finite=2485 (smallest tree 573 nodes))
+-- SSTK lambda=1.0: not computable (non-finite=4343 (smallest tree 433 nodes))
+== PTK lambda=0.1,mu=0.1 02:40:55
+done: 50 queries x 14679 corpus, 748,629 evaluations, 168.4s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.1_m0.1
+== PTK lambda=0.1,mu=0.2 02:44:05
+done: 50 queries x 14679 corpus, 748,629 evaluations, 168.1s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.1_m0.2
+== PTK lambda=0.1,mu=0.4 02:47:14
+done: 50 queries x 14679 corpus, 748,629 evaluations, 168.0s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.1_m0.4
+== PTK lambda=0.1,mu=0.6 02:50:23
+done: 50 queries x 14679 corpus, 748,629 evaluations, 167.8s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.1_m0.6
+== PTK lambda=0.1,mu=0.8 02:53:31
+done: 50 queries x 14679 corpus, 748,629 evaluations, 168.0s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.1_m0.8
+== PTK lambda=0.1,mu=1.0 02:56:39
+done: 50 queries x 14679 corpus, 748,629 evaluations, 165.7s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.1_m1.0
+== PTK lambda=0.2,mu=0.1 02:59:46
+done: 50 queries x 14679 corpus, 748,629 evaluations, 164.5s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.2_m0.1
+== PTK lambda=0.2,mu=0.2 03:02:51
+done: 50 queries x 14679 corpus, 748,629 evaluations, 166.0s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.2_m0.2
+== PTK lambda=0.2,mu=0.4 03:05:57
+done: 50 queries x 14679 corpus, 748,629 evaluations, 165.5s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.2_m0.4
+== PTK lambda=0.2,mu=0.6 03:09:04
+done: 50 queries x 14679 corpus, 748,629 evaluations, 164.5s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.2_m0.6
+== PTK lambda=0.2,mu=0.8 03:12:09
+done: 50 queries x 14679 corpus, 748,629 evaluations, 165.4s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.2_m0.8
+-- PTK lambda=0.2,mu=1.0: not computable (non-finite=23 (smallest tree 3066 nodes))
+== PTK lambda=0.4,mu=0.1 03:15:33
+done: 50 queries x 14679 corpus, 748,629 evaluations, 161.6s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.4_m0.1
+== PTK lambda=0.4,mu=0.2 03:18:35
+done: 50 queries x 14679 corpus, 748,629 evaluations, 164.3s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.4_m0.2
+== PTK lambda=0.4,mu=0.4 03:21:40
+done: 50 queries x 14679 corpus, 748,629 evaluations, 166.4s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.4_m0.4
+== PTK lambda=0.4,mu=0.6 03:24:46
+done: 50 queries x 14679 corpus, 748,629 evaluations, 162.7s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.4_m0.6
+-- PTK lambda=0.4,mu=0.8: not computable (non-finite=423 (smallest tree 1670 nodes))
+-- PTK lambda=0.4,mu=1.0: not computable (non-finite=1747 (smallest tree 856 nodes))
+== PTK lambda=0.6,mu=0.1 03:28:25
+done: 50 queries x 14679 corpus, 748,629 evaluations, 162.7s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.6_m0.1
+== PTK lambda=0.6,mu=0.2 03:31:28
+done: 50 queries x 14679 corpus, 748,629 evaluations, 164.7s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.6_m0.2
+== PTK lambda=0.6,mu=0.4 03:34:33
+done: 50 queries x 14679 corpus, 748,629 evaluations, 165.2s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.6_m0.4
+-- PTK lambda=0.6,mu=0.6: not computable (non-finite=536 (smallest tree 1390 nodes))
+-- PTK lambda=0.6,mu=0.8: not computable (non-finite=2503 (smallest tree 645 nodes))
+-- PTK lambda=0.6,mu=1.0: not computable (non-finite=4913 (smallest tree 420 nodes))
+== PTK lambda=0.8,mu=0.1 03:38:32
+done: 50 queries x 14679 corpus, 748,629 evaluations, 164.9s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.8_m0.1
+== PTK lambda=0.8,mu=0.2 03:41:37
+done: 50 queries x 14679 corpus, 748,629 evaluations, 167.0s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l0.8_m0.2
+-- PTK lambda=0.8,mu=0.4: not computable (non-finite=199 (smallest tree 1703 nodes))
+-- PTK lambda=0.8,mu=0.6: not computable (non-finite=2484 (smallest tree 586 nodes))
+-- PTK lambda=0.8,mu=0.8: not computable (non-finite=5816 (smallest tree 364 nodes))
+-- PTK lambda=0.8,mu=1.0: not computable (non-finite=8589 (smallest tree 258 nodes))
+== PTK lambda=1.0,mu=0.1 03:45:56
+done: 50 queries x 14679 corpus, 748,629 evaluations, 163.1s -> /home/hareem/treekernel_revision_Oct2026/results/grid/A/PTK_l1.0_m0.1
+-- PTK lambda=1.0,mu=0.2: not computable (non-finite=5 (smallest tree 2130 nodes))
+-- PTK lambda=1.0,mu=0.4: not computable (non-finite=1359 (smallest tree 627 nodes))
+-- PTK lambda=1.0,mu=0.6: not computable (non-finite=5401 (smallest tree 335 nodes))
+-- PTK lambda=1.0,mu=0.8: not computable (non-finite=9039 (smallest tree 237 nodes))
+-- PTK lambda=1.0,mu=1.0: not computable (non-finite=11248 (smallest tree 177 nodes))
+all done 03:50:11

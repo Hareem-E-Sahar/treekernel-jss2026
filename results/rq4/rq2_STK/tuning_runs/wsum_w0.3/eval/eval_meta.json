@@ -1,0 +1,17 @@
+{
+  "run": "/home/hareem/treekernel_revision_Oct2026/results/rq4/rq2_STK/tuning_runs/wsum_w0.3",
+  "run_meta": {
+    "fusion": "wsum",
+    "w": 0.3,
+    "tree_kernel_run": "results/grid/D/STK_l0.8",
+    "bm25_run": "results/bm25/tuning/all"
+  },
+  "syntactic": [
+    "data/pools/tuning.tsv"
+  ],
+  "functional": [
+    "data/pools/tuning.tsv"
+  ],
+  "bootstrap": 0,
+  "seed": 20261016
+}

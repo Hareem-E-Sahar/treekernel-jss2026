@@ -1,0 +1,177 @@
+== encode zero-shot main 15:43:16
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 24996.75it/s]
+  32/14679 0s
+  1632/14679 45s
+  3232/14679 124s
+  4832/14679 251s
+  6432/14679 420s
+  8032/14679 626s
+  9632/14679 837s
+  11232/14679 1048s
+  12832/14679 1258s
+  14432/14679 1470s
+encoded 14679 methods in 1503s -> data/codebert/emb/zeroshot_main.npy
+run: 584 queries x 14679 -> results/codebert/eval/zeroshot
+600 query evaluations -> results/codebert/eval/zeroshot/eval
+== fine-tune fold 0 16:08:34
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 41309.90it/s]
+  fold 0 step 0 loss 2.954 10s
+  fold 0 step 25 loss 2.929 245s
+  fold 0 step 50 loss 2.487 479s
+  fold 0 step 75 loss 1.078 712s
+  fold 0 step 100 loss 0.646 947s
+  fold 0 step 125 loss 0.531 1182s
+  fold 0 step 150 loss 0.424 1415s
+  fold 0 step 175 loss 0.444 1649s
+  fold 0 step 200 loss 0.416 1884s
+  fold 0 step 225 loss 0.328 2118s
+  fold 0 step 250 loss 0.284 2351s
+  fold 0 step 275 loss 0.276 2585s
+  fold 0 step 300 loss 0.263 2819s
+  fold 0 step 325 loss 0.261 3055s
+  fold 0 step 350 loss 0.303 3289s
+  fold 0 step 375 loss 0.289 3523s
+  fold 0 step 400 loss 0.235 3759s
+  fold 0 step 425 loss 0.255 3994s
+  fold 0 step 450 loss 0.257 4228s
+  fold 0 step 475 loss 0.250 4464s
+  fold 0 step 499 loss 0.178 4689s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  4.65it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  4.63it/s]
+fold 0 trained in 4689s -> /home/hareem/treekernel_revision_Oct2026/data/codebert/models/fold0
+== encode fold 0 main 17:26:50
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7106.51it/s]
+  32/14679 0s
+  1632/14679 53s
+  3232/14679 144s
+  4832/14679 272s
+  6432/14679 440s
+  8032/14679 647s
+  9632/14679 857s
+  11232/14679 1066s
+  12832/14679 1276s
+  14432/14679 1486s
+encoded 14679 methods in 1519s -> data/codebert/emb/fold0_main.npy
+== fine-tune fold 1 17:52:16
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 29802.07it/s]
+  fold 1 step 0 loss 2.964 10s
+  fold 1 step 25 loss 2.953 234s
+  fold 1 step 50 loss 2.569 458s
+  fold 1 step 75 loss 1.118 682s
+  fold 1 step 100 loss 0.787 906s
+  fold 1 step 125 loss 0.674 1131s
+  fold 1 step 150 loss 0.604 1354s
+  fold 1 step 175 loss 0.563 1579s
+  fold 1 step 200 loss 0.465 1803s
+  fold 1 step 225 loss 0.580 2027s
+  fold 1 step 250 loss 0.507 2251s
+  fold 1 step 275 loss 0.471 2475s
+  fold 1 step 300 loss 0.423 2699s
+  fold 1 step 325 loss 0.372 2924s
+  fold 1 step 350 loss 0.384 3148s
+  fold 1 step 375 loss 0.459 3372s
+  fold 1 step 400 loss 0.432 3597s
+  fold 1 step 425 loss 0.367 3821s
+  fold 1 step 450 loss 0.387 4046s
+  fold 1 step 475 loss 0.420 4270s
+  fold 1 step 499 loss 0.442 4486s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 10.95it/s]
+fold 1 trained in 4486s -> /home/hareem/treekernel_revision_Oct2026/data/codebert/models/fold1
+== encode fold 1 main 19:07:07
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9296.69it/s]
+  32/14679 0s
+  1632/14679 53s
+  3232/14679 146s
+  4832/14679 272s
+  6432/14679 441s
+  8032/14679 645s
+  9632/14679 859s
+  11232/14679 1071s
+  12832/14679 1285s
+  14432/14679 1499s
+encoded 14679 methods in 1532s -> data/codebert/emb/fold1_main.npy
+== fine-tune fold 2 19:32:45
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 18635.11it/s]
+  fold 2 step 0 loss 2.980 10s
+  fold 2 step 25 loss 2.960 238s
+  fold 2 step 50 loss 2.565 467s
+  fold 2 step 75 loss 1.043 696s
+  fold 2 step 100 loss 0.871 925s
+  fold 2 step 125 loss 0.667 1157s
+  fold 2 step 150 loss 0.640 1387s
+  fold 2 step 175 loss 0.471 1616s
+  fold 2 step 200 loss 0.464 1847s
+  fold 2 step 225 loss 0.604 2075s
+  fold 2 step 250 loss 0.374 2306s
+  fold 2 step 275 loss 0.458 2536s
+  fold 2 step 300 loss 0.438 2767s
+  fold 2 step 325 loss 0.325 2997s
+  fold 2 step 350 loss 0.381 3227s
+  fold 2 step 375 loss 0.360 3458s
+  fold 2 step 400 loss 0.393 3688s
+  fold 2 step 425 loss 0.289 3918s
+  fold 2 step 450 loss 0.316 4149s
+  fold 2 step 475 loss 0.362 4380s
+  fold 2 step 499 loss 0.355 4601s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  9.81it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  9.79it/s]
+fold 2 trained in 4601s -> /home/hareem/treekernel_revision_Oct2026/data/codebert/models/fold2
+== encode fold 2 main 20:49:32
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8187.66it/s]
+  32/14679 0s
+  1632/14679 53s
+  3232/14679 145s
+  4832/14679 273s
+  6432/14679 442s
+  8032/14679 652s
+  9632/14679 865s
+  11232/14679 1078s
+  12832/14679 1290s
+  14432/14679 1504s
+encoded 14679 methods in 1537s -> data/codebert/emb/fold2_main.npy
+== fine-tune fold 3 21:15:16
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 22322.66it/s]
+  fold 3 step 0 loss 3.038 10s
+  fold 3 step 25 loss 2.947 242s
+  fold 3 step 50 loss 2.363 472s
+  fold 3 step 75 loss 1.016 701s
+  fold 3 step 100 loss 0.662 930s
+  fold 3 step 125 loss 0.586 1160s
+  fold 3 step 150 loss 0.596 1389s
+  fold 3 step 175 loss 0.316 1618s
+  fold 3 step 200 loss 0.439 1848s
+  fold 3 step 225 loss 0.497 2077s
+  fold 3 step 250 loss 0.415 2306s
+  fold 3 step 275 loss 0.328 2534s
+  fold 3 step 300 loss 0.382 2763s
+  fold 3 step 325 loss 0.329 2992s
+  fold 3 step 350 loss 0.303 3221s
+  fold 3 step 375 loss 0.264 3450s
+  fold 3 step 400 loss 0.275 3682s
+  fold 3 step 425 loss 0.240 3912s
+  fold 3 step 450 loss 0.285 4145s
+  fold 3 step 475 loss 0.279 4376s
+  fold 3 step 499 loss 0.226 4598s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  4.36it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  4.35it/s]
+fold 3 trained in 4598s -> /home/hareem/treekernel_revision_Oct2026/data/codebert/models/fold3
+== encode fold 3 main 22:32:02
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7865.38it/s]
+  32/14679 0s
+  1632/14679 54s
+  3232/14679 148s
+  4832/14679 276s
+  6432/14679 449s
+  8032/14679 664s
+  9632/14679 902s
+  11232/14679 1147s
+  12832/14679 1379s
+  14432/14679 1650s
+encoded 14679 methods in 1686s -> data/codebert/emb/fold3_main.npy
+== fine-tune fold 4 23:00:15
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 41488.54it/s]
+  fold 4 step 0 loss 2.984 11s
+  fold 4 step 25 loss 2.943 254s
+  fold 4 step 50 loss 2.476 510s
+  fold 4 step 75 loss 1.158 839s
+  fold 4 step 100 loss 0.916 1175s
+== fine-tune fold 4 23:45:41
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 32307.59it/s]
+  fold 4 step 0 loss 2.984 10s

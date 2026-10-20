@@ -1,0 +1,13 @@
+{
+  "kernel": "BM25",
+  "mode": "all",
+  "k1": 1.2,
+  "b": 0.75,
+  "index": "bcb_timing",
+  "queries": "data/pools/timing_queries.tsv",
+  "n_queries": 20,
+  "n_corpus": 14679,
+  "wall_seconds": 2.5,
+  "elasticsearch": "8.19.15",
+  "tokenisation": "bm25/code_tokens.py"
+}

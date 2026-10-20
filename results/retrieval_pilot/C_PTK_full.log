@@ -1,0 +1,4 @@
+kernel=PTK lambda=0.40 mu=0.40 trees=C.tsv threads=16
+  parsed 14780 trees in 5.3s; pairs planned 1468000, completed 1468000
+  mean per-evaluation CPU time 1.819 ms; throughput 8703 evals/s (wall 168.7s)
+  extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 2.8 min

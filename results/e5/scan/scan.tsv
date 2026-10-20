@@ -1,0 +1,6 @@
+D.tsv	SSTK	lambda=0.4	complete	non-finite=219 (smallest tree 1339 nodes)	largest=1.24e+38	120s
+D.tsv	SSTK	lambda=0.1	complete	non-finite=5 (smallest tree 7116 nodes)	largest=1.57e+33	106s
+D.tsv	STK	lambda=0.8	complete	non-finite=0	largest=1.68e+07	109s
+D.tsv	PTK	lambda=0.4,mu=0.6	complete	non-finite=22 (smallest tree 3245 nodes)	largest=2.84e+37	475s
+D.tsv	PTK	lambda=0.4,mu=0.4	complete	non-finite=0	largest=2.04e+19	447s
+D.tsv	STK	lambda=0.4	complete	non-finite=0	largest=8.39e+06	98s

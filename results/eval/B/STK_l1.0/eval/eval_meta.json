@@ -1,0 +1,31 @@
+{
+  "run": "results/eval/B/STK_l1.0",
+  "run_meta": {
+    "kernel": "STK",
+    "lambda": 1.0,
+    "mu": null,
+    "terminal_factor": null,
+    "implementation": "KeLP STK as is (float), log taken afterwards",
+    "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_main/B.tsv",
+    "queries": "/home/hareem/treekernel_revision_Oct2026/data/pools/eval_queries.tsv",
+    "n_queries": 584,
+    "n_corpus": 14679,
+    "evaluations": 8587215,
+    "threads": 14,
+    "wall_seconds": 61.7,
+    "finished": "2026-10-18T06:02:11.844345340Z",
+    "java": "21.0.12.1"
+  },
+  "syntactic": [
+    "data/pools/syntactic_T1.tsv:T1",
+    "data/pools/syntactic_T2.tsv:T2",
+    "data/pools/syntactic_VST3.tsv:VST3",
+    "data/pools/syntactic_ST3.tsv:ST3",
+    "data/pools/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "data/pools/functional.tsv"
+  ],
+  "bootstrap": 1000,
+  "seed": 20261016
+}

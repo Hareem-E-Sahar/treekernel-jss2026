@@ -1,0 +1,48 @@
+A.tsv: 81754 has 161 nodes, 5127007 has 169 nodes (lambda=0.40, mu=0.40)
+kernel         K(q,q)         K(c,c)         K(q,c)  normalised
+STK         260.0130       272.2732       260.8762      0.9805
+SSTK        335.2410       358.3955       314.7360      0.9080
+PTK          97.9043       105.2743       100.0800      0.9858
+
+B.tsv: 81754 has 115 nodes, 5127007 has 123 nodes (lambda=0.40, mu=0.40)
+kernel         K(q,q)         K(c,c)         K(q,c)  normalised
+STK         164.8425       177.1817       165.3158      0.9673
+SSTK        240.5807       264.8980       219.6171      0.8700
+PTK          76.4641        83.8180        78.7133      0.9832
+
+C.tsv: 81754 has 85 nodes, 5127007 has 91 nodes (lambda=0.40, mu=0.40)
+kernel         K(q,q)         K(c,c)         K(q,c)  normalised
+STK         276.1045       301.4359       286.8083      0.9942
+SSTK        307.7920       337.9276       311.2585      0.9651
+PTK          59.5598        65.5215        61.7661      0.9887
+
+D.tsv: 81754 has 85 nodes, 5127007 has 91 nodes (lambda=0.40, mu=0.40)
+kernel         K(q,q)         K(c,c)         K(q,c)  normalised
+STK         276.1045       301.4359       286.8083      0.9942
+SSTK        307.7920       337.9276       311.2585      0.9651
+PTK          59.5598        65.5215        61.7661      0.9887
+
+A.tsv: 81754 has 161 nodes, 588571 has 171 nodes (lambda=0.40, mu=0.40)
+kernel         K(q,q)         K(c,c)         K(q,c)  normalised
+STK         260.0130       187.7629        83.6002      0.3784
+SSTK        335.2410       335.1230        83.6002      0.2494
+PTK          97.9043        97.8384        59.7471      0.6105
+
+B.tsv: 81754 has 115 nodes, 588571 has 112 nodes (lambda=0.40, mu=0.40)
+kernel         K(q,q)         K(c,c)         K(q,c)  normalised
+STK         164.8425        65.5303         5.6000      0.0539
+SSTK        240.5807       196.0498         5.6000      0.0258
+PTK          76.4641        68.1853        44.9604      0.6227
+
+C.tsv: 81754 has 85 nodes, 588571 has 74 nodes (lambda=0.40, mu=0.40)
+kernel         K(q,q)         K(c,c)         K(q,c)  normalised
+STK         276.1045       292.9492       247.5985      0.8706
+SSTK        307.7920       317.4106       247.5985      0.7922
+PTK          59.5598        60.9994        44.6795      0.7413
+
+D.tsv: 81754 has 85 nodes, 588571 has 87 nodes (lambda=0.40, mu=0.40)
+kernel         K(q,q)         K(c,c)         K(q,c)  normalised
+STK         276.1045       188.7917       199.5992      0.8742
+SSTK        307.7920       235.5467       199.5992      0.7413
+PTK          59.5598        47.7573        36.9996      0.6937
+

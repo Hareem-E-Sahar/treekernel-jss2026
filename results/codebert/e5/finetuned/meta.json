@@ -1,0 +1,1 @@
+{"kernel": "CodeBERT", "model": "microsoft/codebert-base", "embeddings": "data/codebert/emb/fold{k}_e5.npy", "fine_tuned": true, "pooling": "CLS", "max_len": 512, "queries": "/home/hareem/treekernel_revision_Oct2026/data/pools/eval_queries.tsv", "n_queries": 584, "n_corpus": 72782}

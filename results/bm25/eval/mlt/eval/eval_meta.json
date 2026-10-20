@@ -1,0 +1,28 @@
+{
+  "run": "results/bm25/eval/mlt",
+  "run_meta": {
+    "kernel": "BM25",
+    "mode": "mlt",
+    "k1": 1.2,
+    "b": 0.75,
+    "index": "bcb_main",
+    "queries": "data/pools/eval_queries.tsv",
+    "n_queries": 584,
+    "n_corpus": 14679,
+    "wall_seconds": 197.9,
+    "elasticsearch": "8.19.15",
+    "tokenisation": "bm25/code_tokens.py"
+  },
+  "syntactic": [
+    "data/pools/syntactic_T1.tsv:T1",
+    "data/pools/syntactic_T2.tsv:T2",
+    "data/pools/syntactic_VST3.tsv:VST3",
+    "data/pools/syntactic_ST3.tsv:ST3",
+    "data/pools/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "data/pools/functional.tsv"
+  ],
+  "bootstrap": 1000,
+  "seed": 20261016
+}

@@ -1,0 +1,6 @@
+{
+  "fusion": "wsum",
+  "w": 0.4,
+  "tree_kernel_run": "results/grid/D/PTK_l0.4_m0.6",
+  "bm25_run": "results/codebert/tuning/finetuned"
+}

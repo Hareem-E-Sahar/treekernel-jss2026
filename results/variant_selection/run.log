@@ -1,0 +1,25 @@
+== C STK 11:11:03
+done: 50 queries x 14679 corpus, 748,629 evaluations, 18.9s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/C_STK
+== C SSTK 11:11:22
+done: 50 queries x 14679 corpus, 748,629 evaluations, 17.8s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/C_SSTK
+== C PTK 11:11:40
+done: 50 queries x 14679 corpus, 748,629 evaluations, 29.2s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/C_PTK
+== D STK 11:12:10
+done: 50 queries x 14679 corpus, 748,629 evaluations, 11.5s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/D_STK
+== D SSTK 11:12:22
+done: 50 queries x 14679 corpus, 748,629 evaluations, 11.5s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/D_SSTK
+== D PTK 11:12:33
+done: 50 queries x 14679 corpus, 748,629 evaluations, 24.9s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/D_PTK
+== B STK 11:12:58
+done: 50 queries x 14679 corpus, 748,629 evaluations, 5.8s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/B_STK
+== B SSTK 11:13:04
+done: 50 queries x 14679 corpus, 748,629 evaluations, 5.7s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/B_SSTK
+== B PTK 11:13:10
+done: 50 queries x 14679 corpus, 748,629 evaluations, 40.3s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/B_PTK
+== A STK 11:13:51
+done: 50 queries x 14679 corpus, 748,629 evaluations, 37.6s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/A_STK
+== A SSTK 11:14:28
+done: 50 queries x 14679 corpus, 748,629 evaluations, 37.3s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/A_SSTK
+== A PTK 11:15:06
+done: 50 queries x 14679 corpus, 748,629 evaluations, 129.8s -> /home/hareem/treekernel_revision_Oct2026/results/variant_selection/A_PTK
+all done 11:17:16

@@ -1,0 +1,10 @@
+{
+  "index": "bcb_timing",
+  "trees": "data/trees_main/D.tsv",
+  "sources": [
+    "data/trees_main/source.tsv"
+  ],
+  "docs": 14679,
+  "index_seconds": 3.3,
+  "store_bytes": 13494029
+}

@@ -1,0 +1,24 @@
+{
+  "run": "results/bm25/tuning/mlt",
+  "run_meta": {
+    "kernel": "BM25",
+    "mode": "mlt",
+    "k1": 1.2,
+    "b": 0.75,
+    "index": "bcb_main",
+    "queries": "data/pools/tuning.tsv",
+    "n_queries": 50,
+    "n_corpus": 14679,
+    "wall_seconds": 19.8,
+    "elasticsearch": "8.19.15",
+    "tokenisation": "bm25/code_tokens.py"
+  },
+  "syntactic": [
+    "data/pools/tuning.tsv"
+  ],
+  "functional": [
+    "data/pools/tuning.tsv"
+  ],
+  "bootstrap": 1000,
+  "seed": 20261016
+}

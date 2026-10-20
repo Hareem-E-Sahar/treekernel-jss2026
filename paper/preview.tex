@@ -1,0 +1,16 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{booktabs,graphicx,amssymb}
+\begin{document}
+\input{tables/rq1_map}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/rq1_map_by_type}\caption{RQ1: MAP per clone type with 95\% bootstrap CIs.}\label{fig:rq1}\end{figure}
+\input{tables/rq2_functional}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/rq1_rq2_by_category}\caption{RQ1/RQ2 by functionality category.}\label{fig:cat}\end{figure}
+\input{tables/rq3_variants}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/rq3_variant_kernel}\caption{RQ3: variant $\times$ kernel.}\label{fig:rq3}\end{figure}
+\input{tables/rq4_fusion}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/rq4_complementarity_fusion}\caption{RQ4.}\label{fig:rq4}\end{figure*}
+\input{tables/e5_false_positives}
+\input{tables/rq5_cost}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/rq5_time_per_query}\caption{RQ5: time per query.}\label{fig:rq5}\end{figure}
+\end{document}

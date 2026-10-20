@@ -1,0 +1,16 @@
+{
+  "kernel": "PTK",
+  "lambda": 0.6,
+  "mu": 0.4,
+  "terminal_factor": 1.0,
+  "implementation": "KeLP PTK as is (float), log taken afterwards",
+  "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_main/A.tsv",
+  "queries": "/home/hareem/treekernel_revision_Oct2026/data/pools/timing_empty.tsv",
+  "n_queries": 0,
+  "n_corpus": 14679,
+  "evaluations": 14679,
+  "threads": 1,
+  "wall_seconds": 51.1,
+  "finished": "2026-10-18T12:11:51.796085056Z",
+  "java": "21.0.12.1"
+}

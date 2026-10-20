@@ -1,0 +1,58 @@
+{
+ "heap_used_in_bytes": 1088908552,
+ "heap_used_percent": 50,
+ "heap_committed_in_bytes": 2147483648,
+ "heap_max_in_bytes": 2147483648,
+ "non_heap_used_in_bytes": 227354976,
+ "non_heap_committed_in_bytes": 238616576,
+ "pools": {
+  "CodeHeap 'non-nmethods'": {
+   "used_in_bytes": 2989952,
+   "max_in_bytes": 7602176,
+   "peak_used_in_bytes": 4827136,
+   "peak_max_in_bytes": 7602176
+  },
+  "Metaspace": {
+   "used_in_bytes": 156300888,
+   "max_in_bytes": 0,
+   "peak_used_in_bytes": 158113864,
+   "peak_max_in_bytes": 0
+  },
+  "CodeHeap 'profiled nmethods'": {
+   "used_in_bytes": 31399296,
+   "max_in_bytes": 122023936,
+   "peak_used_in_bytes": 31851648,
+   "peak_max_in_bytes": 122023936
+  },
+  "Compressed Class Space": {
+   "used_in_bytes": 21570440,
+   "max_in_bytes": 1073741824,
+   "peak_used_in_bytes": 22116920,
+   "peak_max_in_bytes": 1073741824
+  },
+  "young": {
+   "used_in_bytes": 897581056,
+   "max_in_bytes": 0,
+   "peak_used_in_bytes": 1283457024,
+   "peak_max_in_bytes": 0
+  },
+  "old": {
+   "used_in_bytes": 183332096,
+   "max_in_bytes": 2147483648,
+   "peak_used_in_bytes": 183332096,
+   "peak_max_in_bytes": 2147483648
+  },
+  "survivor": {
+   "used_in_bytes": 7995400,
+   "max_in_bytes": 0,
+   "peak_used_in_bytes": 155189248,
+   "peak_max_in_bytes": 0
+  },
+  "CodeHeap 'non-profiled nmethods'": {
+   "used_in_bytes": 15094400,
+   "max_in_bytes": 122032128,
+   "peak_used_in_bytes": 15117184,
+   "peak_max_in_bytes": 122032128
+  }
+ }
+}

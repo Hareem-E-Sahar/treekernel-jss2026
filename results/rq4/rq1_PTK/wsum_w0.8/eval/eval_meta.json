@@ -1,0 +1,23 @@
+{
+  "run": "/home/hareem/treekernel_revision_Oct2026/results/rq4/rq1_PTK/wsum_w0.8",
+  "run_meta": {
+    "fusion": "wsum",
+    "w": 0.8,
+    "k": null,
+    "objective": "rq1",
+    "tree_kernel_run": "results/eval/D/PTK_l0.4_m0.6",
+    "bm25_run": "results/bm25/eval/all"
+  },
+  "syntactic": [
+    "data/pools/syntactic_T1.tsv:T1",
+    "data/pools/syntactic_T2.tsv:T2",
+    "data/pools/syntactic_VST3.tsv:VST3",
+    "data/pools/syntactic_ST3.tsv:ST3",
+    "data/pools/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "data/pools/functional.tsv"
+  ],
+  "bootstrap": 1000,
+  "seed": 20261016
+}

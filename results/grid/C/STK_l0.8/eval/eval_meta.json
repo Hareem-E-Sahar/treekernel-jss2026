@@ -1,0 +1,25 @@
+{
+  "run": "results/grid/C/STK_l0.8",
+  "run_meta": {
+    "kernel": "STK",
+    "lambda": 0.8,
+    "mu": null,
+    "terminal_factor": null,
+    "implementation": "KeLP STK as is (float), log taken afterwards",
+    "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_main/C.tsv",
+    "queries": "/home/hareem/treekernel_revision_Oct2026/data/pools/tuning.tsv",
+    "n_queries": 50,
+    "n_corpus": 14679,
+    "evaluations": 748629,
+    "threads": 14,
+    "wall_seconds": 26.7,
+    "finished": "2026-10-17T07:38:47.180798097Z",
+    "java": "21.0.12.1"
+  },
+  "syntactic": [
+    "data/pools/tuning.tsv"
+  ],
+  "functional": [],
+  "bootstrap": 1000,
+  "seed": 20261016
+}

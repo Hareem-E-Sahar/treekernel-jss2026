@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\caption{RQ1: MAP per clone type (100 queries each; candidates = the query's clones of that type plus methods of other functionalities). Tree kernels on variant D at tuned settings. Mean = mean over the five types. CodeBERT: microsoft/codebert-base, CLS embedding, cosine, first 512 tokens; fine-tuned = contrastive fine-tuning in 5 folds by functionality, each query scored by the model whose training data excluded its functionality. $^{+}$/$^{-}$: significantly better/worse than BM25 (paired bootstrap, 95\%). $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT. Best per column in bold.}
+\label{tab:rq1}
+\small
+\begin{tabular}{llcccccc}
+\toprule
+Method & Setting & T1 & T2 & VST3 & ST3 & MT3 & Mean \\
+\midrule
+STK & $\lambda$=0.8 & \textbf{1.000} & \textbf{1.000}$^{+}$ & \textbf{1.000}$^{\uparrow}$ & 0.937$^{+}$ & 0.592$^{\downarrow}$ & 0.906 \\
+SSTK & $\lambda$=0.1 & \textbf{1.000} & \textbf{1.000}$^{+}$ & \textbf{1.000}$^{\uparrow}$ & 0.939$^{+}$ & 0.606 & 0.909$^{+}$ \\
+PTK & $\lambda$=0.4, $\mu$=0.6 & \textbf{1.000} & \textbf{1.000}$^{+}$ & \textbf{1.000}$^{\uparrow}$ & \textbf{0.973}$^{+\uparrow}$ & 0.654 & \textbf{0.926}$^{+}$ \\
+\midrule
+BM25 & $k_1$=1.2, $b$=0.75 & \textbf{1.000} & 0.969 & 0.989 & 0.854 & 0.630 & 0.888 \\
+CodeBERT zs & zero-shot & \textbf{1.000} & 0.992 & 0.981 & 0.882 & 0.485$^{-}$ & 0.868 \\
+CodeBERT ft & fine-tuned, 5 folds & \textbf{1.000} & 0.990 & 0.983 & 0.906$^{+}$ & \textbf{0.673} & 0.910$^{+}$ \\
+\bottomrule
+\end{tabular}
+\end{table*}

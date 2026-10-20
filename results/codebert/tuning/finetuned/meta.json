@@ -1,0 +1,1 @@
+{"kernel": "CodeBERT", "model": "microsoft/codebert-base", "embeddings": "data/codebert/emb/fold{k}_main.npy", "fine_tuned": true, "pooling": "CLS", "max_len": 512, "queries": "data/pools/tuning.tsv", "n_queries": 50, "n_corpus": 14679}

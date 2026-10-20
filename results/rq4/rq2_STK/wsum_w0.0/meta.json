@@ -1,0 +1,8 @@
+{
+  "fusion": "wsum",
+  "w": 0.0,
+  "k": null,
+  "objective": "rq2",
+  "tree_kernel_run": "results/eval/D/STK_l0.8",
+  "bm25_run": "results/bm25/eval/all"
+}

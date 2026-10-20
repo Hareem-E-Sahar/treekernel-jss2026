@@ -1,0 +1,7 @@
+step	seconds	ms_per_method
+parse	2.02	0.137
+variant A	10.62	0.724
+variant B	11.29	0.769
+variant C	4.89	0.333
+variant D	5.55	0.378
+BM25 tokens	1.84	0.125

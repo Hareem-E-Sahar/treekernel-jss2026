@@ -1,0 +1,200 @@
+C.tsv	SSTK	lambda=0.02	complete	non-finite=0	largest=1.32e+04	3s
+C.tsv	SSTK	lambda=0.05	complete	non-finite=0	largest=3.35e+04	2s
+C.tsv	SSTK	lambda=0.1	complete	non-finite=0	largest=6.71e+04	2s
+C.tsv	SSTK	lambda=0.15	complete	non-finite=0	largest=1.29e+07	2s
+C.tsv	SSTK	lambda=0.2	complete	non-finite=0	largest=1.59e+10	2s
+C.tsv	SSTK	lambda=0.3	complete	non-finite=0	largest=9.19e+16	2s
+C.tsv	SSTK	lambda=0.4	complete	non-finite=0	largest=7.92e+24	2s
+C.tsv	SSTK	lambda=0.6	complete	non-finite=110 (smallest tree 893 nodes)	largest=2.49e+38	2s
+C.tsv	SSTK	lambda=0.8	complete	non-finite=515 (smallest tree 540 nodes)	largest=3.15e+38	2s
+C.tsv	SSTK	lambda=1.0	complete	non-finite=1113 (smallest tree 463 nodes)	largest=3.27e+38	2s
+C.tsv	STK	lambda=0.1	complete	non-finite=0	largest=6.58e+04	2s
+C.tsv	STK	lambda=0.4	complete	non-finite=0	largest=2.64e+05	2s
+C.tsv	STK	lambda=0.8	complete	non-finite=0	largest=5.29e+05	2s
+C.tsv	STK	lambda=1.0	complete	non-finite=0	largest=6.60e+05	2s
+C.tsv	PTK	lambda=0.1,mu=0.1	complete	non-finite=0	largest=8.26e+02	3s
+C.tsv	PTK	lambda=0.1,mu=0.4	complete	non-finite=0	largest=3.79e+03	2s
+C.tsv	PTK	lambda=0.1,mu=0.8	complete	non-finite=0	largest=3.55e+04	3s
+C.tsv	PTK	lambda=0.4,mu=0.1	complete	non-finite=0	largest=1.32e+04	3s
+C.tsv	PTK	lambda=0.4,mu=0.4	complete	non-finite=0	largest=1.11e+09	3s
+C.tsv	PTK	lambda=0.4,mu=0.8	complete	non-finite=25 (smallest tree 1285 nodes)	largest=3.29e+38	3s
+C.tsv	PTK	lambda=0.8,mu=0.1	complete	non-finite=0	largest=1.43e+05	3s
+C.tsv	PTK	lambda=0.8,mu=0.4	complete	non-finite=1 (smallest tree 1285 nodes)	largest=9.73e+37	3s
+C.tsv	PTK	lambda=0.8,mu=0.8	complete	non-finite=1896 (smallest tree 298 nodes)	largest=2.88e+38	3s
+D.tsv	SSTK	lambda=0.02	complete	non-finite=0	largest=7.76e+03	3s
+D.tsv	SSTK	lambda=0.05	complete	non-finite=0	largest=1.94e+04	1s
+D.tsv	SSTK	lambda=0.1	complete	non-finite=0	largest=3.88e+04	1s
+D.tsv	SSTK	lambda=0.15	complete	non-finite=0	largest=3.53e+07	1s
+D.tsv	SSTK	lambda=0.2	complete	non-finite=0	largest=1.10e+11	1s
+D.tsv	SSTK	lambda=0.3	complete	non-finite=0	largest=1.45e+19	2s
+D.tsv	SSTK	lambda=0.4	complete	non-finite=0	largest=1.46e+29	1s
+D.tsv	SSTK	lambda=0.6	complete	non-finite=233 (smallest tree 849 nodes)	largest=3.28e+38	1s
+D.tsv	SSTK	lambda=0.8	complete	non-finite=833 (smallest tree 558 nodes)	largest=2.85e+38	1s
+D.tsv	SSTK	lambda=1.0	complete	non-finite=1718 (smallest tree 409 nodes)	largest=3.33e+38	1s
+D.tsv	STK	lambda=0.1	complete	non-finite=0	largest=3.79e+04	1s
+D.tsv	STK	lambda=0.4	complete	non-finite=0	largest=1.52e+05	1s
+D.tsv	STK	lambda=0.8	complete	non-finite=0	largest=3.06e+05	1s
+D.tsv	STK	lambda=1.0	complete	non-finite=0	largest=3.86e+05	1s
+D.tsv	PTK	lambda=0.1,mu=0.1	complete	non-finite=0	largest=5.66e+02	3s
+D.tsv	PTK	lambda=0.1,mu=0.4	complete	non-finite=0	largest=2.63e+03	2s
+D.tsv	PTK	lambda=0.1,mu=0.8	complete	non-finite=0	largest=3.55e+04	2s
+D.tsv	PTK	lambda=0.4,mu=0.1	complete	non-finite=0	largest=9.06e+03	2s
+D.tsv	PTK	lambda=0.4,mu=0.4	complete	non-finite=0	largest=3.16e+08	6s
+D.tsv	PTK	lambda=0.4,mu=0.8	complete	non-finite=27 (smallest tree 1458 nodes)	largest=3.00e+38	2s
+D.tsv	PTK	lambda=0.8,mu=0.1	complete	non-finite=0	largest=1.29e+05	2s
+D.tsv	PTK	lambda=0.8,mu=0.4	complete	non-finite=1 (smallest tree 1458 nodes)	largest=7.40e+35	3s
+D.tsv	PTK	lambda=0.8,mu=0.8	complete	non-finite=1962 (smallest tree 346 nodes)	largest=2.88e+38	3s
+D.tsv	STK	lambda=0.2	complete	non-finite=0	largest=7.59e+04	2s
+D.tsv	STK	lambda=0.6	complete	non-finite=0	largest=2.28e+05	2s
+D.tsv	PTK	lambda=0.1,mu=0.2	complete	non-finite=0	largest=1.19e+03	3s
+D.tsv	PTK	lambda=0.1,mu=0.6	complete	non-finite=0	largest=4.40e+03	3s
+D.tsv	PTK	lambda=0.1,mu=1.0	complete	non-finite=0	largest=6.40e+11	3s
+D.tsv	PTK	lambda=0.2,mu=0.1	complete	non-finite=0	largest=2.27e+03	4s
+D.tsv	PTK	lambda=0.2,mu=0.2	complete	non-finite=0	largest=4.75e+03	5s
+D.tsv	PTK	lambda=0.2,mu=0.4	complete	non-finite=0	largest=1.05e+04	5s
+D.tsv	PTK	lambda=0.2,mu=0.6	complete	non-finite=0	largest=1.28e+05	4s
+D.tsv	PTK	lambda=0.2,mu=0.8	complete	non-finite=0	largest=2.60e+12	4s
+D.tsv	PTK	lambda=0.2,mu=1.0	complete	non-finite=0	largest=2.92e+34	4s
+D.tsv	PTK	lambda=0.4,mu=0.2	complete	non-finite=0	largest=1.90e+04	4s
+D.tsv	PTK	lambda=0.4,mu=0.6	complete	non-finite=0	largest=6.39e+18	4s
+D.tsv	PTK	lambda=0.4,mu=1.0	complete	non-finite=490 (smallest tree 743 nodes)	largest=3.32e+38	3s
+D.tsv	PTK	lambda=0.6,mu=0.1	complete	non-finite=0	largest=2.03e+04	4s
+D.tsv	PTK	lambda=0.6,mu=0.2	complete	non-finite=0	largest=1.83e+06	4s
+D.tsv	PTK	lambda=0.6,mu=0.4	complete	non-finite=0	largest=5.62e+17	4s
+D.tsv	PTK	lambda=0.6,mu=0.6	complete	non-finite=36 (smallest tree 1336 nodes)	largest=2.36e+38	4s
+D.tsv	PTK	lambda=0.6,mu=0.8	complete	non-finite=676 (smallest tree 611 nodes)	largest=3.08e+38	4s
+D.tsv	PTK	lambda=0.6,mu=1.0	complete	non-finite=1886 (smallest tree 388 nodes)	largest=3.04e+38	4s
+D.tsv	PTK	lambda=0.8,mu=0.2	complete	non-finite=0	largest=1.56e+14	4s
+D.tsv	PTK	lambda=0.8,mu=0.6	complete	non-finite=537 (smallest tree 611 nodes)	largest=2.96e+38	4s
+D.tsv	PTK	lambda=0.8,mu=1.0	complete	non-finite=3502 (smallest tree 252 nodes)	largest=3.25e+38	4s
+D.tsv	PTK	lambda=1.0,mu=0.1	complete	non-finite=0	largest=3.12e+22	4s
+D.tsv	PTK	lambda=1.0,mu=0.2	complete	non-finite=0	largest=5.88e+33	4s
+D.tsv	PTK	lambda=1.0,mu=0.4	complete	non-finite=189 (smallest tree 629 nodes)	largest=1.28e+38	4s
+D.tsv	PTK	lambda=1.0,mu=0.6	complete	non-finite=1474 (smallest tree 346 nodes)	largest=2.43e+38	4s
+D.tsv	PTK	lambda=1.0,mu=0.8	complete	non-finite=3345 (smallest tree 240 nodes)	largest=2.66e+38	5s
+D.tsv	PTK	lambda=1.0,mu=1.0	complete	non-finite=5309 (smallest tree 175 nodes)	largest=3.28e+38	6s
+C.tsv	STK	lambda=0.2	complete	non-finite=0	largest=1.32e+05	3s
+C.tsv	STK	lambda=0.6	complete	non-finite=0	largest=3.91e+05	3s
+C.tsv	PTK	lambda=0.1,mu=0.2	complete	non-finite=0	largest=1.72e+03	4s
+C.tsv	PTK	lambda=0.1,mu=0.6	complete	non-finite=0	largest=6.33e+03	5s
+C.tsv	PTK	lambda=0.1,mu=1.0	complete	non-finite=0	largest=1.02e+12	4s
+C.tsv	PTK	lambda=0.2,mu=0.1	complete	non-finite=0	largest=3.30e+03	4s
+C.tsv	PTK	lambda=0.2,mu=0.2	complete	non-finite=0	largest=6.91e+03	4s
+C.tsv	PTK	lambda=0.2,mu=0.4	complete	non-finite=0	largest=1.52e+04	4s
+C.tsv	PTK	lambda=0.2,mu=0.6	complete	non-finite=0	largest=5.86e+05	4s
+C.tsv	PTK	lambda=0.2,mu=0.8	complete	non-finite=0	largest=5.25e+12	4s
+C.tsv	PTK	lambda=0.2,mu=1.0	complete	non-finite=0	largest=5.31e+34	4s
+C.tsv	PTK	lambda=0.4,mu=0.2	complete	non-finite=0	largest=2.76e+04	4s
+C.tsv	PTK	lambda=0.4,mu=0.6	complete	non-finite=0	largest=7.35e+20	4s
+C.tsv	PTK	lambda=0.4,mu=1.0	complete	non-finite=470 (smallest tree 713 nodes)	largest=3.07e+38	4s
+C.tsv	PTK	lambda=0.6,mu=0.1	complete	non-finite=0	largest=2.96e+04	4s
+C.tsv	PTK	lambda=0.6,mu=0.2	complete	non-finite=0	largest=2.60e+06	4s
+C.tsv	PTK	lambda=0.6,mu=0.4	complete	non-finite=0	largest=7.02e+18	4s
+C.tsv	PTK	lambda=0.6,mu=0.6	complete	non-finite=40 (smallest tree 885 nodes)	largest=2.19e+38	5s
+C.tsv	PTK	lambda=0.6,mu=0.8	complete	non-finite=661 (smallest tree 508 nodes)	largest=3.16e+38	5s
+C.tsv	PTK	lambda=0.6,mu=1.0	complete	non-finite=1778 (smallest tree 304 nodes)	largest=3.11e+38	4s
+C.tsv	PTK	lambda=0.8,mu=0.2	complete	non-finite=0	largest=7.96e+14	4s
+C.tsv	PTK	lambda=0.8,mu=0.6	complete	non-finite=577 (smallest tree 474 nodes)	largest=2.73e+38	5s
+C.tsv	PTK	lambda=0.8,mu=1.0	complete	non-finite=3263 (smallest tree 235 nodes)	largest=3.34e+38	4s
+C.tsv	PTK	lambda=1.0,mu=0.1	complete	non-finite=0	largest=4.26e+22	5s
+C.tsv	PTK	lambda=1.0,mu=0.2	complete	non-finite=0	largest=2.91e+34	5s
+C.tsv	PTK	lambda=1.0,mu=0.4	complete	non-finite=211 (smallest tree 535 nodes)	largest=2.36e+38	5s
+C.tsv	PTK	lambda=1.0,mu=0.6	complete	non-finite=1479 (smallest tree 298 nodes)	largest=2.12e+38	4s
+C.tsv	PTK	lambda=1.0,mu=0.8	complete	non-finite=3189 (smallest tree 210 nodes)	largest=2.95e+38	4s
+C.tsv	PTK	lambda=1.0,mu=1.0	complete	non-finite=4954 (smallest tree 169 nodes)	largest=3.39e+38	5s
+B.tsv	STK	lambda=0.1	complete	non-finite=0	largest=1.22e+04	3s
+B.tsv	STK	lambda=0.2	complete	non-finite=0	largest=2.50e+04	3s
+B.tsv	STK	lambda=0.4	complete	non-finite=0	largest=5.28e+04	3s
+B.tsv	STK	lambda=0.6	complete	non-finite=0	largest=8.43e+04	3s
+B.tsv	STK	lambda=0.8	complete	non-finite=0	largest=1.21e+05	3s
+B.tsv	STK	lambda=1.0	complete	non-finite=0	largest=1.69e+05	3s
+B.tsv	SSTK	lambda=0.1	complete	non-finite=0	largest=2.76e+04	3s
+B.tsv	SSTK	lambda=0.2	complete	non-finite=0	largest=5.34e+11	3s
+B.tsv	SSTK	lambda=0.4	complete	non-finite=0	largest=8.05e+37	3s
+B.tsv	SSTK	lambda=0.6	complete	non-finite=676 (smallest tree 764 nodes)	largest=2.41e+38	3s
+B.tsv	SSTK	lambda=0.8	complete	non-finite=2065 (smallest tree 453 nodes)	largest=2.93e+38	3s
+B.tsv	SSTK	lambda=1.0	complete	non-finite=3475 (smallest tree 327 nodes)	largest=3.37e+38	3s
+B.tsv	PTK	lambda=0.1,mu=0.1	complete	non-finite=0	largest=8.41e+02	7s
+B.tsv	PTK	lambda=0.1,mu=0.2	complete	non-finite=0	largest=1.76e+03	7s
+B.tsv	PTK	lambda=0.1,mu=0.4	complete	non-finite=0	largest=3.88e+03	7s
+B.tsv	PTK	lambda=0.1,mu=0.6	complete	non-finite=0	largest=6.51e+03	7s
+B.tsv	PTK	lambda=0.1,mu=0.8	complete	non-finite=0	largest=1.18e+05	7s
+B.tsv	PTK	lambda=0.1,mu=1.0	complete	non-finite=0	largest=2.25e+14	7s
+B.tsv	PTK	lambda=0.2,mu=0.1	complete	non-finite=0	largest=3.36e+03	7s
+B.tsv	PTK	lambda=0.2,mu=0.2	complete	non-finite=0	largest=7.04e+03	7s
+B.tsv	PTK	lambda=0.2,mu=0.4	complete	non-finite=0	largest=1.55e+04	7s
+B.tsv	PTK	lambda=0.2,mu=0.6	complete	non-finite=0	largest=2.09e+06	7s
+B.tsv	PTK	lambda=0.2,mu=0.8	complete	non-finite=0	largest=2.10e+15	7s
+B.tsv	PTK	lambda=0.2,mu=1.0	complete	non-finite=6 (smallest tree 2661 nodes)	largest=2.89e+36	7s
+B.tsv	PTK	lambda=0.4,mu=0.1	complete	non-finite=0	largest=1.35e+04	7s
+B.tsv	PTK	lambda=0.4,mu=0.2	complete	non-finite=0	largest=2.82e+04	7s
+B.tsv	PTK	lambda=0.4,mu=0.4	complete	non-finite=0	largest=2.21e+09	7s
+B.tsv	PTK	lambda=0.4,mu=0.6	complete	non-finite=0	largest=1.43e+23	7s
+B.tsv	PTK	lambda=0.4,mu=0.8	complete	non-finite=111 (smallest tree 1317 nodes)	largest=3.34e+38	7s
+B.tsv	PTK	lambda=0.4,mu=1.0	complete	non-finite=950 (smallest tree 728 nodes)	largest=3.39e+38	8s
+B.tsv	PTK	lambda=0.6,mu=0.1	complete	non-finite=0	largest=3.02e+04	7s
+B.tsv	PTK	lambda=0.6,mu=0.2	complete	non-finite=0	largest=2.87e+06	7s
+B.tsv	PTK	lambda=0.6,mu=0.4	complete	non-finite=0	largest=5.98e+19	7s
+B.tsv	PTK	lambda=0.6,mu=0.6	complete	non-finite=129 (smallest tree 1157 nodes)	largest=2.61e+38	7s
+B.tsv	PTK	lambda=0.6,mu=0.8	complete	non-finite=1232 (smallest tree 572 nodes)	largest=3.21e+38	7s
+B.tsv	PTK	lambda=0.6,mu=1.0	complete	non-finite=2653 (smallest tree 390 nodes)	largest=3.40e+38	7s
+B.tsv	PTK	lambda=0.8,mu=0.1	complete	non-finite=0	largest=1.46e+05	7s
+B.tsv	PTK	lambda=0.8,mu=0.2	complete	non-finite=0	largest=1.19e+15	7s
+B.tsv	PTK	lambda=0.8,mu=0.4	complete	non-finite=10 (smallest tree 1157 nodes)	largest=2.17e+38	7s
+B.tsv	PTK	lambda=0.8,mu=0.6	complete	non-finite=946 (smallest tree 572 nodes)	largest=1.99e+38	7s
+B.tsv	PTK	lambda=0.8,mu=0.8	complete	non-finite=2709 (smallest tree 373 nodes)	largest=2.77e+38	7s
+B.tsv	PTK	lambda=0.8,mu=1.0	complete	non-finite=4818 (smallest tree 266 nodes)	largest=3.37e+38	7s
+B.tsv	PTK	lambda=1.0,mu=0.1	complete	non-finite=0	largest=4.36e+22	7s
+B.tsv	PTK	lambda=1.0,mu=0.2	complete	non-finite=0	largest=4.03e+34	7s
+B.tsv	PTK	lambda=1.0,mu=0.4	complete	non-finite=280 (smallest tree 764 nodes)	largest=1.44e+38	7s
+B.tsv	PTK	lambda=1.0,mu=0.6	complete	non-finite=2076 (smallest tree 391 nodes)	largest=2.53e+38	7s
+B.tsv	PTK	lambda=1.0,mu=0.8	complete	non-finite=4542 (smallest tree 269 nodes)	largest=2.82e+38	7s
+B.tsv	PTK	lambda=1.0,mu=1.0	complete	non-finite=7033 (smallest tree 193 nodes)	largest=3.30e+38	7s
+A.tsv	STK	lambda=0.1	complete	non-finite=0	largest=6.67e+04	8s
+A.tsv	STK	lambda=0.2	complete	non-finite=0	largest=1.34e+05	7s
+A.tsv	STK	lambda=0.4	complete	non-finite=0	largest=2.69e+05	7s
+A.tsv	STK	lambda=0.6	complete	non-finite=0	largest=4.01e+05	7s
+A.tsv	STK	lambda=0.8	complete	non-finite=0	largest=5.45e+05	7s
+A.tsv	STK	lambda=1.0	complete	non-finite=0	largest=6.86e+05	7s
+A.tsv	SSTK	lambda=0.1	complete	non-finite=0	largest=6.93e+04	7s
+A.tsv	SSTK	lambda=0.2	complete	non-finite=0	largest=6.23e+11	7s
+A.tsv	SSTK	lambda=0.4	complete	non-finite=0	largest=1.38e+38	7s
+A.tsv	SSTK	lambda=0.6	complete	non-finite=822 (smallest tree 1002 nodes)	largest=2.10e+38	7s
+A.tsv	SSTK	lambda=0.8	complete	non-finite=2485 (smallest tree 573 nodes)	largest=2.67e+38	7s
+A.tsv	SSTK	lambda=1.0	complete	non-finite=4343 (smallest tree 433 nodes)	largest=3.32e+38	7s
+A.tsv	PTK	lambda=0.1,mu=0.1	complete	non-finite=0	largest=1.51e+03	18s
+A.tsv	PTK	lambda=0.1,mu=0.2	complete	non-finite=0	largest=3.22e+03	18s
+A.tsv	PTK	lambda=0.1,mu=0.4	complete	non-finite=0	largest=7.38e+03	18s
+A.tsv	PTK	lambda=0.1,mu=0.6	complete	non-finite=0	largest=1.29e+04	18s
+A.tsv	PTK	lambda=0.1,mu=0.8	complete	non-finite=0	largest=2.58e+06	17s
+A.tsv	PTK	lambda=0.1,mu=1.0	complete	non-finite=0	largest=4.94e+19	18s
+A.tsv	PTK	lambda=0.2,mu=0.1	complete	non-finite=0	largest=6.04e+03	18s
+A.tsv	PTK	lambda=0.2,mu=0.2	complete	non-finite=0	largest=1.29e+04	17s
+A.tsv	PTK	lambda=0.2,mu=0.4	complete	non-finite=0	largest=2.96e+04	18s
+A.tsv	PTK	lambda=0.2,mu=0.6	complete	non-finite=0	largest=1.93e+08	18s
+A.tsv	PTK	lambda=0.2,mu=0.8	complete	non-finite=0	largest=1.31e+22	18s
+A.tsv	PTK	lambda=0.2,mu=1.0	complete	non-finite=23 (smallest tree 3066 nodes)	largest=3.11e+38	18s
+A.tsv	PTK	lambda=0.4,mu=0.1	complete	non-finite=0	largest=2.42e+04	18s
+A.tsv	PTK	lambda=0.4,mu=0.2	complete	non-finite=0	largest=5.17e+04	17s
+A.tsv	PTK	lambda=0.4,mu=0.4	complete	non-finite=0	largest=1.65e+11	17s
+A.tsv	PTK	lambda=0.4,mu=0.6	complete	non-finite=0	largest=1.36e+33	17s
+A.tsv	PTK	lambda=0.4,mu=0.8	complete	non-finite=423 (smallest tree 1670 nodes)	largest=2.38e+38	17s
+A.tsv	PTK	lambda=0.4,mu=1.0	complete	non-finite=1747 (smallest tree 856 nodes)	largest=3.36e+38	18s
+A.tsv	PTK	lambda=0.6,mu=0.1	complete	non-finite=0	largest=5.43e+04	17s
+A.tsv	PTK	lambda=0.6,mu=0.2	complete	non-finite=0	largest=2.57e+07	17s
+A.tsv	PTK	lambda=0.6,mu=0.4	complete	non-finite=0	largest=1.24e+28	17s
+A.tsv	PTK	lambda=0.6,mu=0.6	complete	non-finite=536 (smallest tree 1390 nodes)	largest=3.00e+38	17s
+A.tsv	PTK	lambda=0.6,mu=0.8	complete	non-finite=2503 (smallest tree 645 nodes)	largest=3.30e+38	18s
+A.tsv	PTK	lambda=0.6,mu=1.0	complete	non-finite=4913 (smallest tree 420 nodes)	largest=3.32e+38	17s
+A.tsv	PTK	lambda=0.8,mu=0.1	complete	non-finite=0	largest=9.47e+05	17s
+A.tsv	PTK	lambda=0.8,mu=0.2	complete	non-finite=0	largest=3.38e+18	17s
+A.tsv	PTK	lambda=0.8,mu=0.4	complete	non-finite=199 (smallest tree 1703 nodes)	largest=1.62e+38	17s
+A.tsv	PTK	lambda=0.8,mu=0.6	complete	non-finite=2484 (smallest tree 586 nodes)	largest=2.27e+38	18s
+A.tsv	PTK	lambda=0.8,mu=0.8	complete	non-finite=5816 (smallest tree 364 nodes)	largest=2.71e+38	17s
+A.tsv	PTK	lambda=0.8,mu=1.0	complete	non-finite=8589 (smallest tree 258 nodes)	largest=3.39e+38	17s
+A.tsv	PTK	lambda=1.0,mu=0.1	complete	non-finite=0	largest=6.21e+23	17s
+A.tsv	PTK	lambda=1.0,mu=0.2	complete	non-finite=5 (smallest tree 2130 nodes)	largest=2.85e+36	17s
+A.tsv	PTK	lambda=1.0,mu=0.4	complete	non-finite=1359 (smallest tree 627 nodes)	largest=1.97e+38	17s
+A.tsv	PTK	lambda=1.0,mu=0.6	complete	non-finite=5401 (smallest tree 335 nodes)	largest=2.22e+38	17s
+A.tsv	PTK	lambda=1.0,mu=0.8	complete	non-finite=9039 (smallest tree 237 nodes)	largest=2.69e+38	17s
+A.tsv	PTK	lambda=1.0,mu=1.0	complete	non-finite=11248 (smallest tree 177 nodes)	largest=3.32e+38	17s

@@ -1,0 +1,12 @@
+{
+ "threads": 1,
+ "model_load_s": 3.3,
+ "sample_methods": 200,
+ "encode_ms_per_method_mean": 421.7,
+ "corpus_encoding_s_estimate": 6189.6,
+ "query_s_mean": 0.373,
+ "query_s_min": 0.088,
+ "query_s_max": 0.567,
+ "n_queries": 20,
+ "n_corpus": 14679
+}

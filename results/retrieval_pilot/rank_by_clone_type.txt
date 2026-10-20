@@ -1,0 +1,20 @@
+
+== C_PTK: where true clones are ranked (14,680 candidates per query)
+clone type   pairs  median score  median rank (top %)  in top R  in top 10
+T1             385         1.000                 0.2%    100.0%     31.17%
+T2             171         1.000                 0.3%    100.0%     15.79%
+VST3            32         0.998                 0.1%    100.0%     53.12%
+ST3            114         0.984                 0.1%    100.0%     41.23%
+MT3            891         0.955                 0.9%     75.6%     11.78%
+WT3/T4      128663         0.910                34.0%     25.8%      0.24%
+not a clone  191057         0.885   (1-in-7 sample of non-relevant candidates)
+
+== C_SSTK: where true clones are ranked (14,680 candidates per query)
+clone type   pairs  median score  median rank (top %)  in top R  in top 10
+T1             385         1.000                 0.2%    100.0%     31.17%
+T2             171         1.000                 0.3%    100.0%     15.79%
+VST3            32         0.992                 0.1%    100.0%     53.12%
+ST3            114         0.933                 0.4%     82.5%     25.44%
+MT3            891         0.890                 2.8%     68.6%      7.30%
+WT3/T4      128663         0.646                44.3%     21.7%      0.14%
+not a clone  190962         0.616   (1-in-7 sample of non-relevant candidates)

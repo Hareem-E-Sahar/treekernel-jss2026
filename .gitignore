@@ -1,0 +1,28 @@
+# Tooling and downloads
+.venv/
+third_party/
+elasticsearch-*/
+__pycache__/
+kernels/target/
+
+# Bulk data (BCB dump, trees, embeddings, models); keep the small query/fold definitions
+data/*
+!data/pools/
+!data/corpus/
+!data/derived_components.tsv
+!data/codebert/
+data/codebert/*
+!data/codebert/folds.tsv
+!data/codebert/query_folds.tsv
+
+# Raw run outputs: score matrices and per-run id lists (regenerable); summaries stay tracked
+*.f64
+corpus_ids.txt
+results/retrieval_pilot/*_full.tsv
+results/retrieval_pilot/query_clone_types.tsv
+results/timing/*.tsv
+
+# LaTeX build files
+paper/*.aux
+paper/*.log
+paper/preview.pdf

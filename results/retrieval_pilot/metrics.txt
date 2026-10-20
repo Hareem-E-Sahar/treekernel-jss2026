@@ -1,0 +1,20 @@
+same-functionality true-positive pairs: 8,579,799 (clones table: 8,584,153)
+
+== retrieval quality (100 queries vs all other non-query true positives)
+config     queries   MAP@R  R-prec    P@1   P@10   per-query MAP@R sd
+C_PTK          100  0.119   0.232   0.810   0.627   0.155
+C_SSTK         100  0.083   0.187   0.610   0.438   0.124
+
+== how precise is a MAP@R estimate from n queries?  (standard error = sd / sqrt(n))
+C_PTK      n=10: ±0.049  n=25: ±0.031  n=50: ±0.022  n=100: ±0.015  n=200: ±0.011
+C_SSTK     n=10: ±0.039  n=25: ±0.025  n=50: ±0.017  n=100: ±0.012  n=200: ±0.009
+
+== paired comparison C_PTK - C_SSTK on the same 100 queries
+mean MAP@R difference +0.036, per-query sd of difference 0.064, C_PTK better on 81, worse on 18, tied on 1
+standard error of the difference: n=10: ±0.020  n=25: ±0.013  n=50: ±0.009  n=100: ±0.006
+if tuning used only n of these queries, how often would it pick the same winner as all 100?
+  n=  5:  94.3% of random subsets
+  n= 10:  99.2% of random subsets
+  n= 20: 100.0% of random subsets
+  n= 30: 100.0% of random subsets
+  n= 50: 100.0% of random subsets

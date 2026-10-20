@@ -1,0 +1,48 @@
+[C] kernel=STK lambda=0.40 mu=0.00 trees=C.tsv threads=16
+[C]   parsed 600 trees in 0.9s; pairs planned 50000, completed 50000
+[C]   mean per-evaluation CPU time 0.770 ms; throughput 19969 evals/s (wall 2.5s)
+[C]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 1.2 min
+[C] kernel=SSTK lambda=0.40 mu=0.00 trees=C.tsv threads=16
+[C]   parsed 600 trees in 0.5s; pairs planned 50000, completed 50000
+[C]   mean per-evaluation CPU time 0.703 ms; throughput 21775 evals/s (wall 2.3s)
+[C]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 1.1 min
+[C] kernel=PTK lambda=0.40 mu=0.40 trees=C.tsv threads=16
+[C]   parsed 600 trees in 0.5s; pairs planned 50000, completed 50000
+[C]   mean per-evaluation CPU time 1.107 ms; throughput 14015 evals/s (wall 3.6s)
+[C]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 1.8 min
+[D] kernel=STK lambda=0.40 mu=0.00 trees=D.tsv threads=16
+[D]   parsed 600 trees in 0.6s; pairs planned 50000, completed 50000
+[D]   mean per-evaluation CPU time 0.560 ms; throughput 27186 evals/s (wall 1.8s)
+[D]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 0.9 min
+[D] kernel=SSTK lambda=0.40 mu=0.00 trees=D.tsv threads=16
+[D]   parsed 600 trees in 0.5s; pairs planned 50000, completed 50000
+[D]   mean per-evaluation CPU time 0.535 ms; throughput 28312 evals/s (wall 1.8s)
+[D]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 0.9 min
+[D] kernel=PTK lambda=0.40 mu=0.40 trees=D.tsv threads=16
+[D]   parsed 600 trees in 0.5s; pairs planned 50000, completed 50000
+[D]   mean per-evaluation CPU time 0.919 ms; throughput 16803 evals/s (wall 3.0s)
+[D]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 1.5 min
+[B] kernel=STK lambda=0.40 mu=0.00 trees=B.tsv threads=16
+[B]   parsed 600 trees in 0.8s; pairs planned 50000, completed 50000
+[B]   mean per-evaluation CPU time 0.271 ms; throughput 53419 evals/s (wall 0.9s)
+[B]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 0.5 min
+[B] kernel=SSTK lambda=0.40 mu=0.00 trees=B.tsv threads=16
+[B]   parsed 600 trees in 0.8s; pairs planned 50000, completed 50000
+[B]   mean per-evaluation CPU time 0.275 ms; throughput 53066 evals/s (wall 0.9s)
+[B]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 0.5 min
+[B] kernel=PTK lambda=0.40 mu=0.40 trees=B.tsv threads=16
+[B]   parsed 600 trees in 0.8s; pairs planned 50000, completed 50000
+[B]   mean per-evaluation CPU time 1.504 ms; throughput 10384 evals/s (wall 4.8s)
+[B]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 2.4 min
+[A] kernel=STK lambda=0.40 mu=0.00 trees=A.tsv threads=16
+[A]   parsed 600 trees in 1.1s; pairs planned 50000, completed 50000
+[A]   mean per-evaluation CPU time 0.981 ms; throughput 15909 evals/s (wall 3.1s)
+[A]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 1.5 min
+[A] kernel=SSTK lambda=0.40 mu=0.00 trees=A.tsv threads=16
+[A]   parsed 600 trees in 1.0s; pairs planned 50000, completed 50000
+[A]   mean per-evaluation CPU time 0.985 ms; throughput 15819 evals/s (wall 3.2s)
+[A]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 1.6 min
+[A] kernel=PTK lambda=0.40 mu=0.40 trees=A.tsv threads=16
+[A]   parsed 600 trees in 1.1s; pairs planned 50000, completed 50000
+[A]   mean per-evaluation CPU time 3.135 ms; throughput 5035 evals/s (wall 9.9s)
+[A]   extrapolated full run (100 queries x 14779 other true positives = 1,477,900 evals): 4.9 min
