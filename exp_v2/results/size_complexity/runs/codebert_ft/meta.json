@@ -1,0 +1,15 @@
+{
+  "kernel": "CodeBERT",
+  "model": "microsoft/codebert-base",
+  "embeddings": "data/codebert/emb/fold{k}_e5.npy",
+  "fine_tuned": true,
+  "pooling": "CLS",
+  "max_len": 512,
+  "queries": "exp_v2/data/size_complexity/union.tsv",
+  "n_queries": 7794,
+  "n_corpus": 72782,
+  "merged_from": {
+    "exp_v2/results/fp/runs/codebert_ft": 3082,
+    "exp_v2/results/size_complexity/new_queries/codebert_ft": 4712
+  }
+}

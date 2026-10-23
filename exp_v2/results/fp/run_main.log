@@ -1,0 +1,136 @@
+== D STK (STK_l1.0) part 1 04:20:02
+done: 2130 queries x 72782 corpus, 155,098,442 evaluations, 2945.3s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/D_STK_1
+== D STK (STK_l1.0) part 2 05:09:08
+done: 2130 queries x 72782 corpus, 155,098,442 evaluations, 2150.6s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/D_STK_2
+== D SSTK (SSTK_l0.1) part 1 05:45:00
+done: 2130 queries x 72782 corpus, 155,098,442 evaluations, 2884.1s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/D_SSTK_1
+== D SSTK (SSTK_l0.1) part 2 06:33:05
+done: 2130 queries x 72782 corpus, 155,098,442 evaluations, 2142.8s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/D_SSTK_2
+== D PTK (PTK_l0.4_m0.6) part 1 07:08:49
+done: 2130 queries x 72782 corpus, 155,098,442 evaluations, 6284.3s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/D_PTK_1
+== D PTK (PTK_l0.4_m0.6) part 2 08:53:34
+done: 2130 queries x 72782 corpus, 155,098,442 evaluations, 4544.6s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/D_PTK_2
+run: 4260 queries x 72782 -> exp_v2/results/fp/runs/codebert_zs
+run: 4260 queries x 72782 -> exp_v2/results/fp/runs/codebert_ft
+== BM25 10:09:51
+all: 4260 queries x 72782 -> exp_v2/results/fp/runs/bm25 (3187s)
+wsum -> exp_v2/results/fp/runs/rq1_PTK_bm25_wsum
+rrf -> exp_v2/results/fp/runs/rq1_PTK_bm25_rrf
+wsum -> exp_v2/results/fp/runs/rq1_PTK_codebert_ft_wsum
+rrf -> exp_v2/results/fp/runs/rq1_PTK_codebert_ft_rrf
+wsum -> exp_v2/results/fp/runs/rq2_STK_bm25_wsum
+rrf -> exp_v2/results/fp/runs/rq2_STK_bm25_rrf
+wsum -> exp_v2/results/fp/runs/rq2_STK_codebert_ft_wsum
+rrf -> exp_v2/results/fp/runs/rq2_STK_codebert_ft_rrf
+== evaluate 11:08:02
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/evaluate.py", line 68, in <module>
+    qids = [int(x) for x in (args.run_dir / "query_ids.txt").read_text().split()]
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'exp_v2/results/fp/runs/union_parts/query_ids.txt'
+exp_v2/scripts/run_replicates.sh failed with exit status 123.

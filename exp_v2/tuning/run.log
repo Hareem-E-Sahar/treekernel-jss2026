@@ -1,0 +1,48 @@
+== STK lambda=0.1 01:43:11
+== STK lambda=0.2 01:44:10
+== STK lambda=0.4 01:45:09
+== STK lambda=0.6 01:46:13
+== STK lambda=0.8 01:47:22
+== STK lambda=1.0 01:48:27
+== SSTK lambda=0.1 01:49:35
+== SSTK lambda=0.2 01:50:43
+== SSTK lambda=0.4 01:51:49
+== PTK lambda=0.1,mu=0.1 01:52:54
+== PTK lambda=0.1,mu=0.2 01:55:24
+== PTK lambda=0.1,mu=0.4 01:57:49
+== PTK lambda=0.1,mu=0.6 02:00:12
+== PTK lambda=0.1,mu=0.8 02:02:37
+== PTK lambda=0.1,mu=1.0 02:05:04
+== PTK lambda=0.2,mu=0.1 02:07:27
+== PTK lambda=0.2,mu=0.2 02:09:56
+== PTK lambda=0.2,mu=0.4 02:12:21
+== PTK lambda=0.2,mu=0.6 02:14:47
+== PTK lambda=0.2,mu=0.8 02:17:16
+== PTK lambda=0.2,mu=1.0 02:19:46
+exp_v2/scripts/run_tuning.sh failed with exit status 1.
+== PTK lambda=0.4,mu=0.1 02:21:32
+== PTK lambda=0.4,mu=0.2 02:24:02
+== PTK lambda=0.4,mu=0.4 02:26:27
+== PTK lambda=0.4,mu=0.6 02:28:57
+== PTK lambda=0.6,mu=0.1 02:31:20
+== PTK lambda=0.6,mu=0.2 02:33:43
+== PTK lambda=0.6,mu=0.4 02:36:11
+== PTK lambda=0.8,mu=0.1 02:38:35
+== PTK lambda=0.8,mu=0.2 02:41:00
+== PTK lambda=1.0,mu=0.1 02:43:32
+   not computable: non-finite=13 (smallest tree 279 nodes)
+== PTK lambda=1.0,mu=0.2 02:45:13
+   not computable: non-finite=63 (smallest tree 279 nodes)
+run: 50 queries x 72782 -> exp_v2/tuning/runs/codebert_zs
+run: 50 queries x 72782 -> exp_v2/tuning/runs/codebert_ft
+== BM25 02:46:13
+all: 50 queries x 72782 -> exp_v2/tuning/runs/bm25 (38s)
+Traceback (most recent call last):
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/tune.py", line 22, in <module>
+    from fusion import fuse  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/fusion.py", line 19, in <module>
+    from fusion import avg_ranks  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'avg_ranks' from partially initialized module 'fusion' (most likely due to a circular import) (/home/hareem/treekernel_revision_Oct2026/exp_v2/eval/fusion.py)
+exp_v2/scripts/run_tuning.sh failed with exit status 1.

@@ -1,0 +1,25 @@
+group	set	pool	per_seed	sampled
+small	T1	461	100	yes
+small	T2	53	53	no (whole pool)
+small	VST3	12	12	no (whole pool)
+small	ST3	507	100	yes
+small	MT3	567	100	yes
+small	functional	835	100	yes
+large	T1	2955	100	yes
+large	T2	736	100	yes
+large	VST3	1854	100	yes
+large	ST3	3551	100	yes
+large	MT3	6234	100	yes
+large	functional	12636	100	yes
+low	T1	3254	100	yes
+low	T2	941	100	yes
+low	VST3	1706	100	yes
+low	ST3	4316	100	yes
+low	MT3	7414	100	yes
+low	functional	12708	100	yes
+high	T1	492	100	yes
+high	T2	57	57	no (whole pool)
+high	VST3	285	100	yes
+high	ST3	336	100	yes
+high	MT3	308	100	yes
+high	functional	1878	100	yes

@@ -1,0 +1,16 @@
+{
+  "kernel": "BM25",
+  "mode": "all",
+  "k1": 1.2,
+  "b": 0.75,
+  "index": "bcb_e5",
+  "queries": "exp_v2/data/size_complexity/union.tsv",
+  "n_queries": 7794,
+  "n_corpus": 72782,
+  "elasticsearch": "8.19.15",
+  "tokenisation": "bm25/code_tokens.py",
+  "merged_from": {
+    "exp_v2/results/fp/runs/bm25": 3082,
+    "exp_v2/results/size_complexity/new_queries/bm25": 4712
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "run": "exp_v2/results/size_complexity/runs/D_SSTK",
+  "run_meta": {
+    "kernel": "SSTK",
+    "lambda": 0.1,
+    "mu": null,
+    "terminal_factor": null,
+    "implementation": "KeLP SSTK as is (float), log taken afterwards",
+    "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_e5/D.tsv",
+    "queries": "exp_v2/data/size_complexity/union.tsv",
+    "n_queries": 7794,
+    "n_corpus": 72782,
+    "threads": 14,
+    "java": "21.0.12.1",
+    "parts": [
+      "/home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/part1.tsv",
+      "/home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/part2.tsv"
+    ],
+    "merged_from": {
+      "exp_v2/results/fp/runs/D_SSTK": 3082,
+      "exp_v2/results/size_complexity/new_queries/D_SSTK_part00": 1600,
+      "exp_v2/results/size_complexity/new_queries/D_SSTK_part01": 1600,
+      "exp_v2/results/size_complexity/new_queries/D_SSTK_part02": 1512
+    }
+  },
+  "syntactic": [
+    "exp_v2/data/size_complexity/seed2084/low/syntactic_T1.tsv:T1",
+    "exp_v2/data/size_complexity/seed2084/low/syntactic_T2.tsv:T2",
+    "exp_v2/data/size_complexity/seed2084/low/syntactic_VST3.tsv:VST3",
+    "exp_v2/data/size_complexity/seed2084/low/syntactic_ST3.tsv:ST3",
+    "exp_v2/data/size_complexity/seed2084/low/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "exp_v2/data/size_complexity/seed2084/low/functional.tsv"
+  ],
+  "ignore": "exp_v2/data/fp_copies.tsv",
+  "bootstrap": 0,
+  "seed": 20261016
+}

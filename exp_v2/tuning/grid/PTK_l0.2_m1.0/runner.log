@@ -1,0 +1,18 @@
+  2000 / 72782 corpus methods scored (6s)
+  4000 / 72782 corpus methods scored (10s)
+  6000 / 72782 corpus methods scored (14s)
+  8000 / 72782 corpus methods scored (18s)
+  10000 / 72782 corpus methods scored (21s)
+  12000 / 72782 corpus methods scored (25s)
+  14000 / 72782 corpus methods scored (29s)
+Exception in thread "main" java.util.concurrent.ExecutionException: java.lang.ArithmeticException: PTK value Infinity is not finite/non-negative (trees of 3393 and 3393 nodes): this setting must be excluded from the grid
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at treekernel.RetrievalRunner.main(RetrievalRunner.java:140)
+Caused by: java.lang.ArithmeticException: PTK value Infinity is not finite/non-negative (trees of 3393 and 3393 nodes): this setting must be excluded from the grid
+	at treekernel.RetrievalRunner$Scorer.logK(RetrievalRunner.java:192)
+	at treekernel.RetrievalRunner.lambda$main$0(RetrievalRunner.java:119)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)

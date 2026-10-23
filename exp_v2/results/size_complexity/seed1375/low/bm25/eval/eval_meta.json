@@ -1,0 +1,32 @@
+{
+  "run": "exp_v2/results/size_complexity/runs/bm25",
+  "run_meta": {
+    "kernel": "BM25",
+    "mode": "all",
+    "k1": 1.2,
+    "b": 0.75,
+    "index": "bcb_e5",
+    "queries": "exp_v2/data/size_complexity/union.tsv",
+    "n_queries": 7794,
+    "n_corpus": 72782,
+    "elasticsearch": "8.19.15",
+    "tokenisation": "bm25/code_tokens.py",
+    "merged_from": {
+      "exp_v2/results/fp/runs/bm25": 3082,
+      "exp_v2/results/size_complexity/new_queries/bm25": 4712
+    }
+  },
+  "syntactic": [
+    "exp_v2/data/size_complexity/seed1375/low/syntactic_T1.tsv:T1",
+    "exp_v2/data/size_complexity/seed1375/low/syntactic_T2.tsv:T2",
+    "exp_v2/data/size_complexity/seed1375/low/syntactic_VST3.tsv:VST3",
+    "exp_v2/data/size_complexity/seed1375/low/syntactic_ST3.tsv:ST3",
+    "exp_v2/data/size_complexity/seed1375/low/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "exp_v2/data/size_complexity/seed1375/low/functional.tsv"
+  ],
+  "ignore": "exp_v2/data/fp_copies.tsv",
+  "bootstrap": 0,
+  "seed": 20261016
+}

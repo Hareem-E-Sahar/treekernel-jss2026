@@ -1,0 +1,14 @@
+== D STK (STK_l1.0) 11:22:18
+done: 4260 queries x 14679 corpus, 62,547,219 evaluations, 1109.4s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/main/runs/D_STK
+== D SSTK (SSTK_l0.1): frozen run reused (same setting)
+== D PTK (PTK_l0.4_m0.6): frozen run reused (same setting)
+wsum -> exp_v2/results/main/runs/rq1_PTK_bm25_wsum
+rrf -> exp_v2/results/main/runs/rq1_PTK_bm25_rrf
+wsum -> exp_v2/results/main/runs/rq1_PTK_codebert_ft_wsum
+rrf -> exp_v2/results/main/runs/rq1_PTK_codebert_ft_rrf
+wsum -> exp_v2/results/main/runs/rq2_STK_bm25_wsum
+rrf -> exp_v2/results/main/runs/rq2_STK_bm25_rrf
+wsum -> exp_v2/results/main/runs/rq2_STK_codebert_ft_wsum
+rrf -> exp_v2/results/main/runs/rq2_STK_codebert_ft_rrf
+== evaluate 14:02:21
+all done 14:03:27

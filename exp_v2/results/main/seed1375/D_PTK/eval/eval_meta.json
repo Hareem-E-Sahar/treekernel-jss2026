@@ -1,0 +1,32 @@
+{
+  "run": "exp_v2/results/main/runs/D_PTK",
+  "run_meta": {
+    "kernel": "PTK",
+    "lambda": 0.4,
+    "mu": 0.6,
+    "terminal_factor": 1.0,
+    "implementation": "KeLP PTK as is (float), log taken afterwards",
+    "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_main/D.tsv",
+    "queries": "/home/hareem/treekernel_revision_Oct2026/data/pools/replicates/union.tsv",
+    "n_queries": 4260,
+    "n_corpus": 14679,
+    "evaluations": 62547219,
+    "threads": 14,
+    "wall_seconds": 5119.6,
+    "finished": "2026-10-20T18:35:15.103948768Z",
+    "java": "21.0.12.1"
+  },
+  "syntactic": [
+    "exp_v2/data/replicates/seed1375/syntactic_T1.tsv:T1",
+    "exp_v2/data/replicates/seed1375/syntactic_T2.tsv:T2",
+    "exp_v2/data/replicates/seed1375/syntactic_VST3.tsv:VST3",
+    "exp_v2/data/replicates/seed1375/syntactic_ST3.tsv:ST3",
+    "exp_v2/data/replicates/seed1375/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "exp_v2/data/replicates/seed1375/functional.tsv"
+  ],
+  "ignore": null,
+  "bootstrap": 0,
+  "seed": 20261016
+}

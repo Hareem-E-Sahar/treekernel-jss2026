@@ -1,0 +1,19 @@
+{
+  "run": "/home/hareem/treekernel_revision_Oct2026/exp_v2/tuning/fusion/rq1_PTK_codebert_ft/wsum_w0.3",
+  "run_meta": {
+    "fusion": "wsum",
+    "w": 0.3,
+    "k": null,
+    "tree_kernel_run": "/home/hareem/treekernel_revision_Oct2026/exp_v2/tuning/grid/PTK_l0.4_m0.6",
+    "other_run": "/home/hareem/treekernel_revision_Oct2026/exp_v2/tuning/runs/codebert_ft"
+  },
+  "syntactic": [
+    "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/tuning.tsv"
+  ],
+  "functional": [
+    "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/tuning.tsv"
+  ],
+  "ignore": "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/fp_copies.tsv",
+  "bootstrap": 0,
+  "seed": 20261016
+}

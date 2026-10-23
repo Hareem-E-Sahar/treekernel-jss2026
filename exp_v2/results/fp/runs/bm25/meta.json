@@ -1,0 +1,13 @@
+{
+  "kernel": "BM25",
+  "mode": "all",
+  "k1": 1.2,
+  "b": 0.75,
+  "index": "bcb_e5",
+  "queries": "exp_v2/data/replicates/union.tsv",
+  "n_queries": 4260,
+  "n_corpus": 72782,
+  "wall_seconds": 3187.1,
+  "elasticsearch": "8.19.15",
+  "tokenisation": "bm25/code_tokens.py"
+}

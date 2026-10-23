@@ -1,0 +1,7 @@
+{
+  "fusion": "wsum",
+  "w": 0.3,
+  "k": null,
+  "tree_kernel_run": "/home/hareem/treekernel_revision_Oct2026/exp_v2/tuning/grid/STK_l1.0",
+  "other_run": "/home/hareem/treekernel_revision_Oct2026/exp_v2/tuning/runs/codebert_ft"
+}

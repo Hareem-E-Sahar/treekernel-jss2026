@@ -1,0 +1,28 @@
+{
+  "run": "/home/hareem/treekernel_revision_Oct2026/exp_v2/tuning/grid/STK_l1.0",
+  "run_meta": {
+    "kernel": "STK",
+    "lambda": 1.0,
+    "mu": null,
+    "terminal_factor": null,
+    "implementation": "KeLP STK as is (float), log taken afterwards",
+    "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_e5/D.tsv",
+    "queries": "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/tuning.tsv",
+    "n_queries": 50,
+    "n_corpus": 72782,
+    "evaluations": 3711882,
+    "threads": 14,
+    "wall_seconds": 66.6,
+    "finished": "2026-10-21T07:49:34.557064367Z",
+    "java": "21.0.12.1"
+  },
+  "syntactic": [
+    "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/tuning.tsv"
+  ],
+  "functional": [
+    "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/tuning.tsv"
+  ],
+  "ignore": "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/fp_copies.tsv",
+  "bootstrap": 0,
+  "seed": 20261016
+}

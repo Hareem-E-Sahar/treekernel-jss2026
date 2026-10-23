@@ -1,0 +1,7 @@
+== D STK (STK_l1.0) 02:51:14
+Exception in thread "main" java.lang.IllegalArgumentException: capacity < 0: (-1814556736 < 0)
+	at java.base/java.nio.Buffer.createCapacityException(Buffer.java:290)
+	at java.base/java.nio.ByteBuffer.allocate(ByteBuffer.java:390)
+	at treekernel.RetrievalRunner.writeDoubles(RetrievalRunner.java:208)
+	at treekernel.RetrievalRunner.main(RetrievalRunner.java:145)
+exp_v2/scripts/run_replicates.sh failed with exit status 1.

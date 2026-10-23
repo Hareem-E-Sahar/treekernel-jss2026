@@ -1,0 +1,36 @@
+{
+  "run": "exp_v2/results/fp/runs/D_PTK",
+  "run_meta": {
+    "kernel": "PTK",
+    "lambda": 0.4,
+    "mu": 0.6,
+    "terminal_factor": 1.0,
+    "implementation": "KeLP PTK as is (float), log taken afterwards",
+    "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_e5/D.tsv",
+    "queries": "exp_v2/data/replicates/union.tsv",
+    "n_queries": 4260,
+    "n_corpus": 72782,
+    "evaluations": 310196884,
+    "threads": 14,
+    "wall_seconds": 10828.9,
+    "finished": "2026-10-21T16:09:19.137134968Z",
+    "java": "21.0.12.1",
+    "parts": [
+      "/home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/part1.tsv",
+      "/home/hareem/treekernel_revision_Oct2026/exp_v2/results/fp/runs/union_parts/part2.tsv"
+    ]
+  },
+  "syntactic": [
+    "exp_v2/data/replicates/seed3501/syntactic_T1.tsv:T1",
+    "exp_v2/data/replicates/seed3501/syntactic_T2.tsv:T2",
+    "exp_v2/data/replicates/seed3501/syntactic_VST3.tsv:VST3",
+    "exp_v2/data/replicates/seed3501/syntactic_ST3.tsv:ST3",
+    "exp_v2/data/replicates/seed3501/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "exp_v2/data/replicates/seed3501/functional.tsv"
+  ],
+  "ignore": "exp_v2/data/fp_copies.tsv",
+  "bootstrap": 0,
+  "seed": 20261016
+}

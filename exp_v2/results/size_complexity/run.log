@@ -1,0 +1,31 @@
+new queries: 4712 in 3 chunks
+== D STK (STK_l1.0) part00.tsv 01:32:01
+done: 1600 queries x 72782 corpus, 116,523,982 evaluations, 3107.0s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_STK_part00
+== D STK (STK_l1.0) part01.tsv 02:23:48
+done: 1600 queries x 72782 corpus, 116,523,982 evaluations, 2396.1s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_STK_part01
+== D STK (STK_l1.0) part02.tsv 03:03:45
+done: 1512 queries x 72782 corpus, 110,119,166 evaluations, 2356.7s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_STK_part02
+exp_v2/results/size_complexity/runs/D_STK: 7794 queries from D_STK: 3082, D_STK_part00: 1600, D_STK_part01: 1600, D_STK_part02: 1512
+== D SSTK (SSTK_l0.1) part00.tsv 03:43:11
+done: 1600 queries x 72782 corpus, 116,523,982 evaluations, 3223.1s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_SSTK_part00
+== D SSTK (SSTK_l0.1) part01.tsv 04:36:54
+done: 1600 queries x 72782 corpus, 116,523,982 evaluations, 2427.3s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_SSTK_part01
+== D SSTK (SSTK_l0.1) part02.tsv 05:17:22
+done: 1512 queries x 72782 corpus, 110,119,166 evaluations, 2311.0s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_SSTK_part02
+exp_v2/results/size_complexity/runs/D_SSTK: 7794 queries from D_SSTK: 3082, D_SSTK_part00: 1600, D_SSTK_part01: 1600, D_SSTK_part02: 1512
+== D PTK (PTK_l0.4_m0.6) part00.tsv 05:55:59
+done: 1600 queries x 72782 corpus, 116,523,982 evaluations, 6860.7s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_PTK_part00
+== D PTK (PTK_l0.4_m0.6) part01.tsv 07:50:21
+done: 1600 queries x 72782 corpus, 116,523,982 evaluations, 5269.3s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_PTK_part01
+== D PTK (PTK_l0.4_m0.6) part02.tsv 09:18:10
+done: 1512 queries x 72782 corpus, 110,119,166 evaluations, 5109.9s -> /home/hareem/treekernel_revision_Oct2026/exp_v2/results/size_complexity/new_queries/D_PTK_part02
+exp_v2/results/size_complexity/runs/D_PTK: 7794 queries from D_PTK: 3082, D_PTK_part00: 1600, D_PTK_part01: 1600, D_PTK_part02: 1512
+== BM25 10:43:27
+all: 4712 queries x 72782 -> exp_v2/results/size_complexity/new_queries/bm25 (3554s)
+exp_v2/results/size_complexity/runs/bm25: 7794 queries from bm25: 3082, bm25: 4712
+run: 4712 queries x 72782 -> exp_v2/results/size_complexity/new_queries/codebert_zs
+exp_v2/results/size_complexity/runs/codebert_zs: 7794 queries from codebert_zs: 3082, codebert_zs: 4712
+run: 4712 queries x 72782 -> exp_v2/results/size_complexity/new_queries/codebert_ft
+exp_v2/results/size_complexity/runs/codebert_ft: 7794 queries from codebert_ft: 3082, codebert_ft: 4712
+== evaluate 11:45:12
+all done 11:51:59

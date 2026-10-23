@@ -1,0 +1,25 @@
+{
+  "run": "results/grid/D/PTK_l0.4_m0.1",
+  "run_meta": {
+    "kernel": "PTK",
+    "lambda": 0.4,
+    "mu": 0.1,
+    "terminal_factor": 1.0,
+    "implementation": "KeLP PTK as is (float), log taken afterwards",
+    "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_main/D.tsv",
+    "queries": "/home/hareem/treekernel_revision_Oct2026/data/pools/tuning.tsv",
+    "n_queries": 50,
+    "n_corpus": 14679,
+    "evaluations": 748629,
+    "threads": 14,
+    "wall_seconds": 29.6,
+    "finished": "2026-10-16T20:45:40.656220705Z",
+    "java": "21.0.12.1"
+  },
+  "syntactic": [],
+  "functional": [
+    "data/pools/tuning.tsv"
+  ],
+  "bootstrap": 0,
+  "seed": 20261016
+}

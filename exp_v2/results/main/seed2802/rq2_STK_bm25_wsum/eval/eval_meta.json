@@ -1,0 +1,23 @@
+{
+  "run": "exp_v2/results/main/runs/rq2_STK_bm25_wsum",
+  "run_meta": {
+    "fusion": "wsum",
+    "w": 0.0,
+    "k": null,
+    "tree_kernel_run": "exp_v2/results/main/runs/D_STK",
+    "other_run": "exp_v2/results/main/runs/bm25"
+  },
+  "syntactic": [
+    "exp_v2/data/replicates/seed2802/syntactic_T1.tsv:T1",
+    "exp_v2/data/replicates/seed2802/syntactic_T2.tsv:T2",
+    "exp_v2/data/replicates/seed2802/syntactic_VST3.tsv:VST3",
+    "exp_v2/data/replicates/seed2802/syntactic_ST3.tsv:ST3",
+    "exp_v2/data/replicates/seed2802/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "exp_v2/data/replicates/seed2802/functional.tsv"
+  ],
+  "ignore": null,
+  "bootstrap": 0,
+  "seed": 20261016
+}

@@ -1,0 +1,17 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{booktabs,graphicx,amssymb}
+\newcommand{\boxnote}{Box: interquartile range and median; whiskers: the most extreme replicate within 1.5 times the interquartile range; points: replicates beyond.}
+\begin{document}
+\input{tables/rq1_map}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/rq1_metrics}\caption{RQ1 per clone type over 10 replicate query sets (100 queries per type each), corpus with false positives. \boxnote}\label{fig:rq1}\end{figure*}
+\input{tables/rq1_rq2_metrics}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/rq2_metrics}\caption{RQ2: functional similarity over 10 replicate query sets (100 queries each), corpus with false positives. \boxnote}\label{fig:rq2}\end{figure}
+\input{tables/rq4_fusion}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/rq4_fusion_rq1}\caption{RQ4, syntactic clones: PTK, BM25, fine-tuned CodeBERT and the fusions of PTK with each (weighted sum at the tuned $W$; RRF); mean over the five clone types, 10 replicate query sets. \boxnote}\label{fig:rq4a}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/rq4_fusion_rq2}\caption{RQ4, functional similarity: STK, BM25, fine-tuned CodeBERT and the fusions of STK with each; 10 replicate query sets. \boxnote}\label{fig:rq4b}\end{figure*}
+\input{tables/size_complexity}
+\input{tables/size_complexity_interaction}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/size_complexity_rq1}\caption{Size and complexity, RQ1: mean over the five clone types per group of the query, 10 seeds (groups as in Table~\ref{tab:sizecx}). \boxnote}\label{fig:sizecx1}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/size_complexity_rq2}\caption{Size and complexity, RQ2: functional similarity per group of the query, 10 seeds. \boxnote}\label{fig:sizecx2}\end{figure*}
+\end{document}

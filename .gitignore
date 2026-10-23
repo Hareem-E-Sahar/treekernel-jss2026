@@ -26,3 +26,6 @@ results/timing/*.tsv
 paper/*.aux
 paper/*.log
 paper/preview.pdf
+exp_v2/paper/*.aux
+exp_v2/paper/*.log
+exp_v2/paper/preview.pdf

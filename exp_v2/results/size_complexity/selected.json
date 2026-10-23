@@ -1,0 +1,64 @@
+{
+  "settings": {
+    "STK": {
+      "run": "STK_l1.0",
+      "rq1_mean5_map": 0.8684,
+      "rq2_mapr": 0.172176
+    },
+    "SSTK": {
+      "run": "SSTK_l0.1",
+      "rq1_mean5_map": 0.889283,
+      "rq2_mapr": 0.17284
+    },
+    "PTK": {
+      "run": "PTK_l0.4_m0.6",
+      "rq1_mean5_map": 0.915578,
+      "rq2_mapr": 0.165741
+    }
+  },
+  "fusion_kernel": {
+    "rq1": "PTK",
+    "rq2": "STK"
+  },
+  "fusion_kernel_by_rule": {
+    "rq1": "PTK",
+    "rq2": "SSTK"
+  },
+  "fusion_kernel_override": "rq2: STK instead of SSTK (MAP@R 0.1722 vs 0.1728, within noise; as in the frozen experiment)",
+  "fusion": {
+    "rq1_PTK_bm25": {
+      "kernel": "PTK",
+      "other": "BM25",
+      "objective": "rq1",
+      "w": 0.9
+    },
+    "rq1_PTK_codebert_ft": {
+      "kernel": "PTK",
+      "other": "CodeBERT ft",
+      "objective": "rq1",
+      "w": 0.6
+    },
+    "rq2_STK_bm25": {
+      "kernel": "STK",
+      "other": "BM25",
+      "objective": "rq2",
+      "w": 0.0
+    },
+    "rq2_STK_codebert_ft": {
+      "kernel": "STK",
+      "other": "CodeBERT ft",
+      "objective": "rq2",
+      "w": 0.2
+    }
+  },
+  "others_on_tuning_queries": {
+    "BM25": {
+      "rq2": 0.349132,
+      "rq1": 0.818879
+    },
+    "CodeBERT ft": {
+      "rq2": 0.377165,
+      "rq1": 0.814464
+    }
+  }
+}

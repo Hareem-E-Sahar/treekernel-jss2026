@@ -1,0 +1,27 @@
+{
+  "run": "exp_v2/results/fp/runs/codebert_zs",
+  "run_meta": {
+    "kernel": "CodeBERT",
+    "model": "microsoft/codebert-base",
+    "embeddings": "data/codebert/emb/zeroshot_e5.npy",
+    "fine_tuned": false,
+    "pooling": "CLS",
+    "max_len": 512,
+    "queries": "exp_v2/data/replicates/union.tsv",
+    "n_queries": 4260,
+    "n_corpus": 72782
+  },
+  "syntactic": [
+    "exp_v2/data/replicates/seed6251/syntactic_T1.tsv:T1",
+    "exp_v2/data/replicates/seed6251/syntactic_T2.tsv:T2",
+    "exp_v2/data/replicates/seed6251/syntactic_VST3.tsv:VST3",
+    "exp_v2/data/replicates/seed6251/syntactic_ST3.tsv:ST3",
+    "exp_v2/data/replicates/seed6251/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "exp_v2/data/replicates/seed6251/functional.tsv"
+  ],
+  "ignore": "exp_v2/data/fp_copies.tsv",
+  "bootstrap": 0,
+  "seed": 20261016
+}

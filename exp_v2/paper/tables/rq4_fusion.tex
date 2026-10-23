@@ -1,0 +1,37 @@
+\begin{table*}[t]
+\centering
+\caption{RQ4: fusion of a tree kernel (variant D, tuned) with BM25 or with fine-tuned CodeBERT. Weighted sum = $W\cdot$TK + $(1-W)\cdot$other/max, $W$ tuned on the tuning queries for the RQ's measure; RRF = reciprocal rank fusion ($k$=60). The RQ1 fusions use PTK, the best kernel on RQ1; the RQ2 fusions use STK. Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count as non-relevant, except exact copies of the query (ignored). 10 replicate query sets (seeds 55, 1375, 2084, 2802, 3389, 3501, 6251, 8241, 8828, 9080), each with 100 queries per clone type and 100 functional queries, drawn independently; tuning queries excluded. Mean $\pm$ standard deviation over the 10 replicates. Best mean per block and column in bold. $^{\dagger}$: significantly better than both components. Significance: all distinct queries of the replicates pooled, paired bootstrap resampling functionalities, 95\%.}
+\label{tab:rq4}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{3}{c}{RQ1 (MAP)} & RQ2 \\ \cmidrule(lr){2-4} \cmidrule(lr){5-5}
+Method & ST3 & MT3 & Mean & MAP@R \\
+\midrule
+\multicolumn{5}{l}{\emph{PTK + BM25, $W$ tuned for RQ1}} \\
+\quad PTK & 0.924$\pm$0.019 & 0.555$\pm$0.044 & 0.892$\pm$0.009 & -- \\
+\quad BM25 & 0.791$\pm$0.028 & 0.446$\pm$0.038 & 0.810$\pm$0.008 & -- \\
+\quad Weighted sum ($W$=0.9) & \textbf{0.943}$\pm$0.017$^{\dagger}$ & \textbf{0.661}$\pm$0.043$^{\dagger}$ & \textbf{0.918}$\pm$0.008$^{\dagger}$ & -- \\
+\quad RRF & 0.911$\pm$0.018 & 0.600$\pm$0.033 & 0.896$\pm$0.006 & -- \\
+\midrule
+\multicolumn{5}{l}{\emph{PTK + CodeBERT ft, $W$ tuned for RQ1}} \\
+\quad PTK & 0.924$\pm$0.019 & 0.555$\pm$0.044 & 0.892$\pm$0.009 & -- \\
+\quad CodeBERT ft & 0.780$\pm$0.020 & 0.461$\pm$0.035 & 0.824$\pm$0.009 & -- \\
+\quad Weighted sum ($W$=0.6) & \textbf{0.944}$\pm$0.013$^{\dagger}$ & \textbf{0.672}$\pm$0.039$^{\dagger}$ & \textbf{0.920}$\pm$0.007$^{\dagger}$ & -- \\
+\quad RRF & 0.909$\pm$0.013 & 0.619$\pm$0.037$^{\dagger}$ & 0.898$\pm$0.008 & -- \\
+\midrule
+\multicolumn{5}{l}{\emph{STK + BM25, $W$ tuned for RQ2}} \\
+\quad STK & -- & -- & -- & 0.137$\pm$0.021 \\
+\quad BM25 & -- & -- & -- & \textbf{0.305}$\pm$0.023 \\
+\quad Weighted sum ($W$=0.0) & -- & -- & -- & \textbf{0.305}$\pm$0.023 \\
+\quad RRF & -- & -- & -- & 0.229$\pm$0.021 \\
+\midrule
+\multicolumn{5}{l}{\emph{STK + CodeBERT ft, $W$ tuned for RQ2}} \\
+\quad STK & -- & -- & -- & 0.137$\pm$0.021 \\
+\quad CodeBERT ft & -- & -- & -- & 0.310$\pm$0.025 \\
+\quad Weighted sum ($W$=0.2) & -- & -- & -- & \textbf{0.320}$\pm$0.026$^{\dagger}$ \\
+\quad RRF & -- & -- & -- & 0.245$\pm$0.020 \\
+\bottomrule
+\end{tabular}
+\end{table*}
