@@ -1,0 +1,9 @@
+{
+  "stage": "BM25 top k",
+  "index": "bcb_e5",
+  "queries": "exp_v2/data/full/union.tsv",
+  "n_queries": 14587,
+  "k": 200,
+  "wall_seconds": 239.0,
+  "elasticsearch": "8.19.15"
+}

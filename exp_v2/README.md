@@ -11,7 +11,8 @@ Design and rationale: `DESIGN.md`. Order of steps:
 5. Size and complexity: `prep/size_complexity.py` → `data/size_complexity.tsv` (LOC, Checkstyle McCabe);
    `prep/sample_size_complexity.py` → `data/size_complexity/` (stratified query sets); `scripts/run_size_complexity.sh`
    → `results/size_complexity/`; then `.venv/bin/python exp_v2/eval/size_complexity.py`.
-6. Planned: the hybrid (BM25 top-k → tree kernel) on all eligible queries.
+6. Hybrid: `prep/full_queries.py` → `data/full/`; `scripts/run_hybrid.sh` → `results/hybrid/` (BM25 top k → tree kernel,
+   k = 100, 200; all eligible queries).
 
 ## Tuning result (2026-10-21, corpus with false positives)
 

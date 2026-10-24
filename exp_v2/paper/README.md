@@ -11,7 +11,9 @@ Order:
 4. Size and complexity: `.venv/bin/python exp_v2/paper/size_complexity_tables.py` → `tables/size_complexity*.tex`;
    `Rscript exp_v2/paper/size_complexity.R` → `figures/size_complexity_rq{1,2}.pdf`
    (inputs from `exp_v2/eval/size_complexity.py`).
-5. `pdflatex preview.tex` (twice, from this folder) → `preview.pdf`, all tables and figures.
+5. Hybrid: `.venv/bin/python exp_v2/paper/hybrid_tables.py` → `tables/hybrid_*.tex`; `Rscript exp_v2/paper/hybrid.R`
+   → `figures/hybrid_*.pdf` (inputs from `exp_v2/eval/hybrid.py`).
+6. `pdflatex preview.tex` (twice, from this folder) → `preview.pdf`, all tables and figures.
 
 | File | Contents |
 |---|---|
@@ -20,12 +22,18 @@ Order:
 | `tables/rq4_fusion.tex` | RQ4: PTK fusions (ST3, MT3, mean MAP) and STK fusions (MAP@R) next to their components |
 | `tables/size_complexity.tex` | Size and complexity: RQ1 mean MAP and RQ2 MAP@R per group (small/large LOC, low/high McCabe) |
 | `tables/size_complexity_interaction.tex` | Size and complexity: change of each method difference between groups, with 95% CIs |
+| `tables/hybrid_full.tex` | Hybrid on every eligible query: MAP per type, mean, MAP@R, each with its 95% CI |
+| `tables/hybrid_replicates.tex` | Hybrid vs the full-ranking kernels on the 10 replicate sets, mean ± SD |
+| `tables/hybrid_cost.tex` | Hybrid cost per query: first stage, re-ranking top 100 / 200, full ranking |
 | `figures/rq1_metrics.pdf` | RQ1 per clone type, four panels: nP@5, nP@10, MRR, MAP |
 | `figures/rq2_metrics.pdf` | RQ2, four panels: nP@5, nP@10, MRR, MAP@R |
 | `figures/rq4_fusion_rq1.pdf` | RQ4, PTK fusions, mean over the types, four panels as RQ1 |
 | `figures/rq4_fusion_rq2.pdf` | RQ4, STK fusions, functional, four panels as RQ2 |
 | `figures/size_complexity_rq1.pdf` | Size and complexity, mean over the types per group: nP@5, nP@10, MRR, MAP |
 | `figures/size_complexity_rq2.pdf` | Size and complexity, functional per group: nP@5, nP@10, MRR, MAP@R |
+| `figures/hybrid_full.pdf` | Hybrid on every eligible query: value and 95% CI; RQ1 and RQ2, four metrics each |
+| `figures/hybrid_rq1.pdf` | Hybrid vs full ranking, replicate sets, mean over the types: nP@5, nP@10, MRR, MAP |
+| `figures/hybrid_rq2.pdf` | Hybrid vs full ranking, replicate sets, functional: nP@5, nP@10, MRR, MAP@R |
 
 Notes:
 - **nP@k instead of P@k:** nP@k = relevant methods in the top k / min(k, R). Many clone-type queries have fewer than 5

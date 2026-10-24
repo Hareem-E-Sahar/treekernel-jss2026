@@ -66,3 +66,16 @@ Procedure (`scripts/run_tuning.sh`, `eval/tune.py`):
   functionality bootstrap that resamples jointly across both groups.
 - **Compute:** only the 4,712 queries without a row in the replicate runs are scored; `eval/merge_runs.py` assembles
   one run per method (rows copied unchanged; checked byte-identical to a direct run).
+
+## Hybrid (run 2026-10-23)
+- **Pipeline:** BM25 top k (same query and index as the BM25 baseline; k = 100 and 200, not tuned), re-ranked by a
+  tree kernel (STK, SSTK, PTK at the tuned settings). Below rank k the BM25 order is kept, so MAP and MAP@R are defined
+  over the full ranking; the hybrid differs from BM25 only inside the top k.
+- **Queries:** every eligible query (`data/full`, `prep/full_queries.py`): T1 3,746, T2 998, VST3 1,991, ST3 4,652,
+  MT3 7,722, functional 14,587 (same pools as the replicates). Corpus with false positives; exact copies ignored.
+- **Baselines on the same queries:** BM25 and CodeBERT (zero-shot, fine-tuned) full runs. Full-ranking tree kernels
+  exist only for the replicate queries, so hybrid vs full kernel is compared on the 10 replicate sets.
+- **Second stage:** `kernels/src/treekernel/HybridRerank.java` (compiled to `kernels/classes`, separate from the
+  shared runner) scores only the given pairs with RetrievalRunner's scorer; values checked identical to full runs
+  (250/250 pairs for PTK and STK). It records each query's summed kernel time (cost, RQ5).
+- **Top-k at the cut:** ties at rank k are broken by Elasticsearch's internal document order.

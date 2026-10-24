@@ -14,4 +14,10 @@
 \input{tables/size_complexity_interaction}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/size_complexity_rq1}\caption{Size and complexity, RQ1: mean over the five clone types per group of the query, 10 seeds (groups as in Table~\ref{tab:sizecx}). \boxnote}\label{fig:sizecx1}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/size_complexity_rq2}\caption{Size and complexity, RQ2: functional similarity per group of the query, 10 seeds. \boxnote}\label{fig:sizecx2}\end{figure*}
+\input{tables/hybrid_full}
+\input{tables/hybrid_replicates}
+\input{tables/hybrid_cost}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/hybrid_full}\caption{Hybrid on every eligible query: BM25, CodeBERT and BM25's top 100 or 200 re-ranked by each tree kernel; value and 95\% confidence interval (bootstrap over functionalities). Top: RQ1, mean over the five clone types; bottom: RQ2.}\label{fig:hybridfull}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/hybrid_rq1}\caption{Hybrid against full ranking, RQ1 (mean over the five clone types), 10 replicate query sets: each tree kernel ranking the whole corpus or re-ranking BM25's top 100 or 200, next to BM25 and fine-tuned CodeBERT. \boxnote}\label{fig:hybrid1}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/hybrid_rq2}\caption{Hybrid against full ranking, RQ2 (functional similarity), 10 replicate query sets. \boxnote}\label{fig:hybrid2}\end{figure*}
 \end{document}

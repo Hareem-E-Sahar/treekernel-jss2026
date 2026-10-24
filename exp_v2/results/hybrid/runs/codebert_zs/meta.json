@@ -1,0 +1,19 @@
+{
+  "kernel": "CodeBERT",
+  "model": "microsoft/codebert-base",
+  "embeddings": "data/codebert/emb/zeroshot_e5.npy",
+  "fine_tuned": false,
+  "pooling": "CLS",
+  "max_len": 512,
+  "queries": "exp_v2/data/full/union.tsv",
+  "n_queries": 14587,
+  "n_corpus": 72782,
+  "merged_from": {
+    "exp_v2/results/fp/runs/codebert_zs": 4260,
+    "exp_v2/results/size_complexity/runs/codebert_zs": 4712,
+    "exp_v2/results/hybrid/new_queries/codebert_zs_part00": 1500,
+    "exp_v2/results/hybrid/new_queries/codebert_zs_part01": 1500,
+    "exp_v2/results/hybrid/new_queries/codebert_zs_part02": 1500,
+    "exp_v2/results/hybrid/new_queries/codebert_zs_part03": 1115
+  }
+}

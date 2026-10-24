@@ -1,0 +1,11 @@
+step	measure	median_ms	mean_ms	queries
+BM25 top 200 (first stage)	Elasticsearch took	11.0	13.6	14587
+STK on the top 200 (second stage)	summed kernel CPU time	46.7	112.5	14587
+STK on the top 100 (second stage)	summed kernel CPU time	24.4	61.6	14587
+STK full ranking (72,782 methods)	wall x threads / queries	nan	16747.1	4260
+SSTK on the top 200 (second stage)	summed kernel CPU time	48.8	116.1	14587
+SSTK on the top 100 (second stage)	summed kernel CPU time	24.8	62.6	14587
+SSTK full ranking (72,782 methods)	wall x threads / queries	nan	16520.3	4260
+PTK on the top 200 (second stage)	summed kernel CPU time	95.9	258.9	14587
+PTK on the top 100 (second stage)	summed kernel CPU time	50.0	143.6	14587
+PTK full ranking (72,782 methods)	wall x threads / queries	nan	35587.9	4260

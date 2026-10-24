@@ -1,0 +1,33 @@
+\begin{table*}[t]
+\centering
+\caption{Hybrid on every eligible query (T1 3,746, T2 998, VST3 1,991, ST3 4,652, MT3 7,722, functional 14,587). Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count as non-relevant, except exact copies of the query (ignored). Hybrid: BM25's top $k$ ($k$ = 100, 200, not tuned) re-ranked by the tree kernel (variant D, tuned settings); below rank $k$ the BM25 order is kept. Each cell: value over all queries, 95\% confidence interval below (bootstrap resampling functionalities). RQ1: MAP per clone type and Mean over the five types; RQ2: MAP@R. Best value per column in bold. $^{+}$/$^{-}$: significantly better/worse than BM25; $^{\uparrow}$/$^{\downarrow}$: significantly better/worse than fine-tuned CodeBERT (paired bootstrap over functionalities, 95\%). Full-ranking tree kernels were run on the replicate query sets only (Table~\ref{tab:hybridrep}).}
+\label{tab:hybridfull}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccccc}
+\toprule
+ & \multicolumn{6}{c}{RQ1: MAP} & RQ2 \\ \cmidrule(lr){2-7}\cmidrule(lr){8-8}
+Method & T1 & T2 & VST3 & ST3 & MT3 & Mean & MAP@R \\
+\midrule
+BM25 & 0.999 & 0.886 & 0.934 & 0.771 & 0.453 & 0.808 & 0.305 \\
+ & [0.997, 1.000] & [0.852, 0.936] & [0.902, 0.972] & [0.705, 0.845] & [0.400, 0.533] & [0.781, 0.850] & [0.230, 0.409] \\[2pt]
+CodeBERT zs & 0.999 & 0.970 & 0.959 & 0.794 & 0.392 & 0.823 & 0.105 \\
+ & [0.997, 1.000] & [0.960, 0.986] & [0.944, 0.977] & [0.747, 0.866] & [0.339, 0.485] & [0.803, 0.859] & [0.071, 0.161] \\[2pt]
+CodeBERT ft & \textbf{1.000} & 0.937 & 0.942 & 0.767 & 0.461 & 0.821 & \textbf{0.309} \\
+ & [0.999, 1.000] & [0.877, 0.978] & [0.904, 0.970] & [0.688, 0.857] & [0.384, 0.578] & [0.775, 0.875] & [0.234, 0.417] \\[2pt]
+\midrule
+BM25$\rightarrow$STK ($k$=100) & \textbf{1.000} & 0.944$^{+}$ & 0.951$^{+}$ & 0.814$^{+}$ & 0.478$^{+}$ & 0.837$^{+}$ & 0.301$^{-}$ \\
+ & [1.000, 1.000] & [0.913, 0.986] & [0.924, 0.982] & [0.757, 0.882] & [0.426, 0.560] & [0.814, 0.876] & [0.225, 0.403] \\[2pt]
+BM25$\rightarrow$STK ($k$=200) & \textbf{1.000} & \textbf{0.976}$^{+}$ & 0.960$^{+}$ & 0.840$^{+\uparrow}$ & 0.494$^{+}$ & 0.854$^{+}$ & 0.298$^{-}$ \\
+ & [1.000, 1.000] & [0.967, 0.990] & [0.940, 0.988] & [0.788, 0.902] & [0.440, 0.580] & [0.833, 0.887] & [0.223, 0.399] \\[2pt]
+BM25$\rightarrow$SSTK ($k$=100) & \textbf{1.000} & 0.944$^{+}$ & 0.952$^{+}$ & 0.815$^{+}$ & 0.479$^{+}$ & 0.838$^{+}$ & 0.301$^{-}$ \\
+ & [1.000, 1.000] & [0.913, 0.986] & [0.924, 0.982] & [0.759, 0.880] & [0.427, 0.561] & [0.814, 0.877] & [0.225, 0.403] \\[2pt]
+BM25$\rightarrow$SSTK ($k$=200) & \textbf{1.000} & \textbf{0.976}$^{+}$ & \textbf{0.961}$^{+}$ & \textbf{0.842}$^{+\uparrow}$ & 0.496$^{+}$ & 0.855$^{+}$ & 0.298$^{-}$ \\
+ & [1.000, 1.000] & [0.967, 0.990] & [0.940, 0.988] & [0.792, 0.901] & [0.442, 0.582] & [0.834, 0.887] & [0.223, 0.399] \\[2pt]
+BM25$\rightarrow$PTK ($k$=100) & \textbf{1.000} & 0.944$^{+}$ & 0.951$^{+}$ & 0.811$^{+}$ & 0.482$^{+}$ & 0.838$^{+}$ & 0.304 \\
+ & [1.000, 1.000] & [0.913, 0.986] & [0.924, 0.982] & [0.759, 0.875] & [0.431, 0.568] & [0.814, 0.876] & [0.227, 0.406] \\[2pt]
+BM25$\rightarrow$PTK ($k$=200) & \textbf{1.000} & \textbf{0.976}$^{+}$ & 0.960$^{+}$ & 0.838$^{+}$ & \textbf{0.508}$^{+}$ & \textbf{0.857}$^{+}$ & 0.303 \\
+ & [1.000, 1.000] & [0.967, 0.990] & [0.939, 0.988] & [0.793, 0.893] & [0.454, 0.597] & [0.837, 0.888] & [0.227, 0.404] \\[2pt]
+\bottomrule
+\end{tabular}
+\end{table*}

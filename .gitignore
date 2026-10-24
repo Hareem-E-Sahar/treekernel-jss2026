@@ -29,3 +29,8 @@ paper/preview.pdf
 exp_v2/paper/*.aux
 exp_v2/paper/*.log
 exp_v2/paper/preview.pdf
+# exp_v2 hybrid intermediates (regenerable by exp_v2/scripts/run_hybrid.sh): BM25 top-200 lists, pair scores; timing kept
+exp_v2/results/hybrid/stage1/topk.tsv
+exp_v2/results/hybrid/pairs*/*.tsv
+!exp_v2/results/hybrid/pairs*/*.timing.tsv
+exp_v2/kernels/classes/

@@ -1,0 +1,20 @@
+{
+  "kernel": "BM25",
+  "mode": "all",
+  "k1": 1.2,
+  "b": 0.75,
+  "index": "bcb_e5",
+  "queries": "exp_v2/data/full/union.tsv",
+  "n_queries": 14587,
+  "n_corpus": 72782,
+  "elasticsearch": "8.19.15",
+  "tokenisation": "bm25/code_tokens.py",
+  "merged_from": {
+    "exp_v2/results/fp/runs/bm25": 4260,
+    "exp_v2/results/size_complexity/runs/bm25": 4712,
+    "exp_v2/results/hybrid/new_queries/bm25_part00": 1500,
+    "exp_v2/results/hybrid/new_queries/bm25_part01": 1500,
+    "exp_v2/results/hybrid/new_queries/bm25_part02": 1500,
+    "exp_v2/results/hybrid/new_queries/bm25_part03": 1115
+  }
+}

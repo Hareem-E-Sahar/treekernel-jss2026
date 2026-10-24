@@ -1,0 +1,60 @@
+queries: 14587; without full BM25/CodeBERT rows: 5615 in 4 chunks
+== stage 1: BM25 top 200 01:00:40
+top 200: 14587 queries -> exp_v2/results/hybrid/stage1 (239s)
+== BM25 full part00.tsv 01:04:41
+all: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/bm25_part00 (1104s)
+== BM25 full part01.tsv 01:23:08
+all: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/bm25_part01 (1113s)
+== BM25 full part02.tsv 01:41:42
+all: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/bm25_part02 (1113s)
+== BM25 full part03.tsv 02:00:17
+all: 1115 queries x 72782 -> exp_v2/results/hybrid/new_queries/bm25_part03 (821s)
+exp_v2/results/hybrid/runs/bm25: 14587 queries from bm25: 4260, bm25: 4712, bm25_part00: 1500, bm25_part01: 1500, bm25_part02: 1500, bm25_part03: 1115
+run: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/codebert_zs_part00
+run: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/codebert_zs_part01
+run: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/codebert_zs_part02
+run: 1115 queries x 72782 -> exp_v2/results/hybrid/new_queries/codebert_zs_part03
+exp_v2/results/hybrid/runs/codebert_zs: 14587 queries from codebert_zs: 4260, codebert_zs: 4712, codebert_zs_part00: 1500, codebert_zs_part01: 1500, codebert_zs_part02: 1500, codebert_zs_part03: 1115
+run: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/codebert_ft_part00
+run: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/codebert_ft_part01
+run: 1500 queries x 72782 -> exp_v2/results/hybrid/new_queries/codebert_ft_part02
+run: 1115 queries x 72782 -> exp_v2/results/hybrid/new_queries/codebert_ft_part03
+exp_v2/results/hybrid/runs/codebert_ft: 14587 queries from codebert_ft: 4260, codebert_ft: 4712, codebert_ft_part00: 1500, codebert_ft_part01: 1500, codebert_ft_part02: 1500, codebert_ft_part03: 1115
+== stage 2: STK (STK_l1.0) on the top-200 pairs 02:16:59
+  2000 / 14587 queries (25s)
+  4000 / 14587 queries (47s)
+  6000 / 14587 queries (64s)
+  8000 / 14587 queries (81s)
+  10000 / 14587 queries (99s)
+  12000 / 14587 queries (116s)
+  14000 / 14587 queries (135s)
+  14587 / 14587 queries (141s)
+done: STK D.tsv lambda=1.0 mu=0.0, 14587 queries, 141.6s -> exp_v2/results/hybrid/pairs/STK.tsv
+hybrid k=100: 14587 queries -> exp_v2/results/hybrid/runs/hybrid_STK_k100 (top-k BM25 mismatch 8.9e-16)
+hybrid k=200: 14587 queries -> exp_v2/results/hybrid/runs/hybrid_STK_k200 (top-k BM25 mismatch 8.9e-16)
+== stage 2: SSTK (SSTK_l0.1) on the top-200 pairs 02:20:25
+  2000 / 14587 queries (26s)
+  4000 / 14587 queries (49s)
+  6000 / 14587 queries (66s)
+  8000 / 14587 queries (84s)
+  10000 / 14587 queries (102s)
+  12000 / 14587 queries (120s)
+  14000 / 14587 queries (139s)
+  14587 / 14587 queries (145s)
+done: SSTK D.tsv lambda=0.1 mu=0.0, 14587 queries, 145.9s -> exp_v2/results/hybrid/pairs/SSTK.tsv
+hybrid k=100: 14587 queries -> exp_v2/results/hybrid/runs/hybrid_SSTK_k100 (top-k BM25 mismatch 8.9e-16)
+hybrid k=200: 14587 queries -> exp_v2/results/hybrid/runs/hybrid_SSTK_k200 (top-k BM25 mismatch 8.9e-16)
+== stage 2: PTK (PTK_l0.4_m0.6) on the top-200 pairs 02:24:03
+  2000 / 14587 queries (54s)
+  4000 / 14587 queries (104s)
+  6000 / 14587 queries (138s)
+  8000 / 14587 queries (175s)
+  10000 / 14587 queries (209s)
+  12000 / 14587 queries (244s)
+  14000 / 14587 queries (283s)
+  14587 / 14587 queries (295s)
+done: PTK D.tsv lambda=0.4 mu=0.6, 14587 queries, 295.3s -> exp_v2/results/hybrid/pairs/PTK.tsv
+hybrid k=100: 14587 queries -> exp_v2/results/hybrid/runs/hybrid_PTK_k100 (top-k BM25 mismatch 8.9e-16)
+hybrid k=200: 14587 queries -> exp_v2/results/hybrid/runs/hybrid_PTK_k200 (top-k BM25 mismatch 8.9e-16)
+== evaluate 02:30:01
+all done 02:50:51
