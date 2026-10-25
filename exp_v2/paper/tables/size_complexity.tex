@@ -1,22 +1,22 @@
 \begin{table*}[t]
 \centering
-\caption{Size and complexity: RQ1 (MAP, mean over the five clone types) and RQ2 (functional MAP@R) per group of the query. Groups of the query: small = at most 6 lines of code (physical lines of the method), large = at least 10; low = McCabe cyclomatic complexity at most 10, high = above 10 (Checkstyle 10.21.1, default counting). Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count as non-relevant, except exact copies of the query (ignored); candidates are not restricted by group. Per seed (10 seeds, those of the replicate query sets), group and query set, 100 queries at random from the group, or the whole group when it has fewer (small T2: 53, small VST3: 12, high T2: 57 queries). Tree kernels on variant D at the tuned settings. Mean $\pm$ standard deviation over the 10 seeds; best mean per column in bold. Last row: distinct queries over all seeds (functionalities). Table~\ref{tab:sizecxint} tests whether the differences between methods change between groups.}
+\caption{Size and complexity: RQ1 (mean over the five clone types) and RQ2 (functional similarity) per group of the query. Groups of the query: small = at most 6 lines of code (physical lines of the method), large = at least 10; low = McCabe cyclomatic complexity at most 10, high = above 10 (Checkstyle 10.21.1, default counting). Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count as non-relevant, except exact copies of the query (ignored); candidates are not restricted by group. Per seed (10 seeds, those of the replicate query sets) and group: for RQ1, 100 queries per clone type, and for RQ2, 100 functional queries, at random from the group, or the whole group when it has fewer (small T2: 53, small VST3: 12, high T2: 57 queries). Tree kernels on variant D at the tuned settings. Mean $\pm$ standard deviation over the 10 seeds; best mean per column in bold. Last row: distinct queries over all seeds (functionalities). Table~\ref{tab:sizecxint} tests whether the differences between methods change between groups.}
 \label{tab:sizecx}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{lcccccccc}
 \toprule
- & \multicolumn{4}{c}{RQ1: MAP (mean over the five types)} & \multicolumn{4}{c}{RQ2: MAP@R} \\ \cmidrule(lr){2-5}\cmidrule(lr){6-9}
+ & \multicolumn{4}{c}{RQ1: MAP (mean over the five types)} & \multicolumn{4}{c}{RQ2: MAP (functional)} \\ \cmidrule(lr){2-5}\cmidrule(lr){6-9}
  & \multicolumn{2}{c}{Size} & \multicolumn{2}{c}{Complexity} & \multicolumn{2}{c}{Size} & \multicolumn{2}{c}{Complexity} \\ \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
 Method & small & large & low & high & small & large & low & high \\
 \midrule
-STK & 0.875$\pm$0.006 & 0.868$\pm$0.006 & 0.873$\pm$0.009 & 0.935$\pm$0.005 & 0.503$\pm$0.024 & 0.092$\pm$0.013 & 0.134$\pm$0.019 & 0.041$\pm$0.007 \\
-SSTK & 0.885$\pm$0.006 & 0.872$\pm$0.005 & 0.877$\pm$0.007 & 0.935$\pm$0.005 & 0.505$\pm$0.025 & 0.092$\pm$0.014 & 0.134$\pm$0.019 & 0.041$\pm$0.007 \\
-PTK & \textbf{0.913}$\pm$0.008 & \textbf{0.874}$\pm$0.009 & \textbf{0.893}$\pm$0.006 & 0.828$\pm$0.008 & 0.488$\pm$0.030 & 0.082$\pm$0.016 & 0.122$\pm$0.020 & 0.036$\pm$0.006 \\
-\midrule
-BM25 & 0.631$\pm$0.006 & 0.826$\pm$0.010 & 0.803$\pm$0.009 & \textbf{0.961}$\pm$0.005 & \textbf{0.605}$\pm$0.020 & 0.274$\pm$0.031 & 0.315$\pm$0.025 & \textbf{0.171}$\pm$0.019 \\
-CodeBERT zs & 0.821$\pm$0.006 & 0.816$\pm$0.010 & 0.816$\pm$0.010 & 0.904$\pm$0.009 & 0.434$\pm$0.031 & 0.072$\pm$0.009 & 0.104$\pm$0.016 & 0.043$\pm$0.008 \\
-CodeBERT ft & 0.699$\pm$0.006 & 0.822$\pm$0.012 & 0.819$\pm$0.009 & 0.909$\pm$0.010 & 0.586$\pm$0.021 & \textbf{0.279}$\pm$0.026 & \textbf{0.318}$\pm$0.027 & 0.169$\pm$0.021 \\
+\quad STK & 0.875$\pm$0.006 & 0.868$\pm$0.006 & 0.873$\pm$0.009 & 0.935$\pm$0.005 & 0.558$\pm$0.023 & 0.143$\pm$0.014 & 0.192$\pm$0.021 & 0.079$\pm$0.007 \\
+\quad SSTK & 0.885$\pm$0.006 & 0.872$\pm$0.005 & 0.877$\pm$0.007 & 0.935$\pm$0.005 & 0.556$\pm$0.023 & 0.143$\pm$0.015 & 0.191$\pm$0.021 & 0.079$\pm$0.007 \\
+\quad PTK & \textbf{0.913}$\pm$0.008 & \textbf{0.874}$\pm$0.009 & \textbf{0.893}$\pm$0.006 & 0.828$\pm$0.008 & 0.521$\pm$0.028 & 0.129$\pm$0.017 & 0.173$\pm$0.020 & 0.071$\pm$0.006 \\
+\cmidrule(lr){1-9}
+\quad BM25 & 0.631$\pm$0.006 & 0.826$\pm$0.010 & 0.803$\pm$0.009 & \textbf{0.961}$\pm$0.005 & \textbf{0.698}$\pm$0.018 & \textbf{0.415}$\pm$0.030 & \textbf{0.456}$\pm$0.026 & \textbf{0.281}$\pm$0.022 \\
+\quad CodeBERT zs & 0.821$\pm$0.006 & 0.816$\pm$0.010 & 0.816$\pm$0.010 & 0.904$\pm$0.009 & 0.459$\pm$0.031 & 0.111$\pm$0.008 & 0.144$\pm$0.016 & 0.078$\pm$0.009 \\
+\quad CodeBERT ft & 0.699$\pm$0.006 & 0.822$\pm$0.012 & 0.819$\pm$0.009 & 0.909$\pm$0.010 & 0.656$\pm$0.018 & 0.392$\pm$0.028 & 0.431$\pm$0.024 & 0.264$\pm$0.022 \\
 \midrule
 Queries & 1,425 (22) & 4,025 (38) & 4,135 (40) & 1,422 (26) & 593 (28) & 957 (37) & 965 (41) & 802 (31) \\
 \bottomrule

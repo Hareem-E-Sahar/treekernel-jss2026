@@ -2,7 +2,7 @@
 #
 # usage: Rscript exp_v2/paper/hybrid.R
 #   -> exp_v2/paper/figures/hybrid_rq1.pdf    replicate sets, mean over the five types: nP@5, nP@10, MRR, MAP (box plots)
-#      exp_v2/paper/figures/hybrid_rq2.pdf    replicate sets, functional: nP@5, nP@10, MRR, MAP@R (box plots)
+#      exp_v2/paper/figures/hybrid_rq2.pdf    replicate sets, functional: nP@5, nP@10, MRR, MAP (box plots)
 #      exp_v2/paper/figures/hybrid_full.pdf   every eligible query: value and 95% CI, RQ1 and RQ2 rows
 # Inputs: exp_v2/results/hybrid/{replicate_values,full_values}.tsv (exp_v2/eval/hybrid.py).
 # Box plots: geom_boxplot with its defaults, as in exp_v2/paper/figures.R. The full query set has one value per method,
@@ -67,15 +67,14 @@ rep_plot <- function(measure_, metrics, name) {
   save(p, name, 7.0, 4.0)
 }
 rep_plot("mean5", c("nP@5", "nP@10", "MRR", "MAP"), "hybrid_rq1.pdf")
-rep_plot("functional", c("nP@5", "nP@10", "MRR", "MAP@R"), "hybrid_rq2.pdf")
+rep_plot("functional", c("nP@5", "nP@10", "MRR", "MAP"), "hybrid_rq2.pdf")
 
 # ---- full query set: points with 95% CIs
 fv <- read.delim(file.path(R, "full_values.tsv"), check.names = FALSE) |>
-  filter(measure %in% c("mean5", "functional")) |>
-  filter((measure == "mean5" & metric != "MAP@R") | (measure == "functional" & metric != "MAP")) |>
+  filter(measure %in% c("mean5", "functional"), metric != "MAP@R") |>   # MAP@R: raw results only
   classify() |>
   mutate(panel = factor(paste(ifelse(measure == "mean5", "RQ1", "RQ2"), metric),
-                        levels = c(paste("RQ1", c("nP@5", "nP@10", "MRR", "MAP")), paste("RQ2", c("nP@5", "nP@10", "MRR", "MAP@R")))),
+                        levels = c(paste("RQ1", c("nP@5", "nP@10", "MRR", "MAP")), paste("RQ2", c("nP@5", "nP@10", "MRR", "MAP")))),
          group = factor(group, levels = c("BM25", "CodeBERT zs", "CodeBERT ft", kernels)),
          how = factor(ifelse(how == "baseline", "baseline", how), levels = c("baseline", hows[2:3])))
 shapes <- c("baseline" = 16, "BM25 top 100" = 1, "BM25 top 200" = 17)

@@ -2,9 +2,9 @@
 #
 # usage: Rscript exp_v2/paper/figures.R
 #   -> exp_v2/paper/figures/rq1_metrics.pdf            RQ1 per clone type: nP@5, nP@10, MRR, MAP
-#      exp_v2/paper/figures/rq2_metrics.pdf            RQ2 functional:     nP@5, nP@10, MRR, MAP@R
+#      exp_v2/paper/figures/rq2_metrics.pdf            RQ2 functional: nP@5, nP@10, MRR, MAP
 #      exp_v2/paper/figures/rq4_fusion_rq1.pdf         RQ4, PTK fusions, mean over the five types: nP@5, nP@10, MRR, MAP
-#      exp_v2/paper/figures/rq4_fusion_rq2.pdf         RQ4, STK fusions, functional:               nP@5, nP@10, MRR, MAP@R
+#      exp_v2/paper/figures/rq4_fusion_rq2.pdf         RQ4, STK fusions, functional: nP@5, nP@10, MRR, MAP
 # Input: exp_v2/results/fp/per_replicate_metrics.tsv (exp_v2/eval/replicate_metrics.py), one value per replicate.
 # geom_boxplot with its defaults: box = IQR and median, whiskers to the most extreme value within 1.5 IQR, points beyond.
 # Colours as in paper/make_assets.py (Okabe-Ito).
@@ -43,7 +43,7 @@ save <- function(p, name, w, h) {
 }
 
 # ---- RQ1: per clone type, the six methods
-m1 <- c("nP@5", "nP@10", "MRR", "MAP")
+m1 <- c("nP@5", "nP@10", "MRR", "MAP")   # the same four metrics for both RQs (MAP@R stays in the raw results)
 d1 <- rep |>
   filter(measure %in% types, metric %in% m1, method %in% methods) |>
   mutate(measure = factor(measure, levels = types), method = factor(method, levels = methods),
@@ -59,7 +59,7 @@ p <- ggplot(d1, aes(x = measure, y = value, fill = method, colour = method)) +
 save(p, "rq1_metrics.pdf", 7.0, 4.2)
 
 # ---- RQ2: functional, the six methods
-m2 <- c("nP@5", "nP@10", "MRR", "MAP@R")
+m2 <- c("nP@5", "nP@10", "MRR", "MAP")
 d2 <- rep |>
   filter(measure == "functional", metric %in% m2, method %in% methods) |>
   mutate(method = factor(method, levels = methods), metric = factor(metric, levels = m2))

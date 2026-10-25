@@ -1,28 +1,28 @@
 \begin{table*}[t]
 \centering
-\caption{Hybrid against the full-ranking tree kernels on the 10 replicate query sets (100 queries per clone type and 100 functional queries each, as in Table~\ref{tab:rq1}). Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count as non-relevant, except exact copies of the query (ignored). Hybrid: BM25's top $k$ ($k$ = 100, 200, not tuned) re-ranked by the tree kernel (variant D, tuned settings); below rank $k$ the BM25 order is kept. Mean $\pm$ standard deviation over the replicates; best mean per column in bold. $^{\triangledown}$/$^{\vartriangle}$: hybrid significantly worse/better than the same kernel ranking the whole corpus; $^{+}$/$^{-}$: significantly better/worse than BM25 (all distinct queries of the replicates pooled, paired bootstrap over functionalities, 95\%).}
+\caption{Hybrid against the full-ranking tree kernels on the 10 replicate query sets (each with 100 queries per clone type for RQ1 and 100 functional queries for RQ2, as in Table~\ref{tab:rq1}). Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count as non-relevant, except exact copies of the query (ignored). Hybrid: BM25's top $k$ ($k$ = 100, 200, not tuned) re-ranked by the tree kernel (variant D, tuned settings); below rank $k$ the BM25 order is kept. Mean $\pm$ standard deviation over the replicates; best mean per column in bold. $^{\triangledown}$/$^{\vartriangle}$: hybrid significantly worse/better than the same kernel ranking the whole corpus; $^{+}$/$^{-}$: significantly better/worse than BM25 (all distinct queries of the replicates pooled, paired bootstrap over functionalities, 95\%).}
 \label{tab:hybridrep}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{lccccccc}
 \toprule
- & \multicolumn{6}{c}{RQ1: MAP} & RQ2 \\ \cmidrule(lr){2-7}\cmidrule(lr){8-8}
-Method & T1 & T2 & VST3 & ST3 & MT3 & Mean & MAP@R \\
+ & \multicolumn{6}{c}{RQ1: MAP} & RQ2: MAP \\ \cmidrule(lr){2-7}\cmidrule(lr){8-8}
+Method & T1 & T2 & VST3 & ST3 & MT3 & Mean & functional \\
 \midrule
-STK & \textbf{1.000}$\pm$0.000 & 0.994$\pm$0.003 & 0.989$\pm$0.008 & 0.911$\pm$0.017 & 0.512$\pm$0.043 & 0.881$\pm$0.008 & 0.137$\pm$0.021 \\
-BM25$\rightarrow$STK ($k$=100) & \textbf{1.000}$\pm$0.000 & 0.946$\pm$0.014$^{\triangledown+}$ & 0.937$\pm$0.019$^{\triangledown+}$ & 0.832$\pm$0.025$^{\triangledown+}$ & 0.479$\pm$0.039$^{+}$ & 0.839$\pm$0.008$^{\triangledown+}$ & 0.298$\pm$0.021$^{\vartriangle-}$ \\
-BM25$\rightarrow$STK ($k$=200) & \textbf{1.000}$\pm$0.000 & 0.979$\pm$0.009$^{\triangledown+}$ & 0.954$\pm$0.015$^{\triangledown+}$ & 0.860$\pm$0.024$^{\triangledown+}$ & 0.493$\pm$0.042$^{+}$ & 0.857$\pm$0.007$^{\triangledown+}$ & 0.296$\pm$0.021$^{\vartriangle-}$ \\
-\midrule
-SSTK & \textbf{1.000}$\pm$0.000 & 0.994$\pm$0.003 & \textbf{0.990}$\pm$0.005 & 0.918$\pm$0.020 & 0.520$\pm$0.045 & 0.885$\pm$0.009 & 0.137$\pm$0.021 \\
-BM25$\rightarrow$SSTK ($k$=100) & \textbf{1.000}$\pm$0.000 & 0.946$\pm$0.014$^{\triangledown+}$ & 0.939$\pm$0.016$^{\triangledown+}$ & 0.832$\pm$0.025$^{\triangledown+}$ & 0.481$\pm$0.039$^{+}$ & 0.840$\pm$0.008$^{\triangledown+}$ & 0.299$\pm$0.021$^{\vartriangle-}$ \\
-BM25$\rightarrow$SSTK ($k$=200) & \textbf{1.000}$\pm$0.000 & 0.979$\pm$0.009$^{\triangledown+}$ & 0.956$\pm$0.013$^{\triangledown+}$ & 0.860$\pm$0.025$^{\triangledown+}$ & 0.496$\pm$0.042$^{+}$ & 0.858$\pm$0.008$^{\triangledown+}$ & 0.296$\pm$0.021$^{\vartriangle-}$ \\
-\midrule
-PTK & \textbf{1.000}$\pm$0.000 & \textbf{0.994}$\pm$0.003 & 0.987$\pm$0.008 & \textbf{0.924}$\pm$0.019 & \textbf{0.555}$\pm$0.044 & \textbf{0.892}$\pm$0.009 & 0.121$\pm$0.020 \\
-BM25$\rightarrow$PTK ($k$=100) & \textbf{1.000}$\pm$0.000 & 0.946$\pm$0.014$^{\triangledown+}$ & 0.938$\pm$0.018$^{\triangledown+}$ & 0.828$\pm$0.025$^{\triangledown+}$ & 0.487$\pm$0.035$^{+}$ & 0.840$\pm$0.006$^{\triangledown+}$ & 0.301$\pm$0.022$^{\vartriangle}$ \\
-BM25$\rightarrow$PTK ($k$=200) & \textbf{1.000}$\pm$0.000 & 0.979$\pm$0.009$^{\triangledown+}$ & 0.954$\pm$0.014$^{+}$ & 0.858$\pm$0.026$^{\triangledown+}$ & 0.515$\pm$0.036$^{+}$ & 0.861$\pm$0.006$^{\triangledown+}$ & 0.300$\pm$0.021$^{\vartriangle}$ \\
-\midrule
-BM25 & 0.998$\pm$0.003 & 0.892$\pm$0.018 & 0.924$\pm$0.017 & 0.791$\pm$0.028 & 0.446$\pm$0.038 & 0.810$\pm$0.008 & 0.305$\pm$0.023 \\
-CodeBERT ft & \textbf{1.000}$\pm$0.001 & 0.931$\pm$0.018 & 0.949$\pm$0.020 & 0.780$\pm$0.020 & 0.461$\pm$0.035 & 0.824$\pm$0.009 & \textbf{0.310}$\pm$0.025 \\
+\quad STK & \textbf{1.000}$\pm$0.000 & 0.994$\pm$0.003 & 0.989$\pm$0.008 & 0.911$\pm$0.017 & 0.512$\pm$0.043 & 0.881$\pm$0.008 & 0.191$\pm$0.021 \\
+\quad BM25$\rightarrow$STK ($k$=100) & \textbf{1.000}$\pm$0.000 & 0.946$\pm$0.014$^{\triangledown+}$ & 0.937$\pm$0.019$^{\triangledown+}$ & 0.832$\pm$0.025$^{\triangledown+}$ & 0.479$\pm$0.039$^{+}$ & 0.839$\pm$0.008$^{\triangledown+}$ & 0.439$\pm$0.021$^{\vartriangle}$ \\
+\quad BM25$\rightarrow$STK ($k$=200) & \textbf{1.000}$\pm$0.000 & 0.979$\pm$0.009$^{\triangledown+}$ & 0.954$\pm$0.015$^{\triangledown+}$ & 0.860$\pm$0.024$^{\triangledown+}$ & 0.493$\pm$0.042$^{+}$ & 0.857$\pm$0.007$^{\triangledown+}$ & 0.437$\pm$0.021$^{\vartriangle-}$ \\
+\cmidrule(lr){1-8}
+\quad SSTK & \textbf{1.000}$\pm$0.000 & 0.994$\pm$0.003 & \textbf{0.990}$\pm$0.005 & 0.918$\pm$0.020 & 0.520$\pm$0.045 & 0.885$\pm$0.009 & 0.190$\pm$0.022 \\
+\quad BM25$\rightarrow$SSTK ($k$=100) & \textbf{1.000}$\pm$0.000 & 0.946$\pm$0.014$^{\triangledown+}$ & 0.939$\pm$0.016$^{\triangledown+}$ & 0.832$\pm$0.025$^{\triangledown+}$ & 0.481$\pm$0.039$^{+}$ & 0.840$\pm$0.008$^{\triangledown+}$ & 0.440$\pm$0.021$^{\vartriangle-}$ \\
+\quad BM25$\rightarrow$SSTK ($k$=200) & \textbf{1.000}$\pm$0.000 & 0.979$\pm$0.009$^{\triangledown+}$ & 0.956$\pm$0.013$^{\triangledown+}$ & 0.860$\pm$0.025$^{\triangledown+}$ & 0.496$\pm$0.042$^{+}$ & 0.858$\pm$0.008$^{\triangledown+}$ & 0.437$\pm$0.021$^{\vartriangle-}$ \\
+\cmidrule(lr){1-8}
+\quad PTK & \textbf{1.000}$\pm$0.000 & \textbf{0.994}$\pm$0.003 & 0.987$\pm$0.008 & \textbf{0.924}$\pm$0.019 & \textbf{0.555}$\pm$0.044 & \textbf{0.892}$\pm$0.009 & 0.169$\pm$0.021 \\
+\quad BM25$\rightarrow$PTK ($k$=100) & \textbf{1.000}$\pm$0.000 & 0.946$\pm$0.014$^{\triangledown+}$ & 0.938$\pm$0.018$^{\triangledown+}$ & 0.828$\pm$0.025$^{\triangledown+}$ & 0.487$\pm$0.035$^{+}$ & 0.840$\pm$0.006$^{\triangledown+}$ & 0.442$\pm$0.022$^{\vartriangle}$ \\
+\quad BM25$\rightarrow$PTK ($k$=200) & \textbf{1.000}$\pm$0.000 & 0.979$\pm$0.009$^{\triangledown+}$ & 0.954$\pm$0.014$^{+}$ & 0.858$\pm$0.026$^{\triangledown+}$ & 0.515$\pm$0.036$^{+}$ & 0.861$\pm$0.006$^{\triangledown+}$ & 0.440$\pm$0.022$^{\vartriangle}$ \\
+\cmidrule(lr){1-8}
+\quad BM25 & 0.998$\pm$0.003 & 0.892$\pm$0.018 & 0.924$\pm$0.017 & 0.791$\pm$0.028 & 0.446$\pm$0.038 & 0.810$\pm$0.008 & \textbf{0.444}$\pm$0.021 \\
+\quad CodeBERT ft & \textbf{1.000}$\pm$0.001 & 0.931$\pm$0.018 & 0.949$\pm$0.020 & 0.780$\pm$0.020 & 0.461$\pm$0.035 & 0.824$\pm$0.009 & 0.424$\pm$0.029 \\
 \bottomrule
 \end{tabular}
 \end{table*}

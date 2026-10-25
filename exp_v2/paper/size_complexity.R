@@ -2,7 +2,7 @@
 #
 # usage: Rscript exp_v2/paper/size_complexity.R
 #   -> exp_v2/paper/figures/size_complexity_rq1.pdf   mean over the five clone types: nP@5, nP@10, MRR, MAP
-#      exp_v2/paper/figures/size_complexity_rq2.pdf   functional:                     nP@5, nP@10, MRR, MAP@R
+#      exp_v2/paper/figures/size_complexity_rq2.pdf   functional: nP@5, nP@10, MRR, MAP
 # Input: exp_v2/results/size_complexity/per_seed.tsv (exp_v2/eval/size_complexity.py), one value per seed and group.
 # geom_boxplot with its defaults, as in exp_v2/paper/figures.R; same colours.
 suppressPackageStartupMessages({
@@ -51,4 +51,4 @@ plot_groups <- function(measure_, metrics, name) {
   cat("figure", name, "\n")
 }
 plot_groups("mean5", c("nP@5", "nP@10", "MRR", "MAP"), "size_complexity_rq1.pdf")
-plot_groups("functional", c("nP@5", "nP@10", "MRR", "MAP@R"), "size_complexity_rq2.pdf")
+plot_groups("functional", c("nP@5", "nP@10", "MRR", "MAP"), "size_complexity_rq2.pdf")

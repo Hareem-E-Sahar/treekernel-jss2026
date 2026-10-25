@@ -36,9 +36,10 @@ Procedure (`scripts/run_tuning.sh`, `eval/tune.py`):
    - A setting that overflows in KeLP on the false positives is not computable. The overflowing methods are counted
      (`tuning/scan.tsv`, ids in `tuning/scan/`).
 2. **Setting per kernel:** the highest mean over T1–MT3 of micro MAP. Ties keep the first setting in grid order.
-3. **Fusion kernels:** the best kernel by that objective is fused for RQ1, and the best by functional MAP@R for RQ2. This
+3. **Fusion kernels:** the best kernel by that objective is fused for RQ1, and the best by functional MAP for RQ2. This
    is the rule the frozen experiment followed implicitly (PTK for RQ1, STK for RQ2), now written down.
-   - **Override:** RQ2 fuses STK, although the rule picks SSTK (MAP@R 0.1728 vs 0.1722, within noise).
+   - **RQ2 objective:** MAP since 2026-10-25 (MAP@R before; same W, no run changed). Under MAP@R the rule picked SSTK
+     (0.1728 vs 0.1722) and STK was used by decision; under MAP the rule picks STK (0.2272 vs SSTK 0.2271).
 4. **Fusion weight:** W ∈ {0, 0.1, …, 1} for the weighted sum, by the same objective; ties go to the larger W. RRF has no
    parameter.
 

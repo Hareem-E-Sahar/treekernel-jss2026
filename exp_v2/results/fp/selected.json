@@ -3,17 +3,17 @@
     "STK": {
       "run": "STK_l1.0",
       "rq1_mean5_map": 0.8684,
-      "rq2_mapr": 0.172176
+      "rq2_map": 0.22724
     },
     "SSTK": {
       "run": "SSTK_l0.1",
       "rq1_mean5_map": 0.889283,
-      "rq2_mapr": 0.17284
+      "rq2_map": 0.227109
     },
     "PTK": {
       "run": "PTK_l0.4_m0.6",
       "rq1_mean5_map": 0.915578,
-      "rq2_mapr": 0.165741
+      "rq2_map": 0.216568
     }
   },
   "fusion_kernel": {
@@ -22,9 +22,9 @@
   },
   "fusion_kernel_by_rule": {
     "rq1": "PTK",
-    "rq2": "SSTK"
+    "rq2": "STK"
   },
-  "fusion_kernel_override": "rq2: STK instead of SSTK (MAP@R 0.1722 vs 0.1728, within noise; as in the frozen experiment)",
+  "fusion_kernel_override": "rq2: STK, as in the frozen experiment (the kernels are within noise on the tuning queries)",
   "fusion": {
     "rq1_PTK_bm25": {
       "kernel": "PTK",
@@ -53,11 +53,11 @@
   },
   "others_on_tuning_queries": {
     "BM25": {
-      "rq2": 0.349132,
+      "rq2": 0.487422,
       "rq1": 0.818879
     },
     "CodeBERT ft": {
-      "rq2": 0.377165,
+      "rq2": 0.497426,
       "rq1": 0.814464
     }
   }

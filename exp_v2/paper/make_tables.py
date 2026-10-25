@@ -29,10 +29,16 @@ POOLED = {(r["a"], r["b"], r["measure"], r["metric"]): (float(r["ci_low"]), floa
           for r in csv.DictReader(open(R / "pooled_compare_metrics.tsv"), delimiter="\t")}
 
 SEEDS = "55, 1375, 2084, 2802, 3389, 3501, 6251, 8241, 8828, 9080"
-SETUP = (f"Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count as "
-         f"non-relevant, except exact copies of the query (ignored). {NREP} replicate query sets (seeds {SEEDS}), each with "
-         "100 queries per clone type and 100 functional queries, drawn independently; tuning queries excluded. "
-         f"Mean $\\pm$ standard deviation over the {NREP} replicates.")
+QUERIES = {"rq1": ("100 queries per clone type (T1, T2, VST3, ST3, MT3)", "RQ1"), "rq2": ("100 functional queries", "RQ2")}
+
+
+def setup(*rqs):
+    """Corpus and replicate sets, naming only the query sets the table uses."""
+    q = QUERIES[rqs[0]][0] if len(rqs) == 1 else " and ".join(f"{QUERIES[r][0]} for {QUERIES[r][1]}" for r in rqs)
+    return (f"Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count "
+            f"as non-relevant, except exact copies of the query (ignored). {NREP} replicate query sets (seeds {SEEDS}), each "
+            f"with {q}, drawn at random and independently of the other replicates; tuning queries excluded. "
+            f"Mean $\\pm$ standard deviation over the {NREP} replicates.")
 SIG = ("Significance: all distinct queries of the replicates pooled, paired bootstrap resampling functionalities, 95\\%.")
 
 
@@ -77,43 +83,52 @@ MARKS_NOTE = ("$^{+}$/$^{-}$: significantly better/worse than BM25; $^{\\uparrow
               "significantly better/worse than fine-tuned CodeBERT. ")
 
 
-def method_table(cols, label, caption, header, with_setting=True, sep="3.5pt", size="footnotesize"):
-    """cols: [(measure, metric)]; one row per method in ALL, best mean per column in bold."""
-    stats = {lab: [stat(lab, m, x) for m, x in cols] for lab in ALL}
-    best = [max(stats[lab][i][0] for lab in ALL) for i in range(len(cols))]
+def method_table(blocks, label, caption, header, with_setting=True, sep="3.5pt", size="footnotesize"):
+    """blocks: [(title, cols)], cols = [(measure, metric)], all blocks with the same number of columns; one row per method
+    in ALL per block (title row first if given), best mean per block and column in bold."""
+    n = len(blocks[0][1])
+    lead = 2 if with_setting else 1
     L = ["\\begin{table*}[t]", "\\centering", f"\\caption{{{caption}}}", f"\\label{{{label}}}", f"\\{size}",
-         f"\\setlength{{\\tabcolsep}}{{{sep}}}", "\\begin{tabular}{" + ("ll" if with_setting else "l") + "c" * len(cols) + "}",
+         f"\\setlength{{\\tabcolsep}}{{{sep}}}", "\\begin{tabular}{" + "l" * lead + "c" * n + "}",
          "\\toprule", *header, "\\midrule"]
-    for lab in ALL:
-        if lab == "BM25":
+    for b, (title, cols) in enumerate(blocks):
+        if b:
             L.append("\\midrule")
-        L.append(f"{lab} & " + (f"{SETTINGS[lab]} & " if with_setting else "") + " & ".join(
-            cell(mu, sd, mu >= best[i] - 5e-4, marks(lab, m, x)) for i, ((mu, sd), (m, x)) in enumerate(zip(stats[lab], cols)))
-            + " \\\\")
+        if title:
+            L.append(f"\\multicolumn{{{lead + n}}}{{l}}{{\\emph{{{title}}}}} \\\\")
+        stats = {lab: [stat(lab, m, x) for m, x in cols] for lab in ALL}
+        best = [max(stats[lab][i][0] for lab in ALL) for i in range(n)]
+        for lab in ALL:
+            if lab == "BM25":
+                L.append("\\cmidrule(lr){1-" + str(lead + n) + "}" if title else "\\midrule")
+            L.append(("\\quad " if title else "") + f"{lab} & " + (f"{SETTINGS[lab]} & " if with_setting else "")
+                     + " & ".join(cell(mu, sd, mu >= best[i] - 5e-4, marks(lab, m, x))
+                                  for i, ((mu, sd), (m, x)) in enumerate(zip(stats[lab], cols))) + " \\\\")
     L += ["\\bottomrule", "\\end{tabular}", "\\end{table*}"]
     return L
 
 
 # ---- RQ1: MAP per clone type
 write("rq1_map.tex", method_table(
-    [(t, "MAP") for t in TYPES + ["mean5"]], "tab:rq1",
+    [(None, [(t, "MAP") for t in TYPES + ["mean5"]])],
+    "tab:rq1",
     "RQ1: MAP per clone type (relevant = the query's clones of that type; the query's other same-functionality methods "
     "are removed from its ranking). Tree kernels on variant D at the settings tuned on separate queries. Mean = mean over "
-    "the five types. " + SETUP + " Best mean per column in bold. " + MARKS_NOTE + SIG,
+    "the five types. " + setup("rq1") + " Best mean per column in bold. " + MARKS_NOTE + SIG,
     ["Method & Setting & T1 & T2 & VST3 & ST3 & MT3 & Mean \\\\"]))
 
-# ---- RQ1 and RQ2: the four metrics
+# ---- RQ1 and RQ2: the same four metrics
+M4 = ("nP@5", "nP@10", "MRR", "MAP")
 NP_NOTE = ("nP@$k$ = relevant methods in the top $k$ divided by $\\min(k, R)$, $R$ = the query's number of relevant "
            "methods; MRR = mean reciprocal rank of the first relevant method. ")
 write("rq1_rq2_metrics.tex", method_table(
-    [("mean5", x) for x in ("nP@5", "nP@10", "MRR", "MAP")] + [("functional", x) for x in ("nP@5", "nP@10", "MRR", "MAP@R")],
+    [("RQ1: mean over the five clone types", [("mean5", x) for x in M4]),
+     ("RQ2: functional similarity", [("functional", x) for x in M4])],
     "tab:metrics",
-    "RQ1 and RQ2 under four metrics. RQ1: mean over the five clone types; RQ2: functional similarity (relevant = every "
-    "method of the query's functionality, candidates = the whole corpus). " + NP_NOTE + SETUP +
-    " Settings as in Table~\\ref{tab:rq1}. Best mean per column in bold. " + MARKS_NOTE + SIG,
-    [" & \\multicolumn{4}{c}{RQ1 (mean over the five types)} & \\multicolumn{4}{c}{RQ2 (functional)} \\\\ "
-     "\\cmidrule(lr){2-5}\\cmidrule(lr){6-9}",
-     "Method & nP@5 & nP@10 & MRR & MAP & nP@5 & nP@10 & MRR & MAP@R \\\\"], with_setting=False, sep="2pt", size="scriptsize"))
+    "RQ1 and RQ2 under the same four metrics. RQ1: mean over the five clone types; RQ2: functional similarity (relevant = "
+    "every method of the query's functionality, candidates = the whole corpus). " + NP_NOTE + setup("rq1", "rq2")
+    + " Settings as in Table~\\ref{tab:rq1}. Best mean per block and column in bold. " + MARKS_NOTE + SIG,
+    ["Method & nP@5 & nP@10 & MRR & MAP \\\\"], with_setting=False))
 
 # ---- RQ4: fusion
 OTHER = {"bm25": "BM25", "codebert_ft": "CodeBERT ft"}
@@ -130,15 +145,16 @@ def block(name):
 L = ["\\begin{table}[t]", "\\centering",
      "\\caption{RQ4: fusion of a tree kernel (variant D, tuned) with BM25 or with fine-tuned CodeBERT. Weighted sum = "
      "$W\\cdot$TK + $(1-W)\\cdot$other/max, $W$ tuned on the tuning queries for the RQ's measure; RRF = reciprocal rank "
-     "fusion ($k$=60). The RQ1 fusions use PTK, the best kernel on RQ1; the RQ2 fusions use STK. " + SETUP +
+     "fusion ($k$=60). The RQ1 fusions use PTK, the best kernel on RQ1; the RQ2 fusions use STK. $W$ was tuned on MAP "
+     "(RQ1: mean over the five types; RQ2: functional). " + setup("rq1", "rq2") +
      " Best mean per block and column in bold. $^{\\dagger}$: significantly better than both components. " + SIG + "}",
      "\\label{tab:rq4}", "\\footnotesize", "\\setlength{\\tabcolsep}{3.5pt}", "\\begin{tabular}{lcccc}", "\\toprule",
      " & \\multicolumn{3}{c}{RQ1 (MAP)} & RQ2 \\\\ \\cmidrule(lr){2-4} \\cmidrule(lr){5-5}",
-     "Method & ST3 & MT3 & Mean & MAP@R \\\\", "\\midrule"]
+     "Method & ST3 & MT3 & Mean & MAP \\\\", "\\midrule"]
 blocks = [block(n) for n in SEL["fusion"]]
 blocks.sort(key=lambda b: b[1])            # RQ1 blocks first
 for i, (title, obj, rows) in enumerate(blocks):
-    ms = [("ST3", "MAP"), ("MT3", "MAP"), ("mean5", "MAP")] if obj == "rq1" else [("functional", "MAP@R")]
+    ms = [("ST3", "MAP"), ("MT3", "MAP"), ("mean5", "MAP")] if obj == "rq1" else [("functional", "MAP")]
     L.append(f"\\multicolumn{{5}}{{l}}{{\\emph{{{title}, $W$ tuned for RQ{obj[-1]}}}}} \\\\")
     st = {lab: [stat(r, m, x) for m, x in ms] for lab, r in rows}
     best = [max(st[lab][j][0] for lab, _ in rows) for j in range(len(ms))]

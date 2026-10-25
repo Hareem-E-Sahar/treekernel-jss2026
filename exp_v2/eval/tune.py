@@ -7,11 +7,13 @@ All on the 50 tuning queries (exp_v2/data/tuning.tsv), corpus data/trees_e5/D.ts
 that are exact copies of the query ignored (exp_v2/data/fp_copies.tsv). Same procedure as the frozen experiment:
   settings: per kernel, the computable grid setting with the highest RQ1 objective (mean over T1-MT3 of micro MAP);
   fusion kernels: the kernel with the highest RQ1 objective (fused for RQ1) and the one with the highest functional
-    MAP@R (fused for RQ2), each at its selected setting;
+    MAP (fused for RQ2), each at its selected setting;
   fusion weight: W in {0, 0.1, ..., 1} maximising the same objective; ties -> the larger W (more tree kernel).
 Ties between settings: the higher value wins; equal values keep the first setting in grid order.
-Override (decided 2026-10-21): RQ2 fuses STK, not the rule's SSTK. Their MAP@R on the tuning queries is 0.1722 vs 0.1728,
-a difference within noise, and STK is the kernel fused for RQ2 in the frozen experiment. Both are recorded.
+Override (decided 2026-10-21): RQ2 fuses STK, as in the frozen experiment, whichever kernel the rule picks (the three are
+within noise on the tuning queries). Both are recorded.
+RQ2 objective (decided 2026-10-25): functional MAP. It was MAP@R until then; the selected W are the same under both
+(STK + BM25 0.0, STK + CodeBERT ft 0.2), so no run changed, and under MAP the rule itself picks STK for RQ2.
 """
 import csv
 import json
@@ -39,7 +41,7 @@ def evaluate(run):
         if r["category"] == "all" and r["averaging"] == "micro":
             if r["type"] == "mean5" and r["metric"] == "AP":
                 v["rq1"] = float(r["value"])
-            if r["type"] == "functional" and r["metric"] == "AP@R":
+            if r["type"] == "functional" and r["metric"] == "AP":
                 v["rq2"] = float(r["value"])
     return v
 
@@ -61,7 +63,7 @@ for name in grid_order():
     elif (d / "NOT_COMPUTABLE").exists():
         rows.append((name, (d / "NOT_COMPUTABLE").read_text().strip(), None, None))
 with open(T / "grid.tsv", "w") as o:
-    o.write("setting\tstatus\trq1_mean5_map\trq2_mapr\n")
+    o.write("setting\tstatus\trq1_mean5_map\trq2_map\n")
     for n, st, a, b in rows:
         o.write(f"{n}\t{st}\t{'' if a is None else f'{a:.6f}'}\t{'' if b is None else f'{b:.6f}'}\n")
 
@@ -85,9 +87,9 @@ for obj, k in fusion_kernel.items():
         weights[name] = {"kernel": k, "other": olab, "objective": obj, "w": wbest}
         print(f"{name}: W = {wbest:.1f}")
 
-sel = {"settings": {k: {"run": v[0], "rq1_mean5_map": v[1], "rq2_mapr": v[2]} for k, v in best.items()},
+sel = {"settings": {k: {"run": v[0], "rq1_mean5_map": v[1], "rq2_map": v[2]} for k, v in best.items()},
        "fusion_kernel": fusion_kernel, "fusion_kernel_by_rule": by_rule,
-       "fusion_kernel_override": "rq2: STK instead of SSTK (MAP@R 0.1722 vs 0.1728, within noise; as in the frozen experiment)",
+       "fusion_kernel_override": "rq2: STK, as in the frozen experiment (the kernels are within noise on the tuning queries)",
        "fusion": weights,
        "others_on_tuning_queries": {lab: evaluate(r) for lab, r in OTHERS.items()}}
 (T / "selected.json").write_text(json.dumps(sel, indent=2))

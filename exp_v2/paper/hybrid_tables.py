@@ -16,7 +16,6 @@ R = ROOT / "exp_v2/results/hybrid"
 TAB = Path(__file__).resolve().parent / "tables"
 TAB.mkdir(exist_ok=True)
 TYPES = ["T1", "T2", "VST3", "ST3", "MT3"]
-COLS = [(t, "MAP") for t in TYPES + ["mean5"]] + [("functional", "MAP@R")]
 KERNELS = ["STK", "SSTK", "PTK"]
 
 
@@ -57,63 +56,85 @@ def write(name, lines):
     print("table", name)
 
 
+BLOCKS = [(None, "MAP")]   # MAP only in the paper (decision 2026-10-25); MAP@R stays in the raw results
+HEADER = [" & \\multicolumn{6}{c}{RQ1: MAP} & RQ2: MAP \\\\ \\cmidrule(lr){2-7}\\cmidrule(lr){8-8}",
+          "Method & T1 & T2 & VST3 & ST3 & MT3 & Mean & functional \\\\", "\\midrule"]
+METRIC_NOTE = ""
+
+
+def cols(metric):
+    return [(t, metric) for t in TYPES + ["mean5"]] + [("functional", metric)]
+
+
 # ---- full query set: value, 95% CI below
 rows = ["BM25", "CodeBERT zs", "CodeBERT ft"] + [hyb(k, K) for k in KERNELS for K in (100, 200)]
-best = [max(float(FV[(r, ms, m)]["value"]) for r in rows) for ms, m in COLS]
 L = ["\\begin{table*}[t]", "\\centering",
      "\\caption{Hybrid on every eligible query (" + ", ".join(f"{t} {N[t]:,}" for t in TYPES) + f", functional "
      f"{N['functional']:,}). " + SETUP + "Each cell: value over all queries, 95\\% confidence interval below (bootstrap "
-     "resampling functionalities). RQ1: MAP per clone type and Mean over the five types; RQ2: MAP@R. Best value per "
-     "column in bold. $^{+}$/$^{-}$: significantly better/worse than BM25; $^{\\uparrow}$/$^{\\downarrow}$: significantly "
-     "better/worse than fine-tuned CodeBERT (paired bootstrap over functionalities, 95\\%). Full-ranking tree kernels "
-     "were run on the replicate query sets only (Table~\\ref{tab:hybridrep}).}",
+     "resampling functionalities). RQ1: per clone type and Mean over the five types; RQ2: functional similarity. "
+     + METRIC_NOTE + "Best value per column in bold. $^{+}$/$^{-}$: significantly better/worse than BM25; "
+     "$^{\\uparrow}$/$^{\\downarrow}$: significantly better/worse than fine-tuned CodeBERT (paired bootstrap over "
+     "functionalities, 95\\%). Full-ranking tree kernels were run on the replicate query sets only "
+     "(Table~\\ref{tab:hybridrep}).}",
      "\\label{tab:hybridfull}", "\\scriptsize", "\\setlength{\\tabcolsep}{3pt}", "\\begin{tabular}{lccccccc}", "\\toprule",
-     " & \\multicolumn{6}{c}{RQ1: MAP} & RQ2 \\\\ \\cmidrule(lr){2-7}\\cmidrule(lr){8-8}",
-     "Method & T1 & T2 & VST3 & ST3 & MT3 & Mean & MAP@R \\\\", "\\midrule"]
-for j, r in enumerate(rows):
-    if j == 3:
+     *HEADER]
+for b, (title, metric) in enumerate(BLOCKS):
+    if b:
         L.append("\\midrule")
-    vals, cis = [], []
-    for i, (ms, m) in enumerate(COLS):
-        c = FV[(r, ms, m)]
-        v = float(c["value"])
-        s = ""
-        if r.startswith("BM25→"):
-            s = {1: "+", -1: "-", 0: ""}[sig(FC, r, "BM25", ms, m)] + {1: "\\uparrow", -1: "\\downarrow", 0: ""}[sig(FC, r, "CodeBERT ft", ms, m)]
-        elif r == "CodeBERT ft":
-            s = {1: "+", -1: "-", 0: ""}[sig(FC, r, "BM25", ms, m)]
-        vals.append(("\\textbf{" + f"{v:.3f}" + "}" if v >= best[i] - 5e-4 else f"{v:.3f}") + mark(s, s))
-        cis.append(f"[{float(c['ci_low']):.3f}, {float(c['ci_high']):.3f}]")
-    L.append(f"{tex(r)} & " + " & ".join(vals) + " \\\\")
-    L.append(" & " + " & ".join(cis) + " \\\\[2pt]")
+    if title:
+        L.append(f"\\multicolumn{{8}}{{l}}{{\\emph{{{title}}}}} \\\\")
+    C = cols(metric)
+    best = [max(float(FV[(r, ms, m)]["value"]) for r in rows) for ms, m in C]
+    for j, r in enumerate(rows):
+        if j == 3:
+            L.append("\\cmidrule(lr){1-8}")
+        vals, cis = [], []
+        for i, (ms, m) in enumerate(C):
+            c = FV[(r, ms, m)]
+            v = float(c["value"])
+            s = ""
+            if r.startswith("BM25→"):
+                s = {1: "+", -1: "-", 0: ""}[sig(FC, r, "BM25", ms, m)] + {1: "\\uparrow", -1: "\\downarrow", 0: ""}[sig(FC, r, "CodeBERT ft", ms, m)]
+            elif r == "CodeBERT ft":
+                s = {1: "+", -1: "-", 0: ""}[sig(FC, r, "BM25", ms, m)]
+            vals.append(("\\textbf{" + f"{v:.3f}" + "}" if v >= best[i] - 5e-4 else f"{v:.3f}") + mark(s, s))
+            cis.append(f"[{float(c['ci_low']):.3f}, {float(c['ci_high']):.3f}]")
+        L.append(f"\\quad {tex(r)} & " + " & ".join(vals) + " \\\\")
+        L.append(" & " + " & ".join(cis) + " \\\\[2pt]")
 L += ["\\bottomrule", "\\end{tabular}", "\\end{table*}"]
 write("hybrid_full.tex", L)
 
 # ---- replicate sets: hybrids next to the full-ranking kernels
 rows = [x for k in KERNELS for x in (k, hyb(k, 100), hyb(k, 200))] + ["BM25", "CodeBERT ft"]
-st = {r: [(np.mean(RV[(r, ms, m)]), np.std(RV[(r, ms, m)], ddof=1)) for ms, m in COLS] for r in rows}
-best = [max(st[r][i][0] for r in rows) for i in range(len(COLS))]
 L = ["\\begin{table*}[t]", "\\centering",
-     f"\\caption{{Hybrid against the full-ranking tree kernels on the {NSEED} replicate query sets (100 queries per clone "
-     "type and 100 functional queries each, as in Table~\\ref{tab:rq1}). " + SETUP + "Mean $\\pm$ standard deviation over "
-     "the replicates; best mean per column in bold. $^{\\triangledown}$/$^{\\vartriangle}$: hybrid significantly "
-     "worse/better than the same kernel ranking the whole corpus; $^{+}$/$^{-}$: significantly better/worse than BM25 "
-     "(all distinct queries of the replicates pooled, paired bootstrap over functionalities, 95\\%).}",
+     f"\\caption{{Hybrid against the full-ranking tree kernels on the {NSEED} replicate query sets (each with 100 queries "
+     "per clone type for RQ1 and 100 functional queries for RQ2, as in Table~\\ref{tab:rq1}). " + SETUP + METRIC_NOTE
+     + "Mean $\\pm$ standard deviation over the replicates; best mean per column in bold. "
+     "$^{\\triangledown}$/$^{\\vartriangle}$: hybrid significantly worse/better than the same kernel ranking the whole "
+     "corpus; $^{+}$/$^{-}$: significantly better/worse than BM25 (all distinct queries of the replicates pooled, paired "
+     "bootstrap over functionalities, 95\\%).}",
      "\\label{tab:hybridrep}", "\\scriptsize", "\\setlength{\\tabcolsep}{3pt}", "\\begin{tabular}{lccccccc}", "\\toprule",
-     " & \\multicolumn{6}{c}{RQ1: MAP} & RQ2 \\\\ \\cmidrule(lr){2-7}\\cmidrule(lr){8-8}",
-     "Method & T1 & T2 & VST3 & ST3 & MT3 & Mean & MAP@R \\\\", "\\midrule"]
-for j, r in enumerate(rows):
-    if j and (r in KERNELS or r == "BM25"):
+     *HEADER]
+for b, (title, metric) in enumerate(BLOCKS):
+    if b:
         L.append("\\midrule")
-    cells = []
-    for i, (ms, m) in enumerate(COLS):
-        mu, sd = st[r][i]
-        s = ""
-        if r.startswith("BM25→"):
-            k = r.split("→")[1].split()[0]
-            s = {1: "\\vartriangle", -1: "\\triangledown", 0: ""}[sig(RC, r, k, ms, m)] + {1: "+", -1: "-", 0: ""}[sig(RC, r, "BM25", ms, m)]
-        cells.append(("\\textbf{" + f"{mu:.3f}" + "}" if mu >= best[i] - 5e-4 else f"{mu:.3f}") + f"$\\pm${sd:.3f}" + mark(s, s))
-    L.append(f"{tex(r)} & " + " & ".join(cells) + " \\\\")
+    if title:
+        L.append(f"\\multicolumn{{8}}{{l}}{{\\emph{{{title}}}}} \\\\")
+    C = cols(metric)
+    st = {r: [(np.mean(RV[(r, ms, m)]), np.std(RV[(r, ms, m)], ddof=1)) for ms, m in C] for r in rows}
+    best = [max(st[r][i][0] for r in rows) for i in range(len(C))]
+    for j, r in enumerate(rows):
+        if j and (r in KERNELS or r == "BM25"):
+            L.append("\\cmidrule(lr){1-8}")
+        cells = []
+        for i, (ms, m) in enumerate(C):
+            mu, sd = st[r][i]
+            s = ""
+            if r.startswith("BM25→"):
+                k = r.split("→")[1].split()[0]
+                s = {1: "\\vartriangle", -1: "\\triangledown", 0: ""}[sig(RC, r, k, ms, m)] + {1: "+", -1: "-", 0: ""}[sig(RC, r, "BM25", ms, m)]
+            cells.append(("\\textbf{" + f"{mu:.3f}" + "}" if mu >= best[i] - 5e-4 else f"{mu:.3f}") + f"$\\pm${sd:.3f}" + mark(s, s))
+        L.append(f"\\quad {tex(r)} & " + " & ".join(cells) + " \\\\")
 L += ["\\bottomrule", "\\end{tabular}", "\\end{table*}"]
 write("hybrid_replicates.tex", L)
 
