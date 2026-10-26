@@ -17,8 +17,8 @@ Order:
 
 | File | Contents |
 |---|---|
-| `tables/rq1_map.tex` | RQ1: MAP per clone type and mean, with settings |
-| `tables/rq1_rq2_metrics.tex` | RQ1 (mean over the types) and RQ2, same five metrics: nP@5, nP@10, MRR, MAP |
+| `tables/rq1.tex` | RQ1: nP@5, nP@10, MRR, MAP as columns; one row block per clone type and for the mean over the types |
+| `tables/rq2.tex` | RQ2 (functional): the same four metrics, one row per method |
 | `tables/rq4_fusion.tex` | RQ4: PTK fusions (ST3, MT3, mean MAP) and STK fusions (functional MAP) next to their components |
 | `tables/size_complexity.tex` | Size and complexity: RQ1 and RQ2 MAP per group (small/large LOC, low/high McCabe) |
 | `tables/size_complexity_interaction.tex` | Size and complexity: change of each method difference between groups, with 95% CIs |

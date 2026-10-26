@@ -10,9 +10,20 @@
 
 - **RQ1. Syntactic similarity.** How well do tree kernels retrieve syntactic clones of each type (T1, T2, VST3, ST3, MT3), compared with BM25?
 - **RQ2. Functional similarity.** How well do tree kernels retrieve code that implements the same task (same BCB functionality, mostly WT3/T4 clones), compared with BM25?
-- **RQ3. Representation.** Which tree kernel (STK, SSTK, PTK) and which tree representation (variants A–D) works best? How much of the kernels' success comes from lexical content inside the trees (B vs C vs D)?
-- **RQ4. Complementarity.** Do tree kernels and BM25 succeed on the same queries and clones, or on different ones? Does combining their scores improve retrieval?
+- **RQ3. Representation** (*superseded 2026-10-26, see the note below*). Which tree kernel (STK, SSTK, PTK) and which tree representation (variants A–D) works best? How much of the kernels' success comes from lexical content inside the trees (B vs C vs D)?
+- **RQ4. Complementarity** (*moved to future RQs 2026-10-26, see the note below*). Do tree kernels and BM25 succeed on the same queries and clones, or on different ones? Does combining their scores improve retrieval?
 - **RQ5. Cost.** What does each measure cost in computation time and memory?
+
+> **Note (2026-10-26, user): RQ3 is now size and complexity.** *RQ3. Size and complexity: do the methods' results, and
+> the differences between them, depend on the size (lines of code) or the cyclomatic complexity of the query?* Groups:
+> small ≤ 6 / large ≥ 10 LOC, low ≤ 10 / high > 10 McCabe (Checkstyle); details in `exp_v2/DESIGN.md`. The
+> representation question above (old RQ3) is kept here for the record; its results exist only in the frozen experiment
+> (tag `replicates-10`).
+>
+> **Note (2026-10-26, user): RQ4 is now the hybrid**, as in the reviewed paper. *RQ4. Hybrid: how much of the tree
+> kernels' effectiveness remains, and at what cost, when they only re-rank BM25's top k candidates?* (k = 100, 200;
+> `exp_v2/DESIGN.md`). The complementarity / score-fusion question above (old RQ4) goes to a "Future RQs" section for
+> now; its results are kept (`exp_v2/results/fp`, untuned-W check in `exp_v2/results/fusion_untuned`).
 
 ## 2. Background: BigCloneBench
 
@@ -225,6 +236,8 @@ Still to build:
 | 2026-10-22 | **Size and complexity (user):** query groups small LOC ≤ 6 / large LOC ≥ 10 (physical lines), low McCabe ≤ 10 / high > 10 (Checkstyle); stratified sampling with the 10 seeds, 100 queries per group and set (whole pool if smaller); corpus with false positives, variant D, tuned settings, no fusion. Details: `exp_v2/DESIGN.md`. |
 | 2026-10-23 | **Hybrid (user):** BM25 top k (k = 100, 200; not tuned) re-ranked by STK, SSTK, PTK at the tuned settings, BM25 order kept below k; all 14,587 eligible queries, corpus with false positives; compared with BM25 and CodeBERT on all queries and with the full-ranking kernels on the 10 replicate sets. Details: `exp_v2/DESIGN.md`. |
 | 2026-10-25 | **Metrics (user):** the paper reports MAP for both RQs (with nP@5, nP@10, MRR); MAP@R is removed from every table and figure because the reviewers did not ask for it, and stays in the raw results (`eval/summary.tsv`, `per_query.tsv`). RQ2 tuning objective switched from MAP@R to MAP (`exp_v2/eval/tune.py`): same settings, same W (STK+BM25 0.0, STK+CodeBERT ft 0.2), and the rule now picks STK for RQ2 itself; no run changed. RQ2 conclusions are the same under MAP and MAP@R. Captions name only the query sets each table uses. |
+| 2026-10-26 | **RQ3 renamed (user):** size and complexity becomes RQ3; the old RQ3 (representation, variants A–D) stays in §1 with a note. RQ1 and RQ2 are reported in separate tables; the preview has one section per RQ. |
+| 2026-10-26 | **RQ4 = hybrid (user):** as in the reviewed paper; score fusion moves to a Future RQs section. Untuned fusion checked: weighted sum at W = 0.5 on the replicate sets (`scripts/run_fusion_untuned.sh`, `eval/fusion_untuned.py`). |
 | 2026-10-18 | **All RQs run** (`results/eval/tables.md`). RQ1: D PTK 0.926 vs BM25 0.888 (+0.037, sig.; ST3 +0.120 sig., MT3 +0.024 n.s.). RQ2: BM25 MAP@R 0.477 vs best kernel 0.248 (B SSTK). RQ3: D best on RQ1 for every kernel; B best on RQ2 (hypothesis, not verified: A's punctuation/keyword nodes and C's ID labels dilute the discriminating names). Tuning helps everywhere except A PTK. RQ4 (`results/rq4/`): weighted-sum fusion W = 0.8 gives 0.957 (MT3 0.810); for RQ2 the tuned W is 0 (BM25 alone). E5 (`results/e5/`): all methods drop, BM25 most on RQ1; T1 drop caused by exact copies of 3 queries among BCB false positives. RQ5 (`results/rq5/`): BM25 ≈ 0.1 s/query vs 0.5–14.8 s for the kernels (D PTK 3.4 s). A and B default runs done. |
 | 2026-10-18 | **Bug fixed: `data/trees_main/source.tsv` was corrupted** by `prep/apply_overflow_exclusion.py` (text mode turned raw `\r` in CRLF source into line breaks: 15,831 lines for 14,679 methods). The tree files were not affected (byte-identical after the fix); `source.tsv` had not been used yet. The script now works on bytes. |
 | 2026-10-18 | **Finishing all RQs (user):** BM25 = code-aware tokens, ES defaults (k1 1.2, b 0.75), all query terms; MLT defaults as a secondary row. E5 (false positives) included; A and B default runs included; RQ5 timing run last, on an otherwise idle machine. |

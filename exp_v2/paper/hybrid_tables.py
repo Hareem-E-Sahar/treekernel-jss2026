@@ -68,8 +68,8 @@ def cols(metric):
 
 # ---- full query set: value, 95% CI below
 rows = ["BM25", "CodeBERT zs", "CodeBERT ft"] + [hyb(k, K) for k in KERNELS for K in (100, 200)]
-L = ["\\begin{table*}[t]", "\\centering",
-     "\\caption{Hybrid on every eligible query (" + ", ".join(f"{t} {N[t]:,}" for t in TYPES) + f", functional "
+L = ["\\begin{table*}[!htbp]", "\\centering",
+     "\\caption{RQ4, hybrid on every eligible query (" + ", ".join(f"{t} {N[t]:,}" for t in TYPES) + f", functional "
      f"{N['functional']:,}). " + SETUP + "Each cell: value over all queries, 95\\% confidence interval below (bootstrap "
      "resampling functionalities). RQ1: per clone type and Mean over the five types; RQ2: functional similarity. "
      + METRIC_NOTE + "Best value per column in bold. $^{+}$/$^{-}$: significantly better/worse than BM25; "
@@ -106,8 +106,8 @@ write("hybrid_full.tex", L)
 
 # ---- replicate sets: hybrids next to the full-ranking kernels
 rows = [x for k in KERNELS for x in (k, hyb(k, 100), hyb(k, 200))] + ["BM25", "CodeBERT ft"]
-L = ["\\begin{table*}[t]", "\\centering",
-     f"\\caption{{Hybrid against the full-ranking tree kernels on the {NSEED} replicate query sets (each with 100 queries "
+L = ["\\begin{table*}[!htbp]", "\\centering",
+     f"\\caption{{RQ4, hybrid against the full-ranking tree kernels on the {NSEED} replicate query sets (each with 100 queries "
      "per clone type for RQ1 and 100 functional queries for RQ2, as in Table~\\ref{tab:rq1}). " + SETUP + METRIC_NOTE
      + "Mean $\\pm$ standard deviation over the replicates; best mean per column in bold. "
      "$^{\\triangledown}$/$^{\\vartriangle}$: hybrid significantly worse/better than the same kernel ranking the whole "
@@ -141,8 +141,8 @@ write("hybrid_replicates.tex", L)
 # ---- cost per query
 T = {r["step"]: r for r in csv.DictReader(open(R / "timing.tsv"), delimiter="\t")}
 first = T["BM25 top 200 (first stage)"]
-L = ["\\begin{table}[t]", "\\centering",
-     "\\caption{Hybrid: cost per query on the corpus with false positives (72,782 methods). First stage: Elasticsearch's "
+L = ["\\begin{table}[!htbp]", "\\centering",
+     "\\caption{RQ4, hybrid: cost per query on the corpus with false positives (72,782 methods). First stage: Elasticsearch's "
      "reported search time for BM25's top 200. Second stage: the summed CPU time of the query's kernel evaluations. "
      "Full ranking: the tree kernel against the whole corpus, wall time $\\times$ threads / queries of the replicate runs "
      "(includes tree parsing, so the ratio is approximate). Ratio = full ranking / second stage (means).}",

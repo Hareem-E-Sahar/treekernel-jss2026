@@ -45,9 +45,9 @@ BLOCKS = [(None, "MAP")]   # MAP only in the paper (decision 2026-10-25); MAP@R 
 METRIC_NOTE = ""
 
 # ---- per group: mean ± SD over the seeds
-L = ["\\begin{table*}[t]", "\\centering",
-     "\\caption{Size and complexity: RQ1 (mean over the five clone types) and RQ2 (functional similarity) per group of the "
-     "query. " + GROUP_DEF + SETUP + METRIC_NOTE + f"Mean $\\pm$ standard deviation over the {NSEED} seeds; best mean per "
+L = ["\\begin{table*}[!htbp]", "\\centering",
+     "\\caption{RQ3, size and complexity: syntactic clones (as in RQ1, mean over the five clone types) and functional "
+     "similarity (as in RQ2) per group of the query. " + GROUP_DEF + SETUP + METRIC_NOTE + f"Mean $\\pm$ standard deviation over the {NSEED} seeds; best mean per "
      "column in bold. Last row: distinct queries over all seeds (functionalities). Table~\\ref{tab:sizecxint} "
      "tests whether the differences between methods change between groups.}",
      "\\label{tab:sizecx}", "\\scriptsize", "\\setlength{\\tabcolsep}{3pt}", "\\begin{tabular}{lcccccccc}", "\\toprule",
@@ -92,8 +92,8 @@ def icell(g1, a, b, ms, metric):
     return s, f"[{lo:+.3f}, {hi:+.3f}]"
 
 
-L = ["\\begin{table*}[t]", "\\centering",
-     "\\caption{Size and complexity: does the difference between two methods change between groups? Each cell is "
+L = ["\\begin{table*}[!htbp]", "\\centering",
+     "\\caption{RQ3, size and complexity: does the difference between two methods change between groups? Each cell is "
      "$D = (A - B)_{1} - (A - B)_{2}$, the difference between methods $A$ and $B$ on the first group minus that on the "
      "second, with its 95\\% confidence interval in the row below; positive: $A$'s advantage is larger (or its "
      "disadvantage smaller) on the first group. Bold: the interval excludes 0. All distinct queries of the seeds pooled; "

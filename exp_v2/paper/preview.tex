@@ -1,23 +1,40 @@
-\documentclass[10pt,twocolumn]{article}
+\documentclass[10pt]{article}
 \usepackage[margin=0.7in]{geometry}
 \usepackage{booktabs,graphicx,amssymb}
+\usepackage{placeins}   % \FloatBarrier: a section's tables and figures stay in that section
 \newcommand{\boxnote}{Box: interquartile range and median; whiskers: the most extreme replicate within 1.5 times the interquartile range; points: replicates beyond.}
+% one section per research question, starting on a new page, so each section's tables and figures stay with it
+\newcommand{\rqsection}[2]{\FloatBarrier\clearpage\section*{#1}\noindent\emph{#2}\par\medskip}
+\setcounter{topnumber}{3}\renewcommand{\topfraction}{0.95}\setcounter{totalnumber}{4}\renewcommand{\textfraction}{0.02}
+\renewcommand{\floatpagefraction}{0.9}\renewcommand{\dbltopfraction}{0.95}\renewcommand{\dblfloatpagefraction}{0.9}
 \begin{document}
-\input{tables/rq1_map}
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/rq1_metrics}\caption{RQ1 per clone type over 10 replicate query sets (100 queries per type each), corpus with false positives. \boxnote}\label{fig:rq1}\end{figure*}
-\input{tables/rq1_rq2_metrics}
-\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/rq2_metrics}\caption{RQ2: functional similarity over 10 replicate query sets (100 queries each), corpus with false positives. \boxnote}\label{fig:rq2}\end{figure}
-\input{tables/rq4_fusion}
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/rq4_fusion_rq1}\caption{RQ4, syntactic clones: PTK, BM25, fine-tuned CodeBERT and the fusions of PTK with each (weighted sum at the tuned $W$; RRF); mean over the five clone types, 10 replicate query sets. \boxnote}\label{fig:rq4a}\end{figure*}
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/rq4_fusion_rq2}\caption{RQ4, functional similarity: STK, BM25, fine-tuned CodeBERT and the fusions of STK with each; 10 replicate query sets. \boxnote}\label{fig:rq4b}\end{figure*}
+
+\rqsection{RQ1. Syntactic similarity}{How well do tree kernels retrieve syntactic clones of each type (T1, T2, VST3, ST3, MT3), compared with BM25 and CodeBERT?}
+\input{tables/rq1}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/rq1_metrics}\caption{RQ1 per clone type over 10 replicate query sets (100 queries per type each), corpus with false positives. \boxnote}\label{fig:rq1}\end{figure*}
+
+\rqsection{RQ2. Functional similarity}{How well do tree kernels retrieve code that implements the same task (same BigCloneBench functionality, mostly WT3/T4 clones), compared with BM25 and CodeBERT?}
+\input{tables/rq2}
+\begin{figure}[!htbp]\centering\includegraphics[width=0.55\textwidth]{figures/rq2_metrics}\caption{RQ2: functional similarity over 10 replicate query sets (100 queries each), corpus with false positives. \boxnote}\label{fig:rq2}\end{figure}
+
+\rqsection{RQ3. Size and complexity}{Do the methods' results, and the differences between them, depend on the size (lines of code) or the cyclomatic complexity of the query?}
 \input{tables/size_complexity}
 \input{tables/size_complexity_interaction}
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/size_complexity_rq1}\caption{Size and complexity, RQ1: mean over the five clone types per group of the query, 10 seeds (groups as in Table~\ref{tab:sizecx}). \boxnote}\label{fig:sizecx1}\end{figure*}
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/size_complexity_rq2}\caption{Size and complexity, RQ2: functional similarity per group of the query, 10 seeds. \boxnote}\label{fig:sizecx2}\end{figure*}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/size_complexity_rq1}\caption{RQ3, syntactic clones (as in RQ1): mean over the five clone types per group of the query, 10 seeds (groups as in Table~\ref{tab:sizecx}). \boxnote}\label{fig:sizecx1}\end{figure*}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/size_complexity_rq2}\caption{RQ3, functional similarity (as in RQ2) per group of the query, 10 seeds. \boxnote}\label{fig:sizecx2}\end{figure*}
+
+\rqsection{RQ4. Hybrid: BM25 followed by a tree kernel}{How much of the tree kernels' effectiveness remains, and at what cost, when they only re-rank BM25's top $k$ candidates?}
 \input{tables/hybrid_full}
 \input{tables/hybrid_replicates}
 \input{tables/hybrid_cost}
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/hybrid_full}\caption{Hybrid on every eligible query: BM25, CodeBERT and BM25's top 100 or 200 re-ranked by each tree kernel; value and 95\% confidence interval (bootstrap over functionalities). Top: RQ1, mean over the five clone types; bottom: RQ2.}\label{fig:hybridfull}\end{figure*}
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/hybrid_rq1}\caption{Hybrid against full ranking, RQ1 (mean over the five clone types), 10 replicate query sets: each tree kernel ranking the whole corpus or re-ranking BM25's top 100 or 200, next to BM25 and fine-tuned CodeBERT. \boxnote}\label{fig:hybrid1}\end{figure*}
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/hybrid_rq2}\caption{Hybrid against full ranking, RQ2 (functional similarity), 10 replicate query sets. \boxnote}\label{fig:hybrid2}\end{figure*}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/hybrid_full}\caption{RQ4, hybrid on every eligible query: BM25, CodeBERT and BM25's top 100 or 200 re-ranked by each tree kernel; value and 95\% confidence interval (bootstrap over functionalities). Top: RQ1, mean over the five clone types; bottom: RQ2.}\label{fig:hybridfull}\end{figure*}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/hybrid_rq1}\caption{RQ4, hybrid against full ranking, syntactic clones (as in RQ1) (mean over the five clone types), 10 replicate query sets: each tree kernel ranking the whole corpus or re-ranking BM25's top 100 or 200, next to BM25 and fine-tuned CodeBERT. \boxnote}\label{fig:hybrid1}\end{figure*}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/hybrid_rq2}\caption{RQ4, hybrid against full ranking, functional similarity (as in RQ2) (functional similarity), 10 replicate query sets. \boxnote}\label{fig:hybrid2}\end{figure*}
+\rqsection{Future RQs}{Results not assigned to an RQ of the paper yet.}
+\subsection*{Score fusion}\noindent\emph{Does combining the scores of a tree kernel with those of BM25 or CodeBERT improve retrieval?}\par\medskip
+\input{tables/rq4_fusion}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/rq4_fusion_rq1}\caption{Score fusion, syntactic clones: PTK, BM25, fine-tuned CodeBERT and the fusions of PTK with each (weighted sum at the tuned $W$; RRF); mean over the five clone types, 10 replicate query sets. \boxnote}\label{fig:rq4a}\end{figure*}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/rq4_fusion_rq2}\caption{Score fusion, functional similarity: STK, BM25, fine-tuned CodeBERT and the fusions of STK with each; 10 replicate query sets. \boxnote}\label{fig:rq4b}\end{figure*}
+
+\FloatBarrier
 \end{document}

@@ -1,0 +1,7 @@
+{
+  "fusion": "wsum",
+  "w": 0.5,
+  "k": null,
+  "tree_kernel_run": "exp_v2/results/fp/runs/D_PTK",
+  "other_run": "exp_v2/results/fp/runs/bm25"
+}

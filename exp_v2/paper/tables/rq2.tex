@@ -1,0 +1,20 @@
+\begin{table*}[!htbp]
+\centering
+\caption{RQ2: functional similarity (relevant = every method of the query's functionality, candidates = the whole corpus). Metrics and settings as in Table~\ref{tab:rq1}. Corpus: BigCloneBench true positives plus its 58,103 false positives (72,782 methods); false positives count as non-relevant, except exact copies of the query (ignored). 10 replicate query sets (seeds 55, 1375, 2084, 2802, 3389, 3501, 6251, 8241, 8828, 9080), each with 100 functional queries, drawn at random and independently of the other replicates; tuning queries excluded. Mean $\pm$ standard deviation over the 10 replicates. Best mean per column in bold. $^{+}$/$^{-}$: significantly better/worse than BM25; $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT. Significance: all distinct queries of the replicates pooled, paired bootstrap resampling functionalities, 95\%.}
+\label{tab:rq2}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lcccc}
+\toprule
+Method & nP@5 & nP@10 & MRR & MAP \\
+\midrule
+STK & 0.650$\pm$0.037$^{-\downarrow}$ & 0.599$\pm$0.036$^{-\downarrow}$ & 0.808$\pm$0.024$^{-\downarrow}$ & 0.191$\pm$0.021$^{-\downarrow}$ \\
+SSTK & 0.652$\pm$0.032$^{-\downarrow}$ & 0.596$\pm$0.033$^{-\downarrow}$ & 0.810$\pm$0.021$^{-\downarrow}$ & 0.190$\pm$0.022$^{-\downarrow}$ \\
+PTK & 0.611$\pm$0.039$^{-\downarrow}$ & 0.552$\pm$0.036$^{-\downarrow}$ & 0.774$\pm$0.034$^{-\downarrow}$ & 0.169$\pm$0.021$^{-\downarrow}$ \\
+\midrule
+BM25 & 0.751$\pm$0.028 & 0.708$\pm$0.023 & \textbf{0.879}$\pm$0.020 & \textbf{0.444}$\pm$0.021 \\
+CodeBERT zs & 0.628$\pm$0.021$^{-}$ & 0.573$\pm$0.021$^{-}$ & 0.797$\pm$0.019$^{-}$ & 0.149$\pm$0.014$^{-}$ \\
+CodeBERT ft & \textbf{0.757}$\pm$0.032 & \textbf{0.728}$\pm$0.030 & 0.875$\pm$0.025 & 0.424$\pm$0.029 \\
+\bottomrule
+\end{tabular}
+\end{table*}

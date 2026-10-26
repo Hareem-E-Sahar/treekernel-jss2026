@@ -1,6 +1,6 @@
 """exp_v2 paper tables: corpus with false positives, 10 replicate query sets, mean ± SD over the replicates.
 
-usage: .venv/bin/python exp_v2/paper/make_tables.py   -> exp_v2/paper/tables/{rq1_map,rq1_rq2_metrics,rq4_fusion}.tex
+usage: .venv/bin/python exp_v2/paper/make_tables.py   -> exp_v2/paper/tables/{rq1,rq2,rq4_fusion}.tex
 Inputs: exp_v2/results/fp/{per_replicate_metrics,pooled_compare_metrics}.tsv (exp_v2/eval/replicate_metrics.py),
         exp_v2/results/fp/selected.json (settings and W). Figures are drawn in R: exp_v2/paper/figures.R.
 Significance marks: pooled paired bootstrap over functionalities (95%), per metric.
@@ -88,7 +88,7 @@ def method_table(blocks, label, caption, header, with_setting=True, sep="3.5pt",
     in ALL per block (title row first if given), best mean per block and column in bold."""
     n = len(blocks[0][1])
     lead = 2 if with_setting else 1
-    L = ["\\begin{table*}[t]", "\\centering", f"\\caption{{{caption}}}", f"\\label{{{label}}}", f"\\{size}",
+    L = ["\\begin{table*}[!htbp]", "\\centering", f"\\caption{{{caption}}}", f"\\label{{{label}}}", f"\\{size}",
          f"\\setlength{{\\tabcolsep}}{{{sep}}}", "\\begin{tabular}{" + "l" * lead + "c" * n + "}",
          "\\toprule", *header, "\\midrule"]
     for b, (title, cols) in enumerate(blocks):
@@ -108,27 +108,28 @@ def method_table(blocks, label, caption, header, with_setting=True, sep="3.5pt",
     return L
 
 
-# ---- RQ1: MAP per clone type
-write("rq1_map.tex", method_table(
-    [(None, [(t, "MAP") for t in TYPES + ["mean5"]])],
-    "tab:rq1",
-    "RQ1: MAP per clone type (relevant = the query's clones of that type; the query's other same-functionality methods "
-    "are removed from its ranking). Tree kernels on variant D at the settings tuned on separate queries. Mean = mean over "
-    "the five types. " + setup("rq1") + " Best mean per column in bold. " + MARKS_NOTE + SIG,
-    ["Method & Setting & T1 & T2 & VST3 & ST3 & MT3 & Mean \\\\"]))
-
-# ---- RQ1 and RQ2: the same four metrics
+# ---- RQ1 and RQ2: one table each, the same four metrics as columns
 M4 = ("nP@5", "nP@10", "MRR", "MAP")
 NP_NOTE = ("nP@$k$ = relevant methods in the top $k$ divided by $\\min(k, R)$, $R$ = the query's number of relevant "
            "methods; MRR = mean reciprocal rank of the first relevant method. ")
-write("rq1_rq2_metrics.tex", method_table(
-    [("RQ1: mean over the five clone types", [("mean5", x) for x in M4]),
-     ("RQ2: functional similarity", [("functional", x) for x in M4])],
-    "tab:metrics",
-    "RQ1 and RQ2 under the same four metrics. RQ1: mean over the five clone types; RQ2: functional similarity (relevant = "
-    "every method of the query's functionality, candidates = the whole corpus). " + NP_NOTE + setup("rq1", "rq2")
-    + " Settings as in Table~\\ref{tab:rq1}. Best mean per block and column in bold. " + MARKS_NOTE + SIG,
-    ["Method & nP@5 & nP@10 & MRR & MAP \\\\"], with_setting=False))
+SETTING_NOTE = ("Tree kernels on variant D at the settings tuned on separate queries (STK " + SETTINGS["STK"] + "; SSTK "
+                + SETTINGS["SSTK"] + "; PTK " + SETTINGS["PTK"] + "); BM25 " + SETTINGS["BM25"] + "; CodeBERT: "
+                "microsoft/codebert-base, CLS embedding, cosine; fine-tuned contrastively in 5 folds by functionality. ")
+HEADER4 = ["Method & nP@5 & nP@10 & MRR & MAP \\\\"]
+TYPE_TITLE = {t: t for t in TYPES} | {"mean5": "Mean over the five types"}
+write("rq1.tex", method_table(
+    [(TYPE_TITLE[t], [(t, x) for x in M4]) for t in TYPES + ["mean5"]],
+    "tab:rq1",
+    "RQ1: syntactic clones per clone type (relevant = the query's clones of that type; the query's other "
+    "same-functionality methods are removed from its ranking). " + NP_NOTE + SETTING_NOTE + setup("rq1")
+    + " Best mean per block and column in bold. " + MARKS_NOTE + SIG,
+    HEADER4, with_setting=False))
+write("rq2.tex", method_table(
+    [(None, [("functional", x) for x in M4])],
+    "tab:rq2",
+    "RQ2: functional similarity (relevant = every method of the query's functionality, candidates = the whole corpus). "
+    "Metrics and settings as in Table~\\ref{tab:rq1}. " + setup("rq2") + " Best mean per column in bold. " + MARKS_NOTE + SIG,
+    HEADER4, with_setting=False))
 
 # ---- RQ4: fusion
 OTHER = {"bm25": "BM25", "codebert_ft": "CodeBERT ft"}
@@ -142,8 +143,8 @@ def block(name):
                                               ("RRF", f"{fus} RRF")]
 
 
-L = ["\\begin{table}[t]", "\\centering",
-     "\\caption{RQ4: fusion of a tree kernel (variant D, tuned) with BM25 or with fine-tuned CodeBERT. Weighted sum = "
+L = ["\\begin{table}[!htbp]", "\\centering",
+     "\\caption{Future RQ, score fusion: a tree kernel (variant D, tuned) fused with BM25 or with fine-tuned CodeBERT. Weighted sum = "
      "$W\\cdot$TK + $(1-W)\\cdot$other/max, $W$ tuned on the tuning queries for the RQ's measure; RRF = reciprocal rank "
      "fusion ($k$=60). The RQ1 fusions use PTK, the best kernel on RQ1; the RQ2 fusions use STK. $W$ was tuned on MAP "
      "(RQ1: mean over the five types; RQ2: functional). " + setup("rq1", "rq2") +

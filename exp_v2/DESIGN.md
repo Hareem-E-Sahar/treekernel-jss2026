@@ -53,7 +53,7 @@ Procedure (`scripts/run_tuning.sh`, `eval/tune.py`):
 - **`eval/replicates.py`:** reads the fusion runs from the selection, not from hard-coded names.
 - **New:** `eval/tune.py`, `prep/fp_copies.py`, `scripts/run_tuning.sh`, `scripts/run_replicates.sh`.
 
-## Size and complexity (decided 2026-10-22)
+## RQ3: size and complexity (decided 2026-10-22; RQ3 since 2026-10-26)
 - **Groups of the query**, fixed before any result: small LOC ≤ 6, large LOC ≥ 10 (LOC = physical lines of the method,
   as in the user's earlier study; 7–9 in neither); low McCabe ≤ 10, high McCabe > 10 (Checkstyle 10.21.1
   CyclomaticComplexity with defaults; one method Checkstyle cannot parse, 16226644, is in neither complexity group).
