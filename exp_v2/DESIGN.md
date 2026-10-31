@@ -33,6 +33,15 @@ code (KeLP runner, BM25, CodeBERT encoder) is reused read-only, and only code th
 
 Procedure (`scripts/run_tuning.sh`, `eval/tune.py`):
 1. **Grid:** λ, μ ∈ {0.1, 0.2, 0.4, 0.6, 0.8, 1.0}, restricted to settings computable on the main corpus.
+   - μ applies to PTK only; STK and SSTK have λ alone.
+   - **λ does not mean the same in every kernel.** In STK and SSTK it is the only decay and down-weights larger
+     fragments. In PTK, μ is the vertical decay, which down-weights larger (deeper) fragments, and λ the horizontal one,
+     which penalises gaps when matching child sequences. The tuned values are therefore not comparable across kernels
+     (e.g. PTK λ 0.4 vs SSTK λ 0.1).
+   - **PTK's terminal factor is not tuned:** it stays at KeLP's default of 1 (as in the frozen experiment), so matching
+     leaves are neither favoured nor penalised relative to internal nodes beyond the decays λ and μ. In variant D the
+     leaves carry the lexical content (identifiers, API names), so a factor above 1 would shift PTK towards lexical
+     matching; that is a separate question from structural similarity (possible future experiment).
    - A setting that overflows in KeLP on the false positives is not computable. The overflowing methods are counted
      (`tuning/scan.tsv`, ids in `tuning/scan/`).
 2. **Setting per kernel:** the highest mean over T1–MT3 of micro MAP. Ties keep the first setting in grid order.
