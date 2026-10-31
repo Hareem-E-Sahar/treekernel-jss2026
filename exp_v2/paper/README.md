@@ -13,7 +13,8 @@ Order:
    (inputs from `exp_v2/eval/size_complexity.py`).
 5. Hybrid: `.venv/bin/python exp_v2/paper/hybrid_tables.py` → `tables/hybrid_*.tex`; `Rscript exp_v2/paper/hybrid.R`
    → `figures/hybrid_*.pdf` (inputs from `exp_v2/eval/hybrid.py`).
-6. `pdflatex preview.tex` (twice, from this folder) → `preview.pdf`, all tables and figures.
+6. Cost (after `exp_v2/scripts/run_timing.sh`, `exp_v2/eval/timing.py`, `exp_v2/scripts/run_timing_one_off.sh` and `exp_v2/hybrid/timing_codebert.py --encode-sample 2000`): `.venv/bin/python exp_v2/paper/timing_tables.py` → `tables/{rq2_cost,hybrid_cost}.tex`
+7. `pdflatex preview.tex` (twice, from this folder) → `preview.pdf`, all tables and figures.
 
 | File | Contents |
 |---|---|
@@ -24,7 +25,8 @@ Order:
 | `tables/size_complexity_interaction.tex` | Size and complexity: change of each method difference between groups, with 95% CIs |
 | `tables/hybrid_full.tex` | Hybrid on every eligible query: MAP per type, mean and functional, each with its 95% CI |
 | `tables/hybrid_replicates.tex` | Hybrid vs the full-ranking kernels on the 10 replicate sets, mean ± SD |
-| `tables/hybrid_cost.tex` | Hybrid cost per query: first stage, re-ranking top 100 / 200, full ranking |
+| `tables/rq2_cost.tex` | RQ2: time to evaluate the 100 functional queries of seed 6251, one thread: per query (main result), 100 queries, one-off (preparation + start-up) |
+| `tables/hybrid_cost.tex` | RQ4: hybrid time per query (first + second stage) against the full ranking, same queries, one thread; speed-up |
 | `figures/rq1_metrics.pdf` | RQ1 per clone type, four panels: nP@5, nP@10, MRR, MAP |
 | `figures/rq2_metrics.pdf` | RQ2, four panels: nP@5, nP@10, MRR, MAP |
 | `figures/rq4_fusion_rq1.pdf` | RQ4, PTK fusions, mean over the types, four panels |

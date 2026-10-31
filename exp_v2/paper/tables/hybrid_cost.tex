@@ -1,26 +1,24 @@
 \begin{table}[!htbp]
 \centering
-\caption{RQ4, hybrid: cost per query on the corpus with false positives (72,782 methods). First stage: Elasticsearch's reported search time for BM25's top 200. Second stage: the summed CPU time of the query's kernel evaluations. Full ranking: the tree kernel against the whole corpus, wall time $\times$ threads / queries of the replicate runs (includes tree parsing, so the ratio is approximate). Ratio = full ranking / second stage (means).}
+\caption{RQ4, hybrid: time per query on the same 100 functional queries, corpus and machine as Table~\ref{tab:rq2cost}, one thread. First stage: BM25's top 200 from Elasticsearch (client time). Second stage: the tree kernel on the top $k$ pairs, including reading those candidates' trees. Full ranking: from Table~\ref{tab:rq2cost}, without its set-up. Speed-up = full ranking / hybrid.}
 \label{tab:hybridcost}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{llrrr}
+\begin{tabular}{lrrrrr}
 \toprule
-Kernel & Step & Median ms & Mean ms & Ratio \\
+Kernel & $k$ & First stage (s) & Second stage (s) & Hybrid (s) & Speed-up \\
 \midrule
--- & BM25 top 200 & 11 & 14 & \\
+STK & 100 & 0.013 & 0.057 & 0.070 & 96$\times$ \\
+ & 200 & 0.013 & 0.093 & 0.107 & 63$\times$ \\
+ & full & & & 6.73 & \\
 \midrule
-STK & re-rank top 100 & 24 & 62 & 272$\times$ \\
- & re-rank top 200 & 47 & 112 & 149$\times$ \\
- & full ranking & -- & 16,747 & \\
+SSTK & 100 & 0.013 & 0.054 & 0.067 & 104$\times$ \\
+ & 200 & 0.013 & 0.091 & 0.105 & 67$\times$ \\
+ & full & & & 6.98 & \\
 \midrule
-SSTK & re-rank top 100 & 25 & 63 & 264$\times$ \\
- & re-rank top 200 & 49 & 116 & 142$\times$ \\
- & full ranking & -- & 16,520 & \\
-\midrule
-PTK & re-rank top 100 & 50 & 144 & 248$\times$ \\
- & re-rank top 200 & 96 & 259 & 137$\times$ \\
- & full ranking & -- & 35,588 & \\
+PTK & 100 & 0.013 & 0.080 & 0.093 & 166$\times$ \\
+ & 200 & 0.013 & 0.144 & 0.158 & 98$\times$ \\
+ & full & & & 15.51 & \\
 \bottomrule
 \end{tabular}
 \end{table}

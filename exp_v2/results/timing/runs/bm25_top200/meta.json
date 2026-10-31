@@ -1,0 +1,9 @@
+{
+  "stage": "BM25 top k",
+  "index": "bcb_e5",
+  "queries": "exp_v2/data/replicates/seed6251/functional.tsv",
+  "n_queries": 100,
+  "k": 200,
+  "wall_seconds": 1.4,
+  "elasticsearch": "8.19.15"
+}

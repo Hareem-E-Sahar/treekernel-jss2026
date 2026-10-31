@@ -1,0 +1,12 @@
+{
+ "threads": 1,
+ "queries": "exp_v2/data/replicates/seed6251/functional.tsv",
+ "n_queries": 100,
+ "n_corpus": 72782,
+ "model_load_s": 7.16,
+ "query_s_mean": 0.4087,
+ "query_s_median": 0.4697,
+ "query_s_min": 0.1197,
+ "query_s_max": 1.4648,
+ "query_s_total": 40.87
+}

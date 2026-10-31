@@ -1,0 +1,4 @@
+step	seconds	ms_per_method
+parse	8.50	0.117
+variant D	34.07	0.468
+BM25 tokens	7.50	0.103

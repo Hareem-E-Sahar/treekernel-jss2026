@@ -1,0 +1,9 @@
+{
+ "threads": 1,
+ "n_corpus": 72782,
+ "model_load_s": 3.55,
+ "sample_methods": 2000,
+ "encode_ms_per_method_mean": 306.9,
+ "encode_ms_per_method_median": 318.9,
+ "corpus_encoding_s_estimate": 22337.3
+}

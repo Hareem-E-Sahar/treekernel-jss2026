@@ -1,9 +1,9 @@
 """exp_v2 paper tables for the hybrid (BM25 top k re-ranked by a tree kernel), corpus with false positives.
 
 usage: .venv/bin/python exp_v2/paper/hybrid_tables.py
-  -> exp_v2/paper/tables/{hybrid_full,hybrid_replicates,hybrid_cost}.tex
-Inputs: exp_v2/results/hybrid/{full_values,full_compare,replicate_values,replicate_compare,timing}.tsv
-(exp_v2/eval/hybrid.py). Figures: exp_v2/paper/hybrid.R.
+  -> exp_v2/paper/tables/{hybrid_full,hybrid_replicates}.tex
+Inputs: exp_v2/results/hybrid/{full_values,full_compare,replicate_values,replicate_compare}.tsv
+(exp_v2/eval/hybrid.py). Figures: exp_v2/paper/hybrid.R. Cost table: exp_v2/paper/timing_tables.py.
 """
 import csv
 from collections import defaultdict
@@ -137,26 +137,3 @@ for b, (title, metric) in enumerate(BLOCKS):
         L.append(f"\\quad {tex(r)} & " + " & ".join(cells) + " \\\\")
 L += ["\\bottomrule", "\\end{tabular}", "\\end{table*}"]
 write("hybrid_replicates.tex", L)
-
-# ---- cost per query
-T = {r["step"]: r for r in csv.DictReader(open(R / "timing.tsv"), delimiter="\t")}
-first = T["BM25 top 200 (first stage)"]
-L = ["\\begin{table}[!htbp]", "\\centering",
-     "\\caption{RQ4, hybrid: cost per query on the corpus with false positives (72,782 methods). First stage: Elasticsearch's "
-     "reported search time for BM25's top 200. Second stage: the summed CPU time of the query's kernel evaluations. "
-     "Full ranking: the tree kernel against the whole corpus, wall time $\\times$ threads / queries of the replicate runs "
-     "(includes tree parsing, so the ratio is approximate). Ratio = full ranking / second stage (means).}",
-     "\\label{tab:hybridcost}", "\\footnotesize", "\\setlength{\\tabcolsep}{4pt}", "\\begin{tabular}{llrrr}", "\\toprule",
-     "Kernel & Step & Median ms & Mean ms & Ratio \\\\", "\\midrule",
-     f"-- & BM25 top 200 & {float(first['median_ms']):.0f} & {float(first['mean_ms']):.0f} & \\\\", "\\midrule"]
-for k in KERNELS:
-    full = float(T[f"{k} full ranking (72,782 methods)"]["mean_ms"])
-    for K in (100, 200):
-        t = T[f"{k} on the top {K} (second stage)"]
-        L.append(f"{k if K == 100 else ''} & re-rank top {K} & {float(t['median_ms']):.0f} & {float(t['mean_ms']):.0f} & "
-                 f"{full / float(t['mean_ms']):.0f}$\\times$ \\\\")
-    L.append(f" & full ranking & -- & {full:,.0f} & \\\\")
-    if k != KERNELS[-1]:
-        L.append("\\midrule")
-L += ["\\bottomrule", "\\end{tabular}", "\\end{table}"]
-write("hybrid_cost.tex", L)

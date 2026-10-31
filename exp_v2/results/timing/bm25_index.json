@@ -1,0 +1,10 @@
+{
+  "index": "bcb_timing_v2",
+  "trees": "/home/hareem/treekernel_revision_Oct2026/exp_v2/../data/trees_e5/D.tsv",
+  "sources": [
+    "/home/hareem/treekernel_revision_Oct2026/exp_v2/../data/trees_e5/source.tsv"
+  ],
+  "docs": 72782,
+  "index_seconds": 14.2,
+  "store_bytes": 64109368
+}
