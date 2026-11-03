@@ -14,6 +14,7 @@ code (KeLP runner, BM25, CodeBERT encoder) is reused read-only, and only code th
 | Variant | A–D (RQ3) | **D only** |
 | Queries | original sets + 10 replicates | the same 10 replicates (`data/replicates/`, copied unchanged) |
 | Hybrid (BM25 top-k → tree kernel) | – | planned, all eligible queries, k = 100 and 200 (not tuned) |
+| CodeBERT fine-tuning | true positives only | **with false positives as hard negatives** (since 2026-10-31; see below) |
 
 **Why the false-positive corpus is primary:**
 - Raw numbers on the main corpus overstate absolute performance. Every true positive contains its task's search keywords,
@@ -32,7 +33,9 @@ code (KeLP runner, BM25, CodeBERT encoder) is reused read-only, and only code th
 - **Analyses:** analyses by query property (e.g. method size or complexity) split the results; they do not re-tune.
 
 Procedure (`scripts/run_tuning.sh`, `eval/tune.py`):
-1. **Grid:** λ, μ ∈ {0.1, 0.2, 0.4, 0.6, 0.8, 1.0}, restricted to settings computable on the main corpus.
+1. **Grid:** λ, μ ∈ {0.1, 0.2, 0.4, 0.6, 0.8, 1.0}, restricted to the settings computable on the corpus with false
+   positives (KeLP does not overflow for any method). Every setting is run and selected on the 50 tuning queries against
+   the full 72,782-method corpus.
    - μ applies to PTK only; STK and SSTK have λ alone.
    - **λ does not mean the same in every kernel.** In STK and SSTK it is the only decay and down-weights larger
      fragments. In PTK, μ is the vertical decay, which down-weights larger (deeper) fragments, and λ the horizontal one,
@@ -42,8 +45,9 @@ Procedure (`scripts/run_tuning.sh`, `eval/tune.py`):
      leaves are neither favoured nor penalised relative to internal nodes beyond the decays λ and μ. In variant D the
      leaves carry the lexical content (identifiers, API names), so a factor above 1 would shift PTK towards lexical
      matching; that is a separate question from structural similarity (possible future experiment).
-   - A setting that overflows in KeLP on the false positives is not computable. The overflowing methods are counted
-     (`tuning/scan.tsv`, ids in `tuning/scan/`).
+   - The corpus contains the main corpus, so a setting that overflows there (`results/grid_scan/main_corpus/scan.tsv`)
+     overflows here too. The false positives make further settings non-computable; their overflowing methods are
+     counted (`tuning/scan.tsv`, ids in `tuning/scan/`).
 2. **Setting per kernel:** the highest mean over T1–MT3 of micro MAP. Ties keep the first setting in grid order.
 3. **Fusion kernels:** the best kernel by that objective is fused for RQ1, and the best by functional MAP for RQ2. This
    is the rule the frozen experiment followed implicitly (PTK for RQ1, STK for RQ2), now written down.
@@ -61,6 +65,29 @@ Procedure (`scripts/run_tuning.sh`, `eval/tune.py`):
   checked).
 - **`eval/replicates.py`:** reads the fusion runs from the selection, not from hard-coded names.
 - **New:** `eval/tune.py`, `prep/fp_copies.py`, `scripts/run_tuning.sh`, `scripts/run_replicates.sh`.
+- **`embed/finetune_fp.py`:** `embed/codebert.py finetune` plus hard negatives from the false positives (see
+  "CodeBERT fine-tuned with false positives").
+
+## CodeBERT fine-tuned with false positives (decided 2026-10-31)
+- **Why:** the fine-tuned models were trained in the frozen experiment on true positives only, and exp_v2 first reused
+  them without a decision. Everything else (KeLP settings, fusion W) was tuned on the corpus with false positives, so
+  the strongest baseline had never seen the lookalikes that make this corpus hard.
+- **Recipe** (`embed/finetune_fp.py`; otherwise as `embed/codebert.py finetune`: 5 folds by functionality, 16 pairs per
+  batch, symmetric InfoNCE at temperature 0.05, AdamW lr 2e-5, 500 steps, 256 tokens, seed 20261018 + fold):
+  - for each pair (a, b) of functionality t, one false positive judged for t is added as a hard negative when t has one
+    (40 of the 43 functionalities do); a is scored against [b; hard negatives] and b against [a; hard negatives], and
+    the other pairs' methods stay negatives;
+  - **no leakage:** model k uses only false positives whose judged functionalities all lie outside fold k;
+  - **excluded:** the 160 false positives whose source equals (ignoring whitespace) a true positive of a functionality
+    they are judged false for;
+  - gradient checkpointing (memory: 4 GB instead of 12 GB; same losses, checked on 4 steps); 14 threads instead of 8
+    (speed only).
+- **Recorded:** training and encoding time per model (`data/codebert/models_fp/fold<k>/train_meta.json`,
+  `data/codebert/emb/fpft_fold<k>_e5.npy.json`), the training loss per step, and the hard-negative pool per fold.
+- **Runs:** `scripts/run_codebert_fp.sh` (train, encode), then `scripts/rerun_codebert_ft.sh` (archives the previous
+  CodeBERT ft results to `results/archive_codebert_tp/` and reruns tuning of W, replicates, untuned fusion, size and
+  complexity, hybrid). The main-corpus setting (`results/main/`, not in the paper) keeps the true-positive models.
+- **Unchanged:** zero-shot CodeBERT, BM25, the kernels, and CodeBERT's per-query cost (same architecture).
 
 ## RQ3: size and complexity (decided 2026-10-22; RQ3 since 2026-10-26)
 - **Groups of the query**, fixed before any result: small LOC ≤ 6, large LOC ≥ 10 (LOC = physical lines of the method,

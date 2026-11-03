@@ -3,6 +3,10 @@
 Design and rationale: `DESIGN.md`. Order of steps:
 
 1. `prep/fp_copies.py` → `data/fp_copies.tsv` (false positives that are exact copies of a true positive).
+1b. `scripts/run_codebert_fp.sh` → `data/codebert/models_fp/`, `data/codebert/emb/fpft_fold{k}_e5.npy` (CodeBERT
+    fine-tuned with false positives as hard negatives, 2026-10-31; used by every later step). The results first
+    obtained with the true-positive models were rerun by `scripts/rerun_codebert_ft.sh` and archived in
+    `results/archive_codebert_tp/`.
 2. `scripts/run_tuning.sh` → `tuning/` (grid on the 50 tuning queries, then `eval/tune.py` → `tuning/selected.json`).
 3. `scripts/run_replicates.sh` → `results/fp/` (10 replicates at the selected settings), then
    `.venv/bin/python exp_v2/eval/replicates.py fp`.
@@ -33,8 +37,9 @@ Design and rationale: `DESIGN.md`. Order of steps:
   | Fusion | W | Frozen experiment |
   |---|---|---|
   | PTK + BM25 | **0.9** | 0.8 |
-  | PTK + CodeBERT ft | 0.6 | 0.6 |
+  | PTK + CodeBERT ft | **0.5** (0.6 with the true-positive models) | 0.6 |
   | STK + BM25 (RQ2) | 0.0 | 0.0 |
   | STK + CodeBERT ft (RQ2) | 0.2 | 0.1 |
 
-- **On the tuning queries:** BM25 RQ1 0.819, MAP@R 0.349; CodeBERT ft RQ1 0.814, MAP@R 0.377.
+- **On the tuning queries:** BM25 RQ1 0.819, MAP@R 0.349; CodeBERT ft RQ1 0.866, RQ2 MAP 0.503 (models fine-tuned with false positives; the
+  true-positive models had 0.814 and 0.497, MAP@R 0.377).

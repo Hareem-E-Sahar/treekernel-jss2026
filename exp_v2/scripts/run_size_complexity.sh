@@ -78,7 +78,7 @@ for r in codebert_zs codebert_ft; do
     if [ $r = codebert_zs ]; then
       .venv/bin/python embed/codebert.py run $N/$r data/codebert/emb/zeroshot_e5.npy --trees $TREES --queries $N/all.tsv
     else
-      .venv/bin/python embed/codebert.py run $N/$r "data/codebert/emb/fold{k}_e5.npy" --folds --trees $TREES --queries $N/all.tsv
+      .venv/bin/python embed/codebert.py run $N/$r "data/codebert/emb/fpft_fold{k}_e5.npy" --folds --trees $TREES --queries $N/all.tsv
     fi
   fi
   .venv/bin/python exp_v2/eval/merge_runs.py $U $O/$r $REP/$r $N/$r

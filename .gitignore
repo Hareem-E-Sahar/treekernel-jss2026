@@ -34,3 +34,12 @@ exp_v2/results/hybrid/stage1/topk.tsv
 exp_v2/results/hybrid/pairs*/*.tsv
 !exp_v2/results/hybrid/pairs*/*.timing.tsv
 exp_v2/kernels/classes/
+# exp_v2: CodeBERT fine-tuned with false positives; keep the training logs and timings, not the weights or embeddings
+!data/codebert/models_fp/
+data/codebert/models_fp/*/model.safetensors
+!data/codebert/emb/
+data/codebert/emb/*
+!data/codebert/emb/fpft_fold*_e5.npy.json
+# previous CodeBERT ft results (true-positive models), moved aside by exp_v2/scripts/rerun_codebert_ft.sh; the tracked
+# summaries are in git history (commit 818aa47)
+exp_v2/results/archive_codebert_tp/

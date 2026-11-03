@@ -11,15 +11,15 @@ Corpus with false positives (72,782 methods; exact copies of the query ignored).
 | D PTK | 1.000 ± 0.000 (1.000–1.000) | 0.994 ± 0.003 (0.989–1.000) | 0.987 ± 0.008 (0.970–1.000) | 0.924 ± 0.019 (0.904–0.958) | 0.555 ± 0.044 (0.472–0.611) | 0.892 ± 0.009 (0.877–0.908) | 0.121 ± 0.020 (0.088–0.164) |
 | BM25 | 0.998 ± 0.003 (0.991–1.000) | 0.892 ± 0.018 (0.851–0.916) | 0.924 ± 0.017 (0.901–0.949) | 0.791 ± 0.028 (0.750–0.825) | 0.446 ± 0.038 (0.400–0.506) | 0.810 ± 0.008 (0.796–0.820) | 0.305 ± 0.023 (0.273–0.338) |
 | CodeBERT zs | 1.000 ± 0.001 (0.997–1.000) | 0.958 ± 0.020 (0.916–0.978) | 0.955 ± 0.017 (0.926–0.987) | 0.809 ± 0.020 (0.768–0.835) | 0.396 ± 0.043 (0.338–0.482) | 0.824 ± 0.010 (0.810–0.845) | 0.109 ± 0.015 (0.092–0.140) |
-| CodeBERT ft | 1.000 ± 0.001 (0.997–1.000) | 0.931 ± 0.018 (0.910–0.962) | 0.949 ± 0.020 (0.904–0.973) | 0.780 ± 0.020 (0.750–0.816) | 0.461 ± 0.035 (0.401–0.504) | 0.824 ± 0.009 (0.815–0.842) | 0.310 ± 0.025 (0.274–0.339) |
+| CodeBERT ft | 1.000 ± 0.001 (0.997–1.000) | 0.952 ± 0.020 (0.923–0.983) | 0.957 ± 0.018 (0.919–0.980) | 0.796 ± 0.021 (0.757–0.839) | 0.496 ± 0.043 (0.404–0.551) | 0.840 ± 0.010 (0.824–0.853) | 0.320 ± 0.027 (0.279–0.355) |
 | PTK+BM25 wsum | 1.000 ± 0.000 (1.000–1.000) | 0.996 ± 0.003 (0.990–1.000) | 0.990 ± 0.007 (0.980–0.999) | 0.943 ± 0.017 (0.922–0.969) | 0.661 ± 0.043 (0.574–0.712) | 0.918 ± 0.008 (0.906–0.928) | 0.193 ± 0.021 (0.158–0.232) |
 | PTK+BM25 RRF | 0.999 ± 0.002 (0.996–1.000) | 0.987 ± 0.008 (0.967–0.993) | 0.981 ± 0.008 (0.971–0.994) | 0.911 ± 0.018 (0.885–0.942) | 0.600 ± 0.033 (0.530–0.643) | 0.896 ± 0.006 (0.887–0.903) | 0.217 ± 0.021 (0.186–0.254) |
-| PTK+CodeBERT ft wsum | 1.000 ± 0.000 (1.000–1.000) | 0.996 ± 0.003 (0.991–1.000) | 0.990 ± 0.007 (0.981–1.000) | 0.944 ± 0.013 (0.929–0.967) | 0.672 ± 0.039 (0.607–0.725) | 0.920 ± 0.007 (0.910–0.930) | 0.285 ± 0.024 (0.244–0.312) |
-| PTK+CodeBERT ft RRF | 1.000 ± 0.000 (1.000–1.000) | 0.979 ± 0.015 (0.949–0.998) | 0.982 ± 0.011 (0.959–1.000) | 0.909 ± 0.013 (0.890–0.926) | 0.619 ± 0.037 (0.546–0.677) | 0.898 ± 0.008 (0.887–0.913) | 0.229 ± 0.019 (0.198–0.256) |
+| PTK+CodeBERT ft wsum | 1.000 ± 0.000 (1.000–1.000) | 0.992 ± 0.005 (0.984–1.000) | 0.989 ± 0.008 (0.977–1.000) | 0.935 ± 0.012 (0.919–0.958) | 0.669 ± 0.040 (0.597–0.711) | 0.917 ± 0.008 (0.900–0.927) | 0.307 ± 0.024 (0.270–0.335) |
+| PTK+CodeBERT ft RRF | 1.000 ± 0.000 (1.000–1.000) | 0.980 ± 0.012 (0.960–0.994) | 0.981 ± 0.012 (0.965–1.000) | 0.915 ± 0.012 (0.896–0.929) | 0.636 ± 0.041 (0.567–0.677) | 0.903 ± 0.009 (0.889–0.917) | 0.232 ± 0.018 (0.203–0.258) |
 | STK+BM25 wsum | 0.998 ± 0.003 (0.991–1.000) | 0.892 ± 0.018 (0.851–0.916) | 0.924 ± 0.017 (0.901–0.949) | 0.791 ± 0.028 (0.750–0.825) | 0.446 ± 0.038 (0.400–0.506) | 0.810 ± 0.008 (0.796–0.820) | 0.305 ± 0.023 (0.273–0.338) |
 | STK+BM25 RRF | 0.999 ± 0.002 (0.996–1.000) | 0.984 ± 0.009 (0.968–0.994) | 0.975 ± 0.009 (0.957–0.987) | 0.888 ± 0.023 (0.863–0.921) | 0.537 ± 0.042 (0.469–0.598) | 0.877 ± 0.009 (0.866–0.893) | 0.229 ± 0.021 (0.200–0.263) |
-| STK+CodeBERT ft wsum | 1.000 ± 0.000 (1.000–1.000) | 0.982 ± 0.011 (0.964–0.998) | 0.977 ± 0.018 (0.934–0.997) | 0.847 ± 0.017 (0.829–0.880) | 0.533 ± 0.035 (0.453–0.568) | 0.868 ± 0.008 (0.851–0.878) | 0.320 ± 0.026 (0.284–0.353) |
-| STK+CodeBERT ft RRF | 1.000 ± 0.000 (1.000–1.000) | 0.981 ± 0.013 (0.956–1.000) | 0.982 ± 0.013 (0.954–0.999) | 0.898 ± 0.016 (0.876–0.926) | 0.580 ± 0.037 (0.505–0.640) | 0.888 ± 0.007 (0.880–0.898) | 0.245 ± 0.020 (0.214–0.282) |
+| STK+CodeBERT ft wsum | 1.000 ± 0.000 (1.000–1.000) | 0.978 ± 0.011 (0.963–0.993) | 0.977 ± 0.016 (0.945–0.999) | 0.851 ± 0.019 (0.827–0.880) | 0.563 ± 0.046 (0.466–0.609) | 0.874 ± 0.010 (0.850–0.883) | 0.327 ± 0.027 (0.288–0.360) |
+| STK+CodeBERT ft RRF | 1.000 ± 0.000 (1.000–1.000) | 0.983 ± 0.011 (0.968–0.998) | 0.982 ± 0.013 (0.955–1.000) | 0.904 ± 0.013 (0.884–0.920) | 0.601 ± 0.040 (0.526–0.659) | 0.894 ± 0.008 (0.883–0.903) | 0.249 ± 0.020 (0.220–0.281) |
 
 ## Comparisons per replicate
 
@@ -35,29 +35,29 @@ Paired query bootstrap within each replicate (2,000 resamples). Better / n.s. / 
 | D PTK | BM25 | mean5 | +0.082 (+0.063 to +0.109) | 10 / 0 / 0 |
 | D PTK | BM25 | functional | -0.184 (-0.212 to -0.151) | 0 / 0 / 10 |
 | D PTK | CodeBERT ft | T1 | +0.000 (+0.000 to +0.003) | 0 / 10 / 0 |
-| D PTK | CodeBERT ft | T2 | +0.063 (+0.032 to +0.088) | 10 / 0 / 0 |
-| D PTK | CodeBERT ft | VST3 | +0.039 (+0.010 to +0.084) | 6 / 4 / 0 |
-| D PTK | CodeBERT ft | ST3 | +0.145 (+0.102 to +0.177) | 10 / 0 / 0 |
-| D PTK | CodeBERT ft | MT3 | +0.094 (+0.043 to +0.154) | 5 / 5 / 0 |
-| D PTK | CodeBERT ft | mean5 | +0.068 (+0.053 to +0.087) | 10 / 0 / 0 |
-| D PTK | CodeBERT ft | functional | -0.189 (-0.238 to -0.154) | 0 / 0 / 10 |
+| D PTK | CodeBERT ft | T2 | +0.043 (+0.017 to +0.072) | 10 / 0 / 0 |
+| D PTK | CodeBERT ft | VST3 | +0.030 (+0.014 to +0.068) | 6 / 4 / 0 |
+| D PTK | CodeBERT ft | ST3 | +0.128 (+0.098 to +0.159) | 10 / 0 / 0 |
+| D PTK | CodeBERT ft | MT3 | +0.059 (-0.005 to +0.134) | 3 / 7 / 0 |
+| D PTK | CodeBERT ft | mean5 | +0.052 (+0.038 to +0.068) | 10 / 0 / 0 |
+| D PTK | CodeBERT ft | functional | -0.199 (-0.254 to -0.150) | 0 / 0 / 10 |
 | CodeBERT ft | BM25 | T1 | +0.001 (+0.000 to +0.005) | 0 / 10 / 0 |
-| CodeBERT ft | BM25 | T2 | +0.040 (+0.013 to +0.074) | 4 / 6 / 0 |
-| CodeBERT ft | BM25 | VST3 | +0.025 (-0.005 to +0.070) | 2 / 8 / 0 |
-| CodeBERT ft | BM25 | ST3 | -0.011 (-0.048 to +0.044) | 0 / 10 / 0 |
-| CodeBERT ft | BM25 | MT3 | +0.015 (-0.067 to +0.059) | 0 / 10 / 0 |
-| CodeBERT ft | BM25 | mean5 | +0.014 (-0.005 to +0.029) | 2 / 8 / 0 |
-| CodeBERT ft | BM25 | functional | +0.005 (-0.017 to +0.052) | 1 / 9 / 0 |
+| CodeBERT ft | BM25 | T2 | +0.060 (+0.024 to +0.099) | 6 / 4 / 0 |
+| CodeBERT ft | BM25 | VST3 | +0.034 (+0.007 to +0.068) | 5 / 5 / 0 |
+| CodeBERT ft | BM25 | ST3 | +0.005 (-0.033 to +0.057) | 1 / 9 / 0 |
+| CodeBERT ft | BM25 | MT3 | +0.051 (-0.022 to +0.103) | 5 / 5 / 0 |
+| CodeBERT ft | BM25 | mean5 | +0.030 (+0.007 to +0.043) | 7 / 3 / 0 |
+| CodeBERT ft | BM25 | functional | +0.015 (-0.008 to +0.068) | 2 / 8 / 0 |
 | D STK | BM25 | mean5 | +0.071 (+0.058 to +0.094) | 10 / 0 / 0 |
 | D STK | BM25 | functional | -0.168 (-0.202 to -0.131) | 0 / 0 / 10 |
 | D SSTK | BM25 | mean5 | +0.074 (+0.060 to +0.097) | 10 / 0 / 0 |
 | D SSTK | BM25 | functional | -0.168 (-0.201 to -0.132) | 0 / 0 / 10 |
-| D STK | CodeBERT ft | mean5 | +0.057 (+0.032 to +0.070) | 10 / 0 / 0 |
-| D STK | CodeBERT ft | functional | -0.173 (-0.216 to -0.134) | 0 / 0 / 10 |
-| D SSTK | CodeBERT ft | mean5 | +0.061 (+0.035 to +0.074) | 10 / 0 / 0 |
-| D SSTK | CodeBERT ft | functional | -0.173 (-0.215 to -0.134) | 0 / 0 / 10 |
-| CodeBERT ft | CodeBERT zs | mean5 | +0.001 (-0.018 to +0.024) | 0 / 10 / 0 |
-| CodeBERT ft | CodeBERT zs | functional | +0.201 (+0.167 to +0.235) | 10 / 0 / 0 |
+| D STK | CodeBERT ft | mean5 | +0.041 (+0.017 to +0.058) | 9 / 1 / 0 |
+| D STK | CodeBERT ft | functional | -0.183 (-0.231 to -0.130) | 0 / 0 / 10 |
+| D SSTK | CodeBERT ft | mean5 | +0.044 (+0.020 to +0.059) | 10 / 0 / 0 |
+| D SSTK | CodeBERT ft | functional | -0.184 (-0.231 to -0.131) | 0 / 0 / 10 |
+| CodeBERT ft | CodeBERT zs | mean5 | +0.017 (-0.007 to +0.039) | 3 / 7 / 0 |
+| CodeBERT ft | CodeBERT zs | functional | +0.211 (+0.163 to +0.251) | 10 / 0 / 0 |
 | PTK+BM25 wsum | D PTK | ST3 | +0.018 (+0.008 to +0.042) | 3 / 7 / 0 |
 | PTK+BM25 wsum | D PTK | MT3 | +0.105 (+0.065 to +0.141) | 10 / 0 / 0 |
 | PTK+BM25 wsum | D PTK | mean5 | +0.026 (+0.015 to +0.035) | 10 / 0 / 0 |
@@ -70,26 +70,26 @@ Paired query bootstrap within each replicate (2,000 resamples). Better / n.s. / 
 | PTK+BM25 RRF | BM25 | ST3 | +0.119 (+0.091 to +0.149) | 10 / 0 / 0 |
 | PTK+BM25 RRF | BM25 | MT3 | +0.154 (+0.103 to +0.224) | 10 / 0 / 0 |
 | PTK+BM25 RRF | BM25 | mean5 | +0.085 (+0.075 to +0.098) | 10 / 0 / 0 |
-| PTK+CodeBERT ft wsum | D PTK | ST3 | +0.019 (+0.009 to +0.037) | 1 / 9 / 0 |
-| PTK+CodeBERT ft wsum | D PTK | MT3 | +0.117 (+0.081 to +0.145) | 10 / 0 / 0 |
-| PTK+CodeBERT ft wsum | D PTK | mean5 | +0.028 (+0.020 to +0.036) | 10 / 0 / 0 |
-| PTK+CodeBERT ft wsum | CodeBERT ft | ST3 | +0.164 (+0.139 to +0.190) | 10 / 0 / 0 |
-| PTK+CodeBERT ft wsum | CodeBERT ft | MT3 | +0.211 (+0.177 to +0.237) | 10 / 0 / 0 |
-| PTK+CodeBERT ft wsum | CodeBERT ft | mean5 | +0.096 (+0.085 to +0.109) | 10 / 0 / 0 |
-| PTK+CodeBERT ft RRF | D PTK | ST3 | -0.015 (-0.039 to +0.022) | 0 / 9 / 1 |
-| PTK+CodeBERT ft RRF | D PTK | MT3 | +0.063 (+0.021 to +0.109) | 7 / 3 / 0 |
-| PTK+CodeBERT ft RRF | D PTK | mean5 | +0.005 (-0.006 to +0.019) | 2 / 8 / 0 |
-| PTK+CodeBERT ft RRF | CodeBERT ft | ST3 | +0.130 (+0.108 to +0.167) | 10 / 0 / 0 |
-| PTK+CodeBERT ft RRF | CodeBERT ft | MT3 | +0.158 (+0.115 to +0.180) | 10 / 0 / 0 |
-| PTK+CodeBERT ft RRF | CodeBERT ft | mean5 | +0.074 (+0.059 to +0.087) | 10 / 0 / 0 |
+| PTK+CodeBERT ft wsum | D PTK | ST3 | +0.010 (-0.006 to +0.031) | 0 / 10 / 0 |
+| PTK+CodeBERT ft wsum | D PTK | MT3 | +0.114 (+0.066 to +0.157) | 10 / 0 / 0 |
+| PTK+CodeBERT ft wsum | D PTK | mean5 | +0.025 (+0.015 to +0.029) | 10 / 0 / 0 |
+| PTK+CodeBERT ft wsum | CodeBERT ft | ST3 | +0.138 (+0.119 to +0.176) | 10 / 0 / 0 |
+| PTK+CodeBERT ft wsum | CodeBERT ft | MT3 | +0.173 (+0.146 to +0.200) | 10 / 0 / 0 |
+| PTK+CodeBERT ft wsum | CodeBERT ft | mean5 | +0.077 (+0.067 to +0.087) | 10 / 0 / 0 |
+| PTK+CodeBERT ft RRF | D PTK | ST3 | -0.009 (-0.034 to +0.025) | 0 / 10 / 0 |
+| PTK+CodeBERT ft RRF | D PTK | MT3 | +0.081 (+0.030 to +0.122) | 9 / 1 / 0 |
+| PTK+CodeBERT ft RRF | D PTK | mean5 | +0.010 (-0.002 to +0.020) | 2 / 8 / 0 |
+| PTK+CodeBERT ft RRF | CodeBERT ft | ST3 | +0.119 (+0.086 to +0.169) | 10 / 0 / 0 |
+| PTK+CodeBERT ft RRF | CodeBERT ft | MT3 | +0.140 (+0.108 to +0.164) | 10 / 0 / 0 |
+| PTK+CodeBERT ft RRF | CodeBERT ft | mean5 | +0.062 (+0.053 to +0.071) | 10 / 0 / 0 |
 | STK+BM25 wsum | D STK | functional | +0.168 (+0.131 to +0.202) | 10 / 0 / 0 |
 | STK+BM25 wsum | BM25 | functional | +0.000 (+0.000 to +0.000) | 0 / 10 / 0 |
 | STK+BM25 RRF | D STK | functional | +0.092 (+0.078 to +0.105) | 10 / 0 / 0 |
 | STK+BM25 RRF | BM25 | functional | -0.076 (-0.097 to -0.053) | 0 / 0 / 10 |
-| STK+CodeBERT ft wsum | D STK | functional | +0.183 (+0.146 to +0.228) | 10 / 0 / 0 |
-| STK+CodeBERT ft wsum | CodeBERT ft | functional | +0.011 (+0.006 to +0.014) | 9 / 1 / 0 |
-| STK+CodeBERT ft RRF | D STK | functional | +0.109 (+0.086 to +0.125) | 10 / 0 / 0 |
-| STK+CodeBERT ft RRF | CodeBERT ft | functional | -0.064 (-0.090 to -0.048) | 0 / 0 / 10 |
+| STK+CodeBERT ft wsum | D STK | functional | +0.190 (+0.139 to +0.236) | 10 / 0 / 0 |
+| STK+CodeBERT ft wsum | CodeBERT ft | functional | +0.007 (+0.003 to +0.010) | 9 / 1 / 0 |
+| STK+CodeBERT ft RRF | D STK | functional | +0.112 (+0.085 to +0.131) | 10 / 0 / 0 |
+| STK+CodeBERT ft RRF | CodeBERT ft | functional | -0.071 (-0.100 to -0.046) | 0 / 0 / 10 |
 
 ## Pooled over the replicates, bootstrap over functionalities
 
@@ -102,15 +102,15 @@ Distinct queries (functionalities): T1 901 (32), T2 650 (29), VST3 823 (30), ST3
 | D PTK | 1.000 | 0.995 | 0.987 | 0.924 | 0.554 | 0.892 | 0.121 |
 | BM25 | 0.999 | 0.890 | 0.923 | 0.789 | 0.450 | 0.810 | 0.304 |
 | CodeBERT zs | 1.000 | 0.960 | 0.952 | 0.809 | 0.395 | 0.823 | 0.110 |
-| CodeBERT ft | 1.000 | 0.934 | 0.942 | 0.777 | 0.459 | 0.822 | 0.311 |
+| CodeBERT ft | 1.000 | 0.953 | 0.953 | 0.795 | 0.492 | 0.838 | 0.321 |
 | PTK+BM25 wsum | 1.000 | 0.996 | 0.990 | 0.944 | 0.660 | 0.918 | 0.193 |
 | PTK+BM25 RRF | 0.999 | 0.988 | 0.982 | 0.911 | 0.600 | 0.896 | 0.217 |
-| PTK+CodeBERT ft wsum | 1.000 | 0.995 | 0.990 | 0.945 | 0.671 | 0.920 | 0.286 |
-| PTK+CodeBERT ft RRF | 1.000 | 0.981 | 0.980 | 0.910 | 0.618 | 0.898 | 0.230 |
+| PTK+CodeBERT ft wsum | 1.000 | 0.992 | 0.988 | 0.935 | 0.669 | 0.917 | 0.308 |
+| PTK+CodeBERT ft RRF | 1.000 | 0.981 | 0.980 | 0.916 | 0.634 | 0.902 | 0.233 |
 | STK+BM25 wsum | 0.999 | 0.890 | 0.923 | 0.789 | 0.450 | 0.810 | 0.304 |
 | STK+BM25 RRF | 0.999 | 0.984 | 0.976 | 0.887 | 0.538 | 0.877 | 0.229 |
-| STK+CodeBERT ft wsum | 1.000 | 0.981 | 0.974 | 0.846 | 0.533 | 0.867 | 0.321 |
-| STK+CodeBERT ft RRF | 1.000 | 0.982 | 0.980 | 0.897 | 0.580 | 0.888 | 0.246 |
+| STK+CodeBERT ft wsum | 1.000 | 0.978 | 0.974 | 0.851 | 0.560 | 0.873 | 0.328 |
+| STK+CodeBERT ft RRF | 1.000 | 0.982 | 0.979 | 0.904 | 0.600 | 0.893 | 0.249 |
 
 | A | B | Measure | A | B | A − B | 95% CI (clustered) |
 |---|---|---|---|---|---|---|
@@ -122,29 +122,29 @@ Distinct queries (functionalities): T1 901 (32), T2 650 (29), VST3 823 (30), ST3
 | D PTK | BM25 | mean5 | 0.892 | 0.810 | +0.082 * | +0.053 to +0.111 |
 | D PTK | BM25 | functional | 0.121 | 0.304 | -0.183 * | -0.271 to -0.115 |
 | D PTK | CodeBERT ft | T1 | 1.000 | 1.000 | +0.000 | +0.000 to +0.001 |
-| D PTK | CodeBERT ft | T2 | 0.995 | 0.934 | +0.062 * | +0.017 to +0.131 |
-| D PTK | CodeBERT ft | VST3 | 0.987 | 0.942 | +0.045 * | +0.016 to +0.086 |
-| D PTK | CodeBERT ft | ST3 | 0.924 | 0.777 | +0.147 * | +0.070 to +0.224 |
-| D PTK | CodeBERT ft | MT3 | 0.554 | 0.459 | +0.094 | -0.002 to +0.202 |
-| D PTK | CodeBERT ft | mean5 | 0.892 | 0.822 | +0.070 * | +0.038 to +0.099 |
-| D PTK | CodeBERT ft | functional | 0.121 | 0.311 | -0.189 * | -0.266 to -0.130 |
+| D PTK | CodeBERT ft | T2 | 0.995 | 0.953 | +0.042 * | +0.018 to +0.075 |
+| D PTK | CodeBERT ft | VST3 | 0.987 | 0.953 | +0.034 * | +0.005 to +0.072 |
+| D PTK | CodeBERT ft | ST3 | 0.924 | 0.795 | +0.129 * | +0.058 to +0.190 |
+| D PTK | CodeBERT ft | MT3 | 0.554 | 0.492 | +0.062 | -0.019 to +0.136 |
+| D PTK | CodeBERT ft | mean5 | 0.892 | 0.838 | +0.054 * | +0.028 to +0.076 |
+| D PTK | CodeBERT ft | functional | 0.121 | 0.321 | -0.200 * | -0.279 to -0.138 |
 | CodeBERT ft | BM25 | T1 | 1.000 | 0.999 | +0.001 | +0.000 to +0.003 |
-| CodeBERT ft | BM25 | T2 | 0.934 | 0.890 | +0.044 | -0.041 to +0.107 |
-| CodeBERT ft | BM25 | VST3 | 0.942 | 0.923 | +0.019 | -0.024 to +0.059 |
-| CodeBERT ft | BM25 | ST3 | 0.777 | 0.789 | -0.012 | -0.081 to +0.077 |
-| CodeBERT ft | BM25 | MT3 | 0.459 | 0.450 | +0.009 | -0.053 to +0.087 |
-| CodeBERT ft | BM25 | mean5 | 0.822 | 0.810 | +0.012 | -0.015 to +0.042 |
-| CodeBERT ft | BM25 | functional | 0.311 | 0.304 | +0.006 | -0.029 to +0.042 |
+| CodeBERT ft | BM25 | T2 | 0.953 | 0.890 | +0.063 * | +0.003 to +0.109 |
+| CodeBERT ft | BM25 | VST3 | 0.953 | 0.923 | +0.030 | -0.009 to +0.066 |
+| CodeBERT ft | BM25 | ST3 | 0.795 | 0.789 | +0.006 | -0.055 to +0.091 |
+| CodeBERT ft | BM25 | MT3 | 0.492 | 0.450 | +0.042 | -0.026 to +0.147 |
+| CodeBERT ft | BM25 | mean5 | 0.838 | 0.810 | +0.028 * | +0.003 to +0.057 |
+| CodeBERT ft | BM25 | functional | 0.321 | 0.304 | +0.017 | -0.016 to +0.048 |
 | D STK | BM25 | mean5 | 0.882 | 0.810 | +0.072 * | +0.047 to +0.093 |
 | D STK | BM25 | functional | 0.137 | 0.304 | -0.168 * | -0.242 to -0.112 |
 | D SSTK | BM25 | mean5 | 0.885 | 0.810 | +0.075 * | +0.050 to +0.097 |
 | D SSTK | BM25 | functional | 0.136 | 0.304 | -0.168 * | -0.244 to -0.112 |
-| D STK | CodeBERT ft | mean5 | 0.882 | 0.822 | +0.059 * | +0.031 to +0.084 |
-| D STK | CodeBERT ft | functional | 0.137 | 0.311 | -0.174 * | -0.241 to -0.126 |
-| D SSTK | CodeBERT ft | mean5 | 0.885 | 0.822 | +0.062 * | +0.034 to +0.089 |
-| D SSTK | CodeBERT ft | functional | 0.136 | 0.311 | -0.174 * | -0.242 to -0.126 |
-| CodeBERT ft | CodeBERT zs | mean5 | 0.822 | 0.823 | -0.001 | -0.025 to +0.024 |
-| CodeBERT ft | CodeBERT zs | functional | 0.311 | 0.110 | +0.201 * | +0.150 to +0.274 |
+| D STK | CodeBERT ft | mean5 | 0.882 | 0.838 | +0.043 * | +0.020 to +0.061 |
+| D STK | CodeBERT ft | functional | 0.137 | 0.321 | -0.184 * | -0.252 to -0.134 |
+| D SSTK | CodeBERT ft | mean5 | 0.885 | 0.838 | +0.046 * | +0.022 to +0.065 |
+| D SSTK | CodeBERT ft | functional | 0.136 | 0.321 | -0.184 * | -0.253 to -0.135 |
+| CodeBERT ft | CodeBERT zs | mean5 | 0.838 | 0.823 | +0.015 | -0.003 to +0.034 |
+| CodeBERT ft | CodeBERT zs | functional | 0.321 | 0.110 | +0.211 * | +0.158 to +0.285 |
 | PTK+BM25 wsum | D PTK | ST3 | 0.944 | 0.924 | +0.019 * | +0.004 to +0.035 |
 | PTK+BM25 wsum | D PTK | MT3 | 0.660 | 0.554 | +0.106 * | +0.070 to +0.146 |
 | PTK+BM25 wsum | D PTK | mean5 | 0.918 | 0.892 | +0.026 * | +0.018 to +0.034 |
@@ -157,23 +157,23 @@ Distinct queries (functionalities): T1 901 (32), T2 650 (29), VST3 823 (30), ST3
 | PTK+BM25 RRF | BM25 | ST3 | 0.911 | 0.789 | +0.122 * | +0.067 to +0.184 |
 | PTK+BM25 RRF | BM25 | MT3 | 0.600 | 0.450 | +0.150 * | +0.106 to +0.200 |
 | PTK+BM25 RRF | BM25 | mean5 | 0.896 | 0.810 | +0.086 * | +0.067 to +0.103 |
-| PTK+CodeBERT ft wsum | D PTK | ST3 | 0.945 | 0.924 | +0.020 * | +0.002 to +0.039 |
-| PTK+CodeBERT ft wsum | D PTK | MT3 | 0.671 | 0.554 | +0.118 * | +0.074 to +0.170 |
-| PTK+CodeBERT ft wsum | D PTK | mean5 | 0.920 | 0.892 | +0.028 * | +0.019 to +0.039 |
-| PTK+CodeBERT ft wsum | CodeBERT ft | ST3 | 0.945 | 0.777 | +0.168 * | +0.098 to +0.238 |
-| PTK+CodeBERT ft wsum | CodeBERT ft | MT3 | 0.671 | 0.459 | +0.212 * | +0.152 to +0.292 |
-| PTK+CodeBERT ft wsum | CodeBERT ft | mean5 | 0.920 | 0.822 | +0.098 * | +0.072 to +0.123 |
-| PTK+CodeBERT ft RRF | D PTK | ST3 | 0.910 | 0.924 | -0.014 | -0.049 to +0.023 |
-| PTK+CodeBERT ft RRF | D PTK | MT3 | 0.618 | 0.554 | +0.064 * | +0.009 to +0.119 |
-| PTK+CodeBERT ft RRF | D PTK | mean5 | 0.898 | 0.892 | +0.006 | -0.008 to +0.020 |
-| PTK+CodeBERT ft RRF | CodeBERT ft | ST3 | 0.910 | 0.777 | +0.133 * | +0.083 to +0.182 |
-| PTK+CodeBERT ft RRF | CodeBERT ft | MT3 | 0.618 | 0.459 | +0.159 * | +0.112 to +0.215 |
-| PTK+CodeBERT ft RRF | CodeBERT ft | mean5 | 0.898 | 0.822 | +0.075 * | +0.057 to +0.093 |
+| PTK+CodeBERT ft wsum | D PTK | ST3 | 0.935 | 0.924 | +0.011 | -0.010 to +0.036 |
+| PTK+CodeBERT ft wsum | D PTK | MT3 | 0.669 | 0.554 | +0.115 * | +0.068 to +0.170 |
+| PTK+CodeBERT ft wsum | D PTK | mean5 | 0.917 | 0.892 | +0.025 * | +0.015 to +0.037 |
+| PTK+CodeBERT ft wsum | CodeBERT ft | ST3 | 0.935 | 0.795 | +0.140 * | +0.085 to +0.194 |
+| PTK+CodeBERT ft wsum | CodeBERT ft | MT3 | 0.669 | 0.492 | +0.176 * | +0.131 to +0.222 |
+| PTK+CodeBERT ft wsum | CodeBERT ft | mean5 | 0.917 | 0.838 | +0.078 * | +0.060 to +0.096 |
+| PTK+CodeBERT ft RRF | D PTK | ST3 | 0.916 | 0.924 | -0.008 | -0.036 to +0.025 |
+| PTK+CodeBERT ft RRF | D PTK | MT3 | 0.634 | 0.554 | +0.080 * | +0.039 to +0.126 |
+| PTK+CodeBERT ft RRF | D PTK | mean5 | 0.902 | 0.892 | +0.010 | -0.000 to +0.023 |
+| PTK+CodeBERT ft RRF | CodeBERT ft | ST3 | 0.916 | 0.795 | +0.121 * | +0.077 to +0.160 |
+| PTK+CodeBERT ft RRF | CodeBERT ft | MT3 | 0.634 | 0.492 | +0.142 * | +0.102 to +0.184 |
+| PTK+CodeBERT ft RRF | CodeBERT ft | mean5 | 0.902 | 0.838 | +0.064 * | +0.050 to +0.077 |
 | STK+BM25 wsum | D STK | functional | 0.304 | 0.137 | +0.168 * | +0.112 to +0.242 |
 | STK+BM25 wsum | BM25 | functional | 0.304 | 0.304 | +0.000 | +0.000 to +0.000 |
 | STK+BM25 RRF | D STK | functional | 0.229 | 0.137 | +0.092 * | +0.066 to +0.127 |
 | STK+BM25 RRF | BM25 | functional | 0.229 | 0.304 | -0.076 * | -0.118 to -0.044 |
-| STK+CodeBERT ft wsum | D STK | functional | 0.321 | 0.137 | +0.184 * | +0.135 to +0.253 |
-| STK+CodeBERT ft wsum | CodeBERT ft | functional | 0.321 | 0.311 | +0.010 * | +0.003 to +0.019 |
-| STK+CodeBERT ft RRF | D STK | functional | 0.246 | 0.137 | +0.109 * | +0.082 to +0.145 |
-| STK+CodeBERT ft RRF | CodeBERT ft | functional | 0.246 | 0.311 | -0.065 * | -0.098 to -0.040 |
+| STK+CodeBERT ft wsum | D STK | functional | 0.328 | 0.137 | +0.192 * | +0.140 to +0.261 |
+| STK+CodeBERT ft wsum | CodeBERT ft | functional | 0.328 | 0.321 | +0.007 * | +0.002 to +0.014 |
+| STK+CodeBERT ft RRF | D STK | functional | 0.249 | 0.137 | +0.113 * | +0.086 to +0.149 |
+| STK+CodeBERT ft RRF | CodeBERT ft | functional | 0.249 | 0.321 | -0.072 * | -0.106 to -0.045 |

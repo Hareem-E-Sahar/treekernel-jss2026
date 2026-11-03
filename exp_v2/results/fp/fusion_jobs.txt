@@ -1,4 +1,4 @@
 rq1_PTK_bm25 PTK bm25 0.9
-rq1_PTK_codebert_ft PTK codebert_ft 0.6
+rq1_PTK_codebert_ft PTK codebert_ft 0.5
 rq2_STK_bm25 STK bm25 0.0
 rq2_STK_codebert_ft STK codebert_ft 0.2

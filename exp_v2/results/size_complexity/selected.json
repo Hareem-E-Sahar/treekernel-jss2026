@@ -36,7 +36,7 @@
       "kernel": "PTK",
       "other": "CodeBERT ft",
       "objective": "rq1",
-      "w": 0.6
+      "w": 0.5
     },
     "rq2_STK_bm25": {
       "kernel": "STK",
@@ -57,8 +57,8 @@
       "rq1": 0.818879
     },
     "CodeBERT ft": {
-      "rq2": 0.497426,
-      "rq1": 0.814464
+      "rq2": 0.50334,
+      "rq1": 0.865926
     }
   }
 }

@@ -1,0 +1,118 @@
+== fold 0: fine-tune 02:45:06
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 42457.22it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  fold 0 step 0 loss 3.812 27s
+  fold 0 step 25 loss 3.536 708s
+  fold 0 step 50 loss 3.140 1501s
+  fold 0 step 75 loss 1.775 2323s
+  fold 0 step 100 loss 1.318 3143s
+  fold 0 step 125 loss 1.019 3959s
+  fold 0 step 150 loss 0.913 4767s
+  fold 0 step 175 loss 0.799 5574s
+  fold 0 step 200 loss 0.799 6377s
+  fold 0 step 225 loss 0.636 7197s
+  fold 0 step 250 loss 0.664 8024s
+  fold 0 step 275 loss 0.595 8847s
+  fold 0 step 300 loss 0.584 9671s
+  fold 0 step 325 loss 0.574 10483s
+  fold 0 step 350 loss 0.586 11292s
+  fold 0 step 375 loss 0.515 12117s
+  fold 0 step 400 loss 0.525 12951s
+  fold 0 step 425 loss 0.509 13780s
+  fold 0 step 450 loss 0.421 14605s
+  fold 0 step 475 loss 0.483 15433s
+  fold 0 step 499 loss 0.590 16217s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  9.87it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  9.85it/s]
+fold 0 trained in 16218s -> /home/hareem/treekernel_revision_Oct2026/data/codebert/models_fp/fold0
+== fold 1: fine-tune 07:15:30
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 42977.52it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  fold 1 step 0 loss 3.759 33s
+  fold 1 step 25 loss 3.530 885s
+  fold 1 step 50 loss 3.154 1732s
+  fold 1 step 75 loss 1.819 2567s
+  fold 1 step 100 loss 1.492 3402s
+  fold 1 step 125 loss 1.124 4232s
+  fold 1 step 150 loss 1.155 5079s
+  fold 1 step 175 loss 1.077 5934s
+  fold 1 step 200 loss 0.960 6778s
+  fold 1 step 225 loss 0.925 7614s
+  fold 1 step 250 loss 0.875 8448s
+  fold 1 step 275 loss 0.897 9285s
+  fold 1 step 300 loss 0.704 10129s
+  fold 1 step 325 loss 0.757 10971s
+  fold 1 step 350 loss 0.720 11805s
+  fold 1 step 375 loss 0.817 12633s
+  fold 1 step 400 loss 0.652 13412s
+  fold 1 step 425 loss 0.822 14075s
+  fold 1 step 450 loss 0.644 14721s
+  fold 1 step 475 loss 0.726 15379s
+  fold 1 step 499 loss 0.687 16004s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 10.92it/s]
+fold 1 trained in 16004s -> /home/hareem/treekernel_revision_Oct2026/data/codebert/models_fp/fold1
+== fold 2: fine-tune 11:42:22
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 27621.50it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  fold 2 step 0 loss 3.631 27s
+  fold 2 step 25 loss 3.536 681s
+  fold 2 step 50 loss 3.207 1336s
+  fold 2 step 75 loss 1.977 2009s
+  fold 2 step 100 loss 1.174 12159s
+  fold 2 step 125 loss 1.120 12820s
+  fold 2 step 150 loss 1.052 13486s
+  fold 2 step 175 loss 0.977 14124s
+  fold 2 step 200 loss 0.827 14761s
+  fold 2 step 225 loss 0.844 15405s
+  fold 2 step 250 loss 0.740 16049s
+  fold 2 step 275 loss 0.807 16693s
+  fold 2 step 300 loss 0.691 17340s
+  fold 2 step 325 loss 0.844 17984s
+  fold 2 step 350 loss 0.665 18625s
+  fold 2 step 375 loss 0.673 19268s
+  fold 2 step 400 loss 0.714 19910s
+  fold 2 step 425 loss 0.670 20558s
+  fold 2 step 450 loss 0.639 21203s
+  fold 2 step 475 loss 0.584 21854s
+  fold 2 step 499 loss 0.586 22476s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  8.92it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  8.90it/s]
+fold 2 trained in 22476s -> /home/hareem/treekernel_revision_Oct2026/data/codebert/models_fp/fold2
+== fold 3: fine-tune 17:57:06
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 38377.24it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  fold 3 step 0 loss 3.748 26s
+  fold 3 step 25 loss 3.606 684s
+  fold 3 step 50 loss 3.228 1343s
+  fold 3 step 75 loss 1.674 1997s
+  fold 3 step 100 loss 1.208 2653s
+  fold 3 step 125 loss 1.089 3310s
+  fold 3 step 150 loss 0.832 3967s
+  fold 3 step 175 loss 0.991 4628s
+  fold 3 step 200 loss 0.887 5293s
+  fold 3 step 225 loss 0.743 5957s
+  fold 3 step 250 loss 0.762 6619s
+  fold 3 step 275 loss 0.682 7282s
+  fold 3 step 300 loss 0.700 7945s
+  fold 3 step 325 loss 0.603 8610s
+  fold 3 step 350 loss 0.604 9274s
+  fold 3 step 375 loss 0.580 9940s
+  fold 3 step 400 loss 0.650 10605s
+  fold 3 step 425 loss 0.504 11272s
+  fold 3 step 450 loss 0.508 11940s
+  fold 3 step 475 loss 0.570 12606s
+  fold 3 step 499 loss 0.601 13250s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  9.01it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  9.00it/s]
+fold 3 trained in 13250s -> /home/hareem/treekernel_revision_Oct2026/data/codebert/models_fp/fold3
+== fold 4: fine-tune 21:38:03
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 34743.03it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  fold 4 step 0 loss 3.677 27s
+  fold 4 step 25 loss 3.543 672s
+  fold 4 step 50 loss 3.139 1320s
+  fold 4 step 75 loss 1.742 1963s
+  fold 4 step 100 loss 1.281 2608s
+  fold 4 step 125 loss 1.092 3256s
+  fold 4 step 150 loss 1.101 3912s
+  fold 4 step 175 loss 0.857 6808s
+  fold 4 step 200 loss 0.742 7535s
+  fold 4 step 225 loss 0.720 8254s
+  fold 4 step 250 loss 0.794 8939s

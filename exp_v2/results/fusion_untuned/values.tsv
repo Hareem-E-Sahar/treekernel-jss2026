@@ -1,23 +1,23 @@
 rq	method	mean	sd
 RQ1 (MAP, mean over the five types)	PTK	0.8923	0.0094
 RQ1 (MAP, mean over the five types)	BM25	0.8102	0.0078
-RQ1 (MAP, mean over the five types)	CodeBERT ft	0.8241	0.0091
+RQ1 (MAP, mean over the five types)	CodeBERT ft	0.8404	0.0101
 RQ1 (MAP, mean over the five types)	PTK+BM25 wsum, tuned W=0.9	0.9178	0.0080
 RQ1 (MAP, mean over the five types)	PTK+BM25 wsum, W=0.5 (untuned)	0.8776	0.0104
 RQ1 (MAP, mean over the five types)	PTK+BM25 RRF (no parameter)	0.8956	0.0057
-RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, tuned W=0.6	0.9204	0.0071
-RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, W=0.5 (untuned)	0.9167	0.0076
-RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft RRF (no parameter)	0.8978	0.0082
+RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, tuned W=0.5	0.9169	0.0082
+RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, W=0.5 (untuned)	0.9169	0.0082
+RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft RRF (no parameter)	0.9027	0.0088
 RQ1 (MAP, mean over the five types)	BM25→PTK hybrid, k=100	0.8398	0.0055
 RQ1 (MAP, mean over the five types)	BM25→PTK hybrid, k=200	0.8612	0.0065
 RQ2 (functional MAP)	STK	0.1910	0.0215
 RQ2 (functional MAP)	BM25	0.4444	0.0215
-RQ2 (functional MAP)	CodeBERT ft	0.4236	0.0285
+RQ2 (functional MAP)	CodeBERT ft	0.4366	0.0304
 RQ2 (functional MAP)	STK+BM25 wsum, tuned W=0.0	0.4444	0.0215
 RQ2 (functional MAP)	STK+BM25 wsum, W=0.5 (untuned)	0.4295	0.0231
 RQ2 (functional MAP)	STK+BM25 RRF (no parameter)	0.3598	0.0210
-RQ2 (functional MAP)	STK+CodeBERT ft wsum, tuned W=0.2	0.4363	0.0292
-RQ2 (functional MAP)	STK+CodeBERT ft wsum, W=0.5 (untuned)	0.4288	0.0289
-RQ2 (functional MAP)	STK+CodeBERT ft RRF (no parameter)	0.3627	0.0237
+RQ2 (functional MAP)	STK+CodeBERT ft wsum, tuned W=0.2	0.4447	0.0305
+RQ2 (functional MAP)	STK+CodeBERT ft wsum, W=0.5 (untuned)	0.4336	0.0292
+RQ2 (functional MAP)	STK+CodeBERT ft RRF (no parameter)	0.3686	0.0234
 RQ2 (functional MAP)	BM25→STK hybrid, k=100	0.4395	0.0214
 RQ2 (functional MAP)	BM25→STK hybrid, k=200	0.4366	0.0211

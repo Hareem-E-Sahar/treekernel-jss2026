@@ -65,7 +65,7 @@ done
 [ -f $O/codebert_zs/meta.json ] || .venv/bin/python embed/codebert.py run $O/codebert_zs \
   data/codebert/emb/zeroshot_e5.npy --trees $TREES --queries $U
 [ -f $O/codebert_ft/meta.json ] || .venv/bin/python embed/codebert.py run $O/codebert_ft \
-  "data/codebert/emb/fold{k}_e5.npy" --folds --trees $TREES --queries $U
+  "data/codebert/emb/fpft_fold{k}_e5.npy" --folds --trees $TREES --queries $U
 
 if [ ! -f $O/bm25/meta.json ]; then
   echo "== BM25 $(date +%T)"

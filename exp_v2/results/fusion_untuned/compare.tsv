@@ -4,11 +4,11 @@ RQ1 (MAP, mean over the five types)	PTK+BM25 wsum, W=0.5 (untuned)	PTK	-0.0136	-
 RQ1 (MAP, mean over the five types)	PTK+BM25 wsum, W=0.5 (untuned)	BM25	0.0685	0.0484	0.0909
 RQ1 (MAP, mean over the five types)	PTK+BM25 wsum, tuned W=0.9	PTK	0.0259	0.0166	0.0363
 RQ1 (MAP, mean over the five types)	PTK+BM25 wsum, tuned W=0.9	BM25	0.1080	0.0706	0.1430
-RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, W=0.5 (untuned)	PTK+CodeBERT ft wsum, tuned W=0.6	-0.0039	-0.0056	-0.0016
-RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, W=0.5 (untuned)	PTK	0.0243	0.0126	0.0398
-RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, W=0.5 (untuned)	CodeBERT ft	0.0940	0.0565	0.1428
-RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, tuned W=0.6	PTK	0.0282	0.0175	0.0422
-RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, tuned W=0.6	CodeBERT ft	0.0979	0.0599	0.1465
+RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, W=0.5 (untuned)	PTK+CodeBERT ft wsum, tuned W=0.5	0.0000	0.0000	0.0000
+RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, W=0.5 (untuned)	PTK	0.0247	0.0129	0.0395
+RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, W=0.5 (untuned)	CodeBERT ft	0.0783	0.0504	0.1116
+RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, tuned W=0.5	PTK	0.0247	0.0129	0.0395
+RQ1 (MAP, mean over the five types)	PTK+CodeBERT ft wsum, tuned W=0.5	CodeBERT ft	0.0783	0.0504	0.1116
 RQ1 (MAP, mean over the five types)	BM25→PTK hybrid, k=100	PTK	-0.0510	-0.0836	-0.0135
 RQ1 (MAP, mean over the five types)	BM25→PTK hybrid, k=100	BM25	0.0311	0.0200	0.0453
 RQ1 (MAP, mean over the five types)	BM25→PTK hybrid, k=100	PTK+BM25 wsum, tuned W=0.9	-0.0769	-0.1055	-0.0459
@@ -20,11 +20,11 @@ RQ2 (functional MAP)	STK+BM25 wsum, W=0.5 (untuned)	STK	0.2383	0.1742	0.3263
 RQ2 (functional MAP)	STK+BM25 wsum, W=0.5 (untuned)	BM25	-0.0146	-0.0261	-0.0008
 RQ2 (functional MAP)	STK+BM25 wsum, tuned W=0.0	STK	0.2530	0.1857	0.3446
 RQ2 (functional MAP)	STK+BM25 wsum, tuned W=0.0	BM25	0.0000	0.0000	0.0000
-RQ2 (functional MAP)	STK+CodeBERT ft wsum, W=0.5 (untuned)	STK+CodeBERT ft wsum, tuned W=0.2	-0.0076	-0.0176	0.0022
-RQ2 (functional MAP)	STK+CodeBERT ft wsum, W=0.5 (untuned)	STK	0.2389	0.1842	0.3156
-RQ2 (functional MAP)	STK+CodeBERT ft wsum, W=0.5 (untuned)	CodeBERT ft	0.0051	-0.0094	0.0209
-RQ2 (functional MAP)	STK+CodeBERT ft wsum, tuned W=0.2	STK	0.2465	0.1894	0.3227
-RQ2 (functional MAP)	STK+CodeBERT ft wsum, tuned W=0.2	CodeBERT ft	0.0127	0.0067	0.0205
+RQ2 (functional MAP)	STK+CodeBERT ft wsum, W=0.5 (untuned)	STK+CodeBERT ft wsum, tuned W=0.2	-0.0112	-0.0207	-0.0013
+RQ2 (functional MAP)	STK+CodeBERT ft wsum, W=0.5 (untuned)	STK	0.2439	0.1864	0.3250
+RQ2 (functional MAP)	STK+CodeBERT ft wsum, W=0.5 (untuned)	CodeBERT ft	-0.0031	-0.0165	0.0119
+RQ2 (functional MAP)	STK+CodeBERT ft wsum, tuned W=0.2	STK	0.2551	0.1949	0.3370
+RQ2 (functional MAP)	STK+CodeBERT ft wsum, tuned W=0.2	CodeBERT ft	0.0081	0.0030	0.0141
 RQ2 (functional MAP)	BM25→STK hybrid, k=100	STK	0.2486	0.1820	0.3381
 RQ2 (functional MAP)	BM25→STK hybrid, k=100	BM25	-0.0044	-0.0127	0.0001
 RQ2 (functional MAP)	BM25→STK hybrid, k=100	STK+BM25 wsum, tuned W=0.0	-0.0044	-0.0127	0.0001

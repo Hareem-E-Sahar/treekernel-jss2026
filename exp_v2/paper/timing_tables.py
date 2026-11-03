@@ -5,7 +5,8 @@ usage: .venv/bin/python exp_v2/paper/timing_tables.py   (after exp_v2/eval/timin
   -> exp_v2/paper/tables/{rq2_cost,hybrid_cost}.tex
 Inputs: exp_v2/results/timing/summary.tsv (exp_v2/scripts/run_timing.sh), codebert_encoding.json
 (exp_v2/hybrid/timing_codebert.py --encode-sample 2000), trees.tsv and bm25_index.json
-(exp_v2/scripts/run_timing_one_off.sh).
+(exp_v2/scripts/run_timing_one_off.sh); fine-tuning and encoding times of the fold models
+(data/codebert/models_fp/fold<k>/train_meta.json, data/codebert/emb/fpft_fold<k>_e5.npy.json).
 """
 import csv
 import json
@@ -31,6 +32,11 @@ O = ROOT / "exp_v2/results/timing"
 enc = json.loads((O / "codebert_encoding.json").read_text())
 trees = {r["step"]: float(r["seconds"]) for r in csv.DictReader(open(O / "trees.tsv"), delimiter="\t")}
 prep = {k: trees["parse"] + trees["variant D"] for k in KERNELS}
+# fine-tuning with false positives (exp_v2/embed/finetune_fp.py): training and corpus encoding per fold model, 14 threads
+CB = ROOT / "data/codebert"
+ft = [json.loads((CB / f"models_fp/fold{k}/train_meta.json").read_text())["seconds"] for k in range(5)]
+fe = [json.loads((CB / f"emb/fpft_fold{k}_e5.npy.json").read_text())["seconds"] for k in range(5)]
+ft, fe = (min(ft), max(ft)), (min(fe), max(fe))
 prep |= {"BM25": json.loads((O / "bm25_index.json").read_text())["index_seconds"],
          "CodeBERT": enc["corpus_encoding_s_estimate"]}
 L = ["\\begin{table}[!htbp]", "\\centering",
@@ -41,8 +47,9 @@ L = ["\\begin{table}[!htbp]", "\\centering",
      "building the Elasticsearch index, which uses Elasticsearch's own threads; CodeBERT: loading the model and "
      "encoding the corpus, estimated from "
      f"{enc['sample_methods']:,} random methods encoded one at a time). Fine-tuned CodeBERT has the same per-query "
-     "cost as zero-shot and in addition needs fine-tuning, 75--87 min per model on 8 threads (not measured on one "
-     "thread). Tree kernels at the tuned settings.}",
+     f"cost as zero-shot; in addition its 5 fold models are each fine-tuned ({ft[0] / 3600:.1f}--{ft[1] / 3600:.1f} h per "
+     f"model) and each encodes the corpus ({fe[0] / 3600:.1f}--{fe[1] / 3600:.1f} h per model), measured on 14 threads, "
+     "not on one. Tree kernels at the tuned settings.}",
      "\\label{tab:rq2cost}", "\\footnotesize", "\\setlength{\\tabcolsep}{4pt}", "\\begin{tabular}{lrrr}", "\\toprule",
      "Method & Per query (s) & 100 queries (s) & One-off (s) \\\\", "\\midrule"]
 for m in KERNELS + ["BM25", "CodeBERT"]:

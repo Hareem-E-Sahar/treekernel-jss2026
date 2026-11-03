@@ -114,7 +114,8 @@ NP_NOTE = ("nP@$k$ = relevant methods in the top $k$ divided by $\\min(k, R)$, $
            "methods; MRR = mean reciprocal rank of the first relevant method. ")
 SETTING_NOTE = ("Tree kernels on variant D at the settings tuned on separate queries (STK " + SETTINGS["STK"] + "; SSTK "
                 + SETTINGS["SSTK"] + "; PTK " + SETTINGS["PTK"] + "); BM25 " + SETTINGS["BM25"] + "; CodeBERT: "
-                "microsoft/codebert-base, CLS embedding, cosine; fine-tuned contrastively in 5 folds by functionality. ")
+                "microsoft/codebert-base, CLS embedding, cosine; fine-tuned contrastively in 5 folds by functionality, "
+                "with BigCloneBench false positives as hard negatives. ")
 HEADER4 = ["Method & nP@5 & nP@10 & MRR & MAP \\\\"]
 TYPE_TITLE = {t: t for t in TYPES} | {"mean5": "Mean over the five types"}
 write("rq1.tex", method_table(
