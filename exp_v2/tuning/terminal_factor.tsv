@@ -1,0 +1,10 @@
+terminal_factor	status	rq1_mean5_map	rq2_map	bm25_overlap_top10	bm25_overlap_top100
+0.25	ok	0.892872	0.186401	0.5200	0.3250
+0.5	ok	0.909565	0.200124	0.5240	0.3388
+0.75	ok	0.913128	0.209622	0.5220	0.3420
+1	ok	0.915578	0.216568	0.5200	0.3436
+1.25	ok	0.917045	0.221662	0.5220	0.3502
+1.5	PTK value Infinity is not finite/non-negative (trees of 2894 and 2894 nodes): this setting must be excluded from the grid				
+1.75	PTK value NaN is not finite/non-negative (trees of 3845 and 3845 nodes): this setting must be excluded from the grid				
+2	PTK value Infinity is not finite/non-negative (trees of 3273 and 3273 nodes): this setting must be excluded from the grid				
+4	PTK value NaN is not finite/non-negative (trees of 2182 and 2182 nodes): this setting must be excluded from the grid				

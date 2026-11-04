@@ -1,0 +1,31 @@
+== PTK lambda 0.4 mu 0.6 terminal factor 1 19:01:34
+   factor 1 byte-identical to exp_v2/tuning/grid/PTK_l0.4_m0.6
+== PTK lambda 0.4 mu 0.6 terminal factor 0.25 19:06:26
+== PTK lambda 0.4 mu 0.6 terminal factor 0.5 19:09:18
+== PTK lambda 0.4 mu 0.6 terminal factor 0.75 19:11:33
+== PTK lambda 0.4 mu 0.6 terminal factor 2 19:13:53
+   not computable: PTK value Infinity is not finite/non-negative (trees of 3273 and 3273 nodes): this setting must be excluded from the grid
+== PTK lambda 0.4 mu 0.6 terminal factor 4 19:14:35
+   not computable: PTK value NaN is not finite/non-negative (trees of 2182 and 2182 nodes): this setting must be excluded from the grid
+0.25	ok	0.892872	0.186401
+0.5	ok	0.909565	0.200124
+0.75	ok	0.913128	0.209622
+1	ok	0.915578	0.216568
+2	PTK value Infinity is not finite/non-negative (trees of 3273 and 3273 nodes): this setting must be excluded from the grid		
+4	PTK value NaN is not finite/non-negative (trees of 2182 and 2182 nodes): this setting must be excluded from the grid		
+terminal factor done 19:14:43
+== PTK lambda 0.4 mu 0.6 terminal factor 1.25 20:09:31
+== PTK lambda 0.4 mu 0.6 terminal factor 1.5 20:12:38
+   not computable: PTK value Infinity is not finite/non-negative (trees of 2894 and 2894 nodes): this setting must be excluded from the grid
+== PTK lambda 0.4 mu 0.6 terminal factor 1.75 20:15:11
+   not computable: PTK value NaN is not finite/non-negative (trees of 3845 and 3845 nodes): this setting must be excluded from the grid
+0.25	ok	0.892872	0.186401	0.5200	0.3250
+0.5	ok	0.909565	0.200124	0.5240	0.3388
+0.75	ok	0.913128	0.209622	0.5220	0.3420
+1	ok	0.915578	0.216568	0.5200	0.3436
+1.25	ok	0.917045	0.221662	0.5220	0.3502
+1.5	PTK value Infinity is not finite/non-negative (trees of 2894 and 2894 nodes): this setting must be excluded from the grid				
+1.75	PTK value NaN is not finite/non-negative (trees of 3845 and 3845 nodes): this setting must be excluded from the grid				
+2	PTK value Infinity is not finite/non-negative (trees of 3273 and 3273 nodes): this setting must be excluded from the grid				
+4	PTK value NaN is not finite/non-negative (trees of 2182 and 2182 nodes): this setting must be excluded from the grid				
+terminal factor done 20:16:14

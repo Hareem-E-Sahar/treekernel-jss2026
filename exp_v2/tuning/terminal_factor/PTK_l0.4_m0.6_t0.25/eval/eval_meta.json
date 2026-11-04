@@ -1,0 +1,28 @@
+{
+  "run": "/home/hareem/treekernel_revision_Oct2026/exp_v2/tuning/terminal_factor/PTK_l0.4_m0.6_t0.25",
+  "run_meta": {
+    "kernel": "PTK",
+    "lambda": 0.4,
+    "mu": 0.6,
+    "terminal_factor": 0.25,
+    "implementation": "KeLP PTK as is (float), log taken afterwards; exp_v2 RetrievalRunnerTF",
+    "trees": "/home/hareem/treekernel_revision_Oct2026/data/trees_e5/D.tsv",
+    "queries": "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/tuning.tsv",
+    "n_queries": 50,
+    "n_corpus": 72782,
+    "evaluations": 3711882,
+    "threads": 14,
+    "wall_seconds": 171.9,
+    "finished": "2026-11-04T01:09:18.456886206Z",
+    "java": "21.0.12.1"
+  },
+  "syntactic": [
+    "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/tuning.tsv"
+  ],
+  "functional": [
+    "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/tuning.tsv"
+  ],
+  "ignore": "/home/hareem/treekernel_revision_Oct2026/exp_v2/data/fp_copies.tsv",
+  "bootstrap": 0,
+  "seed": 20261016
+}
