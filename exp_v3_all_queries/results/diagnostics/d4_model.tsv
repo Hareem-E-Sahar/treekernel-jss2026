@@ -1,0 +1,73 @@
+rq	method	predictor	coef
+RQ1	STK	log LOC	-0.0047
+RQ1	STK	log McCabe	0.0256
+RQ1	STK	log nodes	-0.0668
+RQ1	STK	height	0.0164
+RQ1	STK	log max branching	0.0368
+RQ1	STK	relevant overlap	0.4288
+RQ1	SSTK	log LOC	0.0013
+RQ1	SSTK	log McCabe	0.0263
+RQ1	SSTK	log nodes	-0.0721
+RQ1	SSTK	height	0.0165
+RQ1	SSTK	log max branching	0.0305
+RQ1	SSTK	relevant overlap	0.4241
+RQ1	PTK	log LOC	-0.0480
+RQ1	PTK	log McCabe	0.0228
+RQ1	PTK	log nodes	-0.0462
+RQ1	PTK	height	0.0170
+RQ1	PTK	log max branching	0.0113
+RQ1	PTK	relevant overlap	0.3083
+RQ1	BM25	log LOC	0.0423
+RQ1	BM25	log McCabe	-0.0021
+RQ1	BM25	log nodes	-0.0105
+RQ1	BM25	height	0.0275
+RQ1	BM25	log max branching	0.0169
+RQ1	BM25	relevant overlap	0.3748
+RQ1	CodeBERT zs	log LOC	-0.1176
+RQ1	CodeBERT zs	log McCabe	0.0589
+RQ1	CodeBERT zs	log nodes	0.0323
+RQ1	CodeBERT zs	height	0.0192
+RQ1	CodeBERT zs	log max branching	0.0281
+RQ1	CodeBERT zs	relevant overlap	0.2800
+RQ1	CodeBERT ft	log LOC	-0.1001
+RQ1	CodeBERT ft	log McCabe	0.0522
+RQ1	CodeBERT ft	log nodes	-0.0106
+RQ1	CodeBERT ft	height	0.0433
+RQ1	CodeBERT ft	log max branching	0.0384
+RQ1	CodeBERT ft	relevant overlap	0.3340
+RQ2	STK	log LOC	-0.1202
+RQ2	STK	log McCabe	0.0336
+RQ2	STK	log nodes	0.0198
+RQ2	STK	height	0.0106
+RQ2	STK	log max branching	0.0242
+RQ2	STK	relevant overlap	0.1224
+RQ2	SSTK	log LOC	-0.1150
+RQ2	SSTK	log McCabe	0.0334
+RQ2	SSTK	log nodes	0.0144
+RQ2	SSTK	height	0.0105
+RQ2	SSTK	log max branching	0.0252
+RQ2	SSTK	relevant overlap	0.1219
+RQ2	PTK	log LOC	-0.1432
+RQ2	PTK	log McCabe	0.0557
+RQ2	PTK	log nodes	0.0331
+RQ2	PTK	height	0.0159
+RQ2	PTK	log max branching	0.0143
+RQ2	PTK	relevant overlap	0.1199
+RQ2	BM25	log LOC	-0.0033
+RQ2	BM25	log McCabe	-0.0187
+RQ2	BM25	log nodes	-0.0627
+RQ2	BM25	height	0.0129
+RQ2	BM25	log max branching	0.0153
+RQ2	BM25	relevant overlap	0.0950
+RQ2	CodeBERT zs	log LOC	-0.1099
+RQ2	CodeBERT zs	log McCabe	0.0354
+RQ2	CodeBERT zs	log nodes	0.0538
+RQ2	CodeBERT zs	height	0.0066
+RQ2	CodeBERT zs	log max branching	0.0139
+RQ2	CodeBERT zs	relevant overlap	0.1191
+RQ2	CodeBERT ft	log LOC	-0.0699
+RQ2	CodeBERT ft	log McCabe	0.0212
+RQ2	CodeBERT ft	log nodes	-0.0118
+RQ2	CodeBERT ft	height	0.0021
+RQ2	CodeBERT ft	log max branching	0.0123
+RQ2	CodeBERT ft	relevant overlap	0.1084

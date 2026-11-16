@@ -1,0 +1,32 @@
+\begin{table*}[!htbp]
+\centering
+\caption{RQ4 tests on MAP: each hybrid against its kernel's full ranking, BM25 and fine-tuned CodeBERT; difference A $-$ B with Bonferroni-adjusted 99.4\% CI (9 comparisons per measure) and effect size $A_{12}$. Bold: CI excludes 0.}
+\label{tab:rq4effects}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrc}
+\toprule
+Measure & A & B & $\Delta$ MAP [adjusted CI] & $A_{12}$ \\
+\midrule
+Mean of types & STK-Hybrid & STK & -0.038 [-0.071, +0.005] & 0.46 neg. \\
+Mean of types & STK-Hybrid & BM25 & \textbf{+0.029 [+0.015, +0.050]} & 0.56 sma. \\
+Mean of types & STK-Hybrid & CodeBERT ft & -0.001 [-0.058, +0.048] & 0.50 neg. \\
+Mean of types & SSTK-Hybrid & SSTK & -0.042 [-0.075, +0.002] & 0.46 neg. \\
+Mean of types & SSTK-Hybrid & BM25 & \textbf{+0.029 [+0.015, +0.051]} & 0.56 sma. \\
+Mean of types & SSTK-Hybrid & CodeBERT ft & -0.001 [-0.057, +0.049] & 0.50 neg. \\
+Mean of types & PTK-Hybrid & PTK & -0.049 [-0.095, +0.006] & 0.45 neg. \\
+Mean of types & PTK-Hybrid & BM25 & \textbf{+0.029 [+0.014, +0.052]} & 0.57 sma. \\
+Mean of types & PTK-Hybrid & CodeBERT ft & -0.001 [-0.057, +0.051] & 0.50 neg. \\
+\midrule
+Functional & STK-Hybrid & STK & \textbf{+0.257 [+0.156, +0.382]} & 0.92 lar. \\
+Functional & STK-Hybrid & BM25 & -0.003 [-0.013, +0.001] & 0.51 neg. \\
+Functional & STK-Hybrid & CodeBERT ft & +0.005 [-0.045, +0.057] & 0.53 neg. \\
+Functional & SSTK-Hybrid & SSTK & \textbf{+0.257 [+0.156, +0.383]} & 0.92 lar. \\
+Functional & SSTK-Hybrid & BM25 & -0.003 [-0.013, +0.001] & 0.50 neg. \\
+Functional & SSTK-Hybrid & CodeBERT ft & +0.005 [-0.045, +0.057] & 0.52 neg. \\
+Functional & PTK-Hybrid & PTK & \textbf{+0.277 [+0.161, +0.424]} & 0.91 lar. \\
+Functional & PTK-Hybrid & BM25 & -0.001 [-0.009, +0.004] & 0.56 sma. \\
+Functional & PTK-Hybrid & CodeBERT ft & +0.008 [-0.042, +0.061] & 0.53 neg. \\
+\bottomrule
+\end{tabular}
+\end{table*}

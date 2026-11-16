@@ -1,0 +1,29 @@
+queries: 14587; new: 5615 in 4 chunks 2026-11-04 00:49:05
+== D STK (STK_l1.0) part00.tsv 2026-11-04 00:49:05
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 2057.3s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_STK_part00
+== D STK (STK_l1.0) part01.tsv 2026-11-04 01:23:23
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 2171.9s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_STK_part01
+== D STK (STK_l1.0) part02.tsv 2026-11-04 01:59:35
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 2094.8s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_STK_part02
+== D STK (STK_l1.0) part03.tsv 2026-11-04 02:34:31
+done: 1115 queries x 72782 corpus, 81,224,712 evaluations, 1544.3s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_STK_part03
+exp_v3_all_queries/results/runs/D_STK: 14587 queries from D_STK: 4260, D_STK: 4712, D_STK_part00: 1500, D_STK_part01: 1500, D_STK_part02: 1500, D_STK_part03: 1115
+== D SSTK (SSTK_l0.1) part00.tsv 2026-11-04 03:00:36
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 2054.4s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_SSTK_part00
+== D SSTK (SSTK_l0.1) part01.tsv 2026-11-04 03:34:51
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 2130.3s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_SSTK_part01
+== D SSTK (SSTK_l0.1) part02.tsv 2026-11-04 04:10:22
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 2203.3s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_SSTK_part02
+== D SSTK (SSTK_l0.1) part03.tsv 2026-11-04 04:47:05
+done: 1115 queries x 72782 corpus, 81,224,712 evaluations, 1616.2s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_SSTK_part03
+exp_v3_all_queries/results/runs/D_SSTK: 14587 queries from D_SSTK: 4260, D_SSTK: 4712, D_SSTK_part00: 1500, D_SSTK_part01: 1500, D_SSTK_part02: 1500, D_SSTK_part03: 1115
+== D PTK (PTK_l0.4_m0.6) part00.tsv 2026-11-04 05:14:12
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 4245.5s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_PTK_part00
+== D PTK (PTK_l0.4_m0.6) part01.tsv 2026-11-04 06:24:58
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 4147.2s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_PTK_part01
+== D PTK (PTK_l0.4_m0.6) part02.tsv 2026-11-04 07:34:05
+done: 1500 queries x 72782 corpus, 109,245,782 evaluations, 4228.9s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_PTK_part02
+== D PTK (PTK_l0.4_m0.6) part03.tsv 2026-11-04 09:00:54
+done: 1115 queries x 72782 corpus, 81,224,712 evaluations, 5149.4s -> /home/hareem/treekernel_revision_Oct2026/exp_v3_all_queries/results/new_queries/D_PTK_part03
+exp_v3_all_queries/results/runs/D_PTK: 14587 queries from D_PTK: 4260, D_PTK: 4712, D_PTK_part00: 1500, D_PTK_part01: 1500, D_PTK_part02: 1500, D_PTK_part03: 1115
+kernels done 2026-11-04 10:26:58

@@ -1,0 +1,54 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Syntactic clones per clone type, every eligible query. MAP: $^{+}$/$^{-}$ significantly better/worse than BM25; $^{\uparrow}$/$^{\downarrow}$: tree kernel significantly better/worse than fine-tuned CodeBERT (Bonferroni-adjusted CI excludes 0). Best value per block and column in bold. Test results are shown in Figure~\ref{fig:rq1}.}
+\label{tab:rq1}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l|lcccc}
+\toprule
+Clone type & Method & nP@5 & nP@10 & MRR & MAP \\
+\midrule
+\multirow{6}{*}{T1} & STK & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} \\
+ & SSTK & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} \\
+ & PTK & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} \\
+ & BM25 & \textbf{1.000} & \textbf{1.000} & 0.999 & 0.999 \\
+ & CodeBERT zs & 0.999 & 0.999 & 0.999 & 0.999 \\
+ & CodeBERT ft & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} \\
+\midrule
+\multirow{6}{*}{T2} & STK & 0.999 & 0.999 & \textbf{0.997} & 0.995$^{+\uparrow}$ \\
+ & SSTK & 0.999 & 0.999 & \textbf{0.997} & 0.996$^{+\uparrow}$ \\
+ & PTK & \textbf{1.000} & \textbf{1.000} & \textbf{0.997} & \textbf{0.997}$^{+\uparrow}$ \\
+ & BM25 & 0.912 & 0.931 & 0.907 & 0.886 \\
+ & CodeBERT zs & 0.983 & 0.983 & 0.977 & 0.970 \\
+ & CodeBERT ft & 0.973 & 0.978 & 0.963 & 0.958 \\
+\midrule
+\multirow{6}{*}{VST3} & STK & \textbf{0.994} & \textbf{0.998} & 0.992 & 0.990$^{+\uparrow}$ \\
+ & SSTK & \textbf{0.994} & 0.997 & 0.993 & \textbf{0.991}$^{+\uparrow}$ \\
+ & PTK & 0.993 & 0.995 & \textbf{0.994} & 0.989$^{+\uparrow}$ \\
+ & BM25 & 0.942 & 0.947 & 0.947 & 0.934 \\
+ & CodeBERT zs & 0.969 & 0.974 & 0.963 & 0.959 \\
+ & CodeBERT ft & 0.967 & 0.972 & 0.960 & 0.955 \\
+\midrule
+\multirow{6}{*}{ST3} & STK & 0.927 & 0.931 & 0.938 & 0.893$^{+\uparrow}$ \\
+ & SSTK & 0.936 & 0.938 & \textbf{0.942} & 0.902$^{+\uparrow}$ \\
+ & PTK & \textbf{0.939} & \textbf{0.945} & 0.940 & \textbf{0.912}$^{+\uparrow}$ \\
+ & BM25 & 0.810 & 0.811 & 0.838 & 0.771 \\
+ & CodeBERT zs & 0.833 & 0.850 & 0.865 & 0.794 \\
+ & CodeBERT ft & 0.828 & 0.836 & 0.853 & 0.789 \\
+\midrule
+\multirow{6}{*}{MT3} & STK & 0.629 & 0.618 & 0.735 & 0.500 \\
+ & SSTK & 0.640 & 0.624 & 0.740 & 0.508 \\
+ & PTK & \textbf{0.647} & \textbf{0.638} & \textbf{0.754} & \textbf{0.537} \\
+ & BM25 & 0.545 & 0.545 & 0.649 & 0.453 \\
+ & CodeBERT zs & 0.521 & 0.517 & 0.648 & 0.392 \\
+ & CodeBERT ft & 0.599 & 0.593 & 0.694 & 0.491 \\
+\midrule
+\multirow{6}{*}{\begin{tabular}{@{}l@{}}Mean of\\5 types\end{tabular}} & STK & 0.910 & 0.909 & 0.932 & 0.876$^{+}$ \\
+ & SSTK & 0.914 & 0.912 & 0.934 & 0.879$^{+}$ \\
+ & PTK & \textbf{0.916} & \textbf{0.916} & \textbf{0.937} & \textbf{0.887}$^{+}$ \\
+ & BM25 & 0.842 & 0.847 & 0.868 & 0.808 \\
+ & CodeBERT zs & 0.861 & 0.865 & 0.890 & 0.823 \\
+ & CodeBERT ft & 0.873 & 0.876 & 0.894 & 0.839 \\
+\bottomrule
+\end{tabular}
+\end{table*}

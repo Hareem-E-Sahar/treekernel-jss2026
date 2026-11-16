@@ -1,0 +1,10 @@
+statistic	value
+eligible queries	14587
+queries with a Type-2 copy among false positives	174
+query-false positive pairs	428
+  of which whitespace-identical (exp_v2/data/fp_copies.tsv)	360
+distinct false positives involved	217
+queries with a Type-2 copy among other functionalities' true positives	4
+query-other true positive pairs	4
+distinct other true positives involved	4
+queries with any Type-2 copy outside their functionality	178

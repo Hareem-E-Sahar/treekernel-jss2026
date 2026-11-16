@@ -1,0 +1,49 @@
+measure	size	complexity	method	MAP	queries	loc_median	cc_median
+mean5	small	simple	STK	0.8673	10829	21	4
+mean5	small	simple	SSTK	0.8729	10829	21	4
+mean5	small	simple	PTK	0.8982	10829	21	4
+mean5	small	simple	BM25	0.7450	10829	21	4
+mean5	small	simple	CodeBERT zs	0.8056	10829	21	4
+mean5	small	simple	CodeBERT ft	0.8216	10829	21	4
+mean5	small	complex	STK	0.8829	1357	21	4
+mean5	small	complex	SSTK	0.8840	1357	21	4
+mean5	small	complex	PTK	0.9052	1357	21	4
+mean5	small	complex	BM25	0.8328	1357	21	4
+mean5	small	complex	CodeBERT zs	0.8355	1357	21	4
+mean5	small	complex	CodeBERT ft	0.8439	1357	21	4
+mean5	large	simple	STK	0.8787	1535	21	4
+mean5	large	simple	SSTK	0.8839	1535	21	4
+mean5	large	simple	PTK	0.8701	1535	21	4
+mean5	large	simple	BM25	0.8826	1535	21	4
+mean5	large	simple	CodeBERT zs	0.8214	1535	21	4
+mean5	large	simple	CodeBERT ft	0.8486	1535	21	4
+mean5	large	complex	STK	0.8927	5388	21	4
+mean5	large	complex	SSTK	0.8931	5388	21	4
+mean5	large	complex	PTK	0.8594	5388	21	4
+mean5	large	complex	BM25	0.9026	5388	21	4
+mean5	large	complex	CodeBERT zs	0.8487	5388	21	4
+mean5	large	complex	CodeBERT ft	0.8579	5388	21	4
+functional	small	simple	STK	0.2657	6569	21	4
+functional	small	simple	SSTK	0.2652	6569	21	4
+functional	small	simple	PTK	0.2407	6569	21	4
+functional	small	simple	BM25	0.5220	6569	21	4
+functional	small	simple	CodeBERT zs	0.1920	6569	21	4
+functional	small	simple	CodeBERT ft	0.5081	6569	21	4
+functional	small	complex	STK	0.2036	1061	21	4
+functional	small	complex	SSTK	0.1994	1061	21	4
+functional	small	complex	PTK	0.2234	1061	21	4
+functional	small	complex	BM25	0.4201	1061	21	4
+functional	small	complex	CodeBERT zs	0.1579	1061	21	4
+functional	small	complex	CodeBERT ft	0.4990	1061	21	4
+functional	large	simple	STK	0.1159	1471	21	4
+functional	large	simple	SSTK	0.1166	1471	21	4
+functional	large	simple	PTK	0.0861	1471	21	4
+functional	large	simple	BM25	0.4461	1471	21	4
+functional	large	simple	CodeBERT zs	0.1067	1471	21	4
+functional	large	simple	CodeBERT ft	0.4025	1471	21	4
+functional	large	complex	STK	0.0975	5485	21	4
+functional	large	complex	SSTK	0.0980	5485	21	4
+functional	large	complex	PTK	0.0849	5485	21	4
+functional	large	complex	BM25	0.3527	5485	21	4
+functional	large	complex	CodeBERT zs	0.0949	5485	21	4
+functional	large	complex	CodeBERT ft	0.3425	5485	21	4

@@ -43,3 +43,24 @@ data/codebert/emb/*
 # previous CodeBERT ft results (true-positive models), moved aside by exp_v2/scripts/rerun_codebert_ft.sh; the tracked
 # summaries are in git history (commit 818aa47)
 exp_v2/results/archive_codebert_tp/
+# exp_v3_all_queries: fragment cache (regenerable by exp_v3_all_queries/eval/trees.py) and LaTeX output
+exp_v3_all_queries/results/diagnostics/fragments.npz
+exp_v3_all_queries/paper/*.aux
+exp_v3_all_queries/paper/*.log
+exp_v3_all_queries/paper/*.out
+exp_v3_all_queries/paper/paper.pdf
+# exp_v3_all_queries: kernel rankings (24 GB, too large for git), LaTeX/draft output, and personal notes
+exp_v3_all_queries/results/runs/
+exp_v3_all_queries/paper/*.pdf
+exp_v3_all_queries/paper/*.synctex.gz
+exp_v3_all_queries/paper/build.log
+exp_v3_all_queries/Oct/*.aux
+exp_v3_all_queries/Oct/*.bbl
+exp_v3_all_queries/Oct/*.blg
+exp_v3_all_queries/Oct/*.log
+exp_v3_all_queries/Oct/*.out
+exp_v3_all_queries/Oct/*.pdf
+exp_v3_all_queries/Oct/*.synctex.gz
+exp_v3_all_queries/summary
+exp_v3_all_queries/wilcoxon or CIs
+exp_v3_all_queries/diagnostic_explain.md

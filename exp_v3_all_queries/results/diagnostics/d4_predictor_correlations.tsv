@@ -1,0 +1,7 @@
+predictor	log LOC	log McCabe	log nodes	height	log max branching	relevant overlap
+log LOC	1.00	0.77	0.96	0.70	0.71	-0.40
+log McCabe	0.77	1.00	0.74	0.61	0.38	-0.17
+log nodes	0.96	0.74	1.00	0.69	0.77	-0.39
+height	0.70	0.61	0.69	1.00	0.33	-0.29
+log max branching	0.71	0.38	0.77	0.33	1.00	-0.33
+relevant overlap	-0.40	-0.17	-0.39	-0.29	-0.33	1.00

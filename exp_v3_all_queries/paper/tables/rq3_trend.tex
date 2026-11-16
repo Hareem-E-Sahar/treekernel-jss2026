@@ -1,0 +1,28 @@
+\begin{table*}[!htbp]
+\centering
+\caption{RQ3, trend: change in AP per unit of log lines of code and of log McCabe (one model per predictor; for syntactic similarity within clone type). Upper rows: each method's slope; lower rows: a kernel's slope minus BM25's or fine-tuned CodeBERT's (negative = the kernel falls faster).}
+\label{tab:rq3trend}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Syntactic similarity} & \multicolumn{2}{c}{Functional similarity} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & log LOC & log McCabe & log LOC & log McCabe \\
+\midrule
+STK & +0.009 & +0.015 & -0.129 & -0.060 \\
+SSTK & +0.005 & +0.014 & -0.129 & -0.060 \\
+PTK & -0.058 & -0.031 & -0.124 & -0.042 \\
+BM25 & +0.107 & +0.078 & -0.124 & -0.086 \\
+CodeBERT zs & +0.003 & +0.036 & -0.084 & -0.024 \\
+CodeBERT ft & +0.001 & +0.030 & -0.127 & -0.066 \\
+\midrule
+STK $-$ BM25 & -0.098 & -0.063 & -0.005 & +0.026 \\
+STK $-$ CodeBERT ft & +0.008 & -0.015 & -0.002 & +0.006 \\
+SSTK $-$ BM25 & -0.102 & -0.064 & -0.004 & +0.027 \\
+SSTK $-$ CodeBERT ft & +0.004 & -0.017 & -0.001 & +0.006 \\
+PTK $-$ BM25 & -0.165 & -0.109 & +0.000 & +0.044 \\
+PTK $-$ CodeBERT ft & -0.059 & -0.061 & +0.003 & +0.024 \\
+\bottomrule
+\end{tabular}
+\end{table*}

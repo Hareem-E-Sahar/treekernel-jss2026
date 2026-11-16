@@ -1,0 +1,32 @@
+\begin{table*}[!htbp]
+\centering
+\caption{RQ4 test results. Each hybrid (BM25's top 100 re-ranked by a tree kernel) against its kernel's full ranking, BM25 and fine-tuned CodeBERT. Difference in MAP between hybrid and other model with Bonferroni-adjusted 99.4\% CI and $p$-value (9 comparisons per measure), and effect size $A_{12}$. Bold values indicate that CI excludes 0.}
+\label{tab:rq4_tests}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrrrl}
+\toprule
+Measure & Hybrid & Against & $\Delta$ MAP & Adjusted CI & Adjusted $p$ & $A_{12}$ \\
+\midrule
+Mean of types & STK-Hybrid & STK & -0.038 & [-0.071, +0.005] & 0.106 & 0.46 negligible \\
+Mean of types & STK-Hybrid & BM25 & \textbf{+0.029} & \textbf{[+0.015, +0.050]} & \textbf{$<$0.002} & 0.56 small \\
+Mean of types & STK-Hybrid & CodeBERT ft & -0.001 & [-0.058, +0.048] & 1.000 & 0.50 negligible \\
+Mean of types & SSTK-Hybrid & SSTK & -0.042 & [-0.075, +0.002] & 0.079 & 0.46 negligible \\
+Mean of types & SSTK-Hybrid & BM25 & \textbf{+0.029} & \textbf{[+0.015, +0.051]} & \textbf{$<$0.002} & 0.56 small \\
+Mean of types & SSTK-Hybrid & CodeBERT ft & -0.001 & [-0.057, +0.049] & 1.000 & 0.50 negligible \\
+Mean of types & PTK-Hybrid & PTK & -0.049 & [-0.095, +0.006] & 0.122 & 0.45 negligible \\
+Mean of types & PTK-Hybrid & BM25 & \textbf{+0.029} & \textbf{[+0.014, +0.052]} & \textbf{$<$0.002} & 0.57 small \\
+Mean of types & PTK-Hybrid & CodeBERT ft & -0.001 & [-0.057, +0.051] & 1.000 & 0.50 negligible \\
+\midrule
+Functional & STK-Hybrid & STK & \textbf{+0.257} & \textbf{[+0.156, +0.382]} & \textbf{$<$0.002} & 0.92 large \\
+Functional & STK-Hybrid & BM25 & -0.003 & [-0.013, +0.001] & 0.326 & 0.51 negligible \\
+Functional & STK-Hybrid & CodeBERT ft & +0.005 & [-0.045, +0.057] & 1.000 & 0.53 negligible \\
+Functional & SSTK-Hybrid & SSTK & \textbf{+0.257} & \textbf{[+0.156, +0.383]} & \textbf{$<$0.002} & 0.92 large \\
+Functional & SSTK-Hybrid & BM25 & -0.003 & [-0.013, +0.001] & 0.295 & 0.50 negligible \\
+Functional & SSTK-Hybrid & CodeBERT ft & +0.005 & [-0.045, +0.057] & 1.000 & 0.52 negligible \\
+Functional & PTK-Hybrid & PTK & \textbf{+0.277} & \textbf{[+0.161, +0.424]} & \textbf{$<$0.002} & 0.91 large \\
+Functional & PTK-Hybrid & BM25 & -0.001 & [-0.009, +0.004] & 1.000 & 0.56 small \\
+Functional & PTK-Hybrid & CodeBERT ft & +0.008 & [-0.042, +0.061] & 1.000 & 0.53 negligible \\
+\bottomrule
+\end{tabular}
+\end{table*}

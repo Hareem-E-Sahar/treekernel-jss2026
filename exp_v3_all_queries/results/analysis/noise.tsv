@@ -1,0 +1,73 @@
+setting	method	measure	metric	value
+default	STK	mean5	MAP	0.8756
+default	STK	mean5	nP@10	0.9091
+default	STK	functional	MAP	0.1828
+default	STK	functional	nP@10	0.6002
+default	SSTK	mean5	MAP	0.8794
+default	SSTK	mean5	nP@10	0.9117
+default	SSTK	functional	MAP	0.1825
+default	SSTK	functional	nP@10	0.5999
+default	PTK	mean5	MAP	0.8868
+default	PTK	mean5	nP@10	0.9157
+default	PTK	functional	MAP	0.1652
+default	PTK	functional	nP@10	0.5617
+default	BM25	mean5	MAP	0.8085
+default	BM25	mean5	nP@10	0.8467
+default	BM25	functional	MAP	0.4432
+default	BM25	functional	nP@10	0.7044
+default	CodeBERT zs	mean5	MAP	0.8227
+default	CodeBERT zs	mean5	nP@10	0.8646
+default	CodeBERT zs	functional	MAP	0.1444
+default	CodeBERT zs	functional	nP@10	0.5746
+default	CodeBERT ft	mean5	MAP	0.8386
+default	CodeBERT ft	mean5	nP@10	0.8759
+default	CodeBERT ft	functional	MAP	0.4345
+default	CodeBERT ft	functional	nP@10	0.7239
+t2	STK	mean5	MAP	0.8766
+t2	STK	mean5	nP@10	0.9092
+t2	STK	functional	MAP	0.1828
+t2	STK	functional	nP@10	0.6004
+t2	SSTK	mean5	MAP	0.8803
+t2	SSTK	mean5	nP@10	0.9118
+t2	SSTK	functional	MAP	0.1825
+t2	SSTK	functional	nP@10	0.6000
+t2	PTK	mean5	MAP	0.8878
+t2	PTK	mean5	nP@10	0.9159
+t2	PTK	functional	MAP	0.1652
+t2	PTK	functional	nP@10	0.5618
+t2	BM25	mean5	MAP	0.8088
+t2	BM25	mean5	nP@10	0.8467
+t2	BM25	functional	MAP	0.4432
+t2	BM25	functional	nP@10	0.7045
+t2	CodeBERT zs	mean5	MAP	0.8232
+t2	CodeBERT zs	mean5	nP@10	0.8646
+t2	CodeBERT zs	functional	MAP	0.1444
+t2	CodeBERT zs	functional	nP@10	0.5748
+t2	CodeBERT ft	mean5	MAP	0.8393
+t2	CodeBERT ft	mean5	nP@10	0.8760
+t2	CodeBERT ft	functional	MAP	0.4345
+t2	CodeBERT ft	functional	nP@10	0.7240
+no_fp	STK	mean5	MAP	0.9211
+no_fp	STK	mean5	nP@10	0.9427
+no_fp	STK	functional	MAP	0.3385
+no_fp	STK	functional	nP@10	0.7425
+no_fp	SSTK	mean5	MAP	0.9232
+no_fp	SSTK	mean5	nP@10	0.9433
+no_fp	SSTK	functional	MAP	0.3386
+no_fp	SSTK	functional	nP@10	0.7413
+no_fp	PTK	mean5	MAP	0.9291
+no_fp	PTK	mean5	nP@10	0.9468
+no_fp	PTK	functional	MAP	0.3070
+no_fp	PTK	functional	nP@10	0.7022
+no_fp	BM25	mean5	MAP	0.8988
+no_fp	BM25	mean5	nP@10	0.9218
+no_fp	BM25	functional	MAP	0.7065
+no_fp	BM25	functional	nP@10	0.8751
+no_fp	CodeBERT zs	mean5	MAP	0.8876
+no_fp	CodeBERT zs	mean5	nP@10	0.9173
+no_fp	CodeBERT zs	functional	MAP	0.2843
+no_fp	CodeBERT zs	functional	nP@10	0.7483
+no_fp	CodeBERT ft	mean5	MAP	0.9299
+no_fp	CodeBERT ft	mean5	nP@10	0.9496
+no_fp	CodeBERT ft	functional	MAP	0.6833
+no_fp	CodeBERT ft	functional	nP@10	0.8895

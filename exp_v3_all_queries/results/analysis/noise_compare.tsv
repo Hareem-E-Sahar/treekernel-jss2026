@@ -1,0 +1,169 @@
+setting	table	test_family	a	b	measure	metric	diff	A12	A12_label	m	ci_level	adj_ci_low	adj_ci_high	p_adj
+default	noise		STK	BM25	mean5	nP@5	0.0679	0.5497	negligible					
+default	noise		STK	BM25	mean5	nP@10	0.0625	0.5538	negligible					
+default	noise		STK	BM25	mean5	MRR	0.0648	0.5375	negligible					
+default	noise		STK	BM25	mean5	MAP	0.0671	0.5689	small					
+default	noise		STK	CodeBERT ft	mean5	nP@5	0.0363	0.5248	negligible					
+default	noise		STK	CodeBERT ft	mean5	nP@10	0.0332	0.5261	negligible					
+default	noise		STK	CodeBERT ft	mean5	MRR	0.0383	0.5246	negligible					
+default	noise		STK	CodeBERT ft	mean5	MAP	0.0370	0.5402	negligible					
+default	noise		SSTK	BM25	mean5	nP@5	0.0720	0.5523	negligible					
+default	noise		SSTK	BM25	mean5	nP@10	0.0651	0.5577	small					
+default	noise		SSTK	BM25	mean5	MRR	0.0665	0.5394	negligible					
+default	noise		SSTK	BM25	mean5	MAP	0.0709	0.5731	small					
+default	noise		SSTK	CodeBERT ft	mean5	nP@5	0.0404	0.5294	negligible					
+default	noise		SSTK	CodeBERT ft	mean5	nP@10	0.0358	0.5305	negligible					
+default	noise		SSTK	CodeBERT ft	mean5	MRR	0.0401	0.5278	negligible					
+default	noise		SSTK	CodeBERT ft	mean5	MAP	0.0407	0.5490	negligible					
+default	noise		PTK	BM25	mean5	nP@5	0.0739	0.5554	small					
+default	noise		PTK	BM25	mean5	nP@10	0.0690	0.5602	small					
+default	noise		PTK	BM25	mean5	MRR	0.0694	0.5441	negligible					
+default	noise		PTK	BM25	mean5	MAP	0.0783	0.5816	small					
+default	noise		PTK	CodeBERT ft	mean5	nP@5	0.0423	0.5333	negligible					
+default	noise		PTK	CodeBERT ft	mean5	nP@10	0.0398	0.5348	negligible					
+default	noise		PTK	CodeBERT ft	mean5	MRR	0.0429	0.5287	negligible					
+default	noise		PTK	CodeBERT ft	mean5	MAP	0.0482	0.5595	small					
+default	noise		CodeBERT ft	BM25	mean5	nP@5	0.0316	0.5255	negligible					
+default	noise		CodeBERT ft	BM25	mean5	nP@10	0.0293	0.5319	negligible					
+default	noise		CodeBERT ft	BM25	mean5	MRR	0.0265	0.5160	negligible					
+default	noise		CodeBERT ft	BM25	mean5	MAP	0.0302	0.5361	negligible					
+default	noise		STK	BM25	functional	nP@5	-0.0867	0.4162	small					
+default	noise		STK	BM25	functional	nP@10	-0.1042	0.3894	small					
+default	noise		STK	BM25	functional	MRR	-0.0535	0.4595	negligible					
+default	noise		STK	BM25	functional	MAP	-0.2604	0.0843	large					
+default	noise		STK	CodeBERT ft	functional	nP@5	-0.0968	0.4138	small					
+default	noise		STK	CodeBERT ft	functional	nP@10	-0.1237	0.3799	small					
+default	noise		STK	CodeBERT ft	functional	MRR	-0.0468	0.4694	negligible					
+default	noise		STK	CodeBERT ft	functional	MAP	-0.2516	0.1255	large					
+default	noise		SSTK	BM25	functional	nP@5	-0.0890	0.4147	small					
+default	noise		SSTK	BM25	functional	nP@10	-0.1045	0.3891	small					
+default	noise		SSTK	BM25	functional	MRR	-0.0553	0.4579	negligible					
+default	noise		SSTK	BM25	functional	MAP	-0.2607	0.0840	large					
+default	noise		SSTK	CodeBERT ft	functional	nP@5	-0.0991	0.4115	small					
+default	noise		SSTK	CodeBERT ft	functional	nP@10	-0.1240	0.3796	small					
+default	noise		SSTK	CodeBERT ft	functional	MRR	-0.0486	0.4686	negligible					
+default	noise		SSTK	CodeBERT ft	functional	MAP	-0.2519	0.1242	large					
+default	noise		PTK	BM25	functional	nP@5	-0.1264	0.3834	small					
+default	noise		PTK	BM25	functional	nP@10	-0.1427	0.3523	medium					
+default	noise		PTK	BM25	functional	MRR	-0.0859	0.4392	small					
+default	noise		PTK	BM25	functional	MAP	-0.2780	0.0969	large					
+default	noise		PTK	CodeBERT ft	functional	nP@5	-0.1366	0.3808	small					
+default	noise		PTK	CodeBERT ft	functional	nP@10	-0.1622	0.3464	medium					
+default	noise		PTK	CodeBERT ft	functional	MRR	-0.0792	0.4492	negligible					
+default	noise		PTK	CodeBERT ft	functional	MAP	-0.2692	0.1234	large					
+default	noise		CodeBERT ft	BM25	functional	nP@5	0.0101	0.5106	negligible					
+default	noise		CodeBERT ft	BM25	functional	nP@10	0.0195	0.5239	negligible					
+default	noise		CodeBERT ft	BM25	functional	MRR	-0.0067	0.4934	negligible					
+default	noise		CodeBERT ft	BM25	functional	MAP	-0.0088	0.4686	negligible					
+t2	noise		STK	BM25	mean5	nP@5	0.0680	0.5498	negligible					
+t2	noise		STK	BM25	mean5	nP@10	0.0625	0.5537	negligible					
+t2	noise		STK	BM25	mean5	MRR	0.0655	0.5382	negligible					
+t2	noise		STK	BM25	mean5	MAP	0.0677	0.5696	small					
+t2	noise		STK	CodeBERT ft	mean5	nP@5	0.0365	0.5249	negligible					
+t2	noise		STK	CodeBERT ft	mean5	nP@10	0.0332	0.5261	negligible					
+t2	noise		STK	CodeBERT ft	mean5	MRR	0.0386	0.5246	negligible					
+t2	noise		STK	CodeBERT ft	mean5	MAP	0.0373	0.5401	negligible					
+t2	noise		SSTK	BM25	mean5	nP@5	0.0721	0.5524	negligible					
+t2	noise		SSTK	BM25	mean5	nP@10	0.0651	0.5577	small					
+t2	noise		SSTK	BM25	mean5	MRR	0.0673	0.5401	negligible					
+t2	noise		SSTK	BM25	mean5	MAP	0.0715	0.5738	small					
+t2	noise		SSTK	CodeBERT ft	mean5	nP@5	0.0406	0.5294	negligible					
+t2	noise		SSTK	CodeBERT ft	mean5	nP@10	0.0358	0.5306	negligible					
+t2	noise		SSTK	CodeBERT ft	mean5	MRR	0.0404	0.5279	negligible					
+t2	noise		SSTK	CodeBERT ft	mean5	MAP	0.0410	0.5489	negligible					
+t2	noise		PTK	BM25	mean5	nP@5	0.0739	0.5553	small					
+t2	noise		PTK	BM25	mean5	nP@10	0.0692	0.5603	small					
+t2	noise		PTK	BM25	mean5	MRR	0.0702	0.5448	negligible					
+t2	noise		PTK	BM25	mean5	MAP	0.0789	0.5823	small					
+t2	noise		PTK	CodeBERT ft	mean5	nP@5	0.0424	0.5334	negligible					
+t2	noise		PTK	CodeBERT ft	mean5	nP@10	0.0399	0.5350	negligible					
+t2	noise		PTK	CodeBERT ft	mean5	MRR	0.0433	0.5288	negligible					
+t2	noise		PTK	CodeBERT ft	mean5	MAP	0.0485	0.5594	small					
+t2	noise		CodeBERT ft	BM25	mean5	nP@5	0.0315	0.5254	negligible					
+t2	noise		CodeBERT ft	BM25	mean5	nP@10	0.0292	0.5318	negligible					
+t2	noise		CodeBERT ft	BM25	mean5	MRR	0.0269	0.5164	negligible					
+t2	noise		CodeBERT ft	BM25	mean5	MAP	0.0304	0.5365	negligible					
+t2	noise		STK	BM25	functional	nP@5	-0.0866	0.4163	small					
+t2	noise		STK	BM25	functional	nP@10	-0.1042	0.3893	small					
+t2	noise		STK	BM25	functional	MRR	-0.0533	0.4598	negligible					
+t2	noise		STK	BM25	functional	MAP	-0.2604	0.0843	large					
+t2	noise		STK	CodeBERT ft	functional	nP@5	-0.0967	0.4138	small					
+t2	noise		STK	CodeBERT ft	functional	nP@10	-0.1237	0.3799	small					
+t2	noise		STK	CodeBERT ft	functional	MRR	-0.0466	0.4695	negligible					
+t2	noise		STK	CodeBERT ft	functional	MAP	-0.2516	0.1255	large					
+t2	noise		SSTK	BM25	functional	nP@5	-0.0889	0.4149	small					
+t2	noise		SSTK	BM25	functional	nP@10	-0.1045	0.3891	small					
+t2	noise		SSTK	BM25	functional	MRR	-0.0550	0.4582	negligible					
+t2	noise		SSTK	BM25	functional	MAP	-0.2607	0.0840	large					
+t2	noise		SSTK	CodeBERT ft	functional	nP@5	-0.0991	0.4115	small					
+t2	noise		SSTK	CodeBERT ft	functional	nP@10	-0.1240	0.3796	small					
+t2	noise		SSTK	CodeBERT ft	functional	MRR	-0.0484	0.4687	negligible					
+t2	noise		SSTK	CodeBERT ft	functional	MAP	-0.2519	0.1242	large					
+t2	noise		PTK	BM25	functional	nP@5	-0.1263	0.3837	small					
+t2	noise		PTK	BM25	functional	nP@10	-0.1427	0.3522	medium					
+t2	noise		PTK	BM25	functional	MRR	-0.0856	0.4395	small					
+t2	noise		PTK	BM25	functional	MAP	-0.2780	0.0969	large					
+t2	noise		PTK	CodeBERT ft	functional	nP@5	-0.1365	0.3810	small					
+t2	noise		PTK	CodeBERT ft	functional	nP@10	-0.1622	0.3464	medium					
+t2	noise		PTK	CodeBERT ft	functional	MRR	-0.0790	0.4493	negligible					
+t2	noise		PTK	CodeBERT ft	functional	MAP	-0.2692	0.1234	large					
+t2	noise		CodeBERT ft	BM25	functional	nP@5	0.0101	0.5106	negligible					
+t2	noise		CodeBERT ft	BM25	functional	nP@10	0.0195	0.5239	negligible					
+t2	noise		CodeBERT ft	BM25	functional	MRR	-0.0066	0.4934	negligible					
+t2	noise		CodeBERT ft	BM25	functional	MAP	-0.0088	0.4687	negligible					
+no_fp	noise		STK	BM25	mean5	nP@5	0.0242	0.5193	negligible					
+no_fp	noise		STK	BM25	mean5	nP@10	0.0209	0.5191	negligible					
+no_fp	noise		STK	BM25	mean5	MRR	0.0267	0.5157	negligible					
+no_fp	noise		STK	BM25	mean5	MAP	0.0223	0.5177	negligible					
+no_fp	noise		STK	CodeBERT ft	mean5	nP@5	-0.0023	0.4969	negligible					
+no_fp	noise		STK	CodeBERT ft	mean5	nP@10	-0.0069	0.4922	negligible					
+no_fp	noise		STK	CodeBERT ft	mean5	MRR	0.0036	0.5017	negligible					
+no_fp	noise		STK	CodeBERT ft	mean5	MAP	-0.0087	0.4886	negligible					
+no_fp	noise		SSTK	BM25	mean5	nP@5	0.0252	0.5211	negligible					
+no_fp	noise		SSTK	BM25	mean5	nP@10	0.0215	0.5205	negligible					
+no_fp	noise		SSTK	BM25	mean5	MRR	0.0269	0.5159	negligible					
+no_fp	noise		SSTK	BM25	mean5	MAP	0.0244	0.5223	negligible					
+no_fp	noise		SSTK	CodeBERT ft	mean5	nP@5	-0.0012	0.4984	negligible					
+no_fp	noise		SSTK	CodeBERT ft	mean5	nP@10	-0.0063	0.4937	negligible					
+no_fp	noise		SSTK	CodeBERT ft	mean5	MRR	0.0038	0.5023	negligible					
+no_fp	noise		SSTK	CodeBERT ft	mean5	MAP	-0.0066	0.4927	negligible					
+no_fp	noise		PTK	BM25	mean5	nP@5	0.0269	0.5228	negligible					
+no_fp	noise		PTK	BM25	mean5	nP@10	0.0249	0.5246	negligible					
+no_fp	noise		PTK	BM25	mean5	MRR	0.0265	0.5173	negligible					
+no_fp	noise		PTK	BM25	mean5	MAP	0.0303	0.5325	negligible					
+no_fp	noise		PTK	CodeBERT ft	mean5	nP@5	0.0004	0.5008	negligible					
+no_fp	noise		PTK	CodeBERT ft	mean5	nP@10	-0.0029	0.4986	negligible					
+no_fp	noise		PTK	CodeBERT ft	mean5	MRR	0.0033	0.5030	negligible					
+no_fp	noise		PTK	CodeBERT ft	mean5	MAP	-0.0008	0.5054	negligible					
+no_fp	noise		CodeBERT ft	BM25	mean5	nP@5	0.0265	0.5236	negligible					
+no_fp	noise		CodeBERT ft	BM25	mean5	nP@10	0.0278	0.5277	negligible					
+no_fp	noise		CodeBERT ft	BM25	mean5	MRR	0.0232	0.5145	negligible					
+no_fp	noise		CodeBERT ft	BM25	mean5	MAP	0.0310	0.5379	negligible					
+no_fp	noise		STK	BM25	functional	nP@5	-0.1101	0.3930	small					
+no_fp	noise		STK	BM25	functional	nP@10	-0.1326	0.3542	medium					
+no_fp	noise		STK	BM25	functional	MRR	-0.0536	0.4630	negligible					
+no_fp	noise		STK	BM25	functional	MAP	-0.3680	0.0814	large					
+no_fp	noise		STK	CodeBERT ft	functional	nP@5	-0.1188	0.3870	small					
+no_fp	noise		STK	CodeBERT ft	functional	nP@10	-0.1471	0.3437	medium					
+no_fp	noise		STK	CodeBERT ft	functional	MRR	-0.0523	0.4664	negligible					
+no_fp	noise		STK	CodeBERT ft	functional	MAP	-0.3449	0.0810	large					
+no_fp	noise		SSTK	BM25	functional	nP@5	-0.1109	0.3925	small					
+no_fp	noise		SSTK	BM25	functional	nP@10	-0.1338	0.3544	medium					
+no_fp	noise		SSTK	BM25	functional	MRR	-0.0553	0.4613	negligible					
+no_fp	noise		SSTK	BM25	functional	MAP	-0.3679	0.0819	large					
+no_fp	noise		SSTK	CodeBERT ft	functional	nP@5	-0.1196	0.3872	small					
+no_fp	noise		SSTK	CodeBERT ft	functional	nP@10	-0.1482	0.3429	medium					
+no_fp	noise		SSTK	CodeBERT ft	functional	MRR	-0.0540	0.4646	negligible					
+no_fp	noise		SSTK	CodeBERT ft	functional	MAP	-0.3448	0.0808	large					
+no_fp	noise		PTK	BM25	functional	nP@5	-0.1488	0.3595	medium					
+no_fp	noise		PTK	BM25	functional	nP@10	-0.1729	0.3199	medium					
+no_fp	noise		PTK	BM25	functional	MRR	-0.0809	0.4447	small					
+no_fp	noise		PTK	BM25	functional	MAP	-0.3994	0.0837	large					
+no_fp	noise		PTK	CodeBERT ft	functional	nP@5	-0.1575	0.3539	medium					
+no_fp	noise		PTK	CodeBERT ft	functional	nP@10	-0.1873	0.3116	medium					
+no_fp	noise		PTK	CodeBERT ft	functional	MRR	-0.0797	0.4481	negligible					
+no_fp	noise		PTK	CodeBERT ft	functional	MAP	-0.3763	0.0832	large					
+no_fp	noise		CodeBERT ft	BM25	functional	nP@5	0.0087	0.5144	negligible					
+no_fp	noise		CodeBERT ft	BM25	functional	nP@10	0.0144	0.5301	negligible					
+no_fp	noise		CodeBERT ft	BM25	functional	MRR	-0.0013	0.4977	negligible					
+no_fp	noise		CodeBERT ft	BM25	functional	MAP	-0.0231	0.4035	small					

@@ -1,0 +1,10 @@
+grouping	group	queries	functionalities	loc_median	loc_q1	loc_q3	mccabe_median	mccabe_q1	mccabe_q3	nodes_median	nodes_q1	nodes_q3	height_median	height_q1	height_q3	mean_branching_median	mean_branching_q1	mean_branching_q3	max_branching_median	max_branching_q1	max_branching_q3	leaf_share_median	distinct_productions_median
+LOC quartile	Q1 (3–13)	4071	40	10	7	12	2	2	3	79	62	95	10	8	11	1.944	1.886	2.043	6	5	6	0.493	29
+LOC quartile	Q2 (14–21)	3559	40	17	15	19	4	3	5	130	111	157	11	10	13	1.95	1.897	2.026	6	5	8	0.4912	43
+LOC quartile	Q3 (22–35)	3462	39	27	24	31	5	4	7	201	172	239	13	11	15	1.949	1.899	2	8	6	11	0.4896	59
+LOC quartile	Q4 (36–433)	3495	40	55	43	83	11	7	17	444	324	670	16	13	19	1.984	1.94	2.04	14	10	21	0.4971	90
+McCabe	1	1373	36	8	6	15	1	1	1	78	58	129	8	8	10	1.939	1.892	2	6	6	10	0.4915	29
+McCabe	2–3	4399	41	13	10	17	3	2	3	101	77	135	10	9	12	1.938	1.882	2	6	5	8	0.4889	37
+McCabe	4–5	3794	42	20	16	27	4	4	5	149	111	198	12	11	13	1.959	1.903	2.031	6	5	9	0.493	48
+McCabe	6–10	3142	38	32	25	40	7	6	8	233	182	310	14	12	16	1.97	1.918	2.019	8	6	13	0.4943	63
+McCabe	>10	1878	37	71	51	100	17	13	21.75	554	401	793	17	15	20	2.004	1.955	2.049	15	10	21	0.5021	102

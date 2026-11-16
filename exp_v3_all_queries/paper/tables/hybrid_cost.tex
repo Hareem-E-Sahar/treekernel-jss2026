@@ -1,0 +1,16 @@
+\begin{table}[!htbp]
+\centering
+\caption{RQ4: mean time per query of the hybrids over the timing sample of Table~\ref{tab:rq2}, one thread. First stage: BM25's top 200 from Elasticsearch (client time), of which the hybrid uses the top 100. Second stage: the tree kernel on those 100 candidates, including reading their trees. Speed-up = full ranking / hybrid.}
+\label{tab:hybridcost}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & First stage (s) & Second stage (s) & Hybrid (s) & Full ranking (s) & Speed-up \\
+\midrule
+STK-Hybrid & 0.013 & 0.057 & 0.070 & 6.73 & 96$\times$ \\
+SSTK-Hybrid & 0.013 & 0.054 & 0.067 & 6.98 & 104$\times$ \\
+PTK-Hybrid & 0.013 & 0.080 & 0.093 & 15.51 & 166$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}

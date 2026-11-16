@@ -1,0 +1,21 @@
+\begin{table}[!htbp]
+\centering
+\caption{Tree shape (medians) and fragment overlap with the query (means), per quartile of lines of code. Rel.: relevant methods; Wrong: the kernel's 10 highest-scoring non-relevant methods. Overlap is measured on complete subtrees for STK and on productions for SSTK and PTK, so their Rel.\ values are the same.}
+\label{tab:diag}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l|rrr|ccccc|ccccc}
+\toprule
+ & & & & \multicolumn{5}{c}{Syntactic similarity} & \multicolumn{5}{c}{Functional similarity} \\
+\cmidrule(lr){5-9}\cmidrule(lr){10-14}
+ & & & Max & \multicolumn{2}{c}{Rel.} & \multicolumn{3}{c}{Wrong} & \multicolumn{2}{c}{Rel.} & \multicolumn{3}{c}{Wrong} \\
+\cmidrule(lr){5-6}\cmidrule(lr){7-9}\cmidrule(lr){10-11}\cmidrule(lr){12-14}
+LOC & Nodes & Height & branch. & STK & \shortstack{SSTK,\\PTK} & STK & SSTK & PTK & STK & \shortstack{SSTK,\\PTK} & STK & SSTK & PTK \\
+\midrule
+3--13 & 79 & 10 & 6 & 0.79 & 0.88 & 0.27 & 0.40 & 0.47 & 0.27 & 0.39 & 0.24 & 0.38 & 0.44 \\
+14--21 & 130 & 11 & 6 & 0.80 & 0.88 & 0.28 & 0.45 & 0.48 & 0.21 & 0.36 & 0.25 & 0.41 & 0.46 \\
+22--35 & 201 & 13 & 8 & 0.82 & 0.89 & 0.26 & 0.44 & 0.46 & 0.18 & 0.35 & 0.21 & 0.40 & 0.43 \\
+36--433 & 444 & 16 & 14 & 0.85 & 0.91 & 0.19 & 0.42 & 0.38 & 0.14 & 0.28 & 0.17 & 0.40 & 0.37 \\
+\bottomrule
+\end{tabular}
+\end{table}

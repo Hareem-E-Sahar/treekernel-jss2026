@@ -1,0 +1,181 @@
+rq	grouping	group	kernel	statistic	value
+RQ1	LOC quartile	Q1 (3–13)	STK	relevant	0.7883
+RQ1	LOC quartile	Q1 (3–13)	STK	top-10 non-relevant	0.2716
+RQ1	LOC quartile	Q1 (3–13)	STK	size ratio top-10 non-relevant	3.8224
+RQ1	LOC quartile	Q1 (3–13)	SSTK	relevant	0.8802
+RQ1	LOC quartile	Q1 (3–13)	SSTK	top-10 non-relevant	0.4041
+RQ1	LOC quartile	Q1 (3–13)	SSTK	size ratio top-10 non-relevant	3.8280
+RQ1	LOC quartile	Q1 (3–13)	PTK	relevant	0.8802
+RQ1	LOC quartile	Q1 (3–13)	PTK	top-10 non-relevant	0.4699
+RQ1	LOC quartile	Q1 (3–13)	PTK	size ratio top-10 non-relevant	1.6584
+RQ1	LOC quartile	Q1 (3–13)	all	size ratio relevant	1.0097
+RQ1	LOC quartile	Q2 (14–21)	STK	relevant	0.8015
+RQ1	LOC quartile	Q2 (14–21)	STK	top-10 non-relevant	0.2845
+RQ1	LOC quartile	Q2 (14–21)	STK	size ratio top-10 non-relevant	2.5517
+RQ1	LOC quartile	Q2 (14–21)	SSTK	relevant	0.8831
+RQ1	LOC quartile	Q2 (14–21)	SSTK	top-10 non-relevant	0.4505
+RQ1	LOC quartile	Q2 (14–21)	SSTK	size ratio top-10 non-relevant	2.5671
+RQ1	LOC quartile	Q2 (14–21)	PTK	relevant	0.8831
+RQ1	LOC quartile	Q2 (14–21)	PTK	top-10 non-relevant	0.4784
+RQ1	LOC quartile	Q2 (14–21)	PTK	size ratio top-10 non-relevant	1.4262
+RQ1	LOC quartile	Q2 (14–21)	all	size ratio relevant	0.9967
+RQ1	LOC quartile	Q3 (22–35)	STK	relevant	0.8236
+RQ1	LOC quartile	Q3 (22–35)	STK	top-10 non-relevant	0.2568
+RQ1	LOC quartile	Q3 (22–35)	STK	size ratio top-10 non-relevant	2.3457
+RQ1	LOC quartile	Q3 (22–35)	SSTK	relevant	0.8907
+RQ1	LOC quartile	Q3 (22–35)	SSTK	top-10 non-relevant	0.4417
+RQ1	LOC quartile	Q3 (22–35)	SSTK	size ratio top-10 non-relevant	2.3454
+RQ1	LOC quartile	Q3 (22–35)	PTK	relevant	0.8907
+RQ1	LOC quartile	Q3 (22–35)	PTK	top-10 non-relevant	0.4637
+RQ1	LOC quartile	Q3 (22–35)	PTK	size ratio top-10 non-relevant	1.2844
+RQ1	LOC quartile	Q3 (22–35)	all	size ratio relevant	0.9980
+RQ1	LOC quartile	Q4 (36–433)	STK	relevant	0.8525
+RQ1	LOC quartile	Q4 (36–433)	STK	top-10 non-relevant	0.1883
+RQ1	LOC quartile	Q4 (36–433)	STK	size ratio top-10 non-relevant	1.6640
+RQ1	LOC quartile	Q4 (36–433)	SSTK	relevant	0.9057
+RQ1	LOC quartile	Q4 (36–433)	SSTK	top-10 non-relevant	0.4154
+RQ1	LOC quartile	Q4 (36–433)	SSTK	size ratio top-10 non-relevant	1.6761
+RQ1	LOC quartile	Q4 (36–433)	PTK	relevant	0.9057
+RQ1	LOC quartile	Q4 (36–433)	PTK	top-10 non-relevant	0.3755
+RQ1	LOC quartile	Q4 (36–433)	PTK	size ratio top-10 non-relevant	0.8802
+RQ1	LOC quartile	Q4 (36–433)	all	size ratio relevant	0.9889
+RQ1	McCabe	1	STK	relevant	0.8108
+RQ1	McCabe	1	STK	top-10 non-relevant	0.3022
+RQ1	McCabe	1	STK	size ratio top-10 non-relevant	2.4712
+RQ1	McCabe	1	SSTK	relevant	0.8911
+RQ1	McCabe	1	SSTK	top-10 non-relevant	0.4609
+RQ1	McCabe	1	SSTK	size ratio top-10 non-relevant	2.4040
+RQ1	McCabe	1	PTK	relevant	0.8911
+RQ1	McCabe	1	PTK	top-10 non-relevant	0.4995
+RQ1	McCabe	1	PTK	size ratio top-10 non-relevant	1.4305
+RQ1	McCabe	1	all	size ratio relevant	1.0081
+RQ1	McCabe	2–3	STK	relevant	0.7849
+RQ1	McCabe	2–3	STK	top-10 non-relevant	0.2483
+RQ1	McCabe	2–3	STK	size ratio top-10 non-relevant	4.0072
+RQ1	McCabe	2–3	SSTK	relevant	0.8765
+RQ1	McCabe	2–3	SSTK	top-10 non-relevant	0.3947
+RQ1	McCabe	2–3	SSTK	size ratio top-10 non-relevant	3.9872
+RQ1	McCabe	2–3	PTK	relevant	0.8765
+RQ1	McCabe	2–3	PTK	top-10 non-relevant	0.4606
+RQ1	McCabe	2–3	PTK	size ratio top-10 non-relevant	1.7002
+RQ1	McCabe	2–3	all	size ratio relevant	1.0074
+RQ1	McCabe	4–5	STK	relevant	0.8181
+RQ1	McCabe	4–5	STK	top-10 non-relevant	0.2820
+RQ1	McCabe	4–5	STK	size ratio top-10 non-relevant	2.4012
+RQ1	McCabe	4–5	SSTK	relevant	0.8907
+RQ1	McCabe	4–5	SSTK	top-10 non-relevant	0.4470
+RQ1	McCabe	4–5	SSTK	size ratio top-10 non-relevant	2.4572
+RQ1	McCabe	4–5	PTK	relevant	0.8907
+RQ1	McCabe	4–5	PTK	top-10 non-relevant	0.4633
+RQ1	McCabe	4–5	PTK	size ratio top-10 non-relevant	1.3253
+RQ1	McCabe	4–5	all	size ratio relevant	0.9948
+RQ1	McCabe	6–10	STK	relevant	0.8209
+RQ1	McCabe	6–10	STK	top-10 non-relevant	0.2317
+RQ1	McCabe	6–10	STK	size ratio top-10 non-relevant	2.2078
+RQ1	McCabe	6–10	SSTK	relevant	0.8902
+RQ1	McCabe	6–10	SSTK	top-10 non-relevant	0.4245
+RQ1	McCabe	6–10	SSTK	size ratio top-10 non-relevant	2.2481
+RQ1	McCabe	6–10	PTK	relevant	0.8902
+RQ1	McCabe	6–10	PTK	top-10 non-relevant	0.4415
+RQ1	McCabe	6–10	PTK	size ratio top-10 non-relevant	1.1669
+RQ1	McCabe	6–10	all	size ratio relevant	0.9962
+RQ1	McCabe	>10	STK	relevant	0.8591
+RQ1	McCabe	>10	STK	top-10 non-relevant	0.1939
+RQ1	McCabe	>10	STK	size ratio top-10 non-relevant	1.4991
+RQ1	McCabe	>10	SSTK	relevant	0.9109
+RQ1	McCabe	>10	SSTK	top-10 non-relevant	0.4195
+RQ1	McCabe	>10	SSTK	size ratio top-10 non-relevant	1.4665
+RQ1	McCabe	>10	PTK	relevant	0.9109
+RQ1	McCabe	>10	PTK	top-10 non-relevant	0.3626
+RQ1	McCabe	>10	PTK	size ratio top-10 non-relevant	0.7672
+RQ1	McCabe	>10	all	size ratio relevant	0.9910
+RQ2	LOC quartile	Q1 (3–13)	STK	relevant	0.2722
+RQ2	LOC quartile	Q1 (3–13)	STK	top-10 non-relevant	0.2419
+RQ2	LOC quartile	Q1 (3–13)	STK	size ratio top-10 non-relevant	3.8274
+RQ2	LOC quartile	Q1 (3–13)	SSTK	relevant	0.3899
+RQ2	LOC quartile	Q1 (3–13)	SSTK	top-10 non-relevant	0.3760
+RQ2	LOC quartile	Q1 (3–13)	SSTK	size ratio top-10 non-relevant	3.8504
+RQ2	LOC quartile	Q1 (3–13)	PTK	relevant	0.3899
+RQ2	LOC quartile	Q1 (3–13)	PTK	top-10 non-relevant	0.4399
+RQ2	LOC quartile	Q1 (3–13)	PTK	size ratio top-10 non-relevant	1.6983
+RQ2	LOC quartile	Q1 (3–13)	all	size ratio relevant	2.7407
+RQ2	LOC quartile	Q2 (14–21)	STK	relevant	0.2111
+RQ2	LOC quartile	Q2 (14–21)	STK	top-10 non-relevant	0.2478
+RQ2	LOC quartile	Q2 (14–21)	STK	size ratio top-10 non-relevant	2.8191
+RQ2	LOC quartile	Q2 (14–21)	SSTK	relevant	0.3616
+RQ2	LOC quartile	Q2 (14–21)	SSTK	top-10 non-relevant	0.4135
+RQ2	LOC quartile	Q2 (14–21)	SSTK	size ratio top-10 non-relevant	2.8458
+RQ2	LOC quartile	Q2 (14–21)	PTK	relevant	0.3616
+RQ2	LOC quartile	Q2 (14–21)	PTK	top-10 non-relevant	0.4565
+RQ2	LOC quartile	Q2 (14–21)	PTK	size ratio top-10 non-relevant	1.4740
+RQ2	LOC quartile	Q2 (14–21)	all	size ratio relevant	1.7457
+RQ2	LOC quartile	Q3 (22–35)	STK	relevant	0.1821
+RQ2	LOC quartile	Q3 (22–35)	STK	top-10 non-relevant	0.2095
+RQ2	LOC quartile	Q3 (22–35)	STK	size ratio top-10 non-relevant	2.5383
+RQ2	LOC quartile	Q3 (22–35)	SSTK	relevant	0.3473
+RQ2	LOC quartile	Q3 (22–35)	SSTK	top-10 non-relevant	0.3991
+RQ2	LOC quartile	Q3 (22–35)	SSTK	size ratio top-10 non-relevant	2.5520
+RQ2	LOC quartile	Q3 (22–35)	PTK	relevant	0.3473
+RQ2	LOC quartile	Q3 (22–35)	PTK	top-10 non-relevant	0.4301
+RQ2	LOC quartile	Q3 (22–35)	PTK	size ratio top-10 non-relevant	1.3190
+RQ2	LOC quartile	Q3 (22–35)	all	size ratio relevant	1.2840
+RQ2	LOC quartile	Q4 (36–433)	STK	relevant	0.1370
+RQ2	LOC quartile	Q4 (36–433)	STK	top-10 non-relevant	0.1681
+RQ2	LOC quartile	Q4 (36–433)	STK	size ratio top-10 non-relevant	1.6647
+RQ2	LOC quartile	Q4 (36–433)	SSTK	relevant	0.2828
+RQ2	LOC quartile	Q4 (36–433)	SSTK	top-10 non-relevant	0.3987
+RQ2	LOC quartile	Q4 (36–433)	SSTK	size ratio top-10 non-relevant	1.6993
+RQ2	LOC quartile	Q4 (36–433)	PTK	relevant	0.2828
+RQ2	LOC quartile	Q4 (36–433)	PTK	top-10 non-relevant	0.3665
+RQ2	LOC quartile	Q4 (36–433)	PTK	size ratio top-10 non-relevant	0.8819
+RQ2	LOC quartile	Q4 (36–433)	all	size ratio relevant	0.6270
+RQ2	McCabe	1	STK	relevant	0.1635
+RQ2	McCabe	1	STK	top-10 non-relevant	0.2302
+RQ2	McCabe	1	STK	size ratio top-10 non-relevant	3.0806
+RQ2	McCabe	1	SSTK	relevant	0.2913
+RQ2	McCabe	1	SSTK	top-10 non-relevant	0.3925
+RQ2	McCabe	1	SSTK	size ratio top-10 non-relevant	2.9921
+RQ2	McCabe	1	PTK	relevant	0.2913
+RQ2	McCabe	1	PTK	top-10 non-relevant	0.4331
+RQ2	McCabe	1	PTK	size ratio top-10 non-relevant	1.6086
+RQ2	McCabe	1	all	size ratio relevant	3.0172
+RQ2	McCabe	2–3	STK	relevant	0.2370
+RQ2	McCabe	2–3	STK	top-10 non-relevant	0.2316
+RQ2	McCabe	2–3	STK	size ratio top-10 non-relevant	3.5263
+RQ2	McCabe	2–3	SSTK	relevant	0.3766
+RQ2	McCabe	2–3	SSTK	top-10 non-relevant	0.3878
+RQ2	McCabe	2–3	SSTK	size ratio top-10 non-relevant	3.5386
+RQ2	McCabe	2–3	PTK	relevant	0.3766
+RQ2	McCabe	2–3	PTK	top-10 non-relevant	0.4436
+RQ2	McCabe	2–3	PTK	size ratio top-10 non-relevant	1.6311
+RQ2	McCabe	2–3	all	size ratio relevant	2.2112
+RQ2	McCabe	4–5	STK	relevant	0.2424
+RQ2	McCabe	4–5	STK	top-10 non-relevant	0.2407
+RQ2	McCabe	4–5	STK	size ratio top-10 non-relevant	2.7062
+RQ2	McCabe	4–5	SSTK	relevant	0.3882
+RQ2	McCabe	4–5	SSTK	top-10 non-relevant	0.4098
+RQ2	McCabe	4–5	SSTK	size ratio top-10 non-relevant	2.7594
+RQ2	McCabe	4–5	PTK	relevant	0.3882
+RQ2	McCabe	4–5	PTK	top-10 non-relevant	0.4431
+RQ2	McCabe	4–5	PTK	size ratio top-10 non-relevant	1.3844
+RQ2	McCabe	4–5	all	size ratio relevant	1.5062
+RQ2	McCabe	6–10	STK	relevant	0.1725
+RQ2	McCabe	6–10	STK	top-10 non-relevant	0.1969
+RQ2	McCabe	6–10	STK	size ratio top-10 non-relevant	2.3604
+RQ2	McCabe	6–10	SSTK	relevant	0.3327
+RQ2	McCabe	6–10	SSTK	top-10 non-relevant	0.3919
+RQ2	McCabe	6–10	SSTK	size ratio top-10 non-relevant	2.4085
+RQ2	McCabe	6–10	PTK	relevant	0.3327
+RQ2	McCabe	6–10	PTK	top-10 non-relevant	0.4130
+RQ2	McCabe	6–10	PTK	size ratio top-10 non-relevant	1.1985
+RQ2	McCabe	6–10	all	size ratio relevant	1.0945
+RQ2	McCabe	>10	STK	relevant	0.1276
+RQ2	McCabe	>10	STK	top-10 non-relevant	0.1663
+RQ2	McCabe	>10	STK	size ratio top-10 non-relevant	1.4877
+RQ2	McCabe	>10	SSTK	relevant	0.2608
+RQ2	McCabe	>10	SSTK	top-10 non-relevant	0.3974
+RQ2	McCabe	>10	SSTK	size ratio top-10 non-relevant	1.5255
+RQ2	McCabe	>10	PTK	relevant	0.2608
+RQ2	McCabe	>10	PTK	top-10 non-relevant	0.3515
+RQ2	McCabe	>10	PTK	size ratio top-10 non-relevant	0.7486
+RQ2	McCabe	>10	all	size ratio relevant	0.5237

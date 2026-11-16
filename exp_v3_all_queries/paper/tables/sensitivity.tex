@@ -1,0 +1,25 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Kernel hyper-parameters: MAP for syntactic similarity (mean of the five types) on the 50 tuning queries. n.c.\ = not computable (KeLP's float overflows; in brackets the number of overflowing methods). Selected settings in bold. Last rows: PTK's terminal factor at $\lambda$ = 0.4, $\mu$ = 0.6.}
+\label{tab:sensitivity}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llcccccc}
+\toprule
+Kernel & & $\lambda$ = 0.1 & $\lambda$ = 0.2 & $\lambda$ = 0.4 & $\lambda$ = 0.6 & $\lambda$ = 0.8 & $\lambda$ = 1.0 \\
+\midrule
+STK & & 0.815 & 0.826 & 0.830 & 0.836 & 0.852 & \textbf{0.868} \\
+SSTK & & \textbf{0.889} & 0.858 & 0.727 & n.c. (233) & n.c. (833) & n.c. (1,718) \\
+\midrule
+PTK & $\mu$ = 0.1 & 0.849 & 0.849 & 0.849 & 0.849 & 0.851 & n.c. (13) \\
+ & $\mu$ = 0.2 & 0.855 & 0.855 & 0.856 & 0.856 & 0.875 & n.c. (63) \\
+ & $\mu$ = 0.4 & 0.875 & 0.876 & 0.902 & 0.908 & n.c. (1) & n.c. (189) \\
+ & $\mu$ = 0.6 & 0.890 & 0.908 & \textbf{0.916} & n.c. (36) & n.c. (537) & n.c. (1,474) \\
+ & $\mu$ = 0.8 & 0.871 & 0.874 & n.c. (27) & n.c. (676) & n.c. (1,962) & n.c. (3,345) \\
+ & $\mu$ = 1.0 & 0.870 & n.c. (41) & n.c. (490) & n.c. (1,886) & n.c. (3,502) & n.c. (5,309) \\
+\midrule
+PTK & terminal factor & 0.25 & 0.5 & 0.75 & 1 & 1.25 & 1.5 \\
+ & ($\lambda$ 0.4, $\mu$ 0.6) & 0.893 & 0.910 & 0.913 & \textbf{0.917} & 0.917 & n.c. \\
+\bottomrule
+\end{tabular}
+\end{table*}

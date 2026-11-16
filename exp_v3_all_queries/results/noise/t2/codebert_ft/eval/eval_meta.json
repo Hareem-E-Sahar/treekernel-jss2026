@@ -1,0 +1,35 @@
+{
+  "run": "exp_v2/results/hybrid/runs/codebert_ft",
+  "run_meta": {
+    "kernel": "CodeBERT",
+    "model": "microsoft/codebert-base",
+    "embeddings": "data/codebert/emb/fpft_fold{k}_e5.npy",
+    "fine_tuned": true,
+    "pooling": "CLS",
+    "max_len": 512,
+    "queries": "exp_v2/data/full/union.tsv",
+    "n_queries": 14587,
+    "n_corpus": 72782,
+    "merged_from": {
+      "exp_v2/results/fp/runs/codebert_ft": 4260,
+      "exp_v2/results/size_complexity/runs/codebert_ft": 4712,
+      "exp_v2/results/hybrid/new_queries/codebert_ft_part00": 1500,
+      "exp_v2/results/hybrid/new_queries/codebert_ft_part01": 1500,
+      "exp_v2/results/hybrid/new_queries/codebert_ft_part02": 1500,
+      "exp_v2/results/hybrid/new_queries/codebert_ft_part03": 1115
+    }
+  },
+  "syntactic": [
+    "exp_v2/data/full/syntactic_T1.tsv:T1",
+    "exp_v2/data/full/syntactic_T2.tsv:T2",
+    "exp_v2/data/full/syntactic_VST3.tsv:VST3",
+    "exp_v2/data/full/syntactic_ST3.tsv:ST3",
+    "exp_v2/data/full/syntactic_MT3.tsv:MT3"
+  ],
+  "functional": [
+    "exp_v2/data/full/functional.tsv"
+  ],
+  "ignore": "[PosixPath('exp_v2/data/fp_copies.tsv'), PosixPath('exp_v3_all_queries/data/t2_copies.tsv')]",
+  "bootstrap": 0,
+  "seed": 20261016
+}

@@ -1,0 +1,131 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{booktabs,graphicx,amssymb,longtable,multirow}
+\usepackage[T1]{fontenc}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black]{hyperref}
+\newcommand{\rqsection}[2]{\FloatBarrier\clearpage\section*{#1}\noindent\emph{#2}\par\medskip}
+\newcommand{\addresses}[1]{\noindent\textbf{Addresses:} #1\par\medskip}
+\setcounter{topnumber}{3}\renewcommand{\topfraction}{0.95}\setcounter{totalnumber}{4}\renewcommand{\textfraction}{0.02}
+\renewcommand{\floatpagefraction}{0.9}\renewcommand{\dbltopfraction}{0.95}\renewcommand{\dblfloatpagefraction}{0.9}
+\title{Tree kernels on BigCloneBench: revised results (all eligible queries)}
+\date{exp\_v3\_all\_queries, \today}
+\begin{document}
+\maketitle
+
+\noindent This document collects the tables and figures of the revised evaluation, as planned in
+\texttt{revision\_plan.md}. The setting, metrics and statistics are described once, in the section \emph{Setup};
+captions only say what a table or figure shows.
+
+\medskip
+\noindent\begin{tabular}{@{}ll@{}}
+\toprule
+Section & Reviewer comments \\
+\midrule
+RQ1, RQ2 & R1-C1a (all queries), R1-C2a (fine-tuned CodeBERT), R2-C5 (effect sizes, $p$-values) \\
+RQ3 & R2-C4 (no thresholds: LOC quartiles, McCabe bins), R1-C1a \\
+RQ4 & R2-C5 (hybrid effect sizes and metric-level $p$-values), R1-C1a \\
+Kernel hyper-parameters & R1-C1b ($\lambda$, $\mu$, terminal factor) \\
+Label noise & R1-C3 (BigCloneBench label noise) \\
+Diagnostics & R1-C4 (tree depth, nodes, branching) \\
+\bottomrule
+\end{tabular}
+
+\FloatBarrier\clearpage
+\section*{Setup}
+
+%\paragraph{Corpus.} BigCloneBench's true positives plus its 58,103 false positives: 72,782 Java methods. Every query is ranked against the whole corpus. A false positive counts as non-relevant, except a whitespace-identical copy of the query, which is removed from that query's ranking (BigCloneBench evidently mislabelled it).
+
+%\paragraph{Queries.} Every eligible true positive is a query (R1-C1a): the 14,679 true positives minus the 50 tuning queries and the 42 methods whose functionalities span CodeBERT folds, i.e.\ 14,587. No sampling is involved.
+%14,780 tps in bcb but 101 had overflow on KeLP. 219 fps also overflew but not relevant to queries.
+
+
+\paragraph{Confidence intervals and tests.} Queries of the same functionality implement the same task, look alike
+and share relevant methods, so they are not independent. To compute confidence intervals we resample 43 functionalities (not individual queries) 10,000 times with replacement. Each resample keeps all queries of each drawn functionality. %If a query appears in several functionalities is considered a part of the lowest-numbered functionality. 
+Comparisons are paired i.e., both methods are scored on the same queries in every resample. Since all eligible queries are evaluated, the intervals do not describe sampling of queries; they show how far a result would change on a different set of tasks.
+\begin{itemize}
+\item \emph{Tested comparisons}: MAP is the primary metric and the only one tested. In RQ1 (for each clone type and
+for the mean of the five types) and in RQ2, the 9 comparisons are the three kernels against each other and each
+kernel against BM25 and against fine-tuned CodeBERT. In RQ4, the 9 comparisons per measure are each hybrid against
+its kernel's full ranking, BM25 and fine-tuned CodeBERT.
+\item \emph{Bonferroni-adjusted CI}: to account for the multiple comparisons, each CI is widened to the level
+$1 - 0.05/m$ for a family of $m$ comparisons (99.4\% for 9): the middle 99.4\% of the 10,000
+resampled differences. A difference is significant when its adjusted CI excludes 0.
+\item \emph{Effect size $A_{12}$} (paired Vargha--Delaney): the share of queries on which A scores higher than B, plus
+half the ties; 0.5 = no difference. Labels: negligible $<$ 0.56, small $\geq$ 0.56, medium $\geq$ 0.64, large $\geq$
+0.71 (and symmetrically below 0.5).
+\item All other results (the other metrics, comparisons between the baselines, RQ3, label noise and the diagnostics)
+are reported as values over all eligible queries, without CIs or tests.
+\end{itemize}
+
+
+%\paragraph{Label noise.} Every method is re-evaluated on the same rankings under two alternative labellings.
+%\emph{Type-2 copies ignored}: additionally removed from a query's ranking is every method that is a Type-2 copy of the
+%query (identical token sequence after replacing identifiers by one placeholder and literals by another, comments and
+%whitespace removed) but is not labelled as sharing its functionality: 428 query--false positive pairs (360 of them
+%already ignored as whitespace-identical) and 4 true positives of other functionalities, affecting 178 queries.
+%\emph{False positives removed}: all 58,103 false positives are removed from every ranking, as if they had never been
+%judged.
+
+\rqsection{RQ1. Syntactic similarity}{How well do tree kernels retrieve syntactic clones of each type (T1, T2, VST3, ST3, MT3), compared with BM25 and CodeBERT?}
+\addresses{R1-C1a, R1-C2a, R2-C5.}
+\input{tables/rq1}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/rq1_forest}\caption{RQ1 tests on MAP: difference A $-$ B with Bonferroni-adjusted 99.4\% CI (9 comparisons per clone type) and effect size $A_{12}$ (right of each panel). Filled: the CI excludes 0.}\label{fig:rq1}\end{figure*}
+
+%What it shows better than Table 2
+%- All the RQ1 conclusions at a glance: T1 is flat at 0, T2, VST3 and ST3 are filled for both baselines, and MT3 has wide CIs that cross 0.
+%- The size of the uncertainty, which grows from T2 to MT3.
+%- The lead over CodeBERT ft on the mean of types: the CIs just cross 0.
+
+Table~\ref{tab:rq1} shows the results per clone type for the three tree kernel variants, BM25, and
+CodeBERT in zero-shot and fine-tuned settings, on every eligible query from BigCloneBench.
+Figure~\ref{fig:rq1} shows the significance tests of the kernel comparison with BM25, with fine-tuned CodeBERT and with the other kernels. MAP is the primary metric and the only one tested. A marker on a MAP value in Table~\ref{tab:rq1} indicates a significant comparison with a baseline,
+i.e.\ the corresponding Bonferroni-adjusted CI in Figure~\ref{fig:rq1} excludes 0. Comparisons among the baselines and with zero-shot CodeBERT are not tested, so the baseline rows carry no markers.
+
+On T1, every method scores nearly 1.0. On T2, VST3 and ST3, all three kernels perform significantly
+better than both BM25 and fine-tuned CodeBERT. On MT3, no kernel differs significantly from either
+baseline, as their CIs span 0. Across the mean of the five types, the kernels significantly beat
+BM25, but their lead over fine-tuned CodeBERT is not significant. Among the kernels, the only
+significant difference is SSTK over STK on MT3, and it is very small (+0.008 MAP).
+
+
+\rqsection{RQ2. Functional similarity}{What is the performance of three tree kernels for functionally similar source code retrieval?}
+\addresses{R1-C1a, R1-C2a, R2-C5; R1-C3 for the label quality of WT3/T4 pairs (section Label noise).}
+\input{tables/rq2}
+\begin{figure}[!htbp]\centering\includegraphics[width=0.62\textwidth]{figures/rq2_forest}\caption{Tests on MAP: difference A $-$ B with Bonferroni-adjusted 99.4\% CI (9 comparisons) and effect size $A_{12}$ (right). Filled: the CI excludes 0.}\label{fig:rq2}\end{figure}
+
+\paragraph{Runtime}
+
+Timing was measured on functional queries against the full corpus of 72,782 methods,
+on one thread. One-off costs are paid once, not per query: for the tree kernels, parsing the methods, building the trees, reading them and computing the corpus self-similarities; for BM25, building the Elasticsearch index, which uses Elasticsearch's own threads; for CodeBERT, loading the model and encoding the corpus, estimated from 2,000 random methods encoded one at a time. Fine-tuned CodeBERT has the same per-query cost as zero-shot; in addition, each of its 5 fold models is fine-tuned (3.7--6.2 h per model) and encodes the corpus (2.8--4.0 h per model), measured on 14 threads.
+
+
+
+
+
+\rqsection{RQ3. Size and complexity}{Do the techniques' results, and the differences between them, depend on the size (lines of code) or the cyclomatic complexity of the query?}
+\addresses{R2-C4 (no size or complexity thresholds; McCabe $>$ 10 as sensitivity), R1-C1a.}
+\input{tables/rq3_groups}
+\input{tables/rq3_mccabe10}
+\begin{figure*}[!htbp]\centering\includegraphics[width=\textwidth]{figures/rq3_size_complexity}\caption{RQ3: MAP per LOC quartile (left) and McCabe bin (right) of the query, RQ1 (top, mean of the five clone types) and RQ2 (bottom).}\label{fig:rq3}\end{figure*}
+
+\paragraph{RQ3 groups.} Lines of code = physical lines of the method; McCabe = cyclomatic complexity (Checkstyle
+10.21.1, default counting). Queries are grouped into the quartiles of lines of code over the
+eligible queries (3--13, 14--21, 22--35, 36--433) and into McCabe bins 1, 2--3, 4--5, 6--10, $>$ 10, the last being
+McCabe's own threshold. Candidates are not restricted by group.
+
+
+\rqsection{RQ4. Hybrid: BM25 followed by a tree kernel}{How much of the tree kernels' effectiveness remains, and at what cost, when they only re-rank BM25's top 100 candidates?}
+\addresses{R2-C5, R1-C1a.}
+\input{tables/rq4_hybrid}
+\begin{figure*}[!htbp]\centering\includegraphics[width=0.87\textwidth]{figures/rq4_forest}\caption{RQ4 tests on MAP: each hybrid minus its kernel's full ranking, BM25 and fine-tuned CodeBERT, with Bonferroni-adjusted 99.4\% CI (9 comparisons per measure). Filled: the CI excludes 0. Right of each panel: effect size $A_{12}$.}\label{fig:rq4}\end{figure*}
+
+
+%What the draft shows (MAP)
+%- Mean of types: every hybrid beats BM25. None differs significantly from its kernel's full ranking or from fine-tuned CodeBERT.
+%- RQ2: every hybrid is far above its kernel's full ranking (about +0.26), and none differs significantly from BM25 or fine-tuned CodeBERT.
+%- Layout: one row per hybrid, with squares for top 100 and diamonds for top 200. Each column is one opponent, and the x-axis in the first column is wider because of those large RQ2 gains.
+
+
+\end{document}

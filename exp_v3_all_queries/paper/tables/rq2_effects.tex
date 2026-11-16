@@ -1,0 +1,22 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Tests on MAP: difference A $-$ B with Bonferroni-adjusted 99.4\% CI (9 comparisons) and effect size $A_{12}$. Bold: CI excludes 0.}
+\label{tab:rq2effects}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrc}
+\toprule
+A & B & $\Delta$ MAP [adjusted CI] & $A_{12}$ \\
+\midrule
+SSTK & STK & -0.000 [-0.005, +0.004] & 0.46 neg. \\
+PTK & STK & -0.018 [-0.053, +0.017] & 0.38 sma. \\
+PTK & SSTK & -0.017 [-0.052, +0.018] & 0.38 sma. \\
+STK & BM25 & \textbf{-0.260 [-0.389, -0.158]} & 0.08 lar. \\
+STK & CodeBERT ft & \textbf{-0.252 [-0.363, -0.165]} & 0.13 lar. \\
+SSTK & BM25 & \textbf{-0.261 [-0.392, -0.158]} & 0.08 lar. \\
+SSTK & CodeBERT ft & \textbf{-0.252 [-0.363, -0.165]} & 0.12 lar. \\
+PTK & BM25 & \textbf{-0.278 [-0.427, -0.159]} & 0.10 lar. \\
+PTK & CodeBERT ft & \textbf{-0.269 [-0.394, -0.167]} & 0.12 lar. \\
+\bottomrule
+\end{tabular}
+\end{table*}

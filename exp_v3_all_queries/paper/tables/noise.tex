@@ -1,0 +1,29 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Label noise: MAP on every eligible query with the default labels, with Type-2 copies of the query outside its functionality ignored, and with all false positives removed. Syntactic similarity: mean of the five types. Lower rows: differences.}
+\label{tab:noise}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{Syntactic similarity} & \multicolumn{3}{c}{Functional similarity} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Method & Default & Type-2 ign. & FP removed & Default & Type-2 ign. & FP removed \\
+\midrule
+STK & 0.876 & 0.877 & 0.921 & 0.183 & 0.183 & 0.339 \\
+SSTK & 0.879 & 0.880 & 0.923 & 0.182 & 0.182 & 0.339 \\
+PTK & 0.887 & 0.888 & 0.929 & 0.165 & 0.165 & 0.307 \\
+BM25 & 0.808 & 0.809 & 0.899 & 0.443 & 0.443 & 0.707 \\
+CodeBERT zs & 0.823 & 0.823 & 0.888 & 0.144 & 0.144 & 0.284 \\
+CodeBERT ft & 0.839 & 0.839 & 0.930 & 0.434 & 0.434 & 0.683 \\
+\midrule
+STK $-$ BM25 & +0.067 & +0.068 & +0.022 & -0.260 & -0.260 & -0.368 \\
+STK $-$ CodeBERT ft & +0.037 & +0.037 & -0.009 & -0.252 & -0.252 & -0.345 \\
+SSTK $-$ BM25 & +0.071 & +0.071 & +0.024 & -0.261 & -0.261 & -0.368 \\
+SSTK $-$ CodeBERT ft & +0.041 & +0.041 & -0.007 & -0.252 & -0.252 & -0.345 \\
+PTK $-$ BM25 & +0.078 & +0.079 & +0.030 & -0.278 & -0.278 & -0.399 \\
+PTK $-$ CodeBERT ft & +0.048 & +0.049 & -0.001 & -0.269 & -0.269 & -0.376 \\
+CodeBERT ft $-$ BM25 & +0.030 & +0.030 & +0.031 & -0.009 & -0.009 & -0.023 \\
+\bottomrule
+\end{tabular}
+\end{table*}
