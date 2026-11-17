@@ -64,3 +64,14 @@ exp_v3_all_queries/Oct/*.synctex.gz
 exp_v3_all_queries/summary
 exp_v3_all_queries/wilcoxon or CIs
 exp_v3_all_queries/diagnostic_explain.md
+# exp_v3_all_queries: response letter folder (renamed from Oct/) build output; submitted manuscript source kept local
+exp_v3_all_queries/revision_october_2026/*.aux
+exp_v3_all_queries/revision_october_2026/*.bbl
+exp_v3_all_queries/revision_october_2026/*.blg
+exp_v3_all_queries/revision_october_2026/*.log
+exp_v3_all_queries/revision_october_2026/*.out
+exp_v3_all_queries/revision_october_2026/*.pdf
+exp_v3_all_queries/revision_october_2026/*.synctex.gz
+exp_v3_all_queries/revision_manuscript/
+exp_v3_all_queries/revision_manuscript.zip
+exp_v3_all_queries/jss.png

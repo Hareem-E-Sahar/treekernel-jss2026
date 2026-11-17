@@ -18,7 +18,7 @@ Queries: `exp_v2/data/full/` (14,587 = 14,679 true positives − 50 tuning queri
 | 4 | `scripts/run_eval_noise.sh` | `results/noise/{t2,no_fp}/<run>/eval` (`eval/evaluate.py`: exp_v2 copy with `--drop-fp` and repeatable `--ignore`) | R1-C3 A, B |
 | 5 | `.venv/bin/python exp_v3_all_queries/eval/analyze.py` | `results/analysis/`: values, comparisons (Δ, A₁₂; tested: adjusted CI and p), RQ3 groups and trends, McCabe 10, label noise | R1-C1a, R1-C3, R2-C4, R2-C5 |
 | 6 | `.venv/bin/python exp_v3_all_queries/eval/trees.py` then `eval/diagnostics.py` | `results/diagnostics/`: D1 tree shape, D2 overlap, D3 branching, D4 per-query model | R1-C4 |
-| 7 | `.venv/bin/python exp_v3_all_queries/paper/make_tables.py`, `paper/figures.py`, then `pdflatex paper.tex` (twice) in `paper/` | `paper/tables/`, `paper/figures/`, `paper/paper.pdf`; `Oct/revision.tex` holds the hyper-parameter, label-noise and diagnostics sections for now | all |
+| 7 | `.venv/bin/python exp_v3_all_queries/paper/make_tables.py`, `paper/figures.py`, then `pdflatex paper.tex` (twice) in `paper/` | `paper/tables/`, `paper/figures/`, `paper/paper.pdf`; `revision_october_2026/revision.tex` holds the hyper-parameter, label-noise and diagnostics sections for now | all |
 
 `eval/common.py` holds the shared definitions: groups (LOC quartiles 3–13, 14–21, 22–35, 36–433; McCabe bins 1, 2–3,
 4–5, 6–10, > 10) and inference (bootstrap over the 43 functionalities, B = 10,000, a query in several functionalities
